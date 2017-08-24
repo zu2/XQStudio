@@ -1,8 +1,8 @@
-///////////////////////////////////////////////////////////////////////////////
+ï»¿///////////////////////////////////////////////////////////////////////////////
 //
 // XQStduio Source Code (http://www.qipaile.net/xqstudio)
 //
-// Copyright (c) 1998-2008, DONG Shiwei (¶­ÊÀÎ° or ¹ıºÓÏó) 
+// Copyright (c) 1998-2008, DONG Shiwei (è‘£ä¸–ä¼Ÿ or è¿‡æ²³è±¡) 
 // All rights reserved.
 // 
 // Redistribution and use in source and binary forms, with or without
@@ -43,7 +43,8 @@ interface
 
 uses Windows, Classes, Graphics, Forms, Controls, StdCtrls, ExtCtrls,
   ComCtrls, SysUtils, Dialogs, XQSystem, dDelphiS, XQDataT, XQRecLBX, XQPNode,
-  DBCtrls, Buttons, ImgList, ToolWin, ActnList, XQFileRW, Menus, ClipBrd;
+  DBCtrls, Buttons, ImgList, ToolWin, ActnList, XQFileRW, Menus, ClipBrd,
+  System.Actions;
 
 
 const
@@ -54,29 +55,29 @@ const
 //
 //.........................................................................
 type
-  TfrmXQTable = class(TForm)            // "ÏóÆå¶ÔŞÄ×À"Àà¶¨Òå
-    pnlLeft: TPanel;                    // ¶ÔŞÄ×ÀµÄ×ó±ß£¬·ÅÆåÅÌ
-    imgXQBoard: TImage;             // ×´Ì¬Ìõ
-    pnlRight: TPanel;                   // ¶ÔŞÄ×ÀµÄÓÒ±ß£¬·ÅÖÃÆäËüĞÅÏ¢
-    pnlRTop: TPanel;                 // ÓÒ±ßµ×²¿
+  TfrmXQTable = class(TForm)            // "è±¡æ£‹å¯¹å¼ˆæ¡Œ"ç±»å®šä¹‰
+    pnlLeft: TPanel;                    // å¯¹å¼ˆæ¡Œçš„å·¦è¾¹ï¼Œæ”¾æ£‹ç›˜
+    imgXQBoard: TImage;             // çŠ¶æ€æ¡
+    pnlRight: TPanel;                   // å¯¹å¼ˆæ¡Œçš„å³è¾¹ï¼Œæ”¾ç½®å…¶å®ƒä¿¡æ¯
+    pnlRTop: TPanel;                 // å³è¾¹åº•éƒ¨
     pgcInfoPage: TPageControl;
-    tstXQInfoA: TTabSheet;               // ÏóÆå¶ÔŞÄĞÅÏ¢Ò³
-    imgRed1: TImage;                    // ºìÆå: ³µ
-    imgRed2: TImage;                    // ºìÆå: Âí
-    imgRed3: TImage;                    // ºìÆå: Ïà
-    imgRed4: TImage;                    // ºìÆå: Ê¿
-    imgRed5: TImage;                    // ºìÆå: Ë§
-    imgRed6: TImage;                    // ºìÆå: ÅÚ
-    imgRed7: TImage;                    // ºìÆå: ±ø
-    imgBlk1: TImage;                    // ºÚÆå: ³µ
-    imgBlk2: TImage;                    // ºÚÆå: Âí
-    imgBlk3: TImage;                    // ºÚÆå: Ïó
-    imgBlk4: TImage;                    // ºÚÆå: Ê¿
-    imgBlk5: TImage;                    // ºÚÆå: ½«
-    imgBlk6: TImage;                    // ºÚÆå: ÅÚ
-    imgBlk7: TImage;                    // ºÚÆå: ×ä
-    imgXY00: TImage;                    // ÆåÅÌµÄ½»²æµã¶¨Òå
-    imgXY10: TImage;                    // ±äÁ¿ºóÃæµÄÊı×Ö±íÊ¾×ø±ê
+    tstXQInfoA: TTabSheet;               // è±¡æ£‹å¯¹å¼ˆä¿¡æ¯é¡µ
+    imgRed1: TImage;                    // çº¢æ£‹: è½¦
+    imgRed2: TImage;                    // çº¢æ£‹: é©¬
+    imgRed3: TImage;                    // çº¢æ£‹: ç›¸
+    imgRed4: TImage;                    // çº¢æ£‹: å£«
+    imgRed5: TImage;                    // çº¢æ£‹: å¸…
+    imgRed6: TImage;                    // çº¢æ£‹: ç‚®
+    imgRed7: TImage;                    // çº¢æ£‹: å…µ
+    imgBlk1: TImage;                    // é»‘æ£‹: è½¦
+    imgBlk2: TImage;                    // é»‘æ£‹: é©¬
+    imgBlk3: TImage;                    // é»‘æ£‹: è±¡
+    imgBlk4: TImage;                    // é»‘æ£‹: å£«
+    imgBlk5: TImage;                    // é»‘æ£‹: å°†
+    imgBlk6: TImage;                    // é»‘æ£‹: ç‚®
+    imgBlk7: TImage;                    // é»‘æ£‹: å’
+    imgXY00: TImage;                    // æ£‹ç›˜çš„äº¤å‰ç‚¹å®šä¹‰
+    imgXY10: TImage;                    // å˜é‡åé¢çš„æ•°å­—è¡¨ç¤ºåæ ‡
     imgXY20: TImage;
     imgXY30: TImage;
     imgXY40: TImage;
@@ -399,43 +400,43 @@ type
     { Private declarations }
     FDragImgXY      : TImage;
     FReverseBoardH  : Boolean;
-    procedure dSetupXQBoard;                            // ÉèÖÃÆåÅÌ
+    procedure dSetupXQBoard;                            // è®¾ç½®æ£‹ç›˜
     procedure dSetAddVarStepMode(tf: dTBoolean);
-    function  imgGetImgXY(X, Y: Integer): TImage;       // È¡(x,y)´¦½»²æµã
+    function  imgGetImgXY(X, Y: Integer): TImage;       // å–(x,y)å¤„äº¤å‰ç‚¹
   public
 
     XQFileName : string;
 
     isPasteMsgEnabled : Boolean;
 
-    imgXY           : dTXQPXY;                  // ÆåÅÌÉÏµÄ½»²æµã
+    imgXY           : dTXQPXY;                  // æ£‹ç›˜ä¸Šçš„äº¤å‰ç‚¹
     XQ              : dTXiangQi;
 
     isShowBoardOnly : dTBoolean;
     isXQFileChange  : dTBoolean;
     isXQFileSaveOk  : dTBoolean;
 
-    isDemoTable     : dTBoolean;                // ÊÇÍÆÑİÆåÅÌÂğ£¿
+    isDemoTable     : dTBoolean;                // æ˜¯æ¨æ¼”æ£‹ç›˜å—ï¼Ÿ
     //---------------------------------------------------------------------
-    iXQFType        : dTInt32;                  // ÎÄ¼şÀàĞÍ
-                                                // 0-È«¾Ö, 1-¿ª¾Ö
-                                                // 2-ÖĞ¾Ö, 3-²Ğ¾Ö
-    iWhoPlay        : dTInt32;                  // Ë­ÏÈĞĞ
-                                                // 0-ºìÏÈ, 1-ºÚÏÈ
-    iResult         : dTInt32;                  // ±ÈÈü½á¹û
-                                                // 0-Î´Öª, 1-ºìÊ¤
-                                                // 2-ºÚÊ¤, 3-ºÍÆå
-    sTitle          : String[63];               // ±êÌâ
-    sMatchName      : String[63];               // ±ÈÈüÃû³Æ
-    sMatchTime      : String[15];               // ±ÈÈüÊ±¼ä
-    sMatchAddr      : String[15];               // ±ÈÈüµØµã
-    sRedPlayer      : String[15];               // ºì·½ĞÕÃû
-    sBlkPlayer      : String[15];               // ºÚ·½ĞÕÃû
-    sTimeRule       : String[63];               // ÓÃÊ±¹æÔò
-    sRedTime        : String[15];               // ºì·½ÓÃÊ±
-    sBlkTime        : String[15];               // ºÚ·½ÓÃÊ±
-    sRMKWriter      : String[15];               // ÆåÆ×ÆÀÂÛÔ±
-    sAuthor         : STring[15];               // ÎÄ¼şµÄ×÷Õß
+    iXQFType        : dTInt32;                  // æ–‡ä»¶ç±»å‹
+                                                // 0-å…¨å±€, 1-å¼€å±€
+                                                // 2-ä¸­å±€, 3-æ®‹å±€
+    iWhoPlay        : dTInt32;                  // è°å…ˆè¡Œ
+                                                // 0-çº¢å…ˆ, 1-é»‘å…ˆ
+    iResult         : dTInt32;                  // æ¯”èµ›ç»“æœ
+                                                // 0-æœªçŸ¥, 1-çº¢èƒœ
+                                                // 2-é»‘èƒœ, 3-å’Œæ£‹
+    sTitle          : String[63];               // æ ‡é¢˜
+    sMatchName      : String[63];               // æ¯”èµ›åç§°
+    sMatchTime      : String[15];               // æ¯”èµ›æ—¶é—´
+    sMatchAddr      : String[15];               // æ¯”èµ›åœ°ç‚¹
+    sRedPlayer      : String[15];               // çº¢æ–¹å§“å
+    sBlkPlayer      : String[15];               // é»‘æ–¹å§“å
+    sTimeRule       : String[63];               // ç”¨æ—¶è§„åˆ™
+    sRedTime        : String[15];               // çº¢æ–¹ç”¨æ—¶
+    sBlkTime        : String[15];               // é»‘æ–¹ç”¨æ—¶
+    sRMKWriter      : String[15];               // æ£‹è°±è¯„è®ºå‘˜
+    sAuthor         : STring[15];               // æ–‡ä»¶çš„ä½œè€…
     //---------------------------------------------------------------------
 
     procedure dReverseBoardV;
@@ -497,13 +498,13 @@ begin
 end;
 
 //-------------------------------------------------------------------------
-// È¡µÃ×ø±êX, Y´¦'±øÕ¾'µÄ×ø±ê
+// å–å¾—åæ ‡X, Yå¤„'å…µç«™'çš„åæ ‡
 //.........................................................................
 function TfrmXQTable.imgGetImgXY(X, Y: Integer): TImage;
 var
   i, j: Integer;
 begin
-  for i:=0 to 8 do for j:= 0 to 9 do    // ËÑË÷ËùÓĞµÄ±øÕ¾
+  for i:=0 to 8 do for j:= 0 to 9 do    // æœç´¢æ‰€æœ‰çš„å…µç«™
   begin
     if (X>imgXY[i,j].Left+4)and(X<imgXY[i,j].Left+imgXY[i,j].Width-4) and
        (Y>imgXY[i,j].Top+4)and(Y<imgXY[i,j].Top +imgXY[i,j].Height-4) then
@@ -515,24 +516,24 @@ begin
 end;
 
 //-------------------------------------------------------------------------
-// ÉèÖÃÏóÆåÅÌ
+// è®¾ç½®è±¡æ£‹ç›˜
 //.........................................................................
 procedure TfrmXQTable.dSetupXQBoard;
 var
   picQZ : dTXQZPIC;
   i, j  : dTInt32;
 begin
-  // ½«ËùÓĞÆå×ÓµÄÔ­ĞÎ¹Ø±Õ
+  // å°†æ‰€æœ‰æ£‹å­çš„åŸå½¢å…³é—­
   for i:=1 to 7 do
   begin
     with FindComponent('imgRed'+IntToStr(i)) as TImage do Visible := False;
     with FindComponent('imgBlk'+IntToStr(i)) as TImage do Visible := False;
   end;
 
-  // ÕıÔÚÒÆ¶¯µÄÆå×ÓµÄ±äÎª²»¿ÉÒÔÏÔÊ¾
+  // æ­£åœ¨ç§»åŠ¨çš„æ£‹å­çš„å˜ä¸ºä¸å¯ä»¥æ˜¾ç¤º
   imgQZMove.Visible := False;
 
-  // ÉèÖÃ 9 x 10 ¸ö'±øÕ¾'
+  // è®¾ç½® 9 x 10 ä¸ª'å…µç«™'
   for i:=0 to 8 do for j:=0 to 9 do
   begin
     imgXY[i,j] := FindComponent('imgXY'+IntToStr(i)+IntToStr(j)) as TImage;
@@ -564,7 +565,7 @@ begin
   imgMovePosFrom.Height:= 34;
 
 
-  // ÉèÖÃËùÓĞÆå×ÓµÄÍ¼Æ¬
+  // è®¾ç½®æ‰€æœ‰æ£‹å­çš„å›¾ç‰‡
   picQZ[ 1] := ImgRed1.Picture;  picQZ[ 8] := ImgBlk1.Picture;
   picQZ[ 2] := ImgRed2.Picture;  picQZ[ 9] := ImgBlk2.Picture;
   picQZ[ 3] := ImgRed3.Picture;  picQZ[10] := ImgBlk3.Picture;
@@ -573,7 +574,7 @@ begin
   picQZ[ 6] := ImgRed6.Picture;  picQZ[13] := ImgBlk6.Picture;
   picQZ[ 7] := ImgRed7.Picture;  picQZ[14] := ImgBlk7.Picture;
 
-  // ½¨Á¢ÏóÆåÀà
+  // å»ºç«‹è±¡æ£‹ç±»
   XQ:=dTXIANGQI.Create(imgXQBoard,imgXY,imgQZMove,
                        imgMovePosFrom,imgMovePosTo,
                        picQZ,lbxPlayRec,lbxPlayVar,memPlayRec);
@@ -581,7 +582,7 @@ begin
 end;
 
 //-------------------------------------------------------------------------
-// ´´½¨ÏóÆå×À
+// åˆ›å»ºè±¡æ£‹æ¡Œ
 //.........................................................................
 procedure TfrmXQTable.FormCreate(Sender: TObject);
 begin
@@ -591,7 +592,7 @@ begin
   
   imgXQBoard.Picture := frmMain.imgXQBoard.Picture;
 
-  // ÉèÖÃÆå×ÀµÄ´óĞ¡
+  // è®¾ç½®æ£‹æ¡Œçš„å¤§å°
   Self.Left   := 0;                 Self.Top := 0;
   Self.Height := dCXQTableHeight; Self.Width := dCXQTableWidth;
 
@@ -602,7 +603,7 @@ begin
 
   XQ := nil;
 
-  // ÉèÖÃÏóÆåÅÌ
+  // è®¾ç½®è±¡æ£‹ç›˜
   dSetupXQBoard;
 
   tmrAutoPlay.Interval := iAutoPlayTime;
@@ -650,7 +651,7 @@ begin
 end;
 
 //-------------------------------------------------------------------------
-// imgXY µÄÊÂ¼ş´¦Àí³ÌĞò
+// imgXY çš„äº‹ä»¶å¤„ç†ç¨‹åº
 //.........................................................................
 // Click
 procedure TfrmXQTable.imgXYClick(Sender: TObject);
@@ -695,7 +696,7 @@ begin
   Accept := True;
   with Sender as TImage do
   begin
-    if (XQ.QiziMove <> nil) then        // Æå×Ó¸ú×Å¹â±êÒÆ¶¯
+    if (XQ.QiziMove <> nil) then        // æ£‹å­è·Ÿç€å…‰æ ‡ç§»åŠ¨
     begin
       imgQZMove.Left := Left + X - 17;
       imgQZMove.Top  := Top  + Y - 17;
@@ -718,19 +719,19 @@ end;
 procedure TfrmXQTable.imgXYEndDrag(Sender, Target: TObject; X,
   Y: Integer);
 var
-  imgQZTo     : TImage;                 // Æå×ÓÒÆ¶¯µÄÖÕµãÎ»ÖÃ
+  imgQZTo     : TImage;                 // æ£‹å­ç§»åŠ¨çš„ç»ˆç‚¹ä½ç½®
   iPlayStepNo : dTInt32;
 begin
   tmrMoveBlink.Enabled := False;
   iPlayStepNo := XQ.PlayStepNo;
   imgQZTo     := nil;
-  if (Target <> nil) then               // ËÑË÷ÖÕµã'±øÕ¾'
+  if (Target <> nil) then               // æœç´¢ç»ˆç‚¹'å…µç«™'
     with Target as TImage do begin imgQZTo:=imgGetImgXY(X+Left,Y+Top); end;
 
   if (imgQZTo = nil) then
-    XQ.dUndoMove                        // ×îºóÆå×Ó²»ÔÚ'±øÕ¾'ÉÏ£¬È¡ÏûÒÆ¶¯
+    XQ.dUndoMove                        // æœ€åæ£‹å­ä¸åœ¨'å…µç«™'ä¸Šï¼Œå–æ¶ˆç§»åŠ¨
   else
-    XQ.dStopMoveAtXY(imgQZTo.Tag);      // ½«Æå×ÓÒÆ¶¯µ½'±øÕ¾'ÉÏ
+    XQ.dStopMoveAtXY(imgQZTo.Tag);      // å°†æ£‹å­ç§»åŠ¨åˆ°'å…µç«™'ä¸Š
   if (iPlayStepNo <> XQ.PlayStepNo) then
   begin
     tmrMoveBlink.Enabled := False;
@@ -818,7 +819,7 @@ procedure TfrmXQTable.imgXYStartDrag(Sender: TObject;
   var DragObject: TDragObject);
 begin
   if (Sender=nil) then Exit;
-  // ´Ó±¾'±øÕ¾'¿ªÊ¼ÒÆ¶¯Æå×Ó
+  // ä»æœ¬'å…µç«™'å¼€å§‹ç§»åŠ¨æ£‹å­
   tmrMoveBlink.Enabled := False;
   FDragImgXY := Sender as TImage;
   with Sender as TImage do begin XQ.dStartMoveFromXY(tag); end;
@@ -826,7 +827,7 @@ end;
 
 
 //-------------------------------------------------------------------------
-// ´¦ÀíÆåÆ×¼ÇÂ¼ClickÊÂ¼ş£¬ÏÔÊ¾Ö¸¶¨µÄ¼ÇÂ¼µÄÅÌÃæ×´¿ö
+// å¤„ç†æ£‹è°±è®°å½•Clickäº‹ä»¶ï¼Œæ˜¾ç¤ºæŒ‡å®šçš„è®°å½•çš„ç›˜é¢çŠ¶å†µ
 //.........................................................................
 procedure TfrmXQTable.lbxPlayRecClick(Sender: TObject);
 begin
@@ -861,7 +862,7 @@ begin
 end;
 
 //-------------------------------------------------------------------------
-// É¾³ıÆå×À
+// åˆ é™¤æ£‹æ¡Œ
 //.........................................................................
 procedure TfrmXQTable.FormDestroy(Sender: TObject);
 begin
@@ -869,7 +870,7 @@ begin
 end;
 
 //-------------------------------------------------------------------------
-// Æå×À±äÎªµ±Ç°Æå×ÀºóÒª×öµÄÊÂÇé
+// æ£‹æ¡Œå˜ä¸ºå½“å‰æ£‹æ¡Œåè¦åšçš„äº‹æƒ…
 //.........................................................................
 procedure TfrmXQTable.FormActivate(Sender: TObject);
 begin
@@ -977,15 +978,15 @@ begin
         XQ.dDispQiziAtRecNo(XQ.DispStepNo);
         PlayNodeBeforeAddVarStep    := XQ.DispNode;
         if ((XQ.DispNode.StepNo mod 2)=0) then
-          sPlayer := 'ºÚ·½'
+          sPlayer := 'é»‘æ–¹'
         else
-          sPlayer := 'ºì·½';
+          sPlayer := 'çº¢æ–¹';
         lblAddPlayVarHint.Caption   :=
-          '    Èç×óÍ¼ĞÎÊÆ£¬'+ sPlayer +'¸Õ²ÅÒ»²½×ß' +
+          '    å¦‚å·¦å›¾å½¢åŠ¿ï¼Œ'+ sPlayer +'åˆšæ‰ä¸€æ­¥èµ°' +
           PlayNodeBeforeAddVarStep.StrRec +
-          '£¬ÏÖÔÚ²»×ß' + PlayNodeBeforeAddVarStep.StrRec +
-          '£¬ÇëÊäÈëĞÂµÄ±ä×Å£¨ÔÚÆåÅÌÉÏÖ±½Ó×ß×Ó£©¡£'+
-          '°´¡°È¡Ïû¡±°´Å¥¿ÉÒÔÍ£Ö¹ÕâÒ»²Ù×÷¡£';
+          'ï¼Œç°åœ¨ä¸èµ°' + PlayNodeBeforeAddVarStep.StrRec +
+          'ï¼Œè¯·è¾“å…¥æ–°çš„å˜ç€ï¼ˆåœ¨æ£‹ç›˜ä¸Šç›´æ¥èµ°å­ï¼‰ã€‚'+
+          'æŒ‰â€œå–æ¶ˆâ€æŒ‰é’®å¯ä»¥åœæ­¢è¿™ä¸€æ“ä½œã€‚';
         lbxPlayRec.Visible := False;
         for i:=XQ.PlayStepNo downto XQ.DispStepNo do
           XQ.dDeleteOnePlayRec;
@@ -1047,7 +1048,7 @@ begin
   end;
   imgRedNum.Visible := not imgRedNum.Visible;
   imgBlkNum.Visible := not imgBlkNum.Visible;
-  XQ.dDispQiziAtRecNo(XQ.DispStepNo);    // ÎªÁËÏÔÊ¾×îºóÒÆ¶¯Æå×ÓµÄ±ê¼Ç
+  XQ.dDispQiziAtRecNo(XQ.DispStepNo);    // ä¸ºäº†æ˜¾ç¤ºæœ€åç§»åŠ¨æ£‹å­çš„æ ‡è®°
 end;
 
 procedure TfrmXQTable.dReverseBoardH;
@@ -1070,7 +1071,7 @@ begin
 //
   XQ.dRefreshRecStr;
 //
-  XQ.dDispQiziAtRecNo(XQ.DispStepNo);    // ÎªÁËÏÔÊ¾×îºóÒÆ¶¯Æå×ÓµÄ±ê¼Ç
+  XQ.dDispQiziAtRecNo(XQ.DispStepNo);    // ä¸ºäº†æ˜¾ç¤ºæœ€åç§»åŠ¨æ£‹å­çš„æ ‡è®°
 end;
 
 procedure TfrmXQTable.pnlCtrlToolBarResize(Sender: TObject);
@@ -1229,8 +1230,8 @@ begin
   end;
 
   case Application.MessageBox(
-          PChar('ÊÇ·ñ±£´æ¶ÔÎÄ¼ş"'+ExtractFileName(XQFileName)
-          +'"µÄĞŞ¸Ä£¿'),
+          PChar('æ˜¯å¦ä¿å­˜å¯¹æ–‡ä»¶"'+ExtractFileName(XQFileName)
+          +'"çš„ä¿®æ”¹ï¼Ÿ'),
           dCVersionInfo,
           MB_YESNOCANCEL + MB_ICONWARNING + MB_DEFBUTTON1) of
      IDYES:
@@ -1268,66 +1269,66 @@ var
 begin
   lblTitle.Caption   :=sTitle;
   case iXQFType of
-    0:  // È«¾Ö
+    0:  // å…¨å±€
       begin
         s:='';
         if ((sRedPlayer<>'')and(sBlkPlayer<>'')) then
         begin
-          s:='(ºì·½) '+sRedPlayer;
+          s:='(çº¢æ–¹) '+sRedPlayer;
           case iResult of
-            0: begin s:=s+' ¶Ô '; end;
-            1: s:=s+' (ºìÏÈÊ¤) ';
-            2: s:=s+' (ºìÏÈ¸º) ';
-            3: s:=s+' (ºìÏÈºÍ) ';
+            0: begin s:=s+' å¯¹ '; end;
+            1: s:=s+' (çº¢å…ˆèƒœ) ';
+            2: s:=s+' (çº¢å…ˆè´Ÿ) ';
+            3: s:=s+' (çº¢å…ˆå’Œ) ';
           end;
-          s:=s+'(ºÚ·½) '+sBlkPlayer;
+          s:=s+'(é»‘æ–¹) '+sBlkPlayer;
         end;
 
         lblPlayer.Caption  :=s;
 
         lblTimeAddr.Caption:=sMatchTime;
         if (sMatchAddr<>'') then
-          lblTimeAddr.Caption:=lblTimeAddr.Caption+'ŞÄÓÚ'+sMatchAddr;
+          lblTimeAddr.Caption:=lblTimeAddr.Caption+'å¼ˆäº'+sMatchAddr;
       end;
 
-    1:  // ¿ª¾Ö
+    1:  // å¼€å±€
       begin
         s:='';
         lblPlayer.Caption  :=s;
         lblTimeAddr.Caption:=s;
       end;
 
-    2:  // ÖĞ¾Ö
+    2:  // ä¸­å±€
       begin
         s:='';
         if ((sRedPlayer<>'')and(sBlkPlayer<>'')) then
         begin
-          s:='(ºì·½) '+sRedPlayer;
+          s:='(çº¢æ–¹) '+sRedPlayer;
           case iResult of
-            0: begin s:=s+' ¶Ô '; end;
-            1: s:=s+' (Ê¤) ';
-            2: s:=s+' (¸º) ';
-            3: s:=s+' (ºÍ) ';
+            0: begin s:=s+' å¯¹ '; end;
+            1: s:=s+' (èƒœ) ';
+            2: s:=s+' (è´Ÿ) ';
+            3: s:=s+' (å’Œ) ';
           end;
-          s:=s+'(ºÚ·½) '+sBlkPlayer;
+          s:=s+'(é»‘æ–¹) '+sBlkPlayer;
         end;
 
         lblPlayer.Caption  :=s;
 
         lblTimeAddr.Caption:=sMatchTime;
         if (sMatchAddr<>'') then
-          lblTimeAddr.Caption:=lblTimeAddr.Caption+'ŞÄÓÚ'+sMatchAddr;
+          lblTimeAddr.Caption:=lblTimeAddr.Caption+'å¼ˆäº'+sMatchAddr;
       end;
 
-    3:  // ²Ğ¾Ö
+    3:  // æ®‹å±€
       begin
-        s:='(×Å·¨: ';
-        if (iWhoPlay=0) then s:=s+'ºìÏÈ' else s:=s+'ºÚÏÈ';
+        s:='(ç€æ³•: ';
+        if (iWhoPlay=0) then s:=s+'çº¢å…ˆ' else s:=s+'é»‘å…ˆ';
         case iResult of
           0: begin end;
-          1: if (iWhoPlay =0) then s:=s+'Ê¤' else s:=s+'ºìÊ¤';
-          2: if (iWhoPlay<>0) then s:=s+'Ê¤' else s:=s+'ºÚÊ¤';
-          3: s:=s+'ºÍ';
+          1: if (iWhoPlay =0) then s:=s+'èƒœ' else s:=s+'çº¢èƒœ';
+          2: if (iWhoPlay<>0) then s:=s+'èƒœ' else s:=s+'é»‘èƒœ';
+          3: s:=s+'å’Œ';
         end;
         s:=s+')';
         lblPlayer.Caption := s;
@@ -1396,7 +1397,7 @@ end;
 
 
 //-------------------------------------------------------------------------
-// ½«ÆåÆ××ª±ä³ÉÎÄ±¾ÏÔÊ¾
+// å°†æ£‹è°±è½¬å˜æˆæ–‡æœ¬æ˜¾ç¤º
 //.........................................................................
 procedure TfrmXQTable.pnlTextToolBarResize(Sender: TObject);
 begin
@@ -1421,7 +1422,7 @@ procedure TfrmXQTable.tbtSaveTextIntoFileClick(Sender: TObject);
 var
   sFileName : String;
 begin
-  dlgSaveDialog.Title := '½«ÆåÆ×ÎÄ±¾±£´æÎª';
+  dlgSaveDialog.Title := 'å°†æ£‹è°±æ–‡æœ¬ä¿å­˜ä¸º';
   if dlgSaveDialog.Execute then
   begin
     sFileName := dlgSaveDialog.FileName;
@@ -1429,8 +1430,8 @@ begin
     if FileExists(sFileName) then
     begin
       if (Application.MessageBox(
-          PChar(Format('ÎÄ¼ş¡°%s¡±ÒÑ¾­´æÔÚ£¬ÒªÌæ»»Âğ?', [sFileName])),
-          '±£´æÎÄ¼ş',
+          PChar(Format('æ–‡ä»¶â€œ%sâ€å·²ç»å­˜åœ¨ï¼Œè¦æ›¿æ¢å—?', [sFileName])),
+          'ä¿å­˜æ–‡ä»¶',
           MB_OKCANCEL + MB_ICONWARNING + MB_DEFBUTTON1) = IDCANCEL) then
       begin
         Exit;
@@ -1522,7 +1523,7 @@ begin
   ppmAutoPlay07.Checked    := (ppmAutoPlay07.Tag = iAutoPlayTime);
   ppmAutoPlay08.Checked    := (ppmAutoPlay08.Tag = iAutoPlayTime);
 
-  // ¼ì²éÊÇ·ñÓĞÆåÆ×¿ÉÒÔÕ³Ìù
+  // æ£€æŸ¥æ˜¯å¦æœ‰æ£‹è°±å¯ä»¥ç²˜è´´
   ppmPasteQipu.Enabled     := (Clipboard.HasFormat(CF_TEXT) and
                                 (XQ.DispStepNo=XQ.PlayStepNo));
 end;
@@ -1554,21 +1555,21 @@ procedure TfrmXQTable.tbtSaveQiTuTextClick(Sender: TObject);
 var
   sFileName : String;
 begin
-  dlgSaveDialog.Title := '½«ÆåÍ¼ÎÄ±¾±£´æÎª';
+  dlgSaveDialog.Title := 'å°†æ£‹å›¾æ–‡æœ¬ä¿å­˜ä¸º';
   if dlgSaveDialog.Execute then
   begin
     sFileName := dlgSaveDialog.FileName;
     if (Pos('.', sFileName)=0) then sFileName := sFileName + '.TXT';
     if FileExists(sFileName) then
     begin
-      if (Application.MessageBox('ÎÄ¼şÒÑ¾­´æÔÚ£¬ÒªÌæ»»Âğ?', '±£´æÎÄ¼ş',
+      if (Application.MessageBox('æ–‡ä»¶å·²ç»å­˜åœ¨ï¼Œè¦æ›¿æ¢å—?', 'ä¿å­˜æ–‡ä»¶',
           MB_OKCANCEL + MB_DEFBUTTON1) = IDCANCEL) then Exit;
     end;
     memQiTuText.Lines.SaveToFile(sFileName);
   end;
 end;
 
-// ÏÔÊ¾ÆåÍ¼
+// æ˜¾ç¤ºæ£‹å›¾
 procedure TfrmXQTable.tstXQInfoBShow(Sender: TObject);
 var
   iQiTuMode : Integer;
@@ -1578,7 +1579,7 @@ begin
   memQiTuText.Visible := False;  memQiTuText.Lines.Clear;
   iQiTuMode := 0;  if rbtQiTuStyle02.Checked then iQiTuMode := 1;
 
-  // ÅĞ¶ÏÂÖµ½ÄÄ·½ĞĞÆå
+  // åˆ¤æ–­è½®åˆ°å“ªæ–¹è¡Œæ£‹
   case XQ.DispNode.XYt of
       0: wp := wpRed;
     $FF: wp := wpBlk;
@@ -1607,7 +1608,7 @@ begin
 end;
 
 ////////////////////////////////////////////////////////////////////////////////
-// È¡¹Ø¼ü´ÊºóÃæµÄ×Ö·û´®
+// å–å…³é”®è¯åé¢çš„å­—ç¬¦ä¸²
 function sGetKeyString(sLine, sKey: string): string;
 var
   iPos: Integer;
@@ -1630,7 +1631,7 @@ begin
 end;
 
 ////////////////////////////////////////////////////////////////////////////////
-// ÔÚStringListÖĞÑ°ÕÒÖ¸¶¨µÄ¹Ø¼ü´Ê×Ö·û´®
+// åœ¨StringListä¸­å¯»æ‰¾æŒ‡å®šçš„å…³é”®è¯å­—ç¬¦ä¸²
 function sGetStrAfterKeyWord(sl: TStrings; sKey: string): string;
 var
   i: Integer;
@@ -1681,10 +1682,10 @@ begin
 end;
 
 var
-  // ÔÚÒÔ¾ø¶Ô×ø±ê±íÊ¾µÄÆåÆ×ÖĞ(Èç12-23)£¬X×ø±êµÄ³õÊ¼Î»ÖÃÎª0»¹ÊÇ1
+  // åœ¨ä»¥ç»å¯¹åæ ‡è¡¨ç¤ºçš„æ£‹è°±ä¸­(å¦‚12-23)ï¼ŒXåæ ‡çš„åˆå§‹ä½ç½®ä¸º0è¿˜æ˜¯1
   QipuStrXFrom: Integer = 0;
 
-// ½«ÆåÆ×¼ÇÂ¼±ê×¼»¯
+// å°†æ£‹è°±è®°å½•æ ‡å‡†åŒ–
 procedure dMakeStandardRecStr(var sRecStr: string);
 var
   s: string;
@@ -1693,130 +1694,130 @@ begin
 
   s := StringReplace(s, ' ' , '', [rfReplaceAll]);
 
-  // Big5-->GB·±Ìå
-  s := StringReplace(s,#$AB#$D3, 'Ë§', [rfReplaceAll]);
-  s := StringReplace(s,#$B1#$4E, 'Œ¢', [rfReplaceAll]);
-  s := StringReplace(s,#$A5#$4B, 'ÊË', [rfReplaceAll]);
-  s := StringReplace(s,#$A4#$68, 'Ê¿', [rfReplaceAll]);
-  s := StringReplace(s,#$AC#$DB, 'Ïà', [rfReplaceAll]);
-  s := StringReplace(s,#$B6#$48, 'Ïó', [rfReplaceAll]);
-  s := StringReplace(s,#$DA#$CF, '³Œ', [rfReplaceAll]);
-  s := StringReplace(s,#$A8#$AE, 'Ü‡', [rfReplaceAll]);
-  s := StringReplace(s,#$D8#$58, '‚Ø', [rfReplaceAll]);
-  s := StringReplace(s,#$B0#$A8, 'ñR', [rfReplaceAll]);
-  s := StringReplace(s,#$AF#$A5, '³h', [rfReplaceAll]);
-  s := StringReplace(s,#$AC#$B6, 'ÅÚ', [rfReplaceAll]);
-  s := StringReplace(s,#$A5#$5D, '°ü', [rfReplaceAll]);
-  s := StringReplace(s,#$A7#$4C, '±ø', [rfReplaceAll]);
-  s := StringReplace(s,#$A8#$F2, '×ä', [rfReplaceAll]);
-  s := StringReplace(s,#$A4#$40, 'Ò»', [rfReplaceAll]);
-  s := StringReplace(s,#$A4#$47, '¶ş', [rfReplaceAll]);
-  s := StringReplace(s,#$A4#$54, 'Èı', [rfReplaceAll]);
-  s := StringReplace(s,#$A5#$7C, 'ËÄ', [rfReplaceAll]);
-  s := StringReplace(s,#$A4#$AD, 'Îå', [rfReplaceAll]);
-  s := StringReplace(s,#$A4#$BB, 'Áù', [rfReplaceAll]);
-  s := StringReplace(s,#$A4#$43, 'Æß', [rfReplaceAll]);
-  s := StringReplace(s,#$A4#$4B, '°Ë', [rfReplaceAll]);
-  s := StringReplace(s,#$A4#$45, '¾Å', [rfReplaceAll]);
-  s := StringReplace(s,#$B6#$69, 'ßM', [rfReplaceAll]);
-  s := StringReplace(s,#$B0#$68, 'ÍË', [rfReplaceAll]);
-  s := StringReplace(s,#$A5#$AD, 'Æ½', [rfReplaceAll]);
-  s := StringReplace(s,#$AB#$65, 'Ç°', [rfReplaceAll]);
-  s := StringReplace(s,#$A4#$A4, 'ÖĞ', [rfReplaceAll]);
-  s := StringReplace(s,#$AB#$E1, 'áá', [rfReplaceAll]);
-  s := StringReplace(s,#$A6#$5A, 'ºó', [rfReplaceAll]);
+  // Big5-->GBç¹ä½“
+  s := StringReplace(s,#$AB#$D3, 'å¸…', [rfReplaceAll]);
+  s := StringReplace(s,#$B1#$4E, 'å°‡', [rfReplaceAll]);
+  s := StringReplace(s,#$A5#$4B, 'ä»•', [rfReplaceAll]);
+  s := StringReplace(s,#$A4#$68, 'å£«', [rfReplaceAll]);
+  s := StringReplace(s,#$AC#$DB, 'ç›¸', [rfReplaceAll]);
+  s := StringReplace(s,#$B6#$48, 'è±¡', [rfReplaceAll]);
+  s := StringReplace(s,#$DA#$CF, 'ç¡¨', [rfReplaceAll]);
+  s := StringReplace(s,#$A8#$AE, 'è»Š', [rfReplaceAll]);
+  s := StringReplace(s,#$D8#$58, 'å‚Œ', [rfReplaceAll]);
+  s := StringReplace(s,#$B0#$A8, 'é¦¬', [rfReplaceAll]);
+  s := StringReplace(s,#$AF#$A5, 'ç ²', [rfReplaceAll]);
+  s := StringReplace(s,#$AC#$B6, 'ç‚®', [rfReplaceAll]);
+  s := StringReplace(s,#$A5#$5D, 'åŒ…', [rfReplaceAll]);
+  s := StringReplace(s,#$A7#$4C, 'å…µ', [rfReplaceAll]);
+  s := StringReplace(s,#$A8#$F2, 'å’', [rfReplaceAll]);
+  s := StringReplace(s,#$A4#$40, 'ä¸€', [rfReplaceAll]);
+  s := StringReplace(s,#$A4#$47, 'äºŒ', [rfReplaceAll]);
+  s := StringReplace(s,#$A4#$54, 'ä¸‰', [rfReplaceAll]);
+  s := StringReplace(s,#$A5#$7C, 'å››', [rfReplaceAll]);
+  s := StringReplace(s,#$A4#$AD, 'äº”', [rfReplaceAll]);
+  s := StringReplace(s,#$A4#$BB, 'å…­', [rfReplaceAll]);
+  s := StringReplace(s,#$A4#$43, 'ä¸ƒ', [rfReplaceAll]);
+  s := StringReplace(s,#$A4#$4B, 'å…«', [rfReplaceAll]);
+  s := StringReplace(s,#$A4#$45, 'ä¹', [rfReplaceAll]);
+  s := StringReplace(s,#$B6#$69, 'é€²', [rfReplaceAll]);
+  s := StringReplace(s,#$B0#$68, 'é€€', [rfReplaceAll]);
+  s := StringReplace(s,#$A5#$AD, 'å¹³', [rfReplaceAll]);
+  s := StringReplace(s,#$AB#$65, 'å‰', [rfReplaceAll]);
+  s := StringReplace(s,#$A4#$A4, 'ä¸­', [rfReplaceAll]);
+  s := StringReplace(s,#$AB#$E1, 'å¾Œ', [rfReplaceAll]);
+  s := StringReplace(s,#$A6#$5A, 'å', [rfReplaceAll]);
   
-  s := StringReplace(s,#$A2#$B0, '£±', [rfReplaceAll]);
-  s := StringReplace(s,#$A2#$B1, '£²', [rfReplaceAll]);
-  s := StringReplace(s,#$A2#$B2, '£³', [rfReplaceAll]);
-  s := StringReplace(s,#$A2#$B3, '£´', [rfReplaceAll]);
-  s := StringReplace(s,#$A2#$B4, '£µ', [rfReplaceAll]);
-  s := StringReplace(s,#$A2#$B5, '£¶', [rfReplaceAll]);
-  s := StringReplace(s,#$A2#$B6, '£·', [rfReplaceAll]);
-  s := StringReplace(s,#$A2#$B7, '£¸', [rfReplaceAll]);
-  s := StringReplace(s,#$A2#$B8, '£¹', [rfReplaceAll]);
+  s := StringReplace(s,#$A2#$B0, 'ï¼‘', [rfReplaceAll]);
+  s := StringReplace(s,#$A2#$B1, 'ï¼’', [rfReplaceAll]);
+  s := StringReplace(s,#$A2#$B2, 'ï¼“', [rfReplaceAll]);
+  s := StringReplace(s,#$A2#$B3, 'ï¼”', [rfReplaceAll]);
+  s := StringReplace(s,#$A2#$B4, 'ï¼•', [rfReplaceAll]);
+  s := StringReplace(s,#$A2#$B5, 'ï¼–', [rfReplaceAll]);
+  s := StringReplace(s,#$A2#$B6, 'ï¼—', [rfReplaceAll]);
+  s := StringReplace(s,#$A2#$B7, 'ï¼˜', [rfReplaceAll]);
+  s := StringReplace(s,#$A2#$B8, 'ï¼™', [rfReplaceAll]);
 
-  // GB·±Ìå-->GB¼òÌå
-  s := StringReplace(s, 'Ü‡'   , '³µ', [rfReplaceAll]);
-  s := StringReplace(s, 'íº'   , '³µ', [rfReplaceAll]);
-  s := StringReplace(s, '³Œ'   , '³µ', [rfReplaceAll]);
-  s := StringReplace(s, 'ñR'   , 'Âí', [rfReplaceAll]);
-  s := StringReplace(s, 'Âë'   , 'Âí', [rfReplaceAll]);
-  s := StringReplace(s, '‚Ø'   , 'Âí', [rfReplaceAll]);
-  s := StringReplace(s, 'Ïà'   , 'Ïó', [rfReplaceAll]);
-  s := StringReplace(s, 'ÊË'   , 'Ê¿', [rfReplaceAll]);
-  s := StringReplace(s, 'Ë§'   , '½«', [rfReplaceAll]);
-  s := StringReplace(s, '›'   , '½«', [rfReplaceAll]);
-  s := StringReplace(s, 'Œ¢'   , '½«', [rfReplaceAll]);
-  s := StringReplace(s, '³h'   , 'ÅÚ', [rfReplaceAll]);
-  s := StringReplace(s, '°ü'   , 'ÅÚ', [rfReplaceAll]);
-  s := StringReplace(s, '±ø'   , '×ä', [rfReplaceAll]);
-  s := StringReplace(s, 'ÉÏ'   , '½ø', [rfReplaceAll]);
-  s := StringReplace(s, 'ßM'   , '½ø', [rfReplaceAll]);
-  s := StringReplace(s, 'ÏÂ'   , 'ÍË', [rfReplaceAll]);
-  s := StringReplace(s, 'áá'   , 'ºó', [rfReplaceAll]);
-  s := StringReplace(s, 'Èş'   , 'Èı', [rfReplaceAll]);
+  // GBç¹ä½“-->GBç®€ä½“
+  s := StringReplace(s, 'è»Š'   , 'è½¦', [rfReplaceAll]);
+  s := StringReplace(s, 'ç —'   , 'è½¦', [rfReplaceAll]);
+  s := StringReplace(s, 'ç¡¨'   , 'è½¦', [rfReplaceAll]);
+  s := StringReplace(s, 'é¦¬'   , 'é©¬', [rfReplaceAll]);
+  s := StringReplace(s, 'ç '   , 'é©¬', [rfReplaceAll]);
+  s := StringReplace(s, 'å‚Œ'   , 'é©¬', [rfReplaceAll]);
+  s := StringReplace(s, 'ç›¸'   , 'è±¡', [rfReplaceAll]);
+  s := StringReplace(s, 'ä»•'   , 'å£«', [rfReplaceAll]);
+  s := StringReplace(s, 'å¸…'   , 'å°†', [rfReplaceAll]);
+  s := StringReplace(s, 'å¸¥'   , 'å°†', [rfReplaceAll]);
+  s := StringReplace(s, 'å°‡'   , 'å°†', [rfReplaceAll]);
+  s := StringReplace(s, 'ç ²'   , 'ç‚®', [rfReplaceAll]);
+  s := StringReplace(s, 'åŒ…'   , 'ç‚®', [rfReplaceAll]);
+  s := StringReplace(s, 'å…µ'   , 'å’', [rfReplaceAll]);
+  s := StringReplace(s, 'ä¸Š'   , 'è¿›', [rfReplaceAll]);
+  s := StringReplace(s, 'é€²'   , 'è¿›', [rfReplaceAll]);
+  s := StringReplace(s, 'ä¸‹'   , 'é€€', [rfReplaceAll]);
+  s := StringReplace(s, 'å¾Œ'   , 'å', [rfReplaceAll]);
+  s := StringReplace(s, 'å'   , 'ä¸‰', [rfReplaceAll]);
 
-  s := StringReplace(s, 'Ç°³µ' , 'R+', [rfReplaceAll]);
-  s := StringReplace(s, '³µÇ°' , 'R+', [rfReplaceAll]);
-  s := StringReplace(s, 'Ç°Âí' , 'H+', [rfReplaceAll]);
-  s := StringReplace(s, 'ÂíÇ°' , 'H+', [rfReplaceAll]);
-  s := StringReplace(s, 'Ç°ÅÚ' , 'C+', [rfReplaceAll]);
-  s := StringReplace(s, 'ÅÚÇ°' , 'C+', [rfReplaceAll]);
-  s := StringReplace(s, 'Ç°×ä' , 'P+', [rfReplaceAll]);
-  s := StringReplace(s, '×äÇ°' , 'P+', [rfReplaceAll]);
-  s := StringReplace(s, 'Ç°Ê¿' , 'A+', [rfReplaceAll]);
-  s := StringReplace(s, 'Ê¿Ç°' , 'A+', [rfReplaceAll]);
-  s := StringReplace(s, 'Ç°Ïó' , 'E+', [rfReplaceAll]);
-  s := StringReplace(s, 'ÏóÇ°' , 'E+', [rfReplaceAll]);
+  s := StringReplace(s, 'å‰è½¦' , 'R+', [rfReplaceAll]);
+  s := StringReplace(s, 'è½¦å‰' , 'R+', [rfReplaceAll]);
+  s := StringReplace(s, 'å‰é©¬' , 'H+', [rfReplaceAll]);
+  s := StringReplace(s, 'é©¬å‰' , 'H+', [rfReplaceAll]);
+  s := StringReplace(s, 'å‰ç‚®' , 'C+', [rfReplaceAll]);
+  s := StringReplace(s, 'ç‚®å‰' , 'C+', [rfReplaceAll]);
+  s := StringReplace(s, 'å‰å’' , 'P+', [rfReplaceAll]);
+  s := StringReplace(s, 'å’å‰' , 'P+', [rfReplaceAll]);
+  s := StringReplace(s, 'å‰å£«' , 'A+', [rfReplaceAll]);
+  s := StringReplace(s, 'å£«å‰' , 'A+', [rfReplaceAll]);
+  s := StringReplace(s, 'å‰è±¡' , 'E+', [rfReplaceAll]);
+  s := StringReplace(s, 'è±¡å‰' , 'E+', [rfReplaceAll]);
 
-  s := StringReplace(s, 'ºó³µ' , 'R-', [rfReplaceAll]);
-  s := StringReplace(s, '³µºó' , 'R-', [rfReplaceAll]);
-  s := StringReplace(s, 'ºóÂí' , 'H-', [rfReplaceAll]);
-  s := StringReplace(s, 'Âíºó' , 'H-', [rfReplaceAll]);
-  s := StringReplace(s, 'ºóÅÚ' , 'C-', [rfReplaceAll]);
-  s := StringReplace(s, 'ÅÚºó' , 'C-', [rfReplaceAll]);
-  s := StringReplace(s, 'ºó×ä' , 'P-', [rfReplaceAll]);
-  s := StringReplace(s, '×äºó' , 'P-', [rfReplaceAll]);
-  s := StringReplace(s, 'ºóÊ¿' , 'A-', [rfReplaceAll]);
-  s := StringReplace(s, 'Ê¿ºó' , 'A-', [rfReplaceAll]);
-  s := StringReplace(s, 'ºóÏó' , 'E-', [rfReplaceAll]);
-  s := StringReplace(s, 'Ïóºó' , 'E-', [rfReplaceAll]);
+  s := StringReplace(s, 'åè½¦' , 'R-', [rfReplaceAll]);
+  s := StringReplace(s, 'è½¦å' , 'R-', [rfReplaceAll]);
+  s := StringReplace(s, 'åé©¬' , 'H-', [rfReplaceAll]);
+  s := StringReplace(s, 'é©¬å' , 'H-', [rfReplaceAll]);
+  s := StringReplace(s, 'åç‚®' , 'C-', [rfReplaceAll]);
+  s := StringReplace(s, 'ç‚®å' , 'C-', [rfReplaceAll]);
+  s := StringReplace(s, 'åå’' , 'P-', [rfReplaceAll]);
+  s := StringReplace(s, 'å’å' , 'P-', [rfReplaceAll]);
+  s := StringReplace(s, 'åå£«' , 'A-', [rfReplaceAll]);
+  s := StringReplace(s, 'å£«å' , 'A-', [rfReplaceAll]);
+  s := StringReplace(s, 'åè±¡' , 'E-', [rfReplaceAll]);
+  s := StringReplace(s, 'è±¡å' , 'E-', [rfReplaceAll]);
 
-  s := StringReplace(s, '³µ' , 'R', [rfReplaceAll]);
-  s := StringReplace(s, 'Âí' , 'H', [rfReplaceAll]);
-  s := StringReplace(s, 'Ïó' , 'E', [rfReplaceAll]);
-  s := StringReplace(s, 'Ê¿' , 'A', [rfReplaceAll]);
-  s := StringReplace(s, '½«' , 'K', [rfReplaceAll]);
-  s := StringReplace(s, 'ÅÚ' , 'C', [rfReplaceAll]);
-  s := StringReplace(s, '×ä',  'P', [rfReplaceAll]);
+  s := StringReplace(s, 'è½¦' , 'R', [rfReplaceAll]);
+  s := StringReplace(s, 'é©¬' , 'H', [rfReplaceAll]);
+  s := StringReplace(s, 'è±¡' , 'E', [rfReplaceAll]);
+  s := StringReplace(s, 'å£«' , 'A', [rfReplaceAll]);
+  s := StringReplace(s, 'å°†' , 'K', [rfReplaceAll]);
+  s := StringReplace(s, 'ç‚®' , 'C', [rfReplaceAll]);
+  s := StringReplace(s, 'å’',  'P', [rfReplaceAll]);
 
-  s := StringReplace(s, '£±' , '1', [rfReplaceAll]);
-  s := StringReplace(s, '£²' , '2', [rfReplaceAll]);
-  s := StringReplace(s, '£³' , '3', [rfReplaceAll]);
-  s := StringReplace(s, '£´' , '4', [rfReplaceAll]);
-  s := StringReplace(s, '£µ' , '5', [rfReplaceAll]);
-  s := StringReplace(s, '£¶' , '6', [rfReplaceAll]);
-  s := StringReplace(s, '£·' , '7', [rfReplaceAll]);
-  s := StringReplace(s, '£¸' , '8', [rfReplaceAll]);
-  s := StringReplace(s, '£¹' , '9', [rfReplaceAll]);
-  s := StringReplace(s, 'Ò»' , '1', [rfReplaceAll]);
-  s := StringReplace(s, '¶ş' , '2', [rfReplaceAll]);
-  s := StringReplace(s, 'Èı' , '3', [rfReplaceAll]);
-  s := StringReplace(s, 'ËÄ' , '4', [rfReplaceAll]);
-  s := StringReplace(s, 'Îå' , '5', [rfReplaceAll]);
-  s := StringReplace(s, 'Áù' , '6', [rfReplaceAll]);
-  s := StringReplace(s, 'Æß' , '7', [rfReplaceAll]);
-  s := StringReplace(s, '°Ë' , '8', [rfReplaceAll]);
-  s := StringReplace(s, '¾Å' , '9', [rfReplaceAll]);
-  s := StringReplace(s, '½ø' , '+', [rfReplaceAll]);
-  s := StringReplace(s, 'ÍË' , '-', [rfReplaceAll]);
-  s := StringReplace(s, 'Æ½' , '.', [rfReplaceAll]);
+  s := StringReplace(s, 'ï¼‘' , '1', [rfReplaceAll]);
+  s := StringReplace(s, 'ï¼’' , '2', [rfReplaceAll]);
+  s := StringReplace(s, 'ï¼“' , '3', [rfReplaceAll]);
+  s := StringReplace(s, 'ï¼”' , '4', [rfReplaceAll]);
+  s := StringReplace(s, 'ï¼•' , '5', [rfReplaceAll]);
+  s := StringReplace(s, 'ï¼–' , '6', [rfReplaceAll]);
+  s := StringReplace(s, 'ï¼—' , '7', [rfReplaceAll]);
+  s := StringReplace(s, 'ï¼˜' , '8', [rfReplaceAll]);
+  s := StringReplace(s, 'ï¼™' , '9', [rfReplaceAll]);
+  s := StringReplace(s, 'ä¸€' , '1', [rfReplaceAll]);
+  s := StringReplace(s, 'äºŒ' , '2', [rfReplaceAll]);
+  s := StringReplace(s, 'ä¸‰' , '3', [rfReplaceAll]);
+  s := StringReplace(s, 'å››' , '4', [rfReplaceAll]);
+  s := StringReplace(s, 'äº”' , '5', [rfReplaceAll]);
+  s := StringReplace(s, 'å…­' , '6', [rfReplaceAll]);
+  s := StringReplace(s, 'ä¸ƒ' , '7', [rfReplaceAll]);
+  s := StringReplace(s, 'å…«' , '8', [rfReplaceAll]);
+  s := StringReplace(s, 'ä¹' , '9', [rfReplaceAll]);
+  s := StringReplace(s, 'è¿›' , '+', [rfReplaceAll]);
+  s := StringReplace(s, 'é€€' , '-', [rfReplaceAll]);
+  s := StringReplace(s, 'å¹³' , '.', [rfReplaceAll]);
 
   sRecStr := s;
 end;
 
-// ´Ó×Ö·û´®ÖĞÕ³ÌùÆåÆ×¼ÇÂ¼µ½ÆåÆ×ÁĞ±í
+// ä»å­—ç¬¦ä¸²ä¸­ç²˜è´´æ£‹è°±è®°å½•åˆ°æ£‹è°±åˆ—è¡¨
 procedure TfrmXQTable.dAddPlayRecordFromString(sLineStr: String);
 var
   i, iSkip   : dTInt32;
@@ -1826,7 +1827,7 @@ var
   sText, s   : string;
   sRecStr    : String;
   sICSStr    : String;
-  sFxqStr    : String; // www.cchess.net ¸ñÊ½
+  sFxqStr    : String; // www.cchess.net æ ¼å¼
   isQiPuStr  : Boolean;
 begin
   iSkip   := 0;
@@ -1865,7 +1866,7 @@ begin
     if ((s[1] in ['K', 'R', 'H', 'N', 'E', 'M', 'A', 'G', 'C', 'P'])and
         (s[2] in ['1'..'9', '+', '-']) and
         (s[3] in ['+', '-', '=', '.']) and
-        (s[4] in ['1'..'9'])) then          // ÊÇwxfºÍaxfÎÄ¼ş¸ñÊ½
+        (s[4] in ['1'..'9'])) then          // æ˜¯wxfå’Œaxfæ–‡ä»¶æ ¼å¼
     begin
       case sRecStr[1] of
         'N': sRecStr[1] := 'H';
@@ -1889,7 +1890,7 @@ begin
           (s[2] in ['0'..'9']) and
           (s[3] = '-') and
           (s[4] in ['A'..'I']) and
-          (s[5] in ['0'..'9'])) then          // ÊÇICCSÎÄ¼ş¸ñÊ½
+          (s[5] in ['0'..'9'])) then          // æ˜¯ICCSæ–‡ä»¶æ ¼å¼
       begin
         iSkip     := 4;
         s         := UpperCase(sICSStr);
@@ -1904,7 +1905,7 @@ begin
             (s[2] in ['0'..'9']) and
             (s[3] = '-') and
             (s[4] in ['0'..'9']) and
-            (s[5] in ['0'..'9'])) then          // ÊÇCCK JavaÎÄ¼ş¸ñÊ½
+            (s[5] in ['0'..'9'])) then          // æ˜¯CCK Javaæ–‡ä»¶æ ¼å¼
         begin
           s[1] := chr(ord('A') + ord(s[1]) - ord('0') - QipuStrXFrom);
           s[2] := chr(ord('0') + (9 - (ord(s[2]) - ord('0'))));
@@ -1927,7 +1928,7 @@ begin
               (s[5] in ['0'..'8']) and
               (s[6] in ['0'..'9']) and
               (s[7] in ['0'..'2']) and
-              (s[8] in ['0'..'7'])) then          // ÊÇFxq JavaÎÄ¼ş¸ñÊ½
+              (s[8] in ['0'..'7'])) then          // æ˜¯Fxq Javaæ–‡ä»¶æ ¼å¼
           begin
             iSkip     := 7;
             XYft      := (Ord(s[3])-Ord('0'))*10+(9-(Ord(s[4])-Ord('0')));
@@ -1959,24 +1960,24 @@ begin
   end; // end of for
 end;
 
-// ¼ì²éÎÄ±¾ÊÇ·ñÊÇÓÉXQStudio×Ô¶¯Éú³ÉµÄ
+// æ£€æŸ¥æ–‡æœ¬æ˜¯å¦æ˜¯ç”±XQStudioè‡ªåŠ¨ç”Ÿæˆçš„
 function isTextIsXQFText(sText: String): Boolean;
 begin
 
-  if Pos('ÆåÆ×ÓÉXQStudioÈí¼ş×Ô¶¯Éú³É', sText) > 0 then
+  if Pos('æ£‹è°±ç”±XQStudioè½¯ä»¶è‡ªåŠ¨ç”Ÿæˆ', sText) > 0 then
   begin
     Result := True;
     Exit;
   end;
 
-  Result := (Pos('ºì·½:', sText) > 0) and
-            (Pos('ºÚ·½:', sText) > 0) and
-            (Pos('½á¹û:', sText) > 0) and
-            (Pos('ÆÀÂÛ:', sText) > 0) and
+  Result := (Pos('çº¢æ–¹:', sText) > 0) and
+            (Pos('é»‘æ–¹:', sText) > 0) and
+            (Pos('ç»“æœ:', sText) > 0) and
+            (Pos('è¯„è®º:', sText) > 0) and
             (Pos('----------------', sText) > 0);
 end;
 
-// ¼ì²éÎÄ±¾ÊÇ·ñÊÇÓÉXQStudio×Ô¶¯Éú³ÉµÄJavaXQ Html
+// æ£€æŸ¥æ–‡æœ¬æ˜¯å¦æ˜¯ç”±XQStudioè‡ªåŠ¨ç”Ÿæˆçš„JavaXQ Html
 function isTextIsXQVHtml(sText: String): Boolean;
 begin
   Result := False;
@@ -1990,7 +1991,7 @@ begin
   end;
 end;
 
-// ¼ì²éÊÇ·ñÊÇÆåÆ×ĞĞ
+// æ£€æŸ¥æ˜¯å¦æ˜¯æ£‹è°±è¡Œ
 function isQiPuLine(sLine: string): Boolean;
 var
   s: string;
@@ -2003,7 +2004,7 @@ begin
    if s[1] in ['0'..'9'] then Result := True;
 end;
 
-// Õ³ÌùÆåÍ¼
+// ç²˜è´´æ£‹å›¾
 procedure TfrmXQTable.ppmPasteQipuClick(Sender: TObject);
 var
   s            : String;
@@ -2022,60 +2023,60 @@ begin
     memQiTuText.PasteFromClipboard;
   end;
 
-  // ²éÕÒ±êÌâ¡¢ÈüÊÂµÈÆå¾ÖµÄËµÃ÷ĞÅÏ¢
+  // æŸ¥æ‰¾æ ‡é¢˜ã€èµ›äº‹ç­‰æ£‹å±€çš„è¯´æ˜ä¿¡æ¯
   if (sTitle = '') then
-    sTitle     := sGetStrAfterKeyWord(memQiTuText.Lines, '±êÌâ:');
+    sTitle     := sGetStrAfterKeyWord(memQiTuText.Lines, 'æ ‡é¢˜:');
   if (sMatchName = '') then
-    sMatchName := sGetStrAfterKeyWord(memQiTuText.Lines, 'ÈüÊÂ:');
+    sMatchName := sGetStrAfterKeyWord(memQiTuText.Lines, 'èµ›äº‹:');
   if (sMatchTime = '') then
-    sMatchTime := sGetStrAfterKeyWord(memQiTuText.Lines, 'ÈÕÆÚ:');
+    sMatchTime := sGetStrAfterKeyWord(memQiTuText.Lines, 'æ—¥æœŸ:');
   if (sMatchTime = '') then
-    sMatchTime := sGetStrAfterKeyWord(memQiTuText.Lines, 'Ê±¼ä:');
+    sMatchTime := sGetStrAfterKeyWord(memQiTuText.Lines, 'æ—¶é—´:');
   if (sMatchAddr = '') then
-    sMatchAddr := sGetStrAfterKeyWord(memQiTuText.Lines, 'µØµã:');
+    sMatchAddr := sGetStrAfterKeyWord(memQiTuText.Lines, 'åœ°ç‚¹:');
   if (sRedPlayer = '') then
-    sRedPlayer := sGetStrAfterKeyWord(memQiTuText.Lines, 'ºì·½:');
+    sRedPlayer := sGetStrAfterKeyWord(memQiTuText.Lines, 'çº¢æ–¹:');
   if (sBlkPlayer = '') then
-    sBlkPlayer := sGetStrAfterKeyWord(memQiTuText.Lines, 'ºÚ·½:');
+    sBlkPlayer := sGetStrAfterKeyWord(memQiTuText.Lines, 'é»‘æ–¹:');
   if (sRMKWriter = '') then
-    sRMKWriter := sGetStrAfterKeyWord(memQiTuText.Lines, 'ÆÀÂÛ:');
+    sRMKWriter := sGetStrAfterKeyWord(memQiTuText.Lines, 'è¯„è®º:');
   if (sAuthor = '') then
-    sAuthor    := sGetStrAfterKeyWord(memQiTuText.Lines, '×÷Õß:');
+    sAuthor    := sGetStrAfterKeyWord(memQiTuText.Lines, 'ä½œè€…:');
   if (iResult = 0) then
   begin
-    s          := sGetStrAfterKeyWord(memQiTuText.Lines, '½á¹û:');
-    if (s = 'ºì·½Ê¤') then iResult := 1;
-    if (s = 'ºÚ·½Ê¤') then iResult := 2;
-    if (s = 'ºÍÆå')   then iResult := 3;
+    s          := sGetStrAfterKeyWord(memQiTuText.Lines, 'ç»“æœ:');
+    if (s = 'çº¢æ–¹èƒœ') then iResult := 1;
+    if (s = 'é»‘æ–¹èƒœ') then iResult := 2;
+    if (s = 'å’Œæ£‹')   then iResult := 3;
   end;
 
-  //******2007-05-22 ¼ÓÈë¶ÔÏóÆå´óÊ¦Íøµ¼³öÆåÆ×µÄÖ§³Ö ****************************
-  // ²éÕÒ±êÌâ¡¢ÈüÊÂµÈÆå¾ÖµÄËµÃ÷ĞÅÏ¢
+  //******2007-05-22 åŠ å…¥å¯¹è±¡æ£‹å¤§å¸ˆç½‘å¯¼å‡ºæ£‹è°±çš„æ”¯æŒ ****************************
+  // æŸ¥æ‰¾æ ‡é¢˜ã€èµ›äº‹ç­‰æ£‹å±€çš„è¯´æ˜ä¿¡æ¯
   if (sTitle = '') then
-    sTitle     := sGetStrAfterKeyWord(memQiTuText.Lines, 'Æå ¾Ö Ãû£º');
+    sTitle     := sGetStrAfterKeyWord(memQiTuText.Lines, 'æ£‹ å±€ åï¼š');
   if (sMatchName = '') then
-    sMatchName := sGetStrAfterKeyWord(memQiTuText.Lines, '±ÈÈüÃû³Æ£º');
+    sMatchName := sGetStrAfterKeyWord(memQiTuText.Lines, 'æ¯”èµ›åç§°ï¼š');
   if (sMatchTime = '') then
-    sMatchTime := sGetStrAfterKeyWord(memQiTuText.Lines, '±ÈÈüÊ±¼ä£º');
+    sMatchTime := sGetStrAfterKeyWord(memQiTuText.Lines, 'æ¯”èµ›æ—¶é—´ï¼š');
   if (sMatchAddr = '') then
-    sMatchAddr := sGetStrAfterKeyWord(memQiTuText.Lines, '±ÈÈüµØµã£º');
+    sMatchAddr := sGetStrAfterKeyWord(memQiTuText.Lines, 'æ¯”èµ›åœ°ç‚¹ï¼š');
   if (sRedPlayer = '') then
-    sRedPlayer := sGetStrAfterKeyWord(memQiTuText.Lines, 'ºì    ·½£º');
+    sRedPlayer := sGetStrAfterKeyWord(memQiTuText.Lines, 'çº¢    æ–¹ï¼š');
   if (sBlkPlayer = '') then
-    sBlkPlayer := sGetStrAfterKeyWord(memQiTuText.Lines, 'ºÚ    ·½£º');
+    sBlkPlayer := sGetStrAfterKeyWord(memQiTuText.Lines, 'é»‘    æ–¹ï¼š');
   if (iResult = 0) then
   begin
-    s          := sGetStrAfterKeyWord(memQiTuText.Lines, '½á    ¹û£º');
-    if (s = 'ºìÊ¤') then iResult := 1;
-    if (s = 'ºÚÊ¤') then iResult := 2;
-    if (s = 'ºÍÆå') then iResult := 3;
+    s          := sGetStrAfterKeyWord(memQiTuText.Lines, 'ç»“    æœï¼š');
+    if (s = 'çº¢èƒœ') then iResult := 1;
+    if (s = 'é»‘èƒœ') then iResult := 2;
+    if (s = 'å’Œæ£‹') then iResult := 3;
   end;
   //****************************************************************************
 
   dRefreshXQInfo;
   Self.Refresh;
 
-  // ÊÇ·ñÊÇÓÉXQStudio×Ô¶¯Éú³ÉµÄÎÄ¼ş
+  // æ˜¯å¦æ˜¯ç”±XQStudioè‡ªåŠ¨ç”Ÿæˆçš„æ–‡ä»¶
   isXQFText     := isTextIsXQFText(memQiTuText.Text);
   isXQVHtml     := isTextIsXQVHtml(memQiTuText.Text);
 
@@ -2109,7 +2110,7 @@ begin
     QipuStrXFrom := 0;
   end;
 
-  // ÊÇ·ñ¿ªÊ¼¼ì²é×¢½â
+  // æ˜¯å¦å¼€å§‹æ£€æŸ¥æ³¨è§£
   isCheckRemark := False;
 
   iStepNo := XQ.PlayStepNo;
@@ -2132,7 +2133,7 @@ begin
       begin
         if (not isCheckRemark) and (XQ.PlayStepNo=iStepNo) then
         begin
-          // Æô¶¯×¢½â¼ì²éµÄÌõ¼ş
+          // å¯åŠ¨æ³¨è§£æ£€æŸ¥çš„æ¡ä»¶
           if XQ.PlayStepNo > iStepNo then isCheckRemark := True;
           if ((Pos('----------------', s)>0)and(i>3)) then
           begin
@@ -2140,7 +2141,7 @@ begin
           end;
         end;
 
-        // Í£Ö¹×¢½â¼ì²éµÄÌõ¼ş
+        // åœæ­¢æ³¨è§£æ£€æŸ¥çš„æ¡ä»¶
         if ((Pos('----------------', s)>0)and(XQ.PlayStepNo>iStepNo)) then
         begin
           isCheckRemark := False;
@@ -2165,16 +2166,16 @@ begin
   if (iStepNo = XQ.PlayStepNo) and (not isXQVHtml) and isPasteMsgEnabled then
   begin
     Application.MessageBox(
-      '¼ôÌù°å»òÎÄ¼şÖĞµÄÎÄ±¾²»ÊÇÓĞĞ§µÄÆåÆ×¼ÇÂ¼(²»ÊÇÆåÆ×ÎÄ±¾»ò²»ÊÊÓÃÓÚ'#13#10+
-      'µ±Ç°¾ÖÊÆ)£¬ÇëÈ·ÈÏ½«ÕıÈ·µÄÆåÆ×¼ÇÂ¼Ñ¡ÖĞ²¢·ÅÈë¼ôÌù°å¡£',
-      'ÏµÍ³ĞÅÏ¢',
+      'å‰ªè´´æ¿æˆ–æ–‡ä»¶ä¸­çš„æ–‡æœ¬ä¸æ˜¯æœ‰æ•ˆçš„æ£‹è°±è®°å½•(ä¸æ˜¯æ£‹è°±æ–‡æœ¬æˆ–ä¸é€‚ç”¨äº'#13#10+
+      'å½“å‰å±€åŠ¿)ï¼Œè¯·ç¡®è®¤å°†æ­£ç¡®çš„æ£‹è°±è®°å½•é€‰ä¸­å¹¶æ”¾å…¥å‰ªè´´æ¿ã€‚',
+      'ç³»ç»Ÿä¿¡æ¯',
       MB_OK + MB_ICONERROR + MB_DEFBUTTON1);
   end;
 
   isPasteMsgEnabled := True;
 end;
 
-// Ê¹×Ö·û´®¾ÓÖĞÏÔÊ¾
+// ä½¿å­—ç¬¦ä¸²å±…ä¸­æ˜¾ç¤º
 function sAlignCenter(s: String; w: Integer): String;
 var
   i: Integer;
@@ -2187,7 +2188,7 @@ begin
 end;
 
 
-// ½«ÆåÆ××ª»»ÎªÎÄ±¾
+// å°†æ£‹è°±è½¬æ¢ä¸ºæ–‡æœ¬
 procedure TfrmXQTable.tstXQInfoCShow(Sender: TObject);
 var
   i, iStepNo, iColumn, iColumnCount  : dTInt32;
@@ -2195,7 +2196,7 @@ var
   bIsJavaApplet                      : Boolean;
 begin
   Screen.Cursor := crHourGlass;
-  memText.Visible := False;             // ÏÈ¹ØµôÏÔÊ¾
+  memText.Visible := False;             // å…ˆå…³æ‰æ˜¾ç¤º
 
 try
   iColumn := 0;             iColumnCount := 0;
@@ -2205,7 +2206,7 @@ try
 
   bIsJavaApplet  := rbtTextStyle04.Checked;
 
-  memText.Clear;                        // ½«Ô­À´µÄÄÚÈİÇå³ı
+  memText.Clear;                        // å°†åŸæ¥çš„å†…å®¹æ¸…é™¤
 
   if bIsJavaApplet then
   begin
@@ -2213,7 +2214,7 @@ try
     Exit;
   end;
 
-  // Ò»Ğ©±êÌâĞÅÏ¢
+  // ä¸€äº›æ ‡é¢˜ä¿¡æ¯
   memText.Lines.Add('');
   memText.Lines.Add('----------------------------------------------------');
 
@@ -2225,21 +2226,21 @@ try
   //  memText.Lines.Add(sAlignCenter(lblTimeAddr.Caption, 52));
   //memText.Lines.Add('');
 
-  memText.Lines.Add('±êÌâ: ' + sTitle);
-  memText.Lines.Add('ÈüÊÂ: ' + sMatchName);
-  memText.Lines.Add('ÈÕÆÚ: ' + sMatchTime);
-  memText.Lines.Add('µØµã: ' + sMatchAddr);
-  memText.Lines.Add('ºì·½: ' + sRedPlayer);
-  memText.Lines.Add('ºÚ·½: ' + sBlkPlayer);
+  memText.Lines.Add('æ ‡é¢˜: ' + sTitle);
+  memText.Lines.Add('èµ›äº‹: ' + sMatchName);
+  memText.Lines.Add('æ—¥æœŸ: ' + sMatchTime);
+  memText.Lines.Add('åœ°ç‚¹: ' + sMatchAddr);
+  memText.Lines.Add('çº¢æ–¹: ' + sRedPlayer);
+  memText.Lines.Add('é»‘æ–¹: ' + sBlkPlayer);
   case iResult of
     0: sPlayRec := '';
-    1: sPlayRec := 'ºì·½Ê¤';
-    2: sPlayRec := 'ºÚ·½Ê¤';
-    3: sPlayRec := 'ºÍÆå';
+    1: sPlayRec := 'çº¢æ–¹èƒœ';
+    2: sPlayRec := 'é»‘æ–¹èƒœ';
+    3: sPlayRec := 'å’Œæ£‹';
   end;
-  memText.Lines.Add('½á¹û: ' + sPlayRec);
-  memText.Lines.Add('ÆÀÂÛ: ' + sRMKWriter);
-  memText.Lines.Add('×÷Õß: ' + sAuthor);
+  memText.Lines.Add('ç»“æœ: ' + sPlayRec);
+  memText.Lines.Add('è¯„è®º: ' + sRMKWriter);
+  memText.Lines.Add('ä½œè€…: ' + sAuthor);
   memText.Lines.Add('----------------------------------------------------');
 
   if (XQ=nil) then Exit;
@@ -2257,7 +2258,7 @@ try
     iStepNo  := (XQ.PlayRec[i].StepNo+1) div 2;
     sPlayRec := XQ.PlayRec[i].StrRec;
     case (i mod 2) of
-      1: // ºì·½ĞĞÆå×Ó£¬ĞèÒª×Å·¨µÄ»ØºÏÊıÏÔÊ¾
+      1: // çº¢æ–¹è¡Œæ£‹å­ï¼Œéœ€è¦ç€æ³•çš„å›åˆæ•°æ˜¾ç¤º
         begin
           sR := IntToStr(iStepNo);
           case Length(sR) of
@@ -2275,7 +2276,7 @@ try
           begin
             if (XQ.PlayRec[i].Remark <> nil) then
             begin
-              sB           := '  ¡­¡­¡­¡­';
+              sB           := '  â€¦â€¦â€¦â€¦';
               sLine        := sLine + sR + sB ;
               iColumnCount := 3;
             end;
@@ -2296,7 +2297,7 @@ try
 //    if ((sB <> '') or (i=XQ.PlayStepNo)) then
 //    begin
 //      memText.Lines.Add(sR + sB);
-//      sR := sNum + '¡­¡­¡­¡­';  sB := '';
+//      sR := sNum + 'â€¦â€¦â€¦â€¦';  sB := '';
 //    end;
 
     if ((iColumnCount >=iColumn) or (i=XQ.PlayStepNo)) then
@@ -2304,7 +2305,7 @@ try
       iColumnCount := 0;
       sLine := TrimRight(sLine);
       memText.Lines.Add(sLine);
-      sR := sNum + '¡­¡­¡­¡­';    sB := '';  sLine := '';
+      sR := sNum + 'â€¦â€¦â€¦â€¦';    sB := '';  sLine := '';
     end;
 
     if (XQ.PlayRec[i].Remark<>nil) then
@@ -2317,11 +2318,11 @@ try
 
   if (XQ.PlayStepNo = 0) then
   begin
-     memText.Lines.Add('    *** Ã»ÓĞÆåÆ×¼ÇÂ¼!');
+     memText.Lines.Add('    *** æ²¡æœ‰æ£‹è°±è®°å½•!');
   end;
 
   memText.Lines.Add('----------------------------------------------------');
-  memText.Lines.Add('ÆåÆ×ÓÉXQStudioÉú³É (http://www.qipaile.net/xqstudio)');
+  memText.Lines.Add('æ£‹è°±ç”±XQStudioç”Ÿæˆ (http://www.qipaile.net/xqstudio)');
   memText.Lines.Add('');
 
 finally
@@ -2354,7 +2355,7 @@ begin
   Result := '';
   try
     fs.Read(b, 1);
-    s[0] := chr(b);
+    //s[0] := chr(b); XXXXX
     fs.Read(PChar(Addr(s[1]))^, b);
   except
     Exit;
@@ -2369,8 +2370,8 @@ var
 begin
   sFileName := '';
   dlgOpenDialog.Options := dlgOpenDialog.Options - [ofAllowMultiSelect];
-  dlgOpenDialog.Filter  := 'ÎÄ±¾ÎÄ¼ş (*.txt)|*.TXT|QQÓÎÏ·´æÅÌÎÄ¼ş (*.che)|*.CHE|ÁªÖÚÏóÆå´æÅÌÎÄ¼ş (*.chn)|*.CHN|ŞÄÌìÏóÆå´æÅÌÎÄ¼ş (*.mxq)|*.MXQ|ÖĞ¹úÓÎÏ·ÖĞĞÄÏóÆå´æÅÌÎÄ¼ş (*.ccm)|*.CCM|All files (*.*)|*.*';
-  dlgOpenDialog.Title   := '´ò¿ªÒª×ªÈëµÄÆåÆ×ÎÄ¼ş';
+  dlgOpenDialog.Filter  := 'æ–‡æœ¬æ–‡ä»¶ (*.txt)|*.TXT|QQæ¸¸æˆå­˜ç›˜æ–‡ä»¶ (*.che)|*.CHE|è”ä¼—è±¡æ£‹å­˜ç›˜æ–‡ä»¶ (*.chn)|*.CHN|å¼ˆå¤©è±¡æ£‹å­˜ç›˜æ–‡ä»¶ (*.mxq)|*.MXQ|ä¸­å›½æ¸¸æˆä¸­å¿ƒè±¡æ£‹å­˜ç›˜æ–‡ä»¶ (*.ccm)|*.CCM|All files (*.*)|*.*';
+  dlgOpenDialog.Title   := 'æ‰“å¼€è¦è½¬å…¥çš„æ£‹è°±æ–‡ä»¶';
   if dlgOpenDialog.Execute then
   begin
     sFileName := UpperCase(dlgOpenDialog.FileName);
@@ -2379,8 +2380,8 @@ begin
   if (sFileName = '') then Exit;
   if (Pos('.XQF', sFileName) = Length(sFileName) - 3) then
   begin
-    Application.MessageBox('XQFÎÄ¼şÇëÖ±½ÓÓÃXQStudio´ò¿ª£¬' +
-        '×ªÈëÎÄ¼şÖ»ÄÜ×ªÈë·ÇXQFÎÄ¼ş!', 'ÏµÍ³ĞÅÏ¢',
+    Application.MessageBox('XQFæ–‡ä»¶è¯·ç›´æ¥ç”¨XQStudioæ‰“å¼€ï¼Œ' +
+        'è½¬å…¥æ–‡ä»¶åªèƒ½è½¬å…¥éXQFæ–‡ä»¶!', 'ç³»ç»Ÿä¿¡æ¯',
         MB_OK + MB_ICONWARNING);
     Exit;
   end;
@@ -2511,9 +2512,9 @@ end;
 
 var
   sNumToHz : array [0..9] of string =
-             ('±ø','Ë§','Ê¿','Ïà','³µ','Âí','ÅÚ', '±ø', 'Ç°', 'ºó');
+             ('å…µ','å¸…','å£«','ç›¸','è½¦','é©¬','ç‚®', 'å…µ', 'å‰', 'å');
   sNumToFx : array [0..9] of string =
-             ('½ø','½ø','Æ½','ÍË','½ø','Æ½','ÍË', '½ø', 'Æ½', 'ÍË');
+             ('è¿›','è¿›','å¹³','é€€','è¿›','å¹³','é€€', 'è¿›', 'å¹³', 'é€€');
 
 procedure TfrmXQTable.edtQipuInputKeyPress(Sender: TObject; var Key: Char);
 begin
@@ -2535,16 +2536,16 @@ procedure TfrmXQTable.edtQipuInputChange(Sender: TObject);
 function GetPieceChar(c: Char): Char;
 begin
   case c of
-    'j', 'J': c := '1';    // ½«
-    's', 'S': c := 'S';    // Ë§»òÊ¿ Áô´ıÒÔºó´¦Àí
-    'x', 'X': c := '3';    // Ïà,Ïó
-    'c', 'C': c := '4';    // ³µ
-    'm', 'M': c := '5';    // Âí
-    'p', 'P': c := '6';    // ÅÚ
-    'b', 'B': c := '7';    // ±ø
-    'z', 'Z': c := '7';    // ×ä
-    'q', 'Q': c := '8';    // Ç°
-    'h', 'H': c := '9';    // ºó
+    'j', 'J': c := '1';    // å°†
+    's', 'S': c := 'S';    // å¸…æˆ–å£« ç•™å¾…ä»¥åå¤„ç†
+    'x', 'X': c := '3';    // ç›¸,è±¡
+    'c', 'C': c := '4';    // è½¦
+    'm', 'M': c := '5';    // é©¬
+    'p', 'P': c := '6';    // ç‚®
+    'b', 'B': c := '7';    // å…µ
+    'z', 'Z': c := '7';    // å’
+    'q', 'Q': c := '8';    // å‰
+    'h', 'H': c := '9';    // å
     '1','2','3','4','5','6','7','8','9': c := c;
     else     c := '0';
   end;
@@ -2580,7 +2581,7 @@ begin
     sQipuStr := '';
 
     s[4] := GetNumChar(s[4]);
-    case s[3] of        // ½ø¡¢ÍË¡¢Æ½
+    case s[3] of        // è¿›ã€é€€ã€å¹³
       'j', 'J': s[3] := '1';
       'p', 'P': s[3] := '2';
       't', 'T': s[3] := '3';
@@ -2595,15 +2596,15 @@ begin
         begin
           s[2] := GetPieceChar(s[2]);
         end;
-      's', 'S': // Çø·ÖÊ¿»¹ÊÇË§
+      's', 'S': // åŒºåˆ†å£«è¿˜æ˜¯å¸…
         begin
           case s[3] of
-            '2', '5', '8': s[1] := '1';         // Ë§
+            '2', '5', '8': s[1] := '1';         // å¸…
             else
               if (ord(s[4]) > ord('3')) then
-                s[1] := '2'                     // Ê¿
+                s[1] := '2'                     // å£«
               else
-                s[1] := '1';                    // Ë§
+                s[1] := '1';                    // å¸…
           end;
           s[2] := GetNumChar(s[2]);
         end;
@@ -2640,9 +2641,9 @@ begin
       begin
         sQipuStr := StringReplace(sQipuStr, chr($30 + i), dCBLKNUM[i], [rfReplaceAll]);
       end;
-      sQipuStr := StringReplace(sQipuStr, 'Ë§', '½«', [rfReplaceAll]);
-      sQipuStr := StringReplace(sQipuStr, 'Ïà', 'Ïó', [rfReplaceAll]);
-      sQipuStr := StringReplace(sQipuStr, '±ø', '×ä', [rfReplaceAll]);
+      sQipuStr := StringReplace(sQipuStr, 'å¸…', 'å°†', [rfReplaceAll]);
+      sQipuStr := StringReplace(sQipuStr, 'ç›¸', 'è±¡', [rfReplaceAll]);
+      sQipuStr := StringReplace(sQipuStr, 'å…µ', 'å’', [rfReplaceAll]);
     end;
 
     edtQipuInput.Text := sQipuStr;
@@ -2662,8 +2663,8 @@ var
 begin
   sFileName := '';
   dlgOpenDialog.Options := dlgOpenDialog.Options + [ofAllowMultiSelect];
-  dlgOpenDialog.Filter := 'XQStudioÆåÆ×ÎÄ¼ş(*.xqf)|*.XQF';
-  dlgOpenDialog.Title  := '´ò¿ªÒªºÏ²¢µÄÆåÆ×ÎÄ¼ş';
+  dlgOpenDialog.Filter := 'XQStudioæ£‹è°±æ–‡ä»¶(*.xqf)|*.XQF';
+  dlgOpenDialog.Title  := 'æ‰“å¼€è¦åˆå¹¶çš„æ£‹è°±æ–‡ä»¶';
   try
     if dlgOpenDialog.Execute then
     begin
@@ -2701,18 +2702,18 @@ var
   isChnReverse  : Boolean;
   b             : Byte;
 
-// ´ÓÁ÷ÖĞ·ÖÎö¶Á³öÒ»¸öÕûÊı, ±ÈÈç´Ó 30 230 240 ÖĞ¶Á³ö30, 230, 240 µÈ
+// ä»æµä¸­åˆ†æè¯»å‡ºä¸€ä¸ªæ•´æ•°, æ¯”å¦‚ä» 30 230 240 ä¸­è¯»å‡º30, 230, 240 ç­‰
 function ReadIntFromFsStr(AFs: TFileStream; var AInt: Integer): Boolean;
 var
-  s: string[63];
+  s: string;
   i: Integer;
-  c: char;
+  c: Char;
 begin
   s             := '';
   Result        := False;
   c             := ' ';
   i             := 0;
-  while (AFs.Read(c, 1) = 1) and (c=' ') do continue;   // Ìø¹ıÇ°ÃæµÄ¿Õ¸ñ
+  while (AFs.Read(c, 1) = 1) and (c=' ') do continue;   // è·³è¿‡å‰é¢çš„ç©ºæ ¼
   while (c <> ' ') do
   begin
     if (not (c in ['0'..'9'])) then Exit; 
@@ -2722,7 +2723,7 @@ begin
     if (AFs.Read(c, 1) <> 1) then Break;
   end;
   if (i=0) then Exit;
-  s[0] := char(i);      // ÉèÖÃ³¤¶È
+ // s[0] := char(i);      // è®¾ç½®é•¿åº¦              XXXX
   AInt := StrToIntDef(s, 0);
   Result := True;
 end;
@@ -2730,7 +2731,7 @@ end;
 begin
   Result := False;
 
-  // ´¦ÀíQQÓÎÏ·µÄÏóÆå´æÅÌÎÄ¼ş *.CHE
+  // å¤„ç†QQæ¸¸æˆçš„è±¡æ£‹å­˜ç›˜æ–‡ä»¶ *.CHE
   if (Pos('.CHE', sFileName) = Length(sFileName) - 3) then
   begin
     fs := nil;
@@ -2740,7 +2741,7 @@ begin
         memQiTuText.Clear;
         fs := TFileStream.Create(sFileName, fmOpenRead);
 
-        // Ìø¹ıÇ°ÃæµÄ5¸öÊı×Ö
+        // è·³è¿‡å‰é¢çš„5ä¸ªæ•°å­—
         if (not ReadIntFromFsStr(fs, AInt)) then Exit;
         if (not ReadIntFromFsStr(fs, AInt)) then Exit;
         if (not ReadIntFromFsStr(fs, AInt)) then Exit;
@@ -2765,7 +2766,7 @@ begin
           ReadIntFromFsStr(fs, AInt);
           ReadIntFromFsStr(fs, AInt);
 
-          // ×ª»»³É×óÉÏ½ÇÎª(0, 0)µÄ×ø±êÌåÏµ
+          // è½¬æ¢æˆå·¦ä¸Šè§’ä¸º(0, 0)çš„åæ ‡ä½“ç³»
           Yf := 9 - Yf;
           Yt := 9 - Yt;
 
@@ -2783,7 +2784,7 @@ begin
     Exit;
   end;
 
-  // ´¦ÀíÁªÖÚµÄÏóÆå´æÅÌÎÄ¼ş *.CHN
+  // å¤„ç†è”ä¼—çš„è±¡æ£‹å­˜ç›˜æ–‡ä»¶ *.CHN
   if (Pos('.CHN', sFileName) = Length(sFileName) - 3) then
   begin
     fs := nil;
@@ -2824,7 +2825,7 @@ begin
     Exit;
   end;
 
-  // ´¦ÀíŞÄÌìµÄÏóÆå´æÅÌÎÄ¼ş *.MXQ
+  // å¤„ç†å¼ˆå¤©çš„è±¡æ£‹å­˜ç›˜æ–‡ä»¶ *.MXQ
   if (Pos('.MXQ', sFileName) = Length(sFileName) - 3) then
   begin
     fs := nil;
@@ -2833,16 +2834,16 @@ begin
         memQiTuText.ReadOnly := False;
         memQiTuText.Clear;
         fs := TFileStream.Create(sFileName, fmOpenRead);
-        sMatchAddr := 'ŞÄÌìÍø' + sReadMxqStr(fs);
+        sMatchAddr := 'å¼ˆå¤©ç½‘' + sReadMxqStr(fs);
         sMatchTime := sReadMxqStr(fs);
         sTitle     := sReadMxqStr(fs);
 
 
-        if Pos('-Ê¤-', sTitle) > 0 then
+        if Pos('-èƒœ-', sTitle) > 0 then
           iResult := 1
-        else if Pos('-¸º-', sTitle) > 0 then
+        else if Pos('-è´Ÿ-', sTitle) > 0 then
           iResult := 2
-        else if Pos('-ºÍ-', sTitle) > 0 then
+        else if Pos('-å’Œ-', sTitle) > 0 then
           iResult := 3;
 
         s := sTitle;
@@ -2857,12 +2858,12 @@ begin
           end;
         end;
 
-        sReadMxqStr(fs);                        // ºìµÈ¼¶·Ö
-        sReadMxqStr(fs);                        // ºÚµÈ¼¶·Ö
+        sReadMxqStr(fs);                        // çº¢ç­‰çº§åˆ†
+        sReadMxqStr(fs);                        // é»‘ç­‰çº§åˆ†
         sTimeRule  := sReadMxqStr(fs)+'-'+sReadMxqStr(fs)+'-'+sReadMxqStr(fs);
-        sReadMxqStr(fs);                        // ºÚµÈ¼¶·Ö
-        sReadMxqStr(fs);                        // ºìµÈ¼¶·Ö
-        sEndStr := sReadMxqStr(fs);             // ½áÊø·½Ê½
+        sReadMxqStr(fs);                        // é»‘ç­‰çº§åˆ†
+        sReadMxqStr(fs);                        // çº¢ç­‰çº§åˆ†
+        sEndStr := sReadMxqStr(fs);             // ç»“æŸæ–¹å¼
         sReadMxqStr(fs);                        // Moves
 
         while fs.Position < fs.Size do
@@ -2875,7 +2876,7 @@ begin
           Xt := ord(s[4]) - ord('0');
           Yt := ord(s[5]) - ord('A');
 
-          // ×ª»»³É×óÉÏ½ÇÎª(0, 0)µÄ×ø±êÌåÏµ
+          // è½¬æ¢æˆå·¦ä¸Šè§’ä¸º(0, 0)çš„åæ ‡ä½“ç³»
           Yf := 9 - Yf;
           Yt := 9 - Yt;
           sRecStr := Format('%d%d-%d%d ', [Xf, Yf, Xt, Yt]);
@@ -2891,7 +2892,7 @@ begin
     Exit;
   end;
 
-  // ´¦ÀíÖĞ¹úÓÎÏ·ÖĞĞÄÏóÆå´æÅÌÎÄ¼ş *.CCM
+  // å¤„ç†ä¸­å›½æ¸¸æˆä¸­å¿ƒè±¡æ£‹å­˜ç›˜æ–‡ä»¶ *.CCM
   if (Pos('.CCM', sFileName) = Length(sFileName) - 3) then
   begin
     fs := nil;
@@ -2935,7 +2936,7 @@ begin
     Exit;
   end;
 
-  // °´ÎÄ±¾ÎÄ¼ş´¦Àí
+  // æŒ‰æ–‡æœ¬æ–‡ä»¶å¤„ç†
   memQiTuText.ReadOnly := False;
   memQiTuText.Clear;
   memQiTuText.Lines.LoadFromFile(sFileName);
@@ -2990,7 +2991,7 @@ begin
     if (Pos('.', sFileName)=0) then sFileName := sFileName + '.bmp';
     if FileExists(sFileName) then
     begin
-      if (Application.MessageBox('ÎÄ¼şÒÑ¾­´æÔÚ£¬ÒªÌæ»»Âğ?', '±£´æÎÄ¼ş',
+      if (Application.MessageBox('æ–‡ä»¶å·²ç»å­˜åœ¨ï¼Œè¦æ›¿æ¢å—?', 'ä¿å­˜æ–‡ä»¶',
           MB_OKCANCEL + MB_DEFBUTTON1) = IDCANCEL) then Exit;
     end;
     imgQituBitmap.Picture.SaveToFile(sFileName);

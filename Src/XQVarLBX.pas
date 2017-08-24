@@ -2,7 +2,7 @@
 //
 // XQStduio Source Code (http://www.qipaile.net/xqstudio)
 //
-// Copyright (c) 1998-2008, DONG Shiwei (¶­ÊÀÎ° or ¹ýºÓÏó) 
+// Copyright (c) 1998-2008, DONG Shiwei (è‘£ä¸–ä¼Ÿ or è¿‡æ²³è±¡) 
 // All rights reserved.
 // 
 // Redistribution and use in source and binary forms, with or without

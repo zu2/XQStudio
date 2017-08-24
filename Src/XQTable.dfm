@@ -1,12 +1,12 @@
 object frmXQTable: TfrmXQTable
   Left = 27
   Top = 122
-  Width = 740
-  Height = 456
   HorzScrollBar.Visible = False
   VertScrollBar.Visible = False
   BorderIcons = [biSystemMenu, biMinimize]
   Caption = 'MDI Child'
+  ClientHeight = 417
+  ClientWidth = 724
   Color = clBtnFace
   ParentFont = True
   FormStyle = fsMDIChild
@@ -24,26 +24,29 @@ object frmXQTable: TfrmXQTable
   PixelsPerInch = 96
   TextHeight = 13
   object pnlRightMargin: TPanel
-    Left = 729
+    Left = 721
     Top = 0
     Width = 3
-    Height = 422
+    Height = 417
     Align = alRight
     BevelOuter = bvNone
     TabOrder = 2
     OnResize = pnlRightMarginResize
+    ExplicitLeft = 729
+    ExplicitHeight = 422
   end
   object pnlLeft: TPanel
     Left = 0
     Top = 0
     Width = 369
-    Height = 422
+    Height = 417
     Align = alLeft
     BevelOuter = bvNone
     Caption = 'pnlLeft'
     Ctl3D = True
     ParentCtl3D = False
     TabOrder = 0
+    ExplicitHeight = 422
     object imgXQBoard: TImage
       Left = 0
       Top = 0
@@ -3648,42 +3651,47 @@ object frmXQTable: TfrmXQTable
   object pnlRight: TPanel
     Left = 369
     Top = 0
-    Width = 360
-    Height = 422
+    Width = 352
+    Height = 417
     Align = alClient
     BevelOuter = bvNone
     Caption = 'pnlRight'
     TabOrder = 1
     OnResize = pnlRightResize
+    ExplicitWidth = 360
+    ExplicitHeight = 422
     object pnlRTop: TPanel
       Left = 0
       Top = 0
-      Width = 360
+      Width = 352
       Height = 50
       Align = alTop
       BevelOuter = bvNone
       BevelWidth = 2
       TabOrder = 0
       OnResize = pnlRTopResize
+      ExplicitWidth = 360
     end
     object pgcInfoPage: TPageControl
       Left = 0
       Top = 50
-      Width = 360
-      Height = 372
+      Width = 352
+      Height = 367
       ActivePage = tstXQInfoA
       Align = alClient
-      Font.Charset = GB2312_CHARSET
+      Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -12
-      Font.Name = '宋体'
+      Font.Name = #34739#20534#65405#12539
       Font.Style = []
       ParentFont = False
       TabOrder = 1
       TabStop = False
       OnResize = pgcInfoPageResize
+      ExplicitWidth = 360
+      ExplicitHeight = 372
       object tstXQInfoA: TTabSheet
-        Caption = '棋局'
+        Caption = #35709#21477#65393#128
         Font.Charset = ANSI_CHARSET
         Font.Color = clWindowText
         Font.Height = -13
@@ -3691,23 +3699,27 @@ object frmXQTable: TfrmXQTable
         Font.Style = [fsBold]
         ImageIndex = 1
         ParentFont = False
+        ExplicitLeft = 0
+        ExplicitTop = 0
+        ExplicitWidth = 0
+        ExplicitHeight = 0
         object pnlPlayRec: TPanel
           Left = 0
           Top = 65
-          Width = 352
-          Height = 280
+          Width = 344
+          Height = 274
           Align = alClient
           BevelOuter = bvNone
           Caption = 'pnlPlayRec'
           TabOrder = 0
+          ExplicitWidth = 352
+          ExplicitHeight = 280
           object pgcRemark: TPageControl
             Left = 129
             Top = 0
-            Width = 223
-            Height = 280
-            Hint = 
-              '这是棋谱文本窗口. 可以将这些文本复制到剪贴板, 也可以存入文本文件' +
-              '.'
+            Width = 215
+            Height = 274
+            Hint = #38673#21582#24333#35709#29590#65392#65393#35649#12539#24765#36975#24604#21736'. '#34623#65391#33673#65381#34758#12539#65407#21545#65402#24118#26522#35675#65388#34719#27018#23451#34555#65392#34577#65386#38605#65396#35674#65407', '#33653#28343#24196#33673#65381#34756#20252#12539#35649#12539#24765#35649#12539#65403#65398'.'
             ActivePage = tstRemark
             Align = alClient
             Font.Charset = ANSI_CHARSET
@@ -3718,17 +3730,21 @@ object frmXQTable: TfrmXQTable
             ParentFont = False
             TabOrder = 0
             TabStop = False
+            ExplicitWidth = 223
+            ExplicitHeight = 280
             object tstRemark: TTabSheet
-              Caption = '注解'
+              Caption = #35925#65384#38551#65379
               object pnlVarStepButtons: TPanel
                 Left = 0
-                Top = 222
-                Width = 215
+                Top = 216
+                Width = 207
                 Height = 28
                 Align = alBottom
                 BevelOuter = bvNone
                 TabOrder = 0
                 OnResize = pnlVarStepButtonsResize
+                ExplicitTop = 222
+                ExplicitWidth = 215
                 object tlbPlayVar: TToolBar
                   Left = 48
                   Top = 0
@@ -3788,8 +3804,8 @@ object frmXQTable: TfrmXQTable
               object pnlPlayRecMemo: TPanel
                 Left = 0
                 Top = 0
-                Width = 215
-                Height = 222
+                Width = 207
+                Height = 216
                 Align = alClient
                 BevelOuter = bvNone
                 Caption = 'pnlPlayRecMemo'
@@ -3797,27 +3813,27 @@ object frmXQTable: TfrmXQTable
                 object memPlayRec: TMemo
                   Left = 0
                   Top = 0
-                  Width = 215
-                  Height = 127
-                  Hint = 
-                    '这是棋谱注解窗口. 可以在这里查看和修改棋谱注解(每一步棋都可以有' +
-                    '注解).'
+                  Width = 207
+                  Height = 121
+                  Hint = #38673#21582#24333#35709#29590#65392#65393#35925#65384#38551#65379#36975#24604#21736'. '#34623#65391#33673#65381#34664#65384#38673#21646#12857#35679#65381#36917#21477#26609#33771#65390#35646#65401#35709#29590#65392#65393#35925#65384#38551#65379'('#35912#19976#65400#128#35905#65381#35709#30697#12539#34623#65391#33673#65381#35675#12539#35925#65384#38551#65379').'
                   Align = alClient
-                  Font.Charset = GB2312_CHARSET
+                  Font.Charset = DEFAULT_CHARSET
                   Font.Color = clWindowText
                   Font.Height = -12
-                  Font.Name = '宋体'
+                  Font.Name = #34739#20534#65405#12539
                   Font.Style = []
                   ParentFont = False
                   ScrollBars = ssVertical
                   TabOrder = 0
                   OnChange = memPlayRecChange
                   OnKeyPress = memPlayRecKeyPress
+                  ExplicitWidth = 215
+                  ExplicitHeight = 127
                 end
                 object pnlVarStepListBox: TPanel
                   Left = 0
-                  Top = 127
-                  Width = 215
+                  Top = 121
+                  Width = 207
                   Height = 95
                   Align = alBottom
                   BevelOuter = bvNone
@@ -3830,26 +3846,25 @@ object frmXQTable: TfrmXQTable
                     Width = 199
                     Height = 15
                     AutoSize = False
-                    Caption = '本步的所有走法 (双击可查看)：'
+                    Caption = #35675#65388#35905#65381#36903#12539#22290#35675#33469#65397#65392#35925#12539'('#34623#24735#12539#34623#65391#35679#65381#36917#12539#12539#12539
                   end
                   object lbxPlayVar: TListBox
                     Left = 0
                     Top = 32
-                    Width = 215
+                    Width = 207
                     Height = 63
-                    Hint = '这是变着显示窗口,双击一个变着可以显示该变着及后续变化.'
+                    Hint = #38673#21582#24333#34623#20513#25449#35663#65406#36937#65402#36975#24604#21736','#34623#24735#12539#33651#128#33651#65386#34623#20513#25449#34623#65391#33673#65381#35663#65406#36937#65402#38584#65381#34623#20513#25449#34623#38593#37656#25160#65389#34623#20252#21927'.'
+                    Style = lbOwnerDrawFixed
                     Align = alBottom
-                    Font.Charset = GB2312_CHARSET
+                    Font.Charset = DEFAULT_CHARSET
                     Font.Color = clWindowText
                     Font.Height = -12
-                    Font.Name = '宋体'
+                    Font.Name = #34739#20534#65405#12539
                     Font.Style = []
-                    ItemHeight = 16
                     ParentFont = False
                     ParentShowHint = False
                     PopupMenu = ppmPlayVar
                     ShowHint = False
-                    Style = lbOwnerDrawFixed
                     TabOrder = 0
                     OnClick = lbxPlayVarClick
                     OnDblClick = lbxPlayVarDblClick
@@ -3857,7 +3872,7 @@ object frmXQTable: TfrmXQTable
                   object pnlAddVarStepHint: TPanel
                     Left = 0
                     Top = 0
-                    Width = 215
+                    Width = 207
                     Height = 97
                     Align = alTop
                     BevelOuter = bvNone
@@ -3865,6 +3880,7 @@ object frmXQTable: TfrmXQTable
                     TabOrder = 1
                     Visible = False
                     OnResize = pnlAddVarStepHintResize
+                    ExplicitWidth = 215
                     object lblAddPlayVarHint: TLabel
                       Left = 8
                       Top = 32
@@ -3872,12 +3888,12 @@ object frmXQTable: TfrmXQTable
                       Height = 57
                       AutoSize = False
                       Caption = 
-                        '如图形势,  红方已经有马八进七, 马八进九, 马六进五等走法,现在输入' +
-                        '新的变着.'
-                      Font.Charset = GB2312_CHARSET
+                        #34735#12423#23839#34838#65378#34569#65407',  '#37092#65378#35649#65401#34814#65394#25160#20055#24591#39721#65388#34568#65387#38673#24081#65400#12539' '#39721#65388#34568#65387#38673#24081#65401#12539' '#39721#65388#34568#65389#38673#24081#65402#30382#65389#33469#65397#65392#35925#12539#36999#65392#34664#65384#38670#28760#12539#35649#65392#36903#12539#24207#36921 +
+                        #128'.'
+                      Font.Charset = DEFAULT_CHARSET
                       Font.Color = clWindowText
                       Font.Height = -12
-                      Font.Name = '宋体'
+                      Font.Name = #34739#20534#65405#12539
                       Font.Style = []
                       ParentFont = False
                       WordWrap = True
@@ -3885,13 +3901,13 @@ object frmXQTable: TfrmXQTable
                     object lblBigHint: TLabel
                       Left = 0
                       Top = 8
-                      Width = 155
-                      Height = 16
-                      Caption = '提示: (增加新变着)'
-                      Font.Charset = GB2312_CHARSET
+                      Width = 192
+                      Height = 19
+                      Caption = #35616#21315#65380#65402': ('#34821#27115#21000#35649#65392#34623#20513#25449')'
+                      Font.Charset = DEFAULT_CHARSET
                       Font.Color = clWindowText
                       Font.Height = -16
-                      Font.Name = '宋体'
+                      Font.Name = #34739#20534#65405#12539
                       Font.Style = [fsBold]
                       ParentFont = False
                       Transparent = True
@@ -3905,7 +3921,7 @@ object frmXQTable: TfrmXQTable
             Left = 0
             Top = 0
             Width = 129
-            Height = 280
+            Height = 274
             ActivePage = tstRecord
             Align = alLeft
             Font.Charset = ANSI_CHARSET
@@ -3916,45 +3932,46 @@ object frmXQTable: TfrmXQTable
             ParentFont = False
             TabOrder = 1
             TabStop = False
+            ExplicitHeight = 280
             object tstRecord: TTabSheet
-              Caption = '棋谱'
-              Font.Charset = GB2312_CHARSET
+              Caption = #35709#29590#65392#65393
+              Font.Charset = DEFAULT_CHARSET
               Font.Color = clWindowText
               Font.Height = -27
-              Font.Name = '宋体'
+              Font.Name = #34739#20534#65405#12539
               Font.Style = []
               ParentFont = False
               object lbxPlayRec: TListBox
                 Left = 0
                 Top = 0
                 Width = 121
-                Height = 222
+                Height = 216
                 Hint = 
-                  '在棋谱记录上单击鼠标右键可弹出重要的功能选单；用鼠标左键单击其中' +
-                  '的一步可以查看该步的局势; 双击鼠标左键可从该步开始自动播放。'
+                  #34664#65384#35709#29590#65392#65393#38582#65392#34838#31298#65400#38593#40658#34563#65403#39840#63728#35692#12539#25215#39646#65390#34623#65391#34833#65401#34563#65402#39525#23822#65382#8747#22122#34569#28335#12539#39486#29273#40658#12539#24119#30033#39840#63728#35692#12539#65399#65382#39646#65390#34570#21215#12539#34568#65398#33651#65389#36903#12539#65400#128#35905#65381#34623 +
+                  #65391#33673#65381#35679#65381#36917#29590#65391#65381#35905#65381#36903#12539#65393#128#34569#65407'; '#34623#24735#12539#39840#63728#35692#12539#65399#65382#39646#65390#34623#65391#33673#25163#65391#65381#35905#65381#34833#128#34763#29590#12539#34569#65384#35622#65389#35646#65406#32306#12539
+                Style = lbOwnerDrawFixed
                 Align = alClient
-                Font.Charset = GB2312_CHARSET
+                Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
                 Font.Height = -12
-                Font.Name = '宋体'
+                Font.Name = #34739#20534#65405#12539
                 Font.Style = []
-                ItemHeight = 16
                 ParentFont = False
                 PopupMenu = ppmPlayRec
-                Style = lbOwnerDrawFixed
                 TabOrder = 0
                 OnClick = lbxPlayRecClick
                 OnDblClick = lbxPlayRecDblClick
               end
               object pnlCtrlToolBar: TPanel
                 Left = 0
-                Top = 222
+                Top = 216
                 Width = 121
                 Height = 28
                 Align = alBottom
                 BevelOuter = bvNone
                 TabOrder = 1
                 OnResize = pnlCtrlToolBarResize
+                ExplicitTop = 222
                 object tlbPlayRec: TToolBar
                   Left = 0
                   Top = 0
@@ -3970,7 +3987,7 @@ object frmXQTable: TfrmXQTable
                   object tbtFirstStep: TToolButton
                     Left = 0
                     Top = 2
-                    Hint = '开局|回到开局状态.'
+                    Hint = #34833#128#34747#128'|'#34647#27115#33446#34833#128#34747#128#36837#65398#35556#12539
                     Action = actPlayRecFirst
                     ParentShowHint = False
                     ShowHint = True
@@ -4009,20 +4026,19 @@ object frmXQTable: TfrmXQTable
                 Left = 0
                 Top = 0
                 Width = 121
-                Height = 222
+                Height = 216
                 Hint = 
-                  '在棋谱记录上单击鼠标右键可弹出重要的功能选单；用鼠标左键单击其中' +
-                  '的一步可以查看该步的局势; 双击鼠标左键可从该步开始自动播放。'
+                  #34664#65384#35709#29590#65392#65393#38582#65392#34838#31298#65400#38593#40658#34563#65403#39840#63728#35692#12539#25215#39646#65390#34623#65391#34833#65401#34563#65402#39525#23822#65382#8747#22122#34569#28335#12539#39486#29273#40658#12539#24119#30033#39840#63728#35692#12539#65399#65382#39646#65390#34570#21215#12539#34568#65398#33651#65389#36903#12539#65400#128#35905#65381#34623 +
+                  #65391#33673#65381#35679#65381#36917#29590#65391#65381#35905#65381#36903#12539#65393#128#34569#65407'; '#34623#24735#12539#39840#63728#35692#12539#65399#65382#39646#65390#34623#65391#33673#25163#65391#65381#35905#65381#34833#128#34763#29590#12539#34569#65384#35622#65389#35646#65406#32306#12539
+                Style = lbOwnerDrawFixed
                 Align = alClient
-                Font.Charset = GB2312_CHARSET
+                Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
                 Font.Height = -12
-                Font.Name = '宋体'
+                Font.Name = #34739#20534#65405#12539
                 Font.Style = []
-                ItemHeight = 16
                 ParentFont = False
                 PopupMenu = ppmPlayRec
-                Style = lbOwnerDrawFixed
                 TabOrder = 2
                 Visible = False
                 OnDblClick = lbxPlayRecDblClick
@@ -4031,8 +4047,8 @@ object frmXQTable: TfrmXQTable
           end
           object pnlTalk: TPanel
             Left = 0
-            Top = 280
-            Width = 352
+            Top = 274
+            Width = 344
             Height = 0
             Align = alBottom
             Caption = 'pnlTalk'
@@ -4042,12 +4058,11 @@ object frmXQTable: TfrmXQTable
               Top = 2
               Width = 297
               Height = 20
-              Font.Charset = GB2312_CHARSET
+              Font.Charset = DEFAULT_CHARSET
               Font.Color = clWindowText
               Font.Height = -12
-              Font.Name = '宋体'
+              Font.Name = #34739#20534#65405#12539
               Font.Style = []
-              ItemHeight = 12
               ParentFont = False
               TabOrder = 0
               Text = 'cbbTalk'
@@ -4059,8 +4074,8 @@ object frmXQTable: TfrmXQTable
             Width = 73
             Height = 20
             Hint = 
-              '|这是键盘输入棋谱窗口，可以采用数字代替文字录入棋谱，具体的录入' +
-              '方法可参看本软件的“使用说明”。'
+              '|'#38673#21582#24333#39646#65390#36918#20521#65406#28760#12539#35709#29590#65392#65393#36975#24604#21736#12539#24735#24196#33673#65381#39525#12539#30033#35624#65392#34756#23994#65403#65379#35670#65407#35649#12539#65389#24604#65405#21215#12539#35709#29590#65392#65393#12539#24735#12539#33780#37707#22122#34838#21215#12539#35649#65401#35925#21215#24196#34623#12425#24666#35675#65388 +
+              #38675#65391#33673#65398#36903#12539#128#25033#65405#65407#36885#65384#38584#65396#35663#23490#128#26164#128#12539
             AutoSize = False
             MaxLength = 4
             ParentShowHint = False
@@ -4073,7 +4088,7 @@ object frmXQTable: TfrmXQTable
         object pnlPlayerInfo: TPanel
           Left = 0
           Top = 0
-          Width = 352
+          Width = 344
           Height = 65
           Align = alTop
           BevelOuter = bvNone
@@ -4084,6 +4099,7 @@ object frmXQTable: TfrmXQTable
           Font.Style = [fsBold]
           ParentFont = False
           TabOrder = 1
+          ExplicitWidth = 352
           object lblTitle: TLabel
             Left = 0
             Top = 12
@@ -4092,10 +4108,10 @@ object frmXQTable: TfrmXQTable
             Align = alTop
             Alignment = taCenter
             AutoSize = False
-            Font.Charset = GB2312_CHARSET
+            Font.Charset = DEFAULT_CHARSET
             Font.Color = clWindowText
             Font.Height = -12
-            Font.Name = '宋体'
+            Font.Name = #34739#20534#65405#12539
             Font.Style = []
             ParentFont = False
             Transparent = True
@@ -4108,10 +4124,10 @@ object frmXQTable: TfrmXQTable
             Align = alTop
             Alignment = taCenter
             AutoSize = False
-            Font.Charset = GB2312_CHARSET
+            Font.Charset = DEFAULT_CHARSET
             Font.Color = clWindowText
             Font.Height = -12
-            Font.Name = '宋体'
+            Font.Name = #34739#20534#65405#12539
             Font.Style = []
             ParentFont = False
             Transparent = True
@@ -4124,10 +4140,10 @@ object frmXQTable: TfrmXQTable
             Align = alTop
             Alignment = taCenter
             AutoSize = False
-            Font.Charset = GB2312_CHARSET
+            Font.Charset = DEFAULT_CHARSET
             Font.Color = clWindowText
             Font.Height = -12
-            Font.Name = '宋体'
+            Font.Name = #34739#20534#65405#12539
             Font.Style = []
             ParentFont = False
             Transparent = True
@@ -4135,13 +4151,13 @@ object frmXQTable: TfrmXQTable
           object Label1: TLabel
             Left = 0
             Top = 0
-            Width = 352
+            Width = 4
             Height = 12
             Align = alTop
-            Font.Charset = GB2312_CHARSET
+            Font.Charset = DEFAULT_CHARSET
             Font.Color = clWindowText
             Font.Height = -12
-            Font.Name = '宋体'
+            Font.Name = #34739#20534#65405#12539
             Font.Style = []
             ParentFont = False
             Transparent = True
@@ -4149,20 +4165,30 @@ object frmXQTable: TfrmXQTable
         end
       end
       object tstXQInfoB: TTabSheet
-        Caption = '棋图'
+        Caption = #35709#21477#23839
         ImageIndex = 1
         OnShow = tstXQInfoBShow
+        ExplicitLeft = 0
+        ExplicitTop = 0
+        ExplicitWidth = 0
+        ExplicitHeight = 0
         object pgcQiTu: TPageControl
           Left = 0
           Top = 0
-          Width = 352
-          Height = 345
+          Width = 344
+          Height = 339
           ActivePage = tstQiTuText
           Align = alClient
           TabOrder = 0
           TabStop = False
+          ExplicitWidth = 352
+          ExplicitHeight = 345
           object tstQiTuText: TTabSheet
-            Caption = '文本图'
+            Caption = #35649#12539#24765#34647#65406
+            ExplicitLeft = 0
+            ExplicitTop = 0
+            ExplicitWidth = 0
+            ExplicitHeight = 0
             object memQiTuText: TMemo
               Left = 0
               Top = 0
@@ -4199,7 +4225,7 @@ object frmXQTable: TfrmXQTable
                 object tbtSelectQiTuText: TToolButton
                   Left = 0
                   Top = 2
-                  Hint = '全选|将所有的棋图文本选中，以便放到剪贴板'
+                  Hint = #34568#65384#39486#27022#34758#12539#22290#35675#33253#22122#35709#21477#23839#35649#12539#24765#39486#25105#65400#65389#12539#24481#65403#65381#33811#65407#35646#65406#34555#65392#34577#65386#38605#65396#35674#65407
                   Caption = 'tbtSelectQiTuText'
                   ImageIndex = 19
                   ParentShowHint = False
@@ -4216,7 +4242,7 @@ object frmXQTable: TfrmXQTable
                 object tbtSaveQiTuText: TToolButton
                   Left = 46
                   Top = 2
-                  Hint = '保存棋图文本|将棋图文本保存到文本文件中.'
+                  Hint = #33771#26191#65389#20470#65379#21477#23839#35649#12539#24765'|'#34758#12539#65379#21477#23839#35649#12539#24765#33771#26191#65389#20252#33446#35649#12539#24765#35649#12539#65403#65398#33651#65389'.'
                   Caption = '&Copy'
                   ImageIndex = 8
                   ParentShowHint = False
@@ -4235,16 +4261,16 @@ object frmXQTable: TfrmXQTable
                 object lblQiTuTextStyle: TLabel
                   Left = 4
                   Top = 10
-                  Width = 30
+                  Width = 37
                   Height = 12
-                  Caption = '格式:'
+                  Caption = #35692#65404#34833#12539
                 end
                 object rbtQiTuStyle01: TRadioButton
                   Left = 34
                   Top = 8
                   Width = 58
                   Height = 17
-                  Caption = '大棋图'
+                  Caption = #34719#65383#35709#21477#23839
                   Checked = True
                   TabOrder = 0
                   TabStop = True
@@ -4256,7 +4282,7 @@ object frmXQTable: TfrmXQTable
                   Top = 8
                   Width = 58
                   Height = 17
-                  Caption = '小棋图'
+                  Caption = #34758#20055#65379#21477#23839
                   TabOrder = 1
                   OnClick = tstXQInfoBShow
                 end
@@ -4266,10 +4292,10 @@ object frmXQTable: TfrmXQTable
                   Width = 89
                   Height = 17
                   Hint = 
-                    '|如果选中该选项，则使用ASCII颜色控制字符改变红黑方棋子和棋盘网格' +
-                    '线的颜色。该功能主要用来在大学校园字符BBS上张贴彩色棋图用。'
+                    '|'#34735#12424#26849#39486#25105#65400#65389#38584#65381#39486#34558#65377#65401#12539#24735#12539#33780#65407#36885#65384'ASCII'#39706#25030#29281#35607#65383#34555#65398#34756#31036#65388#65382#35646#65401#34623#20513#65402#65378#39839#31532#23167#35709#21477#65389#20185#26609#35709#29399#23592#37122#31532#63728#65404#37092#65407#36903#12539#65378#25030 +
+                    #29281#32306#12426#65391#65381#34569#28335#12539#33651#65403#38549#8747#30033#35674#65381#34664#65384#34719#65383#34756#65382#35692#65377#34647#65389#34756#31036#65388#65382'BBS'#33651#38593#65404#63728#38605#65396#34838#65385#28662#65394#35709#21477#23839#36885#65384#32306#12539
                   TabStop = False
-                  Caption = '字符BBS颜色'
+                  Caption = #34756#31036#65388#65382'BBS'#39706#25030#29281
                   TabOrder = 2
                   OnClick = tstXQInfoBShow
                 end
@@ -4277,9 +4303,13 @@ object frmXQTable: TfrmXQTable
             end
           end
           object tstQituImage: TTabSheet
-            Caption = '书刊排版图'
+            Caption = #33653#65382#34555#38929#36060#36826#20133#23839
             ImageIndex = 1
             OnShow = tstQituImageShow
+            ExplicitLeft = 0
+            ExplicitTop = 0
+            ExplicitWidth = 0
+            ExplicitHeight = 0
             object Panel1: TPanel
               Left = 0
               Top = 297
@@ -4292,9 +4322,9 @@ object frmXQTable: TfrmXQTable
               object Label3: TLabel
                 Left = 4
                 Top = 10
-                Width = 288
+                Width = 406
                 Height = 12
-                Caption = '可以将本棋图复制到剪贴板，然后粘贴在Word文档中。'
+                Caption = #34623#65391#33673#65381#34758#12539#24765#35709#21477#23839#34719#27018#23451#34555#65392#34577#65386#38605#65396#35674#65407#12539#27278#9519#34615#23432#65394#20521#65396#65396#34664#65384'Word'#35649#12539#65377#65379#33651#65389#32306#12539
               end
               object ToolBar1: TToolBar
                 Left = 289
@@ -4312,7 +4342,7 @@ object frmXQTable: TfrmXQTable
                 object tbtCopyQituImage: TToolButton
                   Left = 0
                   Top = 2
-                  Hint = '复制到剪贴板|将本棋图(图象)复制到剪切板供Word等字处理软件使用。'
+                  Hint = #34719#27018#23451#34555#65392#34577#65386#38605#65396#35674#65407'|'#34758#12539#24765#35709#21477#23839'('#34647#65406#38606#65377')'#34719#27018#23451#34555#65392#34577#65386#34555#12539#25912#33811#23094'ord'#36978#29273#65389#24604#65380#12539#28810#38675#65391#33673#65398#33780#65407#36885#65384#32306#12539
                   Caption = '&Copy'
                   ImageIndex = 1
                   ParentShowHint = False
@@ -4322,7 +4352,7 @@ object frmXQTable: TfrmXQTable
                 object tbtSaveQituImage: TToolButton
                   Left = 23
                   Top = 2
-                  Hint = '保存棋图(图象)|将棋图(图象)保存到Windos图象文件中(*.BMP)。'
+                  Hint = #33771#26191#65389#20470#65379#21477#23839'('#34647#65406#38606#65377')|'#34758#12539#65379#21477#23839'('#34647#65406#38606#65377')'#33771#26191#65389#20252#33446'Windos'#34647#65406#38606#65377#35649#12539#65403#65398#33651#65389'(*.BMP)'#32306#12539
                   Caption = '&Copy'
                   ImageIndex = 8
                   ParentShowHint = False
@@ -4351,9 +4381,13 @@ object frmXQTable: TfrmXQTable
             end
           end
           object tstQituBitmap: TTabSheet
-            Caption = '自定义图象棋图'
+            Caption = #38334#65386#34739#22779#65401#29273#23839#38606#65377#35709#21477#23839
             ImageIndex = 2
             OnShow = tstQituBitmapShow
+            ExplicitLeft = 0
+            ExplicitTop = 0
+            ExplicitWidth = 0
+            ExplicitHeight = 0
             object Panel2: TPanel
               Left = 0
               Top = 297
@@ -4366,9 +4400,9 @@ object frmXQTable: TfrmXQTable
               object Label4: TLabel
                 Left = 4
                 Top = 10
-                Width = 288
+                Width = 406
                 Height = 12
-                Caption = '可以将本棋图复制到剪贴板，然后粘贴在Word文档中。'
+                Caption = #34623#65391#33673#65381#34758#12539#24765#35709#21477#23839#34719#27018#23451#34555#65392#34577#65386#38605#65396#35674#65407#12539#27278#9519#34615#23432#65394#20521#65396#65396#34664#65384'Word'#35649#12539#65377#65379#33651#65389#32306#12539
               end
               object ToolBar2: TToolBar
                 Left = 289
@@ -4386,7 +4420,7 @@ object frmXQTable: TfrmXQTable
                 object tbtCopyQituBitmap: TToolButton
                   Left = 0
                   Top = 2
-                  Hint = '复制到剪贴板|将本棋图(图象)复制到剪切板供Word等字处理软件使用。'
+                  Hint = #34719#27018#23451#34555#65392#34577#65386#38605#65396#35674#65407'|'#34758#12539#24765#35709#21477#23839'('#34647#65406#38606#65377')'#34719#27018#23451#34555#65392#34577#65386#34555#12539#25912#33811#23094'ord'#36978#29273#65389#24604#65380#12539#28810#38675#65391#33673#65398#33780#65407#36885#65384#32306#12539
                   Caption = '&Copy'
                   ImageIndex = 1
                   ParentShowHint = False
@@ -4396,7 +4430,7 @@ object frmXQTable: TfrmXQTable
                 object tbtSaveQituBitmap: TToolButton
                   Left = 23
                   Top = 2
-                  Hint = '保存棋图(图象)|将棋图(图象)保存到Windos图象文件中(*.BMP)。'
+                  Hint = #33771#26191#65389#20470#65379#21477#23839'('#34647#65406#38606#65377')|'#34758#12539#65379#21477#23839'('#34647#65406#38606#65377')'#33771#26191#65389#20252#33446'Windos'#34647#65406#38606#65377#35649#12539#65403#65398#33651#65389'(*.BMP)'#32306#12539
                   Caption = '&Copy'
                   ImageIndex = 8
                   ParentShowHint = False
@@ -4425,13 +4459,13 @@ object frmXQTable: TfrmXQTable
               object Label5: TLabel
                 Left = 12
                 Top = 10
-                Width = 306
+                Width = 444
                 Height = 12
-                Caption = '下图是预览效果图,更精细的图象可通过剪贴板或文件获得'
-                Font.Charset = GB2312_CHARSET
+                Caption = #33651#21477#23839#35663#65391#39706#12539#65383#22495#35676#35691#25079#23839','#35670#65396#37002#65406#25160#12539#22122#34647#65406#38606#65377#34623#65391#39486#22794#65407#12539#23713#38605#65396#35674#65407#35596#21249#26522#33673#65398#38356#65399#34837#12539
+                Font.Charset = DEFAULT_CHARSET
                 Font.Color = clGray
                 Font.Height = -12
-                Font.Name = '宋体'
+                Font.Name = #34739#20534#65405#12539
                 Font.Style = []
                 ParentFont = False
               end
@@ -4440,9 +4474,13 @@ object frmXQTable: TfrmXQTable
         end
       end
       object tstXQInfoC: TTabSheet
-        Caption = '文本'
+        Caption = #35649#12539#24765
         ImageIndex = 2
         OnShow = tstXQInfoCShow
+        ExplicitLeft = 0
+        ExplicitTop = 0
+        ExplicitWidth = 0
+        ExplicitHeight = 0
         object pnlTextToolBar: TPanel
           Left = 0
           Top = 324
@@ -4463,16 +4501,16 @@ object frmXQTable: TfrmXQTable
             object Label2: TLabel
               Left = 4
               Top = 10
-              Width = 30
+              Width = 37
               Height = 12
-              Caption = '格式:'
+              Caption = #35692#65404#34833#12539
             end
             object rbtTextStyle01: TRadioButton
               Left = 40
               Top = 8
               Width = 49
               Height = 17
-              Caption = '单栏'
+              Caption = #34570#22675#63728#12539
               TabOrder = 0
               OnClick = tstXQInfoCShow
             end
@@ -4482,7 +4520,7 @@ object frmXQTable: TfrmXQTable
               Top = 8
               Width = 49
               Height = 17
-              Caption = '双栏'
+              Caption = #34623#26791#63728#12539
               Checked = True
               TabOrder = 1
               TabStop = True
@@ -4494,7 +4532,7 @@ object frmXQTable: TfrmXQTable
               Top = 8
               Width = 49
               Height = 17
-              Caption = '三栏'
+              Caption = #33651#30011#63728#12539
               TabOrder = 2
               OnClick = tstXQInfoCShow
             end
@@ -4504,7 +4542,7 @@ object frmXQTable: TfrmXQTable
               Top = 8
               Width = 71
               Height = 17
-              Caption = 'Java棋盘'
+              Caption = 'Java'#35709#29399#23592
               TabOrder = 3
               OnClick = tstXQInfoCShow
             end
@@ -4525,7 +4563,7 @@ object frmXQTable: TfrmXQTable
             object tbtSelectAllText: TToolButton
               Left = 0
               Top = 2
-              Hint = '全选|将所有的文本选中，以便放到剪贴板'
+              Hint = #34568#65384#39486#27022#34758#12539#22290#35675#33253#22122#35649#12539#24765#39486#25105#65400#65389#12539#24481#65403#65381#33811#65407#35646#65406#34555#65392#34577#65386#38605#65396#35674#65407
               Caption = 'tbtSelectAllText'
               ImageIndex = 19
               ParentShowHint = False
@@ -4542,7 +4580,7 @@ object frmXQTable: TfrmXQTable
             object tbtSaveTextIntoFile: TToolButton
               Left = 46
               Top = 2
-              Hint = '保存文本|将棋谱文本保存到文本文件中'
+              Hint = #33771#26191#65389#20470#26522#35675#65388'|'#34758#12539#65379#29590#65392#65393#35649#12539#24765#33771#26191#65389#20252#33446#35649#12539#24765#35649#12539#65403#65398#33651#65389
               Caption = '&Copy'
               ImageIndex = 8
               ParentShowHint = False
@@ -4557,10 +4595,10 @@ object frmXQTable: TfrmXQTable
           Width = 352
           Height = 324
           Align = alClient
-          Font.Charset = GB2312_CHARSET
+          Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -12
-          Font.Name = '宋体'
+          Font.Name = #34739#20534#65405#12539
           Font.Style = []
           ParentFont = False
           ScrollBars = ssVertical
@@ -4581,9 +4619,9 @@ object frmXQTable: TfrmXQTable
     Top = 65532
     object actPlayRecFirst: TAction
       Category = 'PlayRec'
-      Caption = '开局状态'
+      Caption = #34833#128#34747#128#36837#65398#35556#12539
       Enabled = False
-      Hint = '开局'
+      Hint = #34833#128#34747#128
       ImageIndex = 0
       OnExecute = actPlayRecFirstExecute
     end
@@ -4591,7 +4629,7 @@ object frmXQTable: TfrmXQTable
       Category = 'PlayRec'
       Caption = 'actPlayRecPrior'
       Enabled = False
-      Hint = '上一步'
+      Hint = #33651#36107#65400#128#35905#65381
       ImageIndex = 1
       OnExecute = actPlayRecPriorExecute
     end
@@ -4599,7 +4637,7 @@ object frmXQTable: TfrmXQTable
       Category = 'PlayRec'
       Caption = 'actPlayRecNext'
       Enabled = False
-      Hint = '下一步'
+      Hint = #33651#20534#65400#128#35905#65381
       ImageIndex = 2
       OnExecute = actPlayRecNextExecute
     end
@@ -4607,7 +4645,7 @@ object frmXQTable: TfrmXQTable
       Category = 'PlayRec'
       Caption = 'actPlayRecLast'
       Enabled = False
-      Hint = '终局'
+      Hint = #25160#20133#65393#128
       ImageIndex = 3
       OnExecute = actPlayRecLastExecute
     end
@@ -4615,7 +4653,7 @@ object frmXQTable: TfrmXQTable
       Category = 'PlayRec'
       Caption = 'actPlayRecDelete'
       Enabled = False
-      Hint = '删除最后一步'
+      Hint = #34555#63728#39663#65380#35675#128#34615#24825#65400#128#35905#65381
       ImageIndex = 4
       OnExecute = actPlayRecDeleteExecute
     end
@@ -4623,7 +4661,7 @@ object frmXQTable: TfrmXQTable
       Category = 'PlayVar'
       Caption = 'actPlayVarAdd'
       Enabled = False
-      Hint = '增加变着'
+      Hint = #34821#27115#21000#34623#20513#25449
       ImageIndex = 5
       OnExecute = actPlayVarAddExecute
     end
@@ -4631,7 +4669,7 @@ object frmXQTable: TfrmXQTable
       Category = 'PlayVar'
       Caption = 'actPlayVarDelete'
       Enabled = False
-      Hint = '删除变着'
+      Hint = #34555#63728#39663#65380#34623#20513#25449
       ImageIndex = 6
       OnExecute = actPlayVarDeleteExecute
     end
@@ -4639,7 +4677,7 @@ object frmXQTable: TfrmXQTable
       Category = 'PlayVar'
       Caption = 'actPlayVarCancel'
       Enabled = False
-      Hint = '取消'
+      Hint = #34623#21249#65398#12539
       ImageIndex = 7
       OnExecute = actPlayVarCancelExecute
     end
@@ -4647,7 +4685,7 @@ object frmXQTable: TfrmXQTable
       Category = 'PlayVar'
       Caption = 'actPlayVarUp'
       Enabled = False
-      Hint = '变着位置上移'
+      Hint = #34623#20513#25449#33780#21682#65405#65390#33651#38996#65383#65403
       ImageIndex = 8
       OnExecute = actPlayVarUpExecute
     end
@@ -4655,7 +4693,7 @@ object frmXQTable: TfrmXQTable
       Category = 'PlayVar'
       Caption = 'actPlayVarDown'
       Enabled = False
-      Hint = '变着位置下移'
+      Hint = #34623#20513#25449#33780#21682#65405#65390#33651#29399#65383#65403
       ImageIndex = 9
       OnExecute = actPlayVarDownExecute
     end
@@ -4684,64 +4722,64 @@ object frmXQTable: TfrmXQTable
     Left = 375
     Top = 5
     object ppmAutoPlayStart: TMenuItem
-      Caption = '自动播放(双击棋谱)'
+      Caption = #38334#65386#34569#65384#35622#65389#35646#65406'('#34623#24735#12539#35709#29590#65392#65393')'
       OnClick = ppmAutoPlayStartClick
     end
     object ppmLine1: TMenuItem
       Caption = '-'
     end
     object ppmAutoPlayTime: TMenuItem
-      Caption = '播放间隔设置'
+      Caption = #35622#65389#35646#65406#39651#65396#39659#30865#65390#65406#37122#65390
       object ppmAutoPlay01: TMenuItem
         Tag = 1000
-        Caption = '间隔 01 秒'
+        Caption = #39651#65396#39659#12539'01 '#36952#12539
         OnClick = ppmAutoPlayTimeClick
       end
       object ppmAutoPlay02: TMenuItem
         Tag = 2000
-        Caption = '间隔 02 秒'
+        Caption = #39651#65396#39659#12539'02 '#36952#12539
         OnClick = ppmAutoPlayTimeClick
       end
       object ppmAutoPlay03: TMenuItem
         Tag = 3000
-        Caption = '间隔 03 秒'
+        Caption = #39651#65396#39659#12539'03 '#36952#12539
         Checked = True
         OnClick = ppmAutoPlayTimeClick
       end
       object ppmAutoPlay04: TMenuItem
         Tag = 4000
-        Caption = '间隔 04 秒'
+        Caption = #39651#65396#39659#12539'04 '#36952#12539
         OnClick = ppmAutoPlayTimeClick
       end
       object ppmAutoPlay05: TMenuItem
         Tag = 5000
-        Caption = '间隔 05 秒'
+        Caption = #39651#65396#39659#12539'05 '#36952#12539
         OnClick = ppmAutoPlayTimeClick
       end
       object ppmAutoPlay06: TMenuItem
         Tag = 10000
-        Caption = '间隔 10 秒'
+        Caption = #39651#65396#39659#12539'10 '#36952#12539
         OnClick = ppmAutoPlayTimeClick
       end
       object ppmAutoPlay07: TMenuItem
         Tag = 15000
-        Caption = '间隔 15 秒'
+        Caption = #39651#65396#39659#12539'15 '#36952#12539
         OnClick = ppmAutoPlayTimeClick
       end
       object ppmAutoPlay08: TMenuItem
         Tag = 20000
-        Caption = '间隔 20 秒'
+        Caption = #39651#65396#39659#12539'20 '#36952#12539
         OnClick = ppmAutoPlayTimeClick
       end
     end
     object ppmAutoPlay041: TMenuItem
-      Caption = '播放声音设置'
+      Caption = #35622#65389#35646#65406#34722#65392#39675#65395#38582#65406#37122#65390
       object ppmSoundOff: TMenuItem
-        Caption = '走子时无声音提示'
+        Caption = #35149#65392#34756#20808#24942#35660#63728#34722#65392#39675#65395#35616#21315#65380#65402
         OnClick = ppmSoundOffClick
       end
       object ppmSoundOn: TMenuItem
-        Caption = '走子时声音提示'
+        Caption = #35149#65392#34756#20808#24942#34722#65392#39675#65395#35616#21315#65380#65402
         Checked = True
         OnClick = ppmSoundOnClick
       end
@@ -4750,62 +4788,62 @@ object frmXQTable: TfrmXQTable
       Caption = '-'
     end
     object ppmAutoPlayStop: TMenuItem
-      Caption = '停止播放(单击棋谱)'
+      Caption = #34523#25032#65389#65378#35622#65389#35646#65406'('#34570#21215#12539#35709#29590#65392#65393')'
       OnClick = ppmAutoPlayStopClick
     end
     object ppmLine3: TMenuItem
       Caption = '-'
     end
     object ppmPasteQipu: TMenuItem
-      Caption = '从剪贴板粘贴棋谱记录(各种文本格式)到当前棋局'
+      Caption = #33673#20027#23713#38605#65396#35674#65407#37002#20521#65396#65396#35709#29590#65392#65393#38582#65392#34838#12539#34615#12539#65383#32948#26522#35675#65388#35692#65404#34833#12539#34555#65392#34838#28760#29141#35709#21477#65393#128
       OnClick = ppmPasteQipuClick
     end
     object ppmImportQipu: TMenuItem
-      Caption = '从非XQF文件(*.che,*.chn,*.ccm,*.txt)中导入棋谱记录...'
+      Caption = #33673#26417#25788'XQF'#35649#12539#65403#65398'(*.che,*.chn,*.ccm,*.txt)'#33651#65389#34759#65404#34568#65381#35709#29590#65392#65393#38582#65392#34838#12539'..'
       OnClick = ppmImportQipuClick
     end
     object N3: TMenuItem
       Caption = '-'
     end
     object ppmMergeXqf: TMenuItem
-      Caption = '将其它xqf文件(*.xqf)中的棋谱记录合并到本文件...'
+      Caption = #34758#12539#12539#34739#12505'qf'#35649#12539#65403#65398'(*.xqf)'#33651#65389#36903#12539#65379#29590#65392#65393#38582#65392#34838#21215#31883#34807#65398#34555#65392#35675#65388#35649#12539#65403#65398'...'
       OnClick = ppmMergeXqfClick
     end
     object N1: TMenuItem
       Caption = '-'
     end
     object ppmCopy: TMenuItem
-      Caption = '导出局面(图象)到剪贴板'
+      Caption = #34759#65404#34563#65402#34747#128#39665#65378'('#34647#65406#38606#65377')'#34555#65392#34577#65386#38605#65396#35674#65407
       OnClick = ppmCopyClick
     end
     object ppmSaveAsBmp: TMenuItem
-      Caption = '导出局面(图象)到文件...'
+      Caption = #34759#65404#34563#65402#34747#128#39665#65378'('#34647#65406#38606#65377')'#34555#65392#35649#12539#65403#65398'...'
       OnClick = ppmSaveAsBmpClick
     end
     object ppmSearcnFile: TMenuItem
-      Caption = '导出棋子位置到文件查找窗口...'
+      Caption = #34759#65404#34563#65402#35709#21477#65389#34633#65405#21682#65405#65390#34555#65392#35649#12539#65403#65398#35679#65381#35591#65406#36975#24604#21736'...'
       OnClick = ppmSearcnFileClick
     end
     object N2: TMenuItem
       Caption = '-'
     end
     object ppmBitmapCopy: TMenuItem
-      Caption = '导出局面(自定义图象)到剪贴板'
+      Caption = #34759#65404#34563#65402#34747#128#39665#65378'('#38334#65386#34739#22779#65401#29273#23839#38606#65377')'#34555#65392#34577#65386#38605#65396#35674#65407
       OnClick = ppmBitmapCopyClick
     end
     object ppmBitmapSaveAsBmp: TMenuItem
-      Caption = '导出局面(自定义图象)到文件...'
+      Caption = #34759#65404#34563#65402#34747#128#39665#65378'('#38334#65386#34739#22779#65401#29273#23839#38606#65377')'#34555#65392#35649#12539#65403#65398'...'
       OnClick = ppmBitmapSaveAsBmpClick
     end
     object N6: TMenuItem
       Caption = '-'
     end
     object ppmTextXQ: TMenuItem
-      Caption = '导出文本棋谱记录到剪贴板'
+      Caption = #34759#65404#34563#65402#35649#12539#24765#35709#29590#65392#65393#38582#65392#34838#21215#33446#34577#65386#38605#65396#35674#65407
       OnClick = ppmTextXQClick
     end
     object ppmJavaXQ: TMenuItem
-      Caption = '导出棋谱记录的“Java Applet”HTML代码到剪贴板'
+      Caption = #34759#65404#34563#65402#35709#29590#65392#65393#38582#65392#34838#24917#22122#31414#24305'ava Applet'#31414#25166'TML'#33673#65379#36944#8733#33446#34577#65386#38605#65396#35674#65407
       OnClick = ppmJavaXQClick
     end
   end

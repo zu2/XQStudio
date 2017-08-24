@@ -3,7 +3,7 @@ object frmXQFileP: TfrmXQFileP
   Top = 270
   BorderIcons = [biSystemMenu]
   BorderStyle = bsDialog
-  Caption = 'Œƒº˛ Ù–‘'
+  Caption = 'Êñá‰ª∂Â±ûÊÄß'
   ClientHeight = 378
   ClientWidth = 391
   Color = clBtnFace
@@ -24,15 +24,15 @@ object frmXQFileP: TfrmXQFileP
     Width = 385
     Height = 341
     ActivePage = TabSheet2
-    Font.Charset = GB2312_CHARSET
+    Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -12
-    Font.Name = 'ÀŒÃÂ'
+    Font.Name = 'ÂÆã‰Ωì'
     Font.Style = []
     ParentFont = False
     TabOrder = 0
     object TabSheet1: TTabSheet
-      Caption = '≥£πÊ'
+      Caption = 'Â∏∏ËßÑ'
       TabVisible = False
       object bvlLine1: TBevel
         Left = 8
@@ -61,7 +61,7 @@ object frmXQFileP: TfrmXQFileP
         Width = 60
         Height = 12
         AutoSize = False
-        Caption = '¿‡–Õ:'
+        Caption = 'Á±ªÂûã:'
       end
       object Label2: TLabel
         Left = 70
@@ -69,7 +69,7 @@ object frmXQFileP: TfrmXQFileP
         Width = 257
         Height = 12
         AutoSize = False
-        Caption = '(Œ¥÷™)'
+        Caption = '(Êú™Áü•)'
       end
       object Label3: TLabel
         Left = 9
@@ -77,7 +77,7 @@ object frmXQFileP: TfrmXQFileP
         Width = 60
         Height = 12
         AutoSize = False
-        Caption = 'Œª÷√:'
+        Caption = '‰ΩçÁΩÆ:'
       end
       object Label4: TLabel
         Left = 70
@@ -85,7 +85,7 @@ object frmXQFileP: TfrmXQFileP
         Width = 257
         Height = 12
         AutoSize = False
-        Caption = '(Œ¥÷™)'
+        Caption = '(Êú™Áü•)'
       end
       object Label5: TLabel
         Left = 9
@@ -93,7 +93,7 @@ object frmXQFileP: TfrmXQFileP
         Width = 60
         Height = 12
         AutoSize = False
-        Caption = '¥Û–°:'
+        Caption = 'Â§ßÂ∞è:'
       end
       object Label6: TLabel
         Left = 70
@@ -101,7 +101,7 @@ object frmXQFileP: TfrmXQFileP
         Width = 257
         Height = 12
         AutoSize = False
-        Caption = '(Œ¥÷™)'
+        Caption = '(Êú™Áü•)'
       end
       object Label7: TLabel
         Left = 9
@@ -109,7 +109,7 @@ object frmXQFileP: TfrmXQFileP
         Width = 88
         Height = 12
         AutoSize = False
-        Caption = 'MS-DOS Œƒº˛√˚:'
+        Caption = 'MS-DOS Êñá‰ª∂Âêç:'
       end
       object Label8: TLabel
         Left = 96
@@ -124,7 +124,7 @@ object frmXQFileP: TfrmXQFileP
         Width = 60
         Height = 12
         AutoSize = False
-        Caption = '¥¥Ω® ±º‰:'
+        Caption = 'ÂàõÂª∫Êó∂Èó¥:'
       end
       object Label10: TLabel
         Left = 70
@@ -132,7 +132,7 @@ object frmXQFileP: TfrmXQFileP
         Width = 257
         Height = 12
         AutoSize = False
-        Caption = '(Œ¥÷™)'
+        Caption = '(Êú™Áü•)'
       end
       object Label11: TLabel
         Left = 9
@@ -140,7 +140,7 @@ object frmXQFileP: TfrmXQFileP
         Width = 60
         Height = 12
         AutoSize = False
-        Caption = '–ﬁ∏ƒ ±º‰:'
+        Caption = '‰øÆÊîπÊó∂Èó¥:'
       end
       object Label12: TLabel
         Left = 70
@@ -148,7 +148,7 @@ object frmXQFileP: TfrmXQFileP
         Width = 257
         Height = 12
         AutoSize = False
-        Caption = '(Œ¥÷™)'
+        Caption = '(Êú™Áü•)'
       end
       object Label13: TLabel
         Left = 9
@@ -156,7 +156,7 @@ object frmXQFileP: TfrmXQFileP
         Width = 60
         Height = 12
         AutoSize = False
-        Caption = '¥Ê»° ±º‰:'
+        Caption = 'Â≠òÂèñÊó∂Èó¥:'
       end
       object Label14: TLabel
         Left = 70
@@ -164,7 +164,7 @@ object frmXQFileP: TfrmXQFileP
         Width = 257
         Height = 12
         AutoSize = False
-        Caption = '(Œ¥÷™)'
+        Caption = '(Êú™Áü•)'
       end
       object Label15: TLabel
         Left = 9
@@ -172,14 +172,14 @@ object frmXQFileP: TfrmXQFileP
         Width = 60
         Height = 12
         AutoSize = False
-        Caption = ' Ù–‘:'
+        Caption = 'Â±ûÊÄß:'
       end
       object CheckBox1: TCheckBox
         Left = 82
         Top = 276
         Width = 73
         Height = 17
-        Caption = '÷ª∂¡(&R)'
+        Caption = 'Âè™ËØª(&R)'
         Enabled = False
         TabOrder = 0
       end
@@ -188,7 +188,7 @@ object frmXQFileP: TfrmXQFileP
         Top = 295
         Width = 73
         Height = 17
-        Caption = 'µµ∞∏(&C)'
+        Caption = 'Ê°£Ê°à(&C)'
         Enabled = False
         TabOrder = 1
       end
@@ -197,7 +197,7 @@ object frmXQFileP: TfrmXQFileP
         Top = 276
         Width = 97
         Height = 17
-        Caption = '“˛≤ÿ(&D)'
+        Caption = 'ÈöêËóè(&D)'
         Enabled = False
         TabOrder = 2
       end
@@ -206,20 +206,20 @@ object frmXQFileP: TfrmXQFileP
         Top = 295
         Width = 97
         Height = 17
-        Caption = 'œµÕ≥'
+        Caption = 'Á≥ªÁªü'
         Enabled = False
         TabOrder = 3
       end
     end
     object TabSheet2: TTabSheet
-      Caption = '’™“™–≈œ¢'
+      Caption = 'ÊëòË¶Å‰ø°ÊÅØ'
       ImageIndex = 1
       object Label16: TLabel
         Left = 8
         Top = 9
         Width = 54
         Height = 12
-        Caption = 'Œƒº˛±ÍÃ‚:'
+        Caption = 'Êñá‰ª∂Ê†áÈ¢ò:'
       end
       object Bevel3: TBevel
         Left = 8
@@ -233,11 +233,11 @@ object frmXQFileP: TfrmXQFileP
         Top = 269
         Width = 54
         Height = 12
-        Caption = '∆Â∆◊Ω≤∆¿:'
-        Font.Charset = GB2312_CHARSET
+        Caption = 'Ê£ãË∞±ËÆ≤ËØÑ:'
+        Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -12
-        Font.Name = 'ÀŒÃÂ'
+        Font.Name = 'ÂÆã‰Ωì'
         Font.Style = []
         ParentFont = False
       end
@@ -246,11 +246,11 @@ object frmXQFileP: TfrmXQFileP
         Top = 269
         Width = 54
         Height = 12
-        Caption = 'Œƒº˛◊˜’ﬂ:'
-        Font.Charset = GB2312_CHARSET
+        Caption = 'Êñá‰ª∂‰ΩúËÄÖ:'
+        Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -12
-        Font.Name = 'ÀŒÃÂ'
+        Font.Name = 'ÂÆã‰Ωì'
         Font.Style = []
         ParentFont = False
       end
@@ -275,10 +275,10 @@ object frmXQFileP: TfrmXQFileP
         Top = 266
         Width = 117
         Height = 20
-        Font.Charset = GB2312_CHARSET
+        Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -12
-        Font.Name = 'ÀŒÃÂ'
+        Font.Name = 'ÂÆã‰Ωì'
         Font.Style = []
         MaxLength = 15
         ParentFont = False
@@ -291,10 +291,10 @@ object frmXQFileP: TfrmXQFileP
         Top = 266
         Width = 117
         Height = 20
-        Font.Charset = GB2312_CHARSET
+        Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -12
-        Font.Name = 'ÀŒÃÂ'
+        Font.Name = 'ÂÆã‰Ωì'
         Font.Style = []
         MaxLength = 15
         ParentFont = False
@@ -308,10 +308,10 @@ object frmXQFileP: TfrmXQFileP
         Width = 373
         Height = 173
         BevelOuter = bvNone
-        Font.Charset = GB2312_CHARSET
+        Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -12
-        Font.Name = 'ÀŒÃÂ'
+        Font.Name = 'ÂÆã‰Ωì'
         Font.Style = []
         ParentFont = False
         TabOrder = 1
@@ -320,11 +320,11 @@ object frmXQFileP: TfrmXQFileP
           Top = 11
           Width = 54
           Height = 12
-          Caption = 'Œƒº˛¿‡–Õ:'
-          Font.Charset = GB2312_CHARSET
+          Caption = 'Êñá‰ª∂Á±ªÂûã:'
+          Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -12
-          Font.Name = 'ÀŒÃÂ'
+          Font.Name = 'ÂÆã‰Ωì'
           Font.Style = []
           ParentFont = False
         end
@@ -333,11 +333,11 @@ object frmXQFileP: TfrmXQFileP
           Top = 35
           Width = 54
           Height = 12
-          Caption = '±»»¸√˚≥∆:'
-          Font.Charset = GB2312_CHARSET
+          Caption = 'ÊØîËµõÂêçÁß∞:'
+          Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -12
-          Font.Name = 'ÀŒÃÂ'
+          Font.Name = 'ÂÆã‰Ωì'
           Font.Style = []
           ParentFont = False
         end
@@ -346,11 +346,11 @@ object frmXQFileP: TfrmXQFileP
           Top = 59
           Width = 54
           Height = 12
-          Caption = '±»»¸»’∆⁄:'
-          Font.Charset = GB2312_CHARSET
+          Caption = 'ÊØîËµõÊó•Êúü:'
+          Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -12
-          Font.Name = 'ÀŒÃÂ'
+          Font.Name = 'ÂÆã‰Ωì'
           Font.Style = []
           ParentFont = False
         end
@@ -359,11 +359,11 @@ object frmXQFileP: TfrmXQFileP
           Top = 83
           Width = 54
           Height = 12
-          Caption = '∫Ï∑Ω∆Â ÷:'
-          Font.Charset = GB2312_CHARSET
+          Caption = 'Á∫¢ÊñπÊ£ãÊâã:'
+          Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -12
-          Font.Name = 'ÀŒÃÂ'
+          Font.Name = 'ÂÆã‰Ωì'
           Font.Style = []
           ParentFont = False
         end
@@ -372,11 +372,11 @@ object frmXQFileP: TfrmXQFileP
           Top = 155
           Width = 54
           Height = 12
-          Caption = '±»»¸Ω·π˚:'
-          Font.Charset = GB2312_CHARSET
+          Caption = 'ÊØîËµõÁªìÊûú:'
+          Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -12
-          Font.Name = 'ÀŒÃÂ'
+          Font.Name = 'ÂÆã‰Ωì'
           Font.Style = []
           ParentFont = False
         end
@@ -385,11 +385,11 @@ object frmXQFileP: TfrmXQFileP
           Top = 83
           Width = 54
           Height = 12
-          Caption = '∫⁄∑Ω∆Â ÷:'
-          Font.Charset = GB2312_CHARSET
+          Caption = 'ÈªëÊñπÊ£ãÊâã:'
+          Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -12
-          Font.Name = 'ÀŒÃÂ'
+          Font.Name = 'ÂÆã‰Ωì'
           Font.Style = []
           ParentFont = False
         end
@@ -398,11 +398,11 @@ object frmXQFileP: TfrmXQFileP
           Top = 59
           Width = 54
           Height = 12
-          Caption = '±»»¸µÿµ„:'
-          Font.Charset = GB2312_CHARSET
+          Caption = 'ÊØîËµõÂú∞ÁÇπ:'
+          Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -12
-          Font.Name = 'ÀŒÃÂ'
+          Font.Name = 'ÂÆã‰Ωì'
           Font.Style = []
           ParentFont = False
         end
@@ -412,10 +412,10 @@ object frmXQFileP: TfrmXQFileP
           Width = 305
           Height = 12
           AutoSize = False
-          Font.Charset = GB2312_CHARSET
+          Font.Charset = DEFAULT_CHARSET
           Font.Color = clNavy
           Font.Height = -12
-          Font.Name = 'ÀŒÃÂ'
+          Font.Name = 'ÂÆã‰Ωì'
           Font.Style = []
           ParentFont = False
         end
@@ -424,11 +424,11 @@ object frmXQFileP: TfrmXQFileP
           Top = 107
           Width = 54
           Height = 12
-          Caption = '”√ ±πÊ‘Ú:'
-          Font.Charset = GB2312_CHARSET
+          Caption = 'Áî®Êó∂ËßÑÂàô:'
+          Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -12
-          Font.Name = 'ÀŒÃÂ'
+          Font.Name = 'ÂÆã‰Ωì'
           Font.Style = []
           ParentFont = False
         end
@@ -437,11 +437,11 @@ object frmXQFileP: TfrmXQFileP
           Top = 131
           Width = 54
           Height = 12
-          Caption = '∫Ï∑Ω”√ ±:'
-          Font.Charset = GB2312_CHARSET
+          Caption = 'Á∫¢ÊñπÁî®Êó∂:'
+          Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -12
-          Font.Name = 'ÀŒÃÂ'
+          Font.Name = 'ÂÆã‰Ωì'
           Font.Style = []
           ParentFont = False
         end
@@ -450,11 +450,11 @@ object frmXQFileP: TfrmXQFileP
           Top = 131
           Width = 54
           Height = 12
-          Caption = '∫⁄∑Ω”√ ±:'
-          Font.Charset = GB2312_CHARSET
+          Caption = 'ÈªëÊñπÁî®Êó∂:'
+          Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -12
-          Font.Name = 'ÀŒÃÂ'
+          Font.Name = 'ÂÆã‰Ωì'
           Font.Style = []
           ParentFont = False
         end
@@ -463,12 +463,12 @@ object frmXQFileP: TfrmXQFileP
           Top = 154
           Width = 57
           Height = 17
-          Caption = 'Œ¥÷™'
+          Caption = 'Êú™Áü•'
           Checked = True
-          Font.Charset = GB2312_CHARSET
+          Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -12
-          Font.Name = 'ÀŒÃÂ'
+          Font.Name = 'ÂÆã‰Ωì'
           Font.Style = []
           ParentFont = False
           TabOrder = 8
@@ -480,11 +480,11 @@ object frmXQFileP: TfrmXQFileP
           Top = 154
           Width = 57
           Height = 17
-          Caption = '∫Ï §'
-          Font.Charset = GB2312_CHARSET
+          Caption = 'Á∫¢ËÉú'
+          Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -12
-          Font.Name = 'ÀŒÃÂ'
+          Font.Name = 'ÂÆã‰Ωì'
           Font.Style = []
           ParentFont = False
           TabOrder = 9
@@ -495,11 +495,11 @@ object frmXQFileP: TfrmXQFileP
           Top = 154
           Width = 57
           Height = 17
-          Caption = '∫⁄ §'
-          Font.Charset = GB2312_CHARSET
+          Caption = 'ÈªëËÉú'
+          Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -12
-          Font.Name = 'ÀŒÃÂ'
+          Font.Name = 'ÂÆã‰Ωì'
           Font.Style = []
           ParentFont = False
           TabOrder = 10
@@ -510,11 +510,11 @@ object frmXQFileP: TfrmXQFileP
           Top = 154
           Width = 57
           Height = 17
-          Caption = '∫Õ∆Â'
-          Font.Charset = GB2312_CHARSET
+          Caption = 'ÂíåÊ£ã'
+          Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -12
-          Font.Name = 'ÀŒÃÂ'
+          Font.Name = 'ÂÆã‰Ωì'
           Font.Style = []
           ParentFont = False
           TabOrder = 11
@@ -525,10 +525,10 @@ object frmXQFileP: TfrmXQFileP
           Top = 80
           Width = 117
           Height = 20
-          Font.Charset = GB2312_CHARSET
+          Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -12
-          Font.Name = 'ÀŒÃÂ'
+          Font.Name = 'ÂÆã‰Ωì'
           Font.Style = []
           MaxLength = 15
           ParentFont = False
@@ -541,10 +541,10 @@ object frmXQFileP: TfrmXQFileP
           Top = 80
           Width = 117
           Height = 20
-          Font.Charset = GB2312_CHARSET
+          Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -12
-          Font.Name = 'ÀŒÃÂ'
+          Font.Name = 'ÂÆã‰Ωì'
           Font.Style = []
           MaxLength = 15
           ParentFont = False
@@ -557,10 +557,10 @@ object frmXQFileP: TfrmXQFileP
           Top = 56
           Width = 117
           Height = 20
-          Font.Charset = GB2312_CHARSET
+          Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -12
-          Font.Name = 'ÀŒÃÂ'
+          Font.Name = 'ÂÆã‰Ωì'
           Font.Style = []
           MaxLength = 15
           ParentFont = False
@@ -573,10 +573,10 @@ object frmXQFileP: TfrmXQFileP
           Top = 56
           Width = 117
           Height = 20
-          Font.Charset = GB2312_CHARSET
+          Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -12
-          Font.Name = 'ÀŒÃÂ'
+          Font.Name = 'ÂÆã‰Ωì'
           Font.Style = []
           MaxLength = 15
           ParentFont = False
@@ -589,10 +589,10 @@ object frmXQFileP: TfrmXQFileP
           Top = 32
           Width = 305
           Height = 20
-          Font.Charset = GB2312_CHARSET
+          Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -12
-          Font.Name = 'ÀŒÃÂ'
+          Font.Name = 'ÂÆã‰Ωì'
           Font.Style = []
           MaxLength = 63
           ParentFont = False
@@ -605,10 +605,10 @@ object frmXQFileP: TfrmXQFileP
           Top = 104
           Width = 305
           Height = 20
-          Font.Charset = GB2312_CHARSET
+          Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -12
-          Font.Name = 'ÀŒÃÂ'
+          Font.Name = 'ÂÆã‰Ωì'
           Font.Style = []
           MaxLength = 63
           ParentFont = False
@@ -621,10 +621,10 @@ object frmXQFileP: TfrmXQFileP
           Top = 128
           Width = 117
           Height = 20
-          Font.Charset = GB2312_CHARSET
+          Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -12
-          Font.Name = 'ÀŒÃÂ'
+          Font.Name = 'ÂÆã‰Ωì'
           Font.Style = []
           MaxLength = 15
           ParentFont = False
@@ -637,10 +637,10 @@ object frmXQFileP: TfrmXQFileP
           Top = 128
           Width = 117
           Height = 20
-          Font.Charset = GB2312_CHARSET
+          Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -12
-          Font.Name = 'ÀŒÃÂ'
+          Font.Name = 'ÂÆã‰Ωì'
           Font.Style = []
           MaxLength = 15
           ParentFont = False
@@ -651,7 +651,7 @@ object frmXQFileP: TfrmXQFileP
       end
     end
     object TabSheet3: TTabSheet
-      Caption = 'Õ≥º∆–≈œ¢'
+      Caption = 'ÁªüËÆ°‰ø°ÊÅØ'
       ImageIndex = 2
       TabVisible = False
       object Bevel5: TBevel
@@ -673,56 +673,56 @@ object frmXQFileP: TfrmXQFileP
         Top = 12
         Width = 54
         Height = 12
-        Caption = '¥¥Ω® ±º‰:'
+        Caption = 'ÂàõÂª∫Êó∂Èó¥:'
       end
       object Label28: TLabel
         Left = 9
         Top = 30
         Width = 54
         Height = 12
-        Caption = '–ﬁ∏ƒ ±º‰:'
+        Caption = '‰øÆÊîπÊó∂Èó¥:'
       end
       object Label29: TLabel
         Left = 9
         Top = 48
         Width = 54
         Height = 12
-        Caption = '¥Ê»° ±º‰:'
+        Caption = 'Â≠òÂèñÊó∂Èó¥:'
       end
       object Label30: TLabel
         Left = 9
         Top = 66
         Width = 54
         Height = 12
-        Caption = '¥Ú”° ±º‰:'
+        Caption = 'ÊâìÂç∞Êó∂Èó¥:'
       end
       object Label31: TLabel
         Left = 9
         Top = 120
         Width = 66
         Height = 12
-        Caption = '…œ¥Œ±£¥Ê’ﬂ:'
+        Caption = '‰∏äÊ¨°‰øùÂ≠òËÄÖ:'
       end
       object Label32: TLabel
         Left = 9
         Top = 136
         Width = 54
         Height = 12
-        Caption = '–ﬁ∂©¥Œ ˝:'
+        Caption = '‰øÆËÆ¢Ê¨°Êï∞:'
       end
       object Label33: TLabel
         Left = 9
         Top = 152
         Width = 78
         Height = 12
-        Caption = '±‡º≠ ±º‰◊‹º∆:'
+        Caption = 'ÁºñËæëÊó∂Èó¥ÊÄªËÆ°:'
       end
       object Label34: TLabel
         Left = 9
         Top = 208
         Width = 72
         Height = 12
-        Caption = 'Õ≥º∆–≈œ¢(&S):'
+        Caption = 'ÁªüËÆ°‰ø°ÊÅØ(&S):'
       end
       object StringGrid1: TStringGrid
         Left = 88
@@ -742,7 +742,7 @@ object frmXQFileP: TfrmXQFileP
       end
     end
     object TabSheet4: TTabSheet
-      Caption = 'ƒ⁄»›'
+      Caption = 'ÂÜÖÂÆπ'
       ImageIndex = 3
       TabVisible = False
       object Label26: TLabel
@@ -750,7 +750,7 @@ object frmXQFileP: TfrmXQFileP
         Top = 8
         Width = 72
         Height = 12
-        Caption = 'Œƒµµƒ⁄»›(&D):'
+        Caption = 'ÊñáÊ°£ÂÜÖÂÆπ(&D):'
       end
       object Memo2: TMemo
         Left = 84
@@ -761,7 +761,7 @@ object frmXQFileP: TfrmXQFileP
       end
     end
     object TabSheet5: TTabSheet
-      Caption = '◊‘∂®“Â'
+      Caption = 'Ëá™ÂÆö‰πâ'
       ImageIndex = 4
       TabVisible = False
       object Label35: TLabel
@@ -769,39 +769,39 @@ object frmXQFileP: TfrmXQFileP
         Top = 8
         Width = 48
         Height = 12
-        Caption = '√˚≥∆(&N):'
+        Caption = 'ÂêçÁß∞(&N):'
       end
       object Label36: TLabel
         Left = 9
         Top = 114
         Width = 48
         Height = 12
-        Caption = '¿‡–Õ(&T):'
+        Caption = 'Á±ªÂûã(&T):'
       end
       object Label37: TLabel
         Left = 9
         Top = 142
         Width = 48
         Height = 12
-        Caption = '»°÷µ(&V):'
+        Caption = 'ÂèñÂÄº(&V):'
       end
       object Label38: TLabel
         Left = 9
         Top = 176
         Width = 48
         Height = 12
-        Caption = ' Ù–‘(&P):'
+        Caption = 'Â±ûÊÄß(&P):'
       end
       object Button1: TButton
         Left = 236
         Top = 11
         Width = 97
         Height = 22
-        Caption = 'ÃÌº”(&A)'
-        Font.Charset = GB2312_CHARSET
+        Caption = 'Ê∑ªÂä†(&A)'
+        Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -12
-        Font.Name = 'ÀŒÃÂ'
+        Font.Name = 'ÂÆã‰Ωì'
         Font.Style = []
         ParentFont = False
         TabOrder = 0
@@ -811,11 +811,11 @@ object frmXQFileP: TfrmXQFileP
         Top = 39
         Width = 97
         Height = 22
-        Caption = '…æ≥˝(&D)'
-        Font.Charset = GB2312_CHARSET
+        Caption = 'Âà†Èô§(&D)'
+        Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -12
-        Font.Name = 'ÀŒÃÂ'
+        Font.Name = 'ÂÆã‰Ωì'
         Font.Style = []
         ParentFont = False
         TabOrder = 1
@@ -878,11 +878,11 @@ object frmXQFileP: TfrmXQFileP
     Top = 350
     Width = 76
     Height = 22
-    Caption = '»∑∂®'
-    Font.Charset = GB2312_CHARSET
+    Caption = 'Á°ÆÂÆö'
+    Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -12
-    Font.Name = 'ÀŒÃÂ'
+    Font.Name = 'ÂÆã‰Ωì'
     Font.Style = []
     ModalResult = 1
     ParentFont = False
@@ -893,11 +893,11 @@ object frmXQFileP: TfrmXQFileP
     Top = 350
     Width = 76
     Height = 22
-    Caption = '»°œ˚'
-    Font.Charset = GB2312_CHARSET
+    Caption = 'ÂèñÊ∂à'
+    Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -12
-    Font.Name = 'ÀŒÃÂ'
+    Font.Name = 'ÂÆã‰Ωì'
     Font.Style = []
     ModalResult = 2
     ParentFont = False

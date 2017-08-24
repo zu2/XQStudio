@@ -2,7 +2,7 @@
 //
 // XQStduio Source Code (http://www.qipaile.net/xqstudio)
 //
-// Copyright (c) 1998-2008, DONG Shiwei (¶­ÊÀÎ° or ¹ıºÓÏó)
+// Copyright (c) 1998-2008, DONG Shiwei (è‘£ä¸–ä¼Ÿ or è¿‡æ²³è±¡)
 // All rights reserved.
 // 
 // Redistribution and use in source and binary forms, with or without
@@ -46,37 +46,37 @@ uses
 
 interface
   //-----------------------------------------------------------------------
-  // ¶¨ÒåÏóÆåÀà
+  // å®šä¹‰è±¡æ£‹ç±»
   //.......................................................................
   dTXQView = class
   public
-    BoardImage  : TImage;                       // ÏóÆåÅÌÍ¼Ïñ
-    BoardXY     : dTXQPXY;                      // ÆåÅÌ9x10¸ö½»²æµã
-    QiziMoveImg : TImage;                       // ÒÆ¶¯ÖĞÆå×ÓµÄÍ¼Ïñ
-                                                // ÓÃÀ´´¦ÀíÒÆ¶¯
-    Qizi        : array [1..32] of dTXQZ;       // 32¸öÏóÆå×Ó
-    QiziMove    : dTXQZ;                        // ±»ÄÃÆğÒÆ¶¯µÄÆå×Ó
-    MovePosFrom : TImage;                       // ×îºóÒÆ¶¯¹ıµÄÆå×ÓµÄÎ»ÖÃ
-    MovePosTo   : TImage;                       //   ÓÃÀ´ÏÔÊ¾×ßÆåÖ¸Ê¾
+    BoardImage  : TImage;                       // è±¡æ£‹ç›˜å›¾åƒ
+    BoardXY     : dTXQPXY;                      // æ£‹ç›˜9x10ä¸ªäº¤å‰ç‚¹
+    QiziMoveImg : TImage;                       // ç§»åŠ¨ä¸­æ£‹å­çš„å›¾åƒ
+                                                // ç”¨æ¥å¤„ç†ç§»åŠ¨
+    Qizi        : array [1..32] of dTXQZ;       // 32ä¸ªè±¡æ£‹å­
+    QiziMove    : dTXQZ;                        // è¢«æ‹¿èµ·ç§»åŠ¨çš„æ£‹å­
+    MovePosFrom : TImage;                       // æœ€åç§»åŠ¨è¿‡çš„æ£‹å­çš„ä½ç½®
+    MovePosTo   : TImage;                       //   ç”¨æ¥æ˜¾ç¤ºèµ°æ£‹æŒ‡ç¤º
   public
     constructor Create(imgBoard: TImage; imgXY: dTXQPXY; imgQZMove: TImage;
                        imgLastMovePos: TImage;  picQZ: dTXQZPIC);
     destructor Destroy; override;
 
-    procedure dStartMoveFromXY(XY:dTBYTE);      // ´ÓXY´¦¿ªÊ¼ÒÆ¶¯Æå×Ó
-    procedure dStopMoveAtXY(XY:dTBYTE);         // ÒÆ¶¯Í£Ö¹µ½XY´¦
-    procedure dUndoMove;                        // È¡ÏûÒÆ¶¯
+    procedure dStartMoveFromXY(XY:dTBYTE);      // ä»XYå¤„å¼€å§‹ç§»åŠ¨æ£‹å­
+    procedure dStopMoveAtXY(XY:dTBYTE);         // ç§»åŠ¨åœæ­¢åˆ°XYå¤„
+    procedure dUndoMove;                        // å–æ¶ˆç§»åŠ¨
     procedure dRefreshBoard(ReStart:Boolean);
-    procedure dDispQiziAtRecNo(iRec: dTINT32);  // ÏÔÊ¾iRec²½µÄÆå¾Ö
-    procedure dMoveMemoToRecNo(iRec:dTINT32);   // ½«×¢½âÒÆÈë¶Ô¾Ö¼ÇÂ¼
-    procedure dLoadMemoFromRecNo(iRec:dTINT32); // ½«¼ÇÂ¼ÖĞµÄ×¢½âÏÔÊ¾³öÀ´
+    procedure dDispQiziAtRecNo(iRec: dTINT32);  // æ˜¾ç¤ºiRecæ­¥çš„æ£‹å±€
+    procedure dMoveMemoToRecNo(iRec:dTINT32);   // å°†æ³¨è§£ç§»å…¥å¯¹å±€è®°å½•
+    procedure dLoadMemoFromRecNo(iRec:dTINT32); // å°†è®°å½•ä¸­çš„æ³¨è§£æ˜¾ç¤ºå‡ºæ¥
     procedure dDispVarStepAtRecNo(iRec:dTInt32);
     procedure dLoadAllRecForVarStepNo(iVar:dTInt32);
     procedure dLoadAllRecForPlayNode(PN:dTXQPlayNode);
     procedure dAddPlayNodeIntoPlayRec(PN:dTXQPlayNode);
-    procedure dOnRecListBoxClick;               // ÏìÓ¦µ¥»÷Æå¾Ö¼ÇÂ¼ÊÂ¼ş
+    procedure dOnRecListBoxClick;               // å“åº”å•å‡»æ£‹å±€è®°å½•äº‹ä»¶
     procedure dOnVarListBoxClick;
-    procedure dReverseBoard;                    // ÆåÅÌµ¹×ª180¶È
+    procedure dReverseBoard;                    // æ£‹ç›˜å€’è½¬180åº¦
   end;
 
 function  sGetPlayRecStr(var qzXY:dTXQZXY; XYf,XYt:dTBYTE):string;

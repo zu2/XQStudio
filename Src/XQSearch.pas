@@ -2,7 +2,7 @@
 //
 // XQStduio Source Code (http://www.qipaile.net/xqstudio)
 //
-// Copyright (c) 1998-2008, DONG Shiwei (¶­ÊÀÎ° or ¹ıºÓÏó)
+// Copyright (c) 1998-2008, DONG Shiwei (è‘£ä¸–ä¼Ÿ or è¿‡æ²³è±¡)
 // All rights reserved.
 // 
 // Redistribution and use in source and binary forms, with or without
@@ -169,7 +169,7 @@ type
     FCurDrive   : Char;
     imgQizi     : array [1..32] of TImage;
     QiziXYRect  : array [0..8, 0..9] of TRect;
-    pntQizi     : array [1..32] of TPoint;              // ÆåÅÌÍâµÄÎ»ÖÃ
+    pntQizi     : array [1..32] of TPoint;              // æ£‹ç›˜å¤–çš„ä½ç½®
     StartMoveLeft, StartMoveTop : Integer;
     FSearchEnabled  : Boolean;
     FSearching      : Boolean;
@@ -224,7 +224,7 @@ begin
   lblTitle.Caption    := '';
   lblTimeAddr.Caption := '';
 
-  // ¸´ÖÆÆå×ÓµÄÍ¼Ïó
+  // å¤åˆ¶æ£‹å­çš„å›¾è±¡
   for i:=1 to 32 do
   begin
     imgQizi[i] := TImage.Create(Self);
@@ -247,7 +247,7 @@ begin
   end;
   imgQzMove.BringToFront;
 
-  // ÉèÖÃÆåÅÌÉÏµÄ±øÕ¾
+  // è®¾ç½®æ£‹ç›˜ä¸Šçš„å…µç«™
   for i:=0 to 8 do for j:=0 to 9 do
   begin
     with QiziXYRect[i, j] do
@@ -259,13 +259,13 @@ begin
     end;
   end;
 
-  // ÉèÖÃËÀ×ÓµÄÎ»ÖÃ
+  // è®¾ç½®æ­»å­çš„ä½ç½®
   ALeft := imgXQBoard.Left + 2;
   ATop  := imgXQBoard.Top  + imgXQBoard.Height - 24;
   ADx   := 24;
   ADy   := 22;
 
-  // ºìËÀ×ÓÎ»ÖÃ
+  // çº¢æ­»å­ä½ç½®
   X := ALeft + ADx;  Y := ATop + ADy;
   pntQizi[ 1].x := X;   pntQizi[ 1].y := Y;
   pntQizi[ 9].x := X;   pntQizi[ 9].y := Y;
@@ -290,7 +290,7 @@ begin
   pntQizi[15].x := X;   pntQizi[15].y := Y;
   pntQizi[16].x := X;   pntQizi[16].y := Y;
 
-  // ºÚËÀ×ÓÎ»ÖÃ
+  // é»‘æ­»å­ä½ç½®
   X := ALeft + ADx;  Y := Y + ADy;
   pntQizi[17].x := X;   pntQizi[17].y := Y;
   pntQizi[25].x := X;   pntQizi[25].y := Y;
@@ -380,7 +380,7 @@ var
   DirStr: string;
 begin
   DirStr := '';
-  if SelectDirectory('ÇëÑ¡ÔñÆåÆ×ÎÄ¼ş(*.XQF)ËùÔÚµÄÄ¿Â¼', '', DirStr) then
+  if SelectDirectory('è¯·é€‰æ‹©æ£‹è°±æ–‡ä»¶(*.XQF)æ‰€åœ¨çš„ç›®å½•', '', DirStr) then
   begin
     edtDir.Text := DirStr;
   end;
@@ -400,13 +400,13 @@ begin
 
     s := FFileList.Strings[i];
 
-    // ¼ì²éÎÄ¼şÃûµÄÌõ¼ş
+    // æ£€æŸ¥æ–‡ä»¶åçš„æ¡ä»¶
     if (edtFileName.Text <> '') then
     begin
       if (Pos(edtFileName.Text, s) < 1) then continue;
     end;
 
-    // ¼ì²éÎÄ¼şÄÚÈİÌõ¼ş
+    // æ£€æŸ¥æ–‡ä»¶å†…å®¹æ¡ä»¶
     if not IsXqfMatched(s) then continue;
 
     AItem := lvwResult.Items.Add;
@@ -433,16 +433,16 @@ begin
       lblFileCount.Caption := IntToStr(FFileNum);
       lblFileCount.Refresh;
 
-      // ±ØĞëÊÇXQFÎÄ¼ş
+      // å¿…é¡»æ˜¯XQFæ–‡ä»¶
       if(UpperCase(ExtractFileExt(sr.Name))<>'.XQF') then continue;
 
-      // ¼ì²éÎÄ¼şÃûµÄÌõ¼ş
+      // æ£€æŸ¥æ–‡ä»¶åçš„æ¡ä»¶
       if (edtFileName.Text <> '') then
       begin
         if (Pos(edtFileName.Text, sr.Name) < 1) then continue;
       end;
 
-      // ¼ì²éÎÄ¼şÄÚÈİÌõ¼ş
+      // æ£€æŸ¥æ–‡ä»¶å†…å®¹æ¡ä»¶
       if not IsXqfMatched(ADir + '\' + sr.Name) then continue;
 
       AItem := lvwResult.Items.Add;
@@ -511,8 +511,8 @@ begin
   if (pos('.', edtFileName.Text)>0) then
   begin
     Application.MessageBox(
-      'Çë×¢Òâ£¬ÎÄ¼şÃûÖĞ²»ÄÜÓĞÀ©Õ¹Ãû£¬XQStudio»á×Ô¶¯´¦Àí¡°.XQF¡±ÎÄ¼ş¡£',
-      'ÏµÍ³ĞÅÏ¢', MB_OK + MB_ICONWARNING);
+      'è¯·æ³¨æ„ï¼Œæ–‡ä»¶åä¸­ä¸èƒ½æœ‰æ‰©å±•åï¼ŒXQStudioä¼šè‡ªåŠ¨å¤„ç†â€œ.XQFâ€æ–‡ä»¶ã€‚',
+      'ç³»ç»Ÿä¿¡æ¯', MB_OK + MB_ICONWARNING);
     Exit;
   end;
 
@@ -539,7 +539,7 @@ begin
     btnBrowse.Visible      := False;
     aniSearch.Visible      := True;
     aniSearch.Active       := True;
-    lblResultCount.Caption := 'ÕıÔÚ²éÕÒ...';
+    lblResultCount.Caption := 'æ­£åœ¨æŸ¥æ‰¾...';
     lblResultCount.Refresh;
     lblFileCount.Caption   := '0';
     lblFileCount.Visible   := True;
@@ -588,7 +588,7 @@ begin
     lblFileCount.Visible   := False;
     lblResultCount.Caption := IntToStr(lvwResult.Items.Count);
     Screen.Cursor := crDefault;
-    Self.Caption := '²éÕÒä¯ÀÀXQFÎÄ¼ş - ' + DirStr;
+    Self.Caption := 'æŸ¥æ‰¾æµè§ˆXQFæ–‡ä»¶ - ' + DirStr;
     chkDisplayQizi.Checked := False;
     FSearching := False;
   end;
@@ -673,7 +673,7 @@ begin
 
   AStepNo := 0;
 
-  case FXqFile.iLoadXQFile of           // ¶ÁÈëXQFÎÄ¼ş
+  case FXqFile.iLoadXQFile of           // è¯»å…¥XQFæ–‡ä»¶
     0:
       begin
         AStepNum := StrToIntDef(edtStepNo.Text, 0);
@@ -695,7 +695,7 @@ begin
           if (APNode.LChild = nil) then FXqfEnd := True;
         end;
 
-        // ÏÔÊ¾Æå×ÓÎ»ÖÃ
+        // æ˜¾ç¤ºæ£‹å­ä½ç½®
         //frmXQWizard.QiziXYtoImage(QiziXY, imgXQBoard);
         dRefreshQiziXY(QiziXY);
         dRefreshXqfInfo;
@@ -706,7 +706,7 @@ begin
   updStepNo.Max         := 999;
   if FXqfEnd then
   begin
-    lblXqfEndHint.Caption := Format('ÖÕ¾Ö!(±¾ÅÌ¹²%d²½)',  [AStepNo]);
+    lblXqfEndHint.Caption := Format('ç»ˆå±€!(æœ¬ç›˜å…±%dæ­¥)',  [AStepNo]);
     updStepNo.Max         := AStepNo;
   end;
 
@@ -744,22 +744,22 @@ end;
 procedure TfrmXQSearch.dRefreshXqfInfo;
 var
   s: string;
-  iWhoPlay        : Integer;                  // Ë­ÏÈĞĞ
-                                              // 0-ºìÏÈ, 1-ºÚÏÈ
-  iResult         : Integer;                  // ±ÈÈü½á¹û
-                                              // 0-Î´Öª, 1-ºìÊ¤
-                                              // 2-ºÚÊ¤, 3-ºÍÆå
-  sTitle          : String[63];               // ±êÌâ
-  sMatchName      : String[63];               // ±ÈÈüÃû³Æ
-  sMatchTime      : String[15];               // ±ÈÈüÊ±¼ä
-  sMatchAddr      : String[15];               // ±ÈÈüµØµã
-  sRedPlayer      : String[15];               // ºì·½ĞÕÃû
-  sBlkPlayer      : String[15];               // ºÚ·½ĞÕÃû
-  sTimeRule       : String[63];               // ÓÃÊ±¹æÔò
-  sRedTime        : String[15];               // ºì·½ÓÃÊ±
-  sBlkTime        : String[15];               // ºÚ·½ÓÃÊ±
-  sRMKWriter      : String[15];               // ÆåÆ×ÆÀÂÛÔ±
-  sAuthor         : STring[15];               // ÎÄ¼şµÄ×÷Õß
+  iWhoPlay        : Integer;                  // è°å…ˆè¡Œ
+                                              // 0-çº¢å…ˆ, 1-é»‘å…ˆ
+  iResult         : Integer;                  // æ¯”èµ›ç»“æœ
+                                              // 0-æœªçŸ¥, 1-çº¢èƒœ
+                                              // 2-é»‘èƒœ, 3-å’Œæ£‹
+  sTitle          : String[63];               // æ ‡é¢˜
+  sMatchName      : String[63];               // æ¯”èµ›åç§°
+  sMatchTime      : String[15];               // æ¯”èµ›æ—¶é—´
+  sMatchAddr      : String[15];               // æ¯”èµ›åœ°ç‚¹
+  sRedPlayer      : String[15];               // çº¢æ–¹å§“å
+  sBlkPlayer      : String[15];               // é»‘æ–¹å§“å
+  sTimeRule       : String[63];               // ç”¨æ—¶è§„åˆ™
+  sRedTime        : String[15];               // çº¢æ–¹ç”¨æ—¶
+  sBlkTime        : String[15];               // é»‘æ–¹ç”¨æ—¶
+  sRMKWriter      : String[15];               // æ£‹è°±è¯„è®ºå‘˜
+  sAuthor         : STring[15];               // æ–‡ä»¶çš„ä½œè€…
 begin
   if ((FCurItem <> nil) and (FCurItem = lvwResult.ItemFocused)) then Exit;
   FCurStep   := StrToIntDef(edtStepNo.Text, -1);
@@ -786,19 +786,19 @@ begin
   lblBlkName.Visible := False;
 
   case FXqFile.XQFHead.CodeA of
-    0:  // È«¾Ö
+    0:  // å…¨å±€
       begin
         s:='';
         if ((sRedPlayer<>'')and(sBlkPlayer<>'')) then
         begin
-          s:={'(ºì·½) '+}sRedPlayer;
+          s:={'(çº¢æ–¹) '+}sRedPlayer;
           case iResult of
-            0: begin s:=s+' ¶Ô '; end;
-            1: s:=s+' (ºìÏÈÊ¤) ';
-            2: s:=s+' (ºìÏÈ¸º) ';
-            3: s:=s+' (ºìÏÈºÍ) ';
+            0: begin s:=s+' å¯¹ '; end;
+            1: s:=s+' (çº¢å…ˆèƒœ) ';
+            2: s:=s+' (çº¢å…ˆè´Ÿ) ';
+            3: s:=s+' (çº¢å…ˆå’Œ) ';
           end;
-          s:=s+{'(ºÚ·½) '+}sBlkPlayer;
+          s:=s+{'(é»‘æ–¹) '+}sBlkPlayer;
         end;
 
         lblPlayer.Caption  :=s;
@@ -816,29 +816,29 @@ begin
 
         lblTimeAddr.Caption:=sMatchTime;
         if (sMatchAddr<>'') then
-          lblTimeAddr.Caption:=lblTimeAddr.Caption+'ŞÄÓÚ'+sMatchAddr;
+          lblTimeAddr.Caption:=lblTimeAddr.Caption+'å¼ˆäº'+sMatchAddr;
       end;
 
-    1:  // ¿ª¾Ö
+    1:  // å¼€å±€
       begin
         s:='';
         lblPlayer.Caption  :=s;
         lblTimeAddr.Caption:=s;
       end;
 
-    2:  // ÖĞ¾Ö
+    2:  // ä¸­å±€
       begin
         s:='';
         if ((sRedPlayer<>'')and(sBlkPlayer<>'')) then
         begin
-          s:={'(ºì·½) '+}sRedPlayer;
+          s:={'(çº¢æ–¹) '+}sRedPlayer;
           case iResult of
-            0: begin s:=s+' ¶Ô '; end;
-            1: s:=s+' (Ê¤) ';
-            2: s:=s+' (¸º) ';
-            3: s:=s+' (ºÍ) ';
+            0: begin s:=s+' å¯¹ '; end;
+            1: s:=s+' (èƒœ) ';
+            2: s:=s+' (è´Ÿ) ';
+            3: s:=s+' (å’Œ) ';
           end;
-          s:=s+{'(ºÚ·½) '+}sBlkPlayer;
+          s:=s+{'(é»‘æ–¹) '+}sBlkPlayer;
         end;
 
         lblPlayer.Caption  :=s;
@@ -856,18 +856,18 @@ begin
 
         lblTimeAddr.Caption:=sMatchTime;
         if (sMatchAddr<>'') then
-          lblTimeAddr.Caption:=lblTimeAddr.Caption+'ŞÄÓÚ'+sMatchAddr;
+          lblTimeAddr.Caption:=lblTimeAddr.Caption+'å¼ˆäº'+sMatchAddr;
       end;
 
-    3:  // ²Ğ¾Ö
+    3:  // æ®‹å±€
       begin
-        s:='(×Å·¨: ';
-        if (iWhoPlay=0) then s:=s+'ºìÏÈ' else s:=s+'ºÚÏÈ';
+        s:='(ç€æ³•: ';
+        if (iWhoPlay=0) then s:=s+'çº¢å…ˆ' else s:=s+'é»‘å…ˆ';
         case iResult of
           0: begin end;
-          1: if (iWhoPlay =0) then s:=s+'Ê¤' else s:=s+'ºìÊ¤';
-          2: if (iWhoPlay<>0) then s:=s+'Ê¤' else s:=s+'ºÚÊ¤';
-          3: s:=s+'ºÍ';
+          1: if (iWhoPlay =0) then s:=s+'èƒœ' else s:=s+'çº¢èƒœ';
+          2: if (iWhoPlay<>0) then s:=s+'èƒœ' else s:=s+'é»‘èƒœ';
+          3: s:=s+'å’Œ';
         end;
         s:=s+')';
         lblPlayer.Caption := s;
@@ -887,7 +887,7 @@ procedure TfrmXQSearch.dRefreshQiziXY(AQzXY: dTXQZXY);
 var
   i,xy, x, y: Integer;
 begin
-  // È«²¿µÄÆå×Ó²»ÔÚÅÌÉÏ
+  // å…¨éƒ¨çš„æ£‹å­ä¸åœ¨ç›˜ä¸Š
   for i:=1 to 32 do
   begin
     if (AQzXY[i] = $FF) then
@@ -978,15 +978,15 @@ begin
   Result := False;
   if (FXqFile.iLoadXQFile(not FOpenTree)=0) then
   repeat
-    if (cmbRedPlayer.Text <> '') then // ºì·½Ìõ¼ş
+    if (cmbRedPlayer.Text <> '') then // çº¢æ–¹æ¡ä»¶
     begin
       if (Pos(cmbRedPlayer.Text, FXqFile.XQFHead.RedPlayer) < 1) then break;
     end;
-    if (cmbBlkPlayer.Text <> '') then // ºÚ·½Ìõ¼ş
+    if (cmbBlkPlayer.Text <> '') then // é»‘æ–¹æ¡ä»¶
     begin
       if (Pos(cmbBlkPlayer.Text, FXqFile.XQFHead.BlkPlayer) < 1) then break;
     end;
-    // ½á¹ûÌõ¼ş
+    // ç»“æœæ¡ä»¶
     if (chkResultA.Checked or chkResultB.Checked or
         chkResultC.Checked or chkResultD.Checked) then
     begin
@@ -999,15 +999,15 @@ begin
       end;
     end;
 
-    // ËÑË÷¾ÖÃæ
+    // æœç´¢å±€é¢
     if chkSearchQzXY.Checked then
     begin
       dSetSearchQzXYParam(FCurQzXY);
-      if chkOnlyInitPos.Checked then    // Ö»ÔÚ³õÊ¼¾ÖÃæ²é
+      if chkOnlyInitPos.Checked then    // åªåœ¨åˆå§‹å±€é¢æŸ¥
       begin
         if not IsQzXYSame(FCurQzXY, FXqTree.QiziXY, chkQzNumOnly.Checked, chkIgnoreYz.Checked) then break;
       end
-      else                              // ÉîÈëÆå¾ÖÄÚ²¿²é
+      else                              // æ·±å…¥æ£‹å±€å†…éƒ¨æŸ¥
       begin
         AStepNo := GetQzXYStepNo(FXqTree, FCurQzXY);
         if AStepNo < 0 then break;
@@ -1061,7 +1061,7 @@ end;
 
 procedure TfrmXQSearch.ppmBoardPopup(Sender: TObject);
 begin
-  // ÅĞ¶ÏÊÇ·ñÊÇÎÄ±¾£¬ÒÔ¾ö¶¨ÊÇ·ñÔÊĞíÕ³Ìù
+  // åˆ¤æ–­æ˜¯å¦æ˜¯æ–‡æœ¬ï¼Œä»¥å†³å®šæ˜¯å¦å…è®¸ç²˜è´´
   ppmPastePosition.Enabled := Clipboard.HasFormat(CF_TEXT);
 end;
 
@@ -1144,7 +1144,7 @@ begin
     Cy   := imgQZMove.Top  + (Height div 2);
     if not isPointInQiziXY(Cx, Cy) then
     begin
-      //if ((Tag=05) or (Tag=21)) then Exit;      // Ë§¡¢½«²»¿ÉÒÔÒÆ³ö¹¬Íâ
+      //if ((Tag=05) or (Tag=21)) then Exit;      // å¸…ã€å°†ä¸å¯ä»¥ç§»å‡ºå®«å¤–
       if (Cx > (imgXQBoard.Left + imgXQBoard.Width - 6)) or
          (Cx < (imgXQBoard.Left + 6)) or
          (Cy > (imgXQBoard.Top  + imgXQBoard.Height - 32)) or
@@ -1210,14 +1210,14 @@ begin
     lblBlkName.Visible    := False;
     lblRedName.Visible    := False;
     lblXqfEndHint.Visible := False;
-    lblTitle.Caption      := 'ÍÏ×§Æå×Ó°Ú·Å²»Í¬µÄ¾ÖÃæ';
-    lblPlayer.Caption     := '²»ÓÃµÄÆå×Ó¿ÉÍÏ×§µ½ÆåÅÌÏÂ·½¿ÕµÄµØ·½';
-    lblTimeAddr.Caption   := 'ÆåÅÌÉÏµ¥»÷ÓÒ¼ü¿Éµ¯³öÑ¡µ¥';
+    lblTitle.Caption      := 'æ‹–æ‹½æ£‹å­æ‘†æ”¾ä¸åŒçš„å±€é¢';
+    lblPlayer.Caption     := 'ä¸ç”¨çš„æ£‹å­å¯æ‹–æ‹½åˆ°æ£‹ç›˜ä¸‹æ–¹ç©ºçš„åœ°æ–¹';
+    lblTimeAddr.Caption   := 'æ£‹ç›˜ä¸Šå•å‡»å³é”®å¯å¼¹å‡ºé€‰å•';
   end
   else
   begin
     lblTitle.Caption      := '';
-    lblPlayer.Caption     := 'Ã»ÓĞÖ¸¶¨XQFÎÄ¼ş';
+    lblPlayer.Caption     := 'æ²¡æœ‰æŒ‡å®šXQFæ–‡ä»¶';
     lblTimeAddr.Caption   := '';
   end;
 
@@ -1276,7 +1276,7 @@ var
   DirLen: integer;
 begin
   DirStr := '';
-  if SelectDirectory('ÇëÑ¡ÔñÄ¿±êÎÄ¼ş¼Ğ', '', DirStr) then
+  if SelectDirectory('è¯·é€‰æ‹©ç›®æ ‡æ–‡ä»¶å¤¹', '', DirStr) then
   begin
     DirLen := Length(DirStr);  if DirLen < 1 then Exit;
     if (DirStr[DirLen] = '\') then SetLength(DirStr, DirLen-1);
@@ -1288,17 +1288,17 @@ function TFrmXQSearch.getCopyMoveAnswer(AHint, ADir: String): Boolean;
 begin
   Result :=
     (Application.MessageBox(PChar(
-      'È·Êµ°ÑÖ¸¶¨µÄÎÄ¼ş'+AHint+'µ½ÎÄ¼ş¼Ğ¡°'+ADir+'¡±ÖĞÂğ£¿') ,
-      PChar(AHint+'Ö¸¶¨µÄÎÄ¼ş?'),
+      'ç¡®å®æŠŠæŒ‡å®šçš„æ–‡ä»¶'+AHint+'åˆ°æ–‡ä»¶å¤¹â€œ'+ADir+'â€ä¸­å—ï¼Ÿ') ,
+      PChar(AHint+'æŒ‡å®šçš„æ–‡ä»¶?'),
       MB_OKCANCEL + MB_ICONQUESTION + MB_DEFBUTTON1) = IDOK);
 end;
 
 function TFrmXQSearch.getReplaceAnswer(AFile: String): Integer;
 begin
   Result := Application.MessageBox(PChar(
-             'ÎÄ¼ş¡°'+AFile+'¡±ÒÑ¾­´æÔÚÓÚ'+
-             'Ö¸¶¨µÄÎÄ¼ş¼ĞÖĞ£¬ÊÇ·ñÌæ»»¸ÃÎÄ¼ş£¿'),
-             'Ìæ»»ÎÄ¼şÂğ£¿',
+             'æ–‡ä»¶â€œ'+AFile+'â€å·²ç»å­˜åœ¨äº'+
+             'æŒ‡å®šçš„æ–‡ä»¶å¤¹ä¸­ï¼Œæ˜¯å¦æ›¿æ¢è¯¥æ–‡ä»¶ï¼Ÿ'),
+             'æ›¿æ¢æ–‡ä»¶å—ï¼Ÿ',
              MB_YESNOCANCEL + MB_ICONQUESTION);
 end;
 
@@ -1307,7 +1307,7 @@ var
   DirStr: string;
 begin
   DirStr := getDestDir; if (DirStr='') then Exit;
-  if not getCopyMoveAnswer('¸´ÖÆ', DirStr) then Exit;
+  if not getCopyMoveAnswer('å¤åˆ¶', DirStr) then Exit;
   copyFileList(DirStr);
 end;
 
@@ -1316,7 +1316,7 @@ var
   DirStr: string;
 begin
   DirStr := getDestDir; if (DirStr='') then Exit;
-  if not getCopyMoveAnswer('¸´ÖÆ', DirStr) then Exit;
+  if not getCopyMoveAnswer('å¤åˆ¶', DirStr) then Exit;
   copyFileList(DirStr, True);
 end;
 
@@ -1325,7 +1325,7 @@ var
   DirStr: string;
 begin
   DirStr := getDestDir; if (DirStr='') then Exit;
-  if not getCopyMoveAnswer('ÒÆ¶¯', DirStr) then Exit;
+  if not getCopyMoveAnswer('ç§»åŠ¨', DirStr) then Exit;
   copyFileList(DirStr, False, True);
 end;
 
@@ -1334,7 +1334,7 @@ var
   DirStr: string;
 begin
   DirStr := getDestDir; if (DirStr='') then Exit;
-  if not getCopyMoveAnswer('ÒÆ¶¯', DirStr) then Exit;
+  if not getCopyMoveAnswer('ç§»åŠ¨', DirStr) then Exit;
   copyFileList(DirStr, True, True);
 end;
 

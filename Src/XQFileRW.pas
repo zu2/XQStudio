@@ -2,7 +2,7 @@
 //
 // XQStduio Source Code (http://www.qipaile.net/xqstudio)
 //
-// Copyright (c) 1998-2008, DONG Shiwei (¶­ÊÀÎ° or ¹ıºÓÏó)
+// Copyright (c) 1998-2008, DONG Shiwei (è‘£ä¸–ä¼Ÿ or è¿‡æ²³è±¡)
 // All rights reserved.
 // 
 // Redistribution and use in source and binary forms, with or without
@@ -48,34 +48,34 @@ uses
 
 type
   //-----------------------------------------------------------------------
-  // ÏóÆåÎÄ¼şÍ·¼ÇÂ¼µÄ¶¨Òå
+  // è±¡æ£‹æ–‡ä»¶å¤´è®°å½•çš„å®šä¹‰
   //.......................................................................
-  dTXQFHead = packed record                     // ¶¨ÒåÏóÆåÆåÆ×ÎÄ¼şÍ·
-    Signature : dTWord;                         // ÎÄ¼ş±ê¼Ç 'XQ' = $5158;
-    Version   : dTByte;                         // °æ±¾ºÅ
-    KeyMask   : dTByte;                         // ¼ÓÃÜÑÚÂë
-    ProductId : dTDWord;                        // ²úÆ·ºÅ(³§ÉÌµÄ²úÆ·ºÅ)
+  dTXQFHead = packed record                     // å®šä¹‰è±¡æ£‹æ£‹è°±æ–‡ä»¶å¤´
+    Signature : dTWord;                         // æ–‡ä»¶æ ‡è®° 'XQ' = $5158;
+    Version   : dTByte;                         // ç‰ˆæœ¬å·
+    KeyMask   : dTByte;                         // åŠ å¯†æ©ç 
+    ProductId : dTDWord;                        // äº§å“å·(å‚å•†çš„äº§å“å·)
     KeyOrA    : dTByte;
     KeyOrB    : dTByte;
     KeyOrC    : dTByte;
     KeyOrD    : dTByte;
-    KeysSum   : dTByte;                         // ¼ÓÃÜµÄÔ¿³×ºÍ
-    KeyXY     : dTByte;                         // Æå×Ó²¼¾ÖÎ»ÖÃÔ¿³×       
-    KeyXYf    : dTByte;                         // ÆåÆ×ÆğµãÔ¿³×
-    KeyXYt    : dTByte;                         // ÆåÆ×ÖÕµãÔ¿³×
+    KeysSum   : dTByte;                         // åŠ å¯†çš„é’¥åŒ™å’Œ
+    KeyXY     : dTByte;                         // æ£‹å­å¸ƒå±€ä½ç½®é’¥åŒ™       
+    KeyXYf    : dTByte;                         // æ£‹è°±èµ·ç‚¹é’¥åŒ™
+    KeyXYt    : dTByte;                         // æ£‹è°±ç»ˆç‚¹é’¥åŒ™
 
     // = 16 bytes
-    QiziXY    : dTXQZXY;                        // 32¸öÆå×ÓµÄÔ­Ê¼Î»ÖÃ
+    QiziXY    : dTXQZXY;                        // 32ä¸ªæ£‹å­çš„åŸå§‹ä½ç½®
     // = 48 bytes
-    PlayStepNo: dTWord;                         // ÆåÆ×ÎÄ¼şµÄ¿ªÊ¼²½Êı
-    WhoPlay   : dTByte;                         // ¸ÃË­ÏÂ
-    PlayResult: dTByte;                         // ×îÖÕ½á¹û
-    PlayNodes : dTDWord;                        // ±¾ÆåÆ×Ò»¹²¼ÇÂ¼ÁË¶àÉÙ²½
-    PTreePos  : dTDWord;                        // ¶ÔŞÄÊ÷ÔÚÎÄ¼şÖĞµÄÆğÊ¼Î»ÖÃ
+    PlayStepNo: dTWord;                         // æ£‹è°±æ–‡ä»¶çš„å¼€å§‹æ­¥æ•°
+    WhoPlay   : dTByte;                         // è¯¥è°ä¸‹
+    PlayResult: dTByte;                         // æœ€ç»ˆç»“æœ
+    PlayNodes : dTDWord;                        // æœ¬æ£‹è°±ä¸€å…±è®°å½•äº†å¤šå°‘æ­¥
+    PTreePos  : dTDWord;                        // å¯¹å¼ˆæ ‘åœ¨æ–‡ä»¶ä¸­çš„èµ·å§‹ä½ç½®
     Reserved1 : array [1..4] of dTByte;
     // = 64 bytes
-    CodeA     : dTWord;                         // ¶Ô¾ÖÀàĞÍ(¿ª,ÖĞ,²ĞµÈ)
-    CodeB     : dTWord;                         // ÁíÍâµÄÀàĞÍ
+    CodeA     : dTWord;                         // å¯¹å±€ç±»å‹(å¼€,ä¸­,æ®‹ç­‰)
+    CodeB     : dTWord;                         // å¦å¤–çš„ç±»å‹
     CodeC     : dTWord;                         //
     CodeD     : dTWord;
     CodeE     : dTWord;
@@ -83,22 +83,22 @@ type
     CodeH     : dTWord;
     CodeG     : dTWord;
     // = 80  bytes
-    TitleA    : String[63];                     // ±êÌâ
+    TitleA    : String[63];                     // æ ‡é¢˜
     TitleB    : String[63];
     // = 208 bytes
-    MatchName : String[63];                     // ±ÈÈüÃû³Æ
-    MatchTime : String[15];                     // ±ÈÈüÊ±¼ä
-    MatchAddr : String[15];                     // ±ÈÈüµØµã
-    RedPlayer : String[15];                     // ºì·½ĞÕÃû
-    BlkPlayer : String[15];                     // ºÚ·½ĞÕÃû
+    MatchName : String[63];                     // æ¯”èµ›åç§°
+    MatchTime : String[15];                     // æ¯”èµ›æ—¶é—´
+    MatchAddr : String[15];                     // æ¯”èµ›åœ°ç‚¹
+    RedPlayer : String[15];                     // çº¢æ–¹å§“å
+    BlkPlayer : String[15];                     // é»‘æ–¹å§“å
     // = 336 bytes
-    TimeRule  : String[63];                     // ¿ª¾ÖÀàĞÍ
+    TimeRule  : String[63];                     // å¼€å±€ç±»å‹
     RedTime   : String[15];
     BlkTime   : String[15];
     Reservedh : String[31];
     // = 464 bytes
-    RMKWriter : String[15];                     // ÆåÆ×ÆÀÂÛÔ±
-    Author    : STring[15];                     // ÎÄ¼şµÄ×÷Õß
+    RMKWriter : String[15];                     // æ£‹è°±è¯„è®ºå‘˜
+    Author    : STring[15];                     // æ–‡ä»¶çš„ä½œè€…
     // = 496 bytes
     Reserved2 : array [1..16] of dTByte;
     // = 512 bytes
@@ -106,7 +106,7 @@ type
   end;
 
   //-----------------------------------------------------------------------
-  // ÏóÆåÎÄ¼ş¶ÔŞÄ¼ÇÂ¼µÄ¶¨Òå
+  // è±¡æ£‹æ–‡ä»¶å¯¹å¼ˆè®°å½•çš„å®šä¹‰
   //.......................................................................
   dTXQFPlayNode = packed record
     XYf, XYt, ChildTag, Reserved: dTByte;
@@ -114,29 +114,29 @@ type
   end;
 
   //-----------------------------------------------------------------------
-  // ÏóÆåÎÄ¼şÀà
+  // è±¡æ£‹æ–‡ä»¶ç±»
   //.......................................................................
   dTXQFile = class
   public
-    Name        : String;                       // ÎÄ¼şÃû
-    XQPlayTree  : dTXQPlayNode;                 // ÏóÆå¶Ô¾ÖÊ÷
-    XQFHead     : dTXQFHead;                    // ÏóÆåÎÄ¼şÍ·
+    Name        : String;                       // æ–‡ä»¶å
+    XQPlayTree  : dTXQPlayNode;                 // è±¡æ£‹å¯¹å±€æ ‘
+    XQFHead     : dTXQFHead;                    // è±¡æ£‹æ–‡ä»¶å¤´
 
     isDisableRmk: dTBoolean;
     isReverseH  : dTBoolean;
 
-    KeyXY       : dTByte;                       // Æå×Ó32¸öÎ»ÖÃ¼ÓÃÜÒò×Ó
-    KeyXYf      : dTByte;                       // ÆåÆ×¼ÓÃÜÒò×Ó(Æğµã)
-    KeyXYt      : dTByte;                       // ÆåÆ×¼ÓÃÜÒò×Ó(ÖÕµã)
-    KeyRMKSize  : dTWord;                       // ×¢½â´óĞ¡¼ÓÃÜÒò×Ó
+    KeyXY       : dTByte;                       // æ£‹å­32ä¸ªä½ç½®åŠ å¯†å› å­
+    KeyXYf      : dTByte;                       // æ£‹è°±åŠ å¯†å› å­(èµ·ç‚¹)
+    KeyXYt      : dTByte;                       // æ£‹è°±åŠ å¯†å› å­(ç»ˆç‚¹)
+    KeyRMKSize  : dTWord;                       // æ³¨è§£å¤§å°åŠ å¯†å› å­
 
-    function  iLoadXQFile(OnlyHead:Boolean=False): dTINT32;    // ¶ÁÈëXQF
-    procedure dSetRandomSecurityKeys;           // ÉèÖÃËæ»úµÄ¼ÓÃÜÒò×Ó
-    procedure dCalculateSecurityKeys;           // ¼ÆËãÕæÕıµÄ¼ÓÃÜÃÜÂë
-    function  isKeysSumZero: dTBoolean;         // ¼ì²éÃÜÂëµÄĞ£ÑéºÍÎªÁã·ñ?
-    function  iSaveXQFile: dTINT32;             // ±£´æXQF
+    function  iLoadXQFile(OnlyHead:Boolean=False): dTINT32;    // è¯»å…¥XQF
+    procedure dSetRandomSecurityKeys;           // è®¾ç½®éšæœºçš„åŠ å¯†å› å­
+    procedure dCalculateSecurityKeys;           // è®¡ç®—çœŸæ­£çš„åŠ å¯†å¯†ç 
+    function  isKeysSumZero: dTBoolean;         // æ£€æŸ¥å¯†ç çš„æ ¡éªŒå’Œä¸ºé›¶å¦?
+    function  iSaveXQFile: dTINT32;             // ä¿å­˜XQF
 
-    // ¹¹Ôìº¯Êı
+    // æ„é€ å‡½æ•°
     constructor Create(sName:String; XQPTree: dTXQPlayNode);
   end;
 
@@ -261,7 +261,7 @@ begin
 end;
 
 //-------------------------------------------------------------------------
-// ÏóÆåÎÄ¼şÀàµÄ¹¹Ôìº¯Êı
+// è±¡æ£‹æ–‡ä»¶ç±»çš„æ„é€ å‡½æ•°
 //.........................................................................
 constructor dTXQFile.Create(sName:String; XQPTree: dTXQPlayNode);
 begin
@@ -269,18 +269,18 @@ begin
 end;
 
 //-------------------------------------------------------------------------
-// ×°ÈëÏóÆåÎÄ¼ş
+// è£…å…¥è±¡æ£‹æ–‡ä»¶
 //.........................................................................
 function dTXQFile.iLoadXQFile(OnlyHead:Boolean): dTINT32;
 var
-  fs        : dTXqfStream;                      // ÎÄ¼şÁ÷
+  fs        : dTXqfStream;                      // æ–‡ä»¶æµ
   i, iRet   : dTInt32;
 
-// ×Óº¯Êı:¶ÁÈë×¢½â
+// å­å‡½æ•°:è¯»å…¥æ³¨è§£
 function slLoadRemark(fs:dTXqfStream; RmkSize:dTDWord):TStringList;
 var
   sl: TStringList;
-  ss: TStringStream;                            // ×Ö·û´®Á÷
+  ss: TStringStream;                            // å­—ç¬¦ä¸²æµ
 begin
   slLoadRemark := nil;
   if (RmkSize=0) then Exit;
@@ -292,17 +292,17 @@ begin
   slLoadRemark:=sl;
 end;
 
-// ×Ó³ÌĞò:½«Ò»¸ö½Úµã²åÈë¶ÔŞÄÊ÷
+// å­ç¨‹åº:å°†ä¸€ä¸ªèŠ‚ç‚¹æ’å…¥å¯¹å¼ˆæ ‘
 procedure dInsertPNintoPlayTree(pt:dTXQPlayNode);
 var
-  nd   : dTXQPlayNode;                          // ¶ÔŞÄÊ÷½Úµã
-  pn   : dTXQFPlayNode;                         // ÎÄ¼ş´æ·Å½Úµã
+  nd   : dTXQPlayNode;                          // å¯¹å¼ˆæ ‘èŠ‚ç‚¹
+  pn   : dTXQFPlayNode;                         // æ–‡ä»¶å­˜æ”¾èŠ‚ç‚¹
   b    : dTByte;
 begin
   if pt=nil then Exit;
 
   pn.RemarkSize := 0;
-  fs.Read(pn,sizeof(pn) - Sizeof(pn.RemarkSize));// ¶ÁÈëÒ»¸ö½Úµã
+  fs.Read(pn,sizeof(pn) - Sizeof(pn.RemarkSize));// è¯»å…¥ä¸€ä¸ªèŠ‚ç‚¹
   if (XQFHead.Version <= $0A) then
   begin
     b := 0;
@@ -321,40 +321,40 @@ begin
     end;
   end;
 
-  // Ò»²½ÆåµÄÆğµãºÍÖÕµãÓĞ¼òµ¥µÄ¼ÓÃÜ¼ÆËã£¬¶ÁÈëÊ±ĞèÒª»¹Ô­
-  pt.XYf    := pn.XYf - $18 - KeyXYf;           // Ò»²½ÆåµÄÆğµã
-  pt.XYt    := pn.XYt - $20 - KeyXYt;           // Ò»²½ÆåµÄÖÕµã
+  // ä¸€æ­¥æ£‹çš„èµ·ç‚¹å’Œç»ˆç‚¹æœ‰ç®€å•çš„åŠ å¯†è®¡ç®—ï¼Œè¯»å…¥æ—¶éœ€è¦è¿˜åŸ
+  pt.XYf    := pn.XYf - $18 - KeyXYf;           // ä¸€æ­¥æ£‹çš„èµ·ç‚¹
+  pt.XYt    := pn.XYt - $20 - KeyXYt;           // ä¸€æ­¥æ£‹çš„ç»ˆç‚¹
 
-  if pt.LastStepNode <> nil then                // Èç¹û²»ÊÇµÚÒ»²½½Úµã
+  if pt.LastStepNode <> nil then                // å¦‚æœä¸æ˜¯ç¬¬ä¸€æ­¥èŠ‚ç‚¹
   begin
-    pt.StepNo := pt.LastStepNode.StepNo + 1;    // ²½Êı
+    pt.StepNo := pt.LastStepNode.StepNo + 1;    // æ­¥æ•°
     pt.QiziXY := pt.LastStepNode.QiziXY;
     pt.StrRec := sGetPlayRecStr(pt.QiziXY, pt.XYf, pt.XYt, False);
   end
-  else                                          // ÊÇµÚÒ»²½½Úµã
+  else                                          // æ˜¯ç¬¬ä¸€æ­¥èŠ‚ç‚¹
   begin
     pt.XYf    := 0;
-    case XQFHead.WhoPlay of                     // ÅĞ¶ÏË­ÏÈ×ßÆå
+    case XQFHead.WhoPlay of                     // åˆ¤æ–­è°å…ˆèµ°æ£‹
       0: pt.XYt    := 0;
       1: pt.XYt    := $FF;
     end;
   end;
 
-  if (pn.RemarkSize > 0) then                   // Èç¹ûÓĞ×¢½â
+  if (pn.RemarkSize > 0) then                   // å¦‚æœæœ‰æ³¨è§£
   begin
-    pn.RemarkSize := pn.RemarkSize-KeyRMKSize;  // »¹Ô­×¢½âµÄ´óĞ¡
+    pn.RemarkSize := pn.RemarkSize-KeyRMKSize;  // è¿˜åŸæ³¨è§£çš„å¤§å°
   end;
 
-  pt.Remark := slLoadRemark(fs, pn.RemarkSize); // ×¢½â
+  pt.Remark := slLoadRemark(fs, pn.RemarkSize); // æ³¨è§£
 
 //  if pn.ChildTag=0 then Exit;
-  if ((pn.ChildTag and $80)<>0) then            // ÓĞ×ó×ÓÊ÷
+  if ((pn.ChildTag and $80)<>0) then            // æœ‰å·¦å­æ ‘
   begin
     nd := dTXQPlayNode.Create(0,'',0,0,pt.QiziXY,nil,pt,nil,pt);
     pt.dSetLChild(nd);
     dInsertPNintoPlayTree(pt.LChild);
   end;
-  if ((pn.ChildTag and $40)<>0) then            // ÓĞÓÒ×ÓÊ÷
+  if ((pn.ChildTag and $40)<>0) then            // æœ‰å³å­æ ‘
   begin
     nd := dTXQPlayNode.Create(0,'',0,0,pt.QiziXY,nil,
                                        pt.LastStepNode,pt,nil);
@@ -363,13 +363,13 @@ begin
   end;
 end;
 
-begin                                           // ×°ÈëÏóÆåÎÄ¼şÖ÷³ÌĞò
+begin                                           // è£…å…¥è±¡æ£‹æ–‡ä»¶ä¸»ç¨‹åº
   iLoadXQFile := -1;
   iRet        := -1;
   fs          := nil;
   if XQPlayTree = nil then Exit;
 
-  // ½«¶ÔŞÄÊ÷Çå¿Õ
+  // å°†å¯¹å¼ˆæ ‘æ¸…ç©º
   if XQPlayTree.LChild <> nil then XQPlayTree.LChild.Free;
   if XQPlayTree.RChild <> nil then XQPlayTree.RChild.Free;
 
@@ -378,28 +378,28 @@ begin                                           // ×°ÈëÏóÆåÎÄ¼şÖ÷³ÌĞò
       fs := dTXqfStream.Create(Name, fmOpenRead);
       fs.SetKeyBytes(0, 0, 0, 0);
 
-      // ¶ÁÈëÎÄ¼şÍ·
+      // è¯»å…¥æ–‡ä»¶å¤´
       if (fs.Read(XQFHead, SizeOf(XQFHead)) <> SizeOf(XQFHead)) then Exit;
 
-      // ¼ì²éÎÄ¼ş±ê¼Ç
+      // æ£€æŸ¥æ–‡ä»¶æ ‡è®°
       if (XQFHead.Signature <> $5158) then begin iRet:=-2; Exit; end;
 
-      // ¼ì²éÃÜÂëĞ£ÑéºÍ
+      // æ£€æŸ¥å¯†ç æ ¡éªŒå’Œ
       if (not isKeysSumZero) then begin iRet := -3; Exit; end;
 
-      // ¼ì²éÎÄ¼ş°æ±¾ºÅ
+      // æ£€æŸ¥æ–‡ä»¶ç‰ˆæœ¬å·
       if (XQFHead.Version > dCFileVersion) then
       begin
         Application.MessageBox(
-          'ÕâÊÇÒ»¸ö¸ß°æ±¾µÄXQFÎÄ¼ş£¬ÄúĞèÒª¸ü¸ß°æ±¾µÄXQStudioÀ´' +
-          '¶ÁÈ¡Õâ¸öÎÄ¼ş¡£ÇëÔÚInternetÕ¾µãÏÂÔØXQStudioµÄ×îĞÂ°æ±¾¡£',
+          'è¿™æ˜¯ä¸€ä¸ªé«˜ç‰ˆæœ¬çš„XQFæ–‡ä»¶ï¼Œæ‚¨éœ€è¦æ›´é«˜ç‰ˆæœ¬çš„XQStudioæ¥' +
+          'è¯»å–è¿™ä¸ªæ–‡ä»¶ã€‚è¯·åœ¨Internetç«™ç‚¹ä¸‹è½½XQStudioçš„æœ€æ–°ç‰ˆæœ¬ã€‚',
           dCVersionInfo,
           MB_OK + MB_ICONWARNING + MB_DEFBUTTON1);
         iRet:=-3;
         Exit;
       end;
 
-      dCalculateSecurityKeys;   // ½«ÎÄ¼şÍ·ÖĞµÄÃÜÂëÒò×Ó¼ÆËãÎªÃÜÂë£»
+      dCalculateSecurityKeys;   // å°†æ–‡ä»¶å¤´ä¸­çš„å¯†ç å› å­è®¡ç®—ä¸ºå¯†ç ï¼›
 
       with XQPlayTree do
       begin
@@ -408,7 +408,7 @@ begin                                           // ×°ÈëÏóÆåÎÄ¼şÖ÷³ÌĞò
         XYf         := 0;
         XYt         := 0;
 
-        // Æå×ÓÎ»ÖÃÑ­»·ÒÆ¶¯
+        // æ£‹å­ä½ç½®å¾ªç¯ç§»åŠ¨
         for i:=1 to 32 do
         begin
           if (XQFHead.Version >= 12) then
@@ -421,7 +421,7 @@ begin                                           // ×°ÈëÏóÆåÎÄ¼şÖ÷³ÌĞò
           end;
         end;
 
-        // Æå×ÓÎ»ÖÃ½âÃÜ
+        // æ£‹å­ä½ç½®è§£å¯†
         for i:=1 to 32 do
         begin
           QiziXY[i]:= QiziXY[i] - KeyXY;
@@ -457,7 +457,7 @@ begin                                           // ×°ÈëÏóÆåÎÄ¼şÖ÷³ÌĞò
 end;
 
 //-------------------------------------------------------------------------
-// ÉèÖÃËæ»úµÄ¼ÓÃÜÒò×Ó
+// è®¾ç½®éšæœºçš„åŠ å¯†å› å­
 //.........................................................................
 var
   isRandomize : Boolean = False;
@@ -478,14 +478,14 @@ begin
 end;
 
 //-------------------------------------------------------------------------
-// ¼ÆËãÕæÕıµÄ¼ÓÃÜÃÜÂë
+// è®¡ç®—çœŸæ­£çš„åŠ å¯†å¯†ç 
 //.........................................................................
 procedure dTXQFile.dCalculateSecurityKeys;
 var
   bKey : Byte;
   wKey : Word;
 begin
-  if XQFHead.Version <= 10 then         // ¼æÈİ1.0ÒÔÇ°µÄ°æ±¾
+  if XQFHead.Version <= 10 then         // å…¼å®¹1.0ä»¥å‰çš„ç‰ˆæœ¬
   begin
     KeyXY      := 0; 
     KeyXYf     := 0;
@@ -494,7 +494,7 @@ begin
     Exit;
   end;
 
-  // ÒÔÏÂÊÇÃÜÂë¼ÆËã¹«Ê½
+  // ä»¥ä¸‹æ˜¯å¯†ç è®¡ç®—å…¬å¼
   bKey       := XQFHead.KeyXY;
   KeyXY      := (((((bKey*bKey)*3+9)*3+8)*2+1)*3+8) * bKey;
   bKey       := XQFHead.KeyXYf;
@@ -506,7 +506,7 @@ begin
 end;
 
 //-------------------------------------------------------------------------
-// ¼ì²éÃÜÂëµÄĞ£ÑéºÍÎªÁã·ñ?
+// æ£€æŸ¥å¯†ç çš„æ ¡éªŒå’Œä¸ºé›¶å¦?
 //.........................................................................
 function  dTXQFile.isKeysSumZero: dTBoolean;
 var
@@ -521,11 +521,11 @@ end;
 
 
 //-------------------------------------------------------------------------
-// ±£´æÏóÆåÎÄ¼ş£¬Çë×¢Òâ°æ±¾ºÅ
+// ä¿å­˜è±¡æ£‹æ–‡ä»¶ï¼Œè¯·æ³¨æ„ç‰ˆæœ¬å·
 //.........................................................................
 function dTXQFile.iSaveXQFile: dTINT32;
 var
-  fs        : dTXqfStream;                      // ÎÄ¼şÁ÷
+  fs        : dTXqfStream;                      // æ–‡ä»¶æµ
   i, iRet   : dTInt32;
 function bGetSaveXY(bXY: Byte): Byte;
 var
@@ -542,21 +542,21 @@ begin
     Result := bXY;
   end;
 end;
-// ×Ó³ÌĞò£º±£´æ¶ÔŞÄÊ÷µ½XQFÎÄ¼ş
+// å­ç¨‹åºï¼šä¿å­˜å¯¹å¼ˆæ ‘åˆ°XQFæ–‡ä»¶
 procedure dSavePlayNodeIntoXQFile(fs:dTXqfStream; pt:dTXQPlayNode);
 var
   pn     : dTXQFPlayNode;
   iBytes : dTInt32;
   b      : dTByte;
 begin
-  if (pt=nil) then Exit;                        // Ã»ÓĞÆå¾Ö¼ÇÂ¼
+  if (pt=nil) then Exit;                        // æ²¡æœ‰æ£‹å±€è®°å½•
   pn.RemarkSize := 0;
 
-  // ¼ÓÃÜÆåÆ×
+  // åŠ å¯†æ£‹è°±
   pn.XYf        := bGetSaveXY(pt.XYf) + $18 + KeyXYf;
   pn.XYt        := bGetSaveXY(pt.XYt) + $20 + KeyXYt;
 
-  if (pt.LastStepNode = nil) then               // Èç¹ûÊÇµÚÒ»²½½Úµã
+  if (pt.LastStepNode = nil) then               // å¦‚æœæ˜¯ç¬¬ä¸€æ­¥èŠ‚ç‚¹
   begin
     pn.XYf := Ord('X');
     pn.XYt := Ord('Q');
@@ -564,16 +564,16 @@ begin
 
   pn.ChildTag   := 0;
 
-  b := Random(256);  b := (b and $1F);          // Ö»ÓĞÇ°ÈıÎ»ÓĞ¶¨Òå
+  b := Random(256);  b := (b and $1F);          // åªæœ‰å‰ä¸‰ä½æœ‰å®šä¹‰
 
   pn.ChildTag   := pn.ChildTag or b;
 
   pn.Reserved   := Random(256);
 
-  // ÉèÖÃ×óº¢×Ó
+  // è®¾ç½®å·¦å­©å­
   if pt.LChild <> nil then pn.ChildTag := (pn.ChildTag or $80);
 
-  // ÉèÖÃÓÒĞÖµÜ
+  // è®¾ç½®å³å…„å¼Ÿ
   if pt.RChild <> nil then pn.ChildTag := (pn.ChildTag or $40);
 
   iBytes := 0;
@@ -607,8 +607,8 @@ begin
   if XQPlayTree = nil then Exit;
   try
     try
-      XQFHead.Signature := $5158;               // ÎÄ¼ş±ê¼Ç 'XQ' = $5158;
-      XQFHead.Version   := dCFileVersion;       // °æ±¾ºÅ
+      XQFHead.Signature := $5158;               // æ–‡ä»¶æ ‡è®° 'XQ' = $5158;
+      XQFHead.Version   := dCFileVersion;       // ç‰ˆæœ¬å·
       Randomize;
       XQFHead.KeyMask   := Random(256) or $AA;
       XQFHead.KeyOrA    := Random(256);
@@ -617,28 +617,28 @@ begin
       XQFHead.KeyOrD    := XQFHead.KeyOrA + XQFHead.KeyOrB + XQFHead.KeyOrC;
       XQFHead.KeyOrD    := 256 - XQFHead.KeyOrD;
 
-      dSetRandomSecurityKeys;                   // ÉèÖÃËæ»úµÄ¼ÓÃÜÒò×Ó
-      dCalculateSecurityKeys;                   // ¸ù¾İ¼ÓÃÜÒò×Ó¼ÆËãÃÜÂë
+      dSetRandomSecurityKeys;                   // è®¾ç½®éšæœºçš„åŠ å¯†å› å­
+      dCalculateSecurityKeys;                   // æ ¹æ®åŠ å¯†å› å­è®¡ç®—å¯†ç 
 
-      // Æå×ÓÎ»ÖÃÑ­»·Æ«ÒÆ
+      // æ£‹å­ä½ç½®å¾ªç¯åç§»
       for i:=1 to 32 do
       begin
         XQFHead.QiziXY[i]:=XQPlayTree.QiziXY[((i + KeyXY) mod 32) + 1];
       end;
 
-      // Æå×ÓÎ»ÖÃ¼ÓÃÜ
+      // æ£‹å­ä½ç½®åŠ å¯†
       for i:=1 to 32 do
       begin
-        // ËÀ×ÓÎ»ÖÃËæ»ú²úÉú
+        // æ­»å­ä½ç½®éšæœºäº§ç”Ÿ
         if (XQFHead.QiziXY[i]=$FF) then XQFHead.QiziXY[i]:=90+Random(155);
 
-        // Æå×ÓÎ»ÖÃ¼ÓÃÜ
+        // æ£‹å­ä½ç½®åŠ å¯†
         XQFHead.QiziXY[i]:=bGetSaveXY(XQFHead.QiziXY[i]) + KeyXY;
       end;
 
       fs := dTXqfStream.Create(Name, fmCreate);
       fs.SetKeyBytes(0,0,0,0);
-      fs.Write(XQFHead,sizeof(XQFHead));// Ğ´ÈëÎÄ¼şÍ·
+      fs.Write(XQFHead,sizeof(XQFHead));// å†™å…¥æ–‡ä»¶å¤´
       fs.SetKeyBytes(
             (XQFHead.KeysSum and XQFHead.KeyMask) or XQFHead.KeyOrA,
             (XQFHead.KeyXY   and XQFHead.KeyMask) or XQFHead.KeyOrB,
@@ -697,7 +697,7 @@ begin
   if t2 = nil then Exit;
   if not IsQzXYSame(t1.QiziXY, t2.QiziXY, False, False) then Exit;
 
-  // Èç¹û×ó×ÓÊ÷Îª¿Õ£¬ÔòÖ±½Ó½«t2µÄ×ó×ÓÊ÷copy¹ıÀ´¡£
+  // å¦‚æœå·¦å­æ ‘ä¸ºç©ºï¼Œåˆ™ç›´æ¥å°†t2çš„å·¦å­æ ‘copyè¿‡æ¥ã€‚
   if (t1.LChild = nil) then
   begin
     t1.LChild := t2.LChild;

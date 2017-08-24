@@ -2,7 +2,7 @@
 //
 // XQStduio Source Code (http://www.qipaile.net/xqstudio)
 //
-// Copyright (c) 1998-2008, DONG Shiwei (¶­ÊÀÎ° or ¹ýºÓÏó)
+// Copyright (c) 1998-2008, DONG Shiwei (è‘£ä¸–ä¼Ÿ or è¿‡æ²³è±¡)
 // All rights reserved.
 // 
 // Redistribution and use in source and binary forms, with or without
@@ -97,7 +97,7 @@ begin
   if (FirstStepNo > PN.StepNo) then dReset;
   if (LastStepNo< PN.StepNo) then dReset;
 
-  // ÏÈÉ¾³ýÔ­À´µÄ×ß·¨(´ÓÏÔÊ¾µÄµ±Ç°×´¿ö¿ªÊ¼)
+  // å…ˆåˆ é™¤åŽŸæ¥çš„èµ°æ³•(ä»Žæ˜¾ç¤ºçš„å½“å‰çŠ¶å†µå¼€å§‹)
   for i:=LastStepNo downto PN.StepNo do
   begin
     RecListBox.Items.Delete(i-FirstStepNo);
@@ -123,7 +123,7 @@ begin
           s := '     ' + PN.StrRec;
         end;
     end;
-    RecListBox.Items.Add(s);                    // ÏÔÊ¾±¾²½Æå
+    RecListBox.Items.Add(s);                    // æ˜¾ç¤ºæœ¬æ­¥æ£‹
     LastStepNo := PN.StepNo;
     LastPNode  := PN;
     PN := PN.LChild;

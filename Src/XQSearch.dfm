@@ -2,14 +2,14 @@ object frmXQSearch: TfrmXQSearch
   Left = -253
   Top = 159
   BorderStyle = bsToolWindow
-  Caption = '²éÕÒä¯ÀÀXQFÎÄ¼ş'
+  Caption = 'æŸ¥æ‰¾æµè§ˆXQFæ–‡ä»¶'
   ClientHeight = 427
   ClientWidth = 724
   Color = clBtnFace
-  Font.Charset = GB2312_CHARSET
+  Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -12
-  Font.Name = 'ËÎÌå'
+  Font.Name = 'å®‹ä½“'
   Font.Style = []
   FormStyle = fsMDIChild
   OldCreateOrder = False
@@ -45,7 +45,7 @@ object frmXQSearch: TfrmXQSearch
       Width = 233
       Height = 411
       Align = alLeft
-      Caption = ' ÆåÆ×ÎÄ¼şĞÅÏ¢ '
+      Caption = ' æ£‹è°±æ–‡ä»¶ä¿¡æ¯ '
       TabOrder = 0
       object imgClient: TImage
         Left = 2
@@ -67,9 +67,9 @@ object frmXQSearch: TfrmXQSearch
         Width = 212
         Height = 290
         Hint = 
-          '|Êó±êÓÒ¼üµ¥»÷ÆåÅÌ¿Éµ¯³öÆåÍ¼¸´ÖÆµÄ¹¦ÄÜÑ¡µ¥¡£¿É¸´ÖÆÆåÍ¼µ½ÎÄ¼ş»ò¼ô' +
-          'Ìù°åÉÏ£¬¹©×Ö´¦ÀíÈí¼şÊ¹ÓÃ£»Ò²¿É½«ÎÄ±¾ÆåÍ¼¸´ÖÆµ½±¾ÆåÅÌ£¬¹©¾ÖÃæ²éÕÒ' +
-          'ÓÃ¡£'
+          '|é¼ æ ‡å³é”®å•å‡»æ£‹ç›˜å¯å¼¹å‡ºæ£‹å›¾å¤åˆ¶çš„åŠŸèƒ½é€‰å•ã€‚å¯å¤åˆ¶æ£‹å›¾åˆ°æ–‡ä»¶æˆ–å‰ª' +
+          'è´´æ¿ä¸Šï¼Œä¾›å­—å¤„ç†è½¯ä»¶ä½¿ç”¨ï¼›ä¹Ÿå¯å°†æ–‡æœ¬æ£‹å›¾å¤åˆ¶åˆ°æœ¬æ£‹ç›˜ï¼Œä¾›å±€é¢æŸ¥æ‰¾' +
+          'ç”¨ã€‚'
         Picture.Data = {
           07544269746D6170CE7A0000424DCE7A0000000000007600000028000000D400
           0000220100000100040000000000587A0000C40E0000C40E0000100000000000
@@ -1068,10 +1068,10 @@ object frmXQSearch: TfrmXQSearch
         Alignment = taCenter
         AutoSize = False
         Caption = 'Welcome to Use XQStudio'
-        Font.Charset = GB2312_CHARSET
+        Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -12
-        Font.Name = 'ËÎÌå'
+        Font.Name = 'å®‹ä½“'
         Font.Style = []
         ParentFont = False
         Transparent = True
@@ -1084,11 +1084,11 @@ object frmXQSearch: TfrmXQSearch
         Align = alTop
         Alignment = taCenter
         AutoSize = False
-        Caption = 'Ã»ÓĞÖ¸¶¨XQFÎÄ¼ş'
-        Font.Charset = GB2312_CHARSET
+        Caption = 'æ²¡æœ‰æŒ‡å®šXQFæ–‡ä»¶'
+        Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -12
-        Font.Name = 'ËÎÌå'
+        Font.Name = 'å®‹ä½“'
         Font.Style = []
         ParentFont = False
         Transparent = True
@@ -1102,10 +1102,10 @@ object frmXQSearch: TfrmXQSearch
         Alignment = taCenter
         AutoSize = False
         Caption = '2001-03-06'
-        Font.Charset = GB2312_CHARSET
+        Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -12
-        Font.Name = 'ËÎÌå'
+        Font.Name = 'å®‹ä½“'
         Font.Style = []
         ParentFont = False
         Transparent = True
@@ -1130,11 +1130,11 @@ object frmXQSearch: TfrmXQSearch
         Top = 385
         Width = 72
         Height = 12
-        Caption = 'µÚ        ²½'
-        Font.Charset = GB2312_CHARSET
+        Caption = 'ç¬¬        æ­¥'
+        Font.Charset = DEFAULT_CHARSET
         Font.Color = clBlack
         Font.Height = -12
-        Font.Name = 'ËÎÌå'
+        Font.Name = 'å®‹ä½“'
         Font.Style = []
         ParentFont = False
       end
@@ -1145,7 +1145,7 @@ object frmXQSearch: TfrmXQSearch
         Height = 14
         Alignment = taCenter
         AutoSize = False
-        Caption = 'ºÚ·½ÆåÊÖĞÕÃû'
+        Caption = 'é»‘æ–¹æ£‹æ‰‹å§“å'
         Visible = False
       end
       object lblRedName: TLabel
@@ -1155,11 +1155,11 @@ object frmXQSearch: TfrmXQSearch
         Height = 14
         Alignment = taCenter
         AutoSize = False
-        Caption = 'ºì·½ÆåÊÖĞÕÃû'
-        Font.Charset = GB2312_CHARSET
+        Caption = 'çº¢æ–¹æ£‹æ‰‹å§“å'
+        Font.Charset = DEFAULT_CHARSET
         Font.Color = clMaroon
         Font.Height = -12
-        Font.Name = 'ËÎÌå'
+        Font.Name = 'å®‹ä½“'
         Font.Style = []
         ParentFont = False
         Visible = False
@@ -1170,11 +1170,11 @@ object frmXQSearch: TfrmXQSearch
         Width = 126
         Height = 12
         AutoSize = False
-        Caption = '(×¢:Ò»¸ö»ØºÏµÈÓÚÁ½²½)'
-        Font.Charset = GB2312_CHARSET
+        Caption = '(æ³¨:ä¸€ä¸ªå›åˆç­‰äºä¸¤æ­¥)'
+        Font.Charset = DEFAULT_CHARSET
         Font.Color = clBlack
         Font.Height = -12
-        Font.Name = 'ËÎÌå'
+        Font.Name = 'å®‹ä½“'
         Font.Style = []
         ParentFont = False
       end
@@ -1229,8 +1229,8 @@ object frmXQSearch: TfrmXQSearch
         Top = -2
         Width = 119
         Height = 17
-        Hint = '|Ñ¡ÖĞ´Ë½çÃæ½øĞĞÆå×ÓµÄ°Ú·Å£¬ÒÔ±ãÖ¸¶¨Òª²éÕÒµÄÆå¾ÖĞÎÊÆ¡£'
-        Caption = 'ÏÔÊ¾Òª°Ú·ÅµÄÆå×Ó '
+        Hint = '|é€‰ä¸­æ­¤ç•Œé¢è¿›è¡Œæ£‹å­çš„æ‘†æ”¾ï¼Œä»¥ä¾¿æŒ‡å®šè¦æŸ¥æ‰¾çš„æ£‹å±€å½¢åŠ¿ã€‚'
+        Caption = 'æ˜¾ç¤ºè¦æ‘†æ”¾çš„æ£‹å­ '
         TabOrder = 2
         OnClick = chkDisplayQiziClick
       end
@@ -1241,53 +1241,53 @@ object frmXQSearch: TfrmXQSearch
       Width = 467
       Height = 411
       Align = alClient
-      Caption = ' ²éÕÒÌõ¼ş¼°²éÕÒ½á¹û '
+      Caption = ' æŸ¥æ‰¾æ¡ä»¶åŠæŸ¥æ‰¾ç»“æœ '
       TabOrder = 1
       object Label1: TLabel
         Left = 8
         Top = 24
         Width = 54
         Height = 12
-        Caption = 'ÎÄ¼şÃû³Æ:'
+        Caption = 'æ–‡ä»¶åç§°:'
       end
       object Label2: TLabel
         Left = 8
         Top = 48
         Width = 54
         Height = 12
-        Caption = 'ºì·½ÆåÊÖ:'
+        Caption = 'çº¢æ–¹æ£‹æ‰‹:'
       end
       object Label5: TLabel
         Left = 8
         Top = 96
         Width = 54
         Height = 12
-        Caption = 'ÎÄ ¼ş ¼Ğ:'
+        Caption = 'æ–‡ ä»¶ å¤¹:'
       end
       object Label3: TLabel
         Left = 198
         Top = 48
         Width = 54
         Height = 12
-        Caption = 'ºÚ·½ÆåÊÖ:'
+        Caption = 'é»‘æ–¹æ£‹æ‰‹:'
       end
       object Label6: TLabel
         Left = 8
         Top = 72
         Width = 54
         Height = 12
-        Caption = '±ÈÈü½á¹û:'
+        Caption = 'æ¯”èµ›ç»“æœ:'
       end
       object lblOpenHint: TLabel
         Left = 8
         Top = 394
         Width = 54
         Height = 12
-        Caption = 'ÎÄ¼ş¸öÊı:'
-        Font.Charset = GB2312_CHARSET
+        Caption = 'æ–‡ä»¶ä¸ªæ•°:'
+        Font.Charset = DEFAULT_CHARSET
         Font.Color = clBlack
         Font.Height = -12
-        Font.Name = 'ËÎÌå'
+        Font.Name = 'å®‹ä½“'
         Font.Style = []
         ParentFont = False
       end
@@ -1298,10 +1298,10 @@ object frmXQSearch: TfrmXQSearch
         Height = 12
         AutoSize = False
         Caption = '0'
-        Font.Charset = GB2312_CHARSET
+        Font.Charset = DEFAULT_CHARSET
         Font.Color = clNavy
         Font.Height = -12
-        Font.Name = 'ËÎÌå'
+        Font.Name = 'å®‹ä½“'
         Font.Style = []
         ParentFont = False
       end
@@ -1320,7 +1320,7 @@ object frmXQSearch: TfrmXQSearch
         Top = 0
         Width = 138
         Height = 12
-        Caption = '(Ñ¡ÔñÇı¶¯Æ÷:          )'
+        Caption = '(é€‰æ‹©é©±åŠ¨å™¨:          )'
         Visible = False
       end
       object Label7: TLabel
@@ -1328,14 +1328,14 @@ object frmXQSearch: TfrmXQSearch
         Top = 122
         Width = 54
         Height = 12
-        Caption = 'Ö¸¶¨¾ÖÃæ:'
+        Caption = 'æŒ‡å®šå±€é¢:'
       end
       object btnStartSearch: TButton
         Left = 384
         Top = 20
         Width = 75
         Height = 21
-        Caption = '¿ªÊ¼²éÕÒ'
+        Caption = 'å¼€å§‹æŸ¥æ‰¾'
         TabOrder = 17
         OnClick = btnStartSearchClick
       end
@@ -1344,8 +1344,8 @@ object frmXQSearch: TfrmXQSearch
         Top = 66
         Width = 75
         Height = 21
-        Hint = '|Çå³ıËùÓĞµÄ²éÕÒÌõ¼şºÍ²éÕÒ½á¹û'
-        Caption = 'ĞÂ ËÑ Ë÷'
+        Hint = '|æ¸…é™¤æ‰€æœ‰çš„æŸ¥æ‰¾æ¡ä»¶å’ŒæŸ¥æ‰¾ç»“æœ'
+        Caption = 'æ–° æœ ç´¢'
         TabOrder = 18
         OnClick = btnNewSearchClick
       end
@@ -1355,16 +1355,16 @@ object frmXQSearch: TfrmXQSearch
         Width = 451
         Height = 247
         Hint = 
-          '|ÔÚÎÄ¼şÁĞ±íÖĞ£ºÓÃÊó±ê×ó¼üµ¥»÷ÎÄ¼şÃû¿É²é¿´¸ÃÎÄ¼şĞÅÏ¢£»Ë«»÷ÎÄ¼şÃû' +
-          '¿É´ò¿ª¸ÃÆåÆ×ÎÄ¼ş£»µ¥»÷Êó±êÓÒ¼ü¿Éµ¯³ö¡°½á¹ûÔÙ´¦Àí¡±¹¦ÄÜÑ¡µ¥¡£'
+          '|åœ¨æ–‡ä»¶åˆ—è¡¨ä¸­ï¼šç”¨é¼ æ ‡å·¦é”®å•å‡»æ–‡ä»¶åå¯æŸ¥çœ‹è¯¥æ–‡ä»¶ä¿¡æ¯ï¼›åŒå‡»æ–‡ä»¶å' +
+          'å¯æ‰“å¼€è¯¥æ£‹è°±æ–‡ä»¶ï¼›å•å‡»é¼ æ ‡å³é”®å¯å¼¹å‡ºâ€œç»“æœå†å¤„ç†â€åŠŸèƒ½é€‰å•ã€‚'
         Columns = <
           item
-            Caption = 'XQFÎÄ¼şÃû'
+            Caption = 'XQFæ–‡ä»¶å'
             MinWidth = 72
             Width = 328
           end
           item
-            Caption = 'ËùÔÚÎÄ¼ş¼Ğ'
+            Caption = 'æ‰€åœ¨æ–‡ä»¶å¤¹'
             MinWidth = 72
             Width = 328
           end>
@@ -1388,8 +1388,8 @@ object frmXQSearch: TfrmXQSearch
         Width = 317
         Height = 20
         Hint = 
-          '|ÊäÈëÎÄ¼şÃû³ÆÊ±£¬²»ĞèÒªÊäÈëÀ©Õ¹Ãû£¬ÏµÍ³×Ô¶¯ÕÒ¡°.XQF¡±ÎÄ¼ş£»Í¬Ê±' +
-          '£¬Ö»ÊäÈë²¿·ÖÎÄ¼şÃûÒ²¿ÉÒÔ£¬ÏµÍ³¿ÉÒÔ×Ô¶¯Ä£ºıÆ¥Åä¡£'
+          '|è¾“å…¥æ–‡ä»¶åç§°æ—¶ï¼Œä¸éœ€è¦è¾“å…¥æ‰©å±•åï¼Œç³»ç»Ÿè‡ªåŠ¨æ‰¾â€œ.XQFâ€æ–‡ä»¶ï¼›åŒæ—¶' +
+          'ï¼Œåªè¾“å…¥éƒ¨åˆ†æ–‡ä»¶åä¹Ÿå¯ä»¥ï¼Œç³»ç»Ÿå¯ä»¥è‡ªåŠ¨æ¨¡ç³ŠåŒ¹é…ã€‚'
         TabOrder = 3
       end
       object chkResultA: TCheckBox
@@ -1397,7 +1397,7 @@ object frmXQSearch: TfrmXQSearch
         Top = 68
         Width = 65
         Height = 17
-        Caption = 'ºì·½Ê¤'
+        Caption = 'çº¢æ–¹èƒœ'
         TabOrder = 6
       end
       object chkResultB: TCheckBox
@@ -1405,7 +1405,7 @@ object frmXQSearch: TfrmXQSearch
         Top = 68
         Width = 65
         Height = 17
-        Caption = 'ºÚ·½Ê¤'
+        Caption = 'é»‘æ–¹èƒœ'
         TabOrder = 7
       end
       object chkResultC: TCheckBox
@@ -1413,7 +1413,7 @@ object frmXQSearch: TfrmXQSearch
         Top = 68
         Width = 65
         Height = 17
-        Caption = 'ºÍ  Æå'
+        Caption = 'å’Œ  æ£‹'
         TabOrder = 8
       end
       object chkResultD: TCheckBox
@@ -1421,7 +1421,7 @@ object frmXQSearch: TfrmXQSearch
         Top = 68
         Width = 65
         Height = 17
-        Caption = 'Î´  Öª'
+        Caption = 'æœª  çŸ¥'
         TabOrder = 9
       end
       object chkSubDir: TCheckBox
@@ -1430,9 +1430,9 @@ object frmXQSearch: TfrmXQSearch
         Width = 83
         Height = 17
         Hint = 
-          '|Èç¹ûÑ¡ÖĞ±¾Ñ¡Ïî£¬²éÕÒ·¶Î§½«°üÀ¨×ó±ßÖ¸¶¨µÄÎÄ¼ş¼ĞºÍËùÓĞµÄ×ÓÎÄ¼ş¼Ğ' +
-          '¡£µ±È»£¬Ì«´óµÄËÑË÷·¶Î§»áÓ°Ïì²éÕÒµÄËÙ¶È¡£'
-        Caption = '°üº¬×ÓÄ¿Â¼'
+          '|å¦‚æœé€‰ä¸­æœ¬é€‰é¡¹ï¼ŒæŸ¥æ‰¾èŒƒå›´å°†åŒ…æ‹¬å·¦è¾¹æŒ‡å®šçš„æ–‡ä»¶å¤¹å’Œæ‰€æœ‰çš„å­æ–‡ä»¶å¤¹' +
+          'ã€‚å½“ç„¶ï¼Œå¤ªå¤§çš„æœç´¢èŒƒå›´ä¼šå½±å“æŸ¥æ‰¾çš„é€Ÿåº¦ã€‚'
+        Caption = 'åŒ…å«å­ç›®å½•'
         Checked = True
         State = cbChecked
         TabOrder = 11
@@ -1443,9 +1443,9 @@ object frmXQSearch: TfrmXQSearch
         Width = 75
         Height = 21
         Hint = 
-          '|µ¥»÷¡°ä¯ÀÀ¡±°´Å¥¿Éµ¯³öÑ¡ÔñÄ¿Â¼´°¿Ú£¬ÓÃÓÚÖ¸¶¨XQFÎÄ¼şËùÔÚµÄÎÄ¼ş¼Ğ' +
-          '¡£'
-        Caption = 'ä¯ÀÀ(&B)...'
+          '|å•å‡»â€œæµè§ˆâ€æŒ‰é’®å¯å¼¹å‡ºé€‰æ‹©ç›®å½•çª—å£ï¼Œç”¨äºæŒ‡å®šXQFæ–‡ä»¶æ‰€åœ¨çš„æ–‡ä»¶å¤¹' +
+          'ã€‚'
+        Caption = 'æµè§ˆ(&B)...'
         TabOrder = 19
         OnClick = btnBrowseClick
       end
@@ -1454,7 +1454,7 @@ object frmXQSearch: TfrmXQSearch
         Top = 44
         Width = 127
         Height = 20
-        Hint = '|ÊäÈëÆåÊÖĞÕÃûÊ±£¬²»Ò»¶¨ÒªÊäÈëÍêÕûµÄÃû×Ö£¬ÏµÍ³¿ÉÒÔÄ£ºıÆ¥Åä¡£'
+        Hint = '|è¾“å…¥æ£‹æ‰‹å§“åæ—¶ï¼Œä¸ä¸€å®šè¦è¾“å…¥å®Œæ•´çš„åå­—ï¼Œç³»ç»Ÿå¯ä»¥æ¨¡ç³ŠåŒ¹é…ã€‚'
         ItemHeight = 12
         TabOrder = 4
       end
@@ -1463,7 +1463,7 @@ object frmXQSearch: TfrmXQSearch
         Top = 44
         Width = 127
         Height = 20
-        Hint = '|ÊäÈëÆåÊÖĞÕÃûÊ±£¬²»Ò»¶¨ÒªÊäÈëÍêÕûµÄÃû×Ö£¬ÏµÍ³¿ÉÒÔÄ£ºıÆ¥Åä¡£'
+        Hint = '|è¾“å…¥æ£‹æ‰‹å§“åæ—¶ï¼Œä¸ä¸€å®šè¦è¾“å…¥å®Œæ•´çš„åå­—ï¼Œç³»ç»Ÿå¯ä»¥æ¨¡ç³ŠåŒ¹é…ã€‚'
         ItemHeight = 12
         TabOrder = 5
       end
@@ -1473,8 +1473,8 @@ object frmXQSearch: TfrmXQSearch
         Width = 233
         Height = 20
         Hint = 
-          '|ÔÚÕâÀïÊäÈëXQFÎÄ¼şËùÔÚµÄÄ¿Â¼£¬Èç¹ûÒª¼Ó¿ì²éÕÒµÄËÙ¶È£¬Çë²»ÒªÖ¸¶¨Ì«' +
-          '´óµÄ²éÕÒ·¶Î§¡£'
+          '|åœ¨è¿™é‡Œè¾“å…¥XQFæ–‡ä»¶æ‰€åœ¨çš„ç›®å½•ï¼Œå¦‚æœè¦åŠ å¿«æŸ¥æ‰¾çš„é€Ÿåº¦ï¼Œè¯·ä¸è¦æŒ‡å®šå¤ª' +
+          'å¤§çš„æŸ¥æ‰¾èŒƒå›´ã€‚'
         TabOrder = 10
         Text = 'C:\Xqf'
       end
@@ -1494,9 +1494,9 @@ object frmXQSearch: TfrmXQSearch
         Width = 139
         Height = 17
         Hint = 
-          '|Èç¹ûÑ¡ÖĞ¸ÃÑ¡Ïî£¬Ôò±¾½á¹û´°¿ÚÖĞµÄÎÄ¼şÃû½«²»±»Çå³ı£¬ĞÂÕÒ³öÀ´µÄÎÄ' +
-          '¼şÃû×·¼ÓÔÚÏÖÓĞÎÄ¼şÃûÁĞ±íµÄºóÃæ¡£'
-        Caption = '²»Çå³ıÉÏ´Î²éÕÒµÄ½á¹û'
+          '|å¦‚æœé€‰ä¸­è¯¥é€‰é¡¹ï¼Œåˆ™æœ¬ç»“æœçª—å£ä¸­çš„æ–‡ä»¶åå°†ä¸è¢«æ¸…é™¤ï¼Œæ–°æ‰¾å‡ºæ¥çš„æ–‡' +
+          'ä»¶åè¿½åŠ åœ¨ç°æœ‰æ–‡ä»¶ååˆ—è¡¨çš„åé¢ã€‚'
+        Caption = 'ä¸æ¸…é™¤ä¸Šæ¬¡æŸ¥æ‰¾çš„ç»“æœ'
         TabOrder = 23
       end
       object rbtFindFile: TRadioButton
@@ -1504,8 +1504,8 @@ object frmXQSearch: TfrmXQSearch
         Top = -2
         Width = 73
         Height = 17
-        Hint = '|ÇĞ»»µ½²éÕÒÎÄ¼şµÄ½çÃæ'
-        Caption = '²éÕÒÎÄ¼ş'
+        Hint = '|åˆ‡æ¢åˆ°æŸ¥æ‰¾æ–‡ä»¶çš„ç•Œé¢'
+        Caption = 'æŸ¥æ‰¾æ–‡ä»¶'
         Checked = True
         TabOrder = 0
         TabStop = True
@@ -1516,8 +1516,8 @@ object frmXQSearch: TfrmXQSearch
         Top = -2
         Width = 73
         Height = 17
-        Hint = '|ÇĞ»»µ½ä¯ÀÀÎÄ¼şµÄ½çÃæ'
-        Caption = 'ä¯ÀÀÎÄ¼ş'
+        Hint = '|åˆ‡æ¢åˆ°æµè§ˆæ–‡ä»¶çš„ç•Œé¢'
+        Caption = 'æµè§ˆæ–‡ä»¶'
         TabOrder = 1
         OnClick = rbtFindBrowClick
       end
@@ -1527,10 +1527,10 @@ object frmXQSearch: TfrmXQSearch
         Width = 75
         Height = 17
         Hint = 
-          '|Èç¹ûÖ¸¶¨ÁË¸ÃÑ¡Ïî£¬ÔòÒªÇó²éÕÒµ½µÄÆåÆ×ÖĞÄ³Ò»²½µÄĞÎÊÆ±ØĞëºÍ×ó±ßµÄ' +
-          'ÆåÍ¼¾ÖÊÆÍêÈ«Ò»Ñù£¬¼´£¬ËùÓĞÕÒµ½µÄÆåÆ×ÎÄ¼ş£¬¶¼¿ÉÒÔÑİ±ä³É×ó±ßµÄ¾ÖÊÆ' +
-          '¡£'
-        Caption = '°üº¬×óÍ¼'
+          '|å¦‚æœæŒ‡å®šäº†è¯¥é€‰é¡¹ï¼Œåˆ™è¦æ±‚æŸ¥æ‰¾åˆ°çš„æ£‹è°±ä¸­æŸä¸€æ­¥çš„å½¢åŠ¿å¿…é¡»å’Œå·¦è¾¹çš„' +
+          'æ£‹å›¾å±€åŠ¿å®Œå…¨ä¸€æ ·ï¼Œå³ï¼Œæ‰€æœ‰æ‰¾åˆ°çš„æ£‹è°±æ–‡ä»¶ï¼Œéƒ½å¯ä»¥æ¼”å˜æˆå·¦è¾¹çš„å±€åŠ¿' +
+          'ã€‚'
+        Caption = 'åŒ…å«å·¦å›¾'
         TabOrder = 12
         OnClick = chkSearchQzXYClick
       end
@@ -1540,9 +1540,9 @@ object frmXQSearch: TfrmXQSearch
         Width = 77
         Height = 17
         Hint = 
-          '|Èç¹ûÑ¡ÖĞ±¾Ñ¡Ïî£¬±íÊ¾Ö»ÒªÇóÆåÆ×ÎÄ¼şµÄ¿ªÊ¼¾ÖÃæ±ØĞëºÍ×ó±ßµÄÆåÆ×Íê' +
-          'È«Ò»Ñù£¬´Ë¹¦ÄÜÖ÷ÒªÓÃÓÚ°´ÅÅ¾Ö»ò²Ğ¾ÖµÄ³õÊ¼ĞÎÊÆ²éÕÒÆåÆ×ÎÄ¼ş¡£'
-        Caption = '½ö²é³õÍ¼'
+          '|å¦‚æœé€‰ä¸­æœ¬é€‰é¡¹ï¼Œè¡¨ç¤ºåªè¦æ±‚æ£‹è°±æ–‡ä»¶çš„å¼€å§‹å±€é¢å¿…é¡»å’Œå·¦è¾¹çš„æ£‹è°±å®Œ' +
+          'å…¨ä¸€æ ·ï¼Œæ­¤åŠŸèƒ½ä¸»è¦ç”¨äºæŒ‰æ’å±€æˆ–æ®‹å±€çš„åˆå§‹å½¢åŠ¿æŸ¥æ‰¾æ£‹è°±æ–‡ä»¶ã€‚'
+        Caption = 'ä»…æŸ¥åˆå›¾'
         Enabled = False
         TabOrder = 13
       end
@@ -1552,9 +1552,9 @@ object frmXQSearch: TfrmXQSearch
         Width = 143
         Height = 17
         Hint = 
-          '|Èç¹ûÑ¡ÖĞ¸ÃÑ¡Ïî£¬ÔòÔÚµ±Ç°²éÕÒ½á¹ûµÄ»ù´¡ÉÏ(¼´ÔÚµ±Ç°´°¿ÚµÄÎÄ¼şÁĞ±í' +
-          'ÖĞ)°´ĞÂµÄÌõ¼şÖØĞÂ²éÕÒ£¬Ê¹µÃ²éÕÒ½á¹û¸ü¼Ó×¼È·¡£'
-        Caption = 'ÔÚµ±Ç°²éÕÒ½á¹ûÖĞ²éÕÒ'
+          '|å¦‚æœé€‰ä¸­è¯¥é€‰é¡¹ï¼Œåˆ™åœ¨å½“å‰æŸ¥æ‰¾ç»“æœçš„åŸºç¡€ä¸Š(å³åœ¨å½“å‰çª—å£çš„æ–‡ä»¶åˆ—è¡¨' +
+          'ä¸­)æŒ‰æ–°çš„æ¡ä»¶é‡æ–°æŸ¥æ‰¾ï¼Œä½¿å¾—æŸ¥æ‰¾ç»“æœæ›´åŠ å‡†ç¡®ã€‚'
+        Caption = 'åœ¨å½“å‰æŸ¥æ‰¾ç»“æœä¸­æŸ¥æ‰¾'
         TabOrder = 22
         OnClick = chkResultSearchClick
       end
@@ -1564,9 +1564,9 @@ object frmXQSearch: TfrmXQSearch
         Width = 75
         Height = 17
         Hint = 
-          '|Èç¹ûÖ¸¶¨ÁË¸ÃÑ¡Ïî£¬Ôò²éÕÒ¾ÖÃæÊ±Ò²ÔÚ±ä×ÅÖĞÕÒ£¬·ñÔòÖ»ÔÚÖ÷±ä×ÅÖĞ²é' +
-          'ÕÒ¡£'
-        Caption = '°üÀ¨±ä×Å'
+          '|å¦‚æœæŒ‡å®šäº†è¯¥é€‰é¡¹ï¼Œåˆ™æŸ¥æ‰¾å±€é¢æ—¶ä¹Ÿåœ¨å˜ç€ä¸­æ‰¾ï¼Œå¦åˆ™åªåœ¨ä¸»å˜ç€ä¸­æŸ¥' +
+          'æ‰¾ã€‚'
+        Caption = 'åŒ…æ‹¬å˜ç€'
         Enabled = False
         TabOrder = 14
       end
@@ -1576,9 +1576,9 @@ object frmXQSearch: TfrmXQSearch
         Width = 75
         Height = 17
         Hint = 
-          '|Èç¹ûÑ¡ÖĞ±¾Ñ¡Ïî£¬±íÊ¾Ö»ÒªÇó±»²éµÄ¾ÖÃæÖĞ¾ßÓĞºÍ×ó±ß¾ÖÃæÍ¬ÑùµÄ×ÓÁ¦' +
-          '£¬¶ø²»¹ÜÕâĞ©Æå×ÓµÄÎ»ÖÃÊÇ·ñÒ»ÖÂ¡£'
-        Caption = 'Ö»²é×ÓÁ¦'
+          '|å¦‚æœé€‰ä¸­æœ¬é€‰é¡¹ï¼Œè¡¨ç¤ºåªè¦æ±‚è¢«æŸ¥çš„å±€é¢ä¸­å…·æœ‰å’Œå·¦è¾¹å±€é¢åŒæ ·çš„å­åŠ›' +
+          'ï¼Œè€Œä¸ç®¡è¿™äº›æ£‹å­çš„ä½ç½®æ˜¯å¦ä¸€è‡´ã€‚'
+        Caption = 'åªæŸ¥å­åŠ›'
         Enabled = False
         TabOrder = 15
       end
@@ -1588,9 +1588,9 @@ object frmXQSearch: TfrmXQSearch
         Width = 73
         Height = 17
         Hint = 
-          '|Èç¹ûÑ¡ÖĞ±¾Ñ¡Ïî£¬±íÊ¾Ö»ÒªÇó±»²é¾ÖÃæÖĞ°üº¬×ó±ßÆåÍ¼µÄÎ»ÖÃ»ò×ÓÁ¦ĞÅ' +
-          'Ï¢£¬ÆäÓà¶à³öµÄ×ÓÁ¦ºÍÎ»ÖÃ²»ÓÚ¿¼ÂÇ¡£'
-        Caption = 'ºöÂÔÓà×Ó'
+          '|å¦‚æœé€‰ä¸­æœ¬é€‰é¡¹ï¼Œè¡¨ç¤ºåªè¦æ±‚è¢«æŸ¥å±€é¢ä¸­åŒ…å«å·¦è¾¹æ£‹å›¾çš„ä½ç½®æˆ–å­åŠ›ä¿¡' +
+          'æ¯ï¼Œå…¶ä½™å¤šå‡ºçš„å­åŠ›å’Œä½ç½®ä¸äºè€ƒè™‘ã€‚'
+        Caption = 'å¿½ç•¥ä½™å­'
         Enabled = False
         TabOrder = 16
       end
@@ -1599,7 +1599,7 @@ object frmXQSearch: TfrmXQSearch
         Top = 20
         Width = 451
         Height = 117
-        Hint = '|ÓÃÊó±ê×ó¼üË«»÷Ä¿Â¼Ãû¿ÉÒÔ²é¿´¸ÃÄ¿Â¼ÏÂµÄ¡°.XQF¡±ÎÄ¼ş¡£'
+        Hint = '|ç”¨é¼ æ ‡å·¦é”®åŒå‡»ç›®å½•åå¯ä»¥æŸ¥çœ‹è¯¥ç›®å½•ä¸‹çš„â€œ.XQFâ€æ–‡ä»¶ã€‚'
         ItemHeight = 16
         TabOrder = 2
         Visible = False
@@ -1623,33 +1623,33 @@ object frmXQSearch: TfrmXQSearch
     Left = 294
     Top = 1
     object ppmCopy: TMenuItem
-      Caption = '½«µ±Ç°Æå¾ÖÍ¼Ïó¸´ÖÆµ½¼ôÌù°å'
+      Caption = 'å°†å½“å‰æ£‹å±€å›¾è±¡å¤åˆ¶åˆ°å‰ªè´´æ¿'
       OnClick = ppmCopyClick
     end
     object ppmSaveAsBmp: TMenuItem
-      Caption = '½«µ±Ç°Æå¾ÖÍ¼Ïó¸´ÖÆµ½ÎÄ¼ş...'
+      Caption = 'å°†å½“å‰æ£‹å±€å›¾è±¡å¤åˆ¶åˆ°æ–‡ä»¶...'
       OnClick = ppmSaveAsBmpClick
     end
     object ppmLine1: TMenuItem
       Caption = '-'
     end
     object ppmPastePosition: TMenuItem
-      Caption = '´Ó¼ôÌù°åÎÄ±¾ÆåÍ¼ÖĞÕ³ÌùÆå×ÓµÄÎ»ÖÃ'
+      Caption = 'ä»å‰ªè´´æ¿æ–‡æœ¬æ£‹å›¾ä¸­ç²˜è´´æ£‹å­çš„ä½ç½®'
       OnClick = ppmPastePositionClick
     end
     object N1: TMenuItem
       Caption = '-'
     end
     object ppm32Qizi: TMenuItem
-      Caption = '32¸öÆå×ÓµÄ³õÊ¼Î»ÖÃ'
+      Caption = '32ä¸ªæ£‹å­çš„åˆå§‹ä½ç½®'
       OnClick = ppm32QiziClick
     end
     object ppm1Ma: TMenuItem
-      Caption = 'ÈÃµ¥Âí'
+      Caption = 'è®©å•é©¬'
       OnClick = ppm1MaClick
     end
     object ppm2Ma: TMenuItem
-      Caption = 'ÈÃË«Âí'
+      Caption = 'è®©åŒé©¬'
       OnClick = ppm2MaClick
     end
   end
@@ -1659,22 +1659,22 @@ object frmXQSearch: TfrmXQSearch
     Left = 262
     Top = 1
     object ppmCopyAll: TMenuItem
-      Caption = '½«µ±Ç°¡°È«²¿µÄ¡±²éÕÒ½á¹û¡°¸´ÖÆ¡±µ½ÁíÍâµÄÎÄ¼ş¼Ğ...'
+      Caption = 'å°†å½“å‰â€œå…¨éƒ¨çš„â€æŸ¥æ‰¾ç»“æœâ€œå¤åˆ¶â€åˆ°å¦å¤–çš„æ–‡ä»¶å¤¹...'
       OnClick = ppmCopyAllClick
     end
     object ppmCopySelected: TMenuItem
-      Caption = '½«µ±Ç°¡°Ñ¡ÖĞµÄ¡±²éÕÒ½á¹û¡°¸´ÖÆ¡±µ½ÁíÍâµÄÎÄ¼ş¼Ğ...'
+      Caption = 'å°†å½“å‰â€œé€‰ä¸­çš„â€æŸ¥æ‰¾ç»“æœâ€œå¤åˆ¶â€åˆ°å¦å¤–çš„æ–‡ä»¶å¤¹...'
       OnClick = ppmCopySelectedClick
     end
     object N4: TMenuItem
       Caption = '-'
     end
     object ppmMoveAll: TMenuItem
-      Caption = '½«µ±Ç°¡°È«²¿µÄ¡±²éÕÒ½á¹û¡°ÒÆ¶¯¡±µ½ÁíÍâµÄÎÄ¼ş¼Ğ...'
+      Caption = 'å°†å½“å‰â€œå…¨éƒ¨çš„â€æŸ¥æ‰¾ç»“æœâ€œç§»åŠ¨â€åˆ°å¦å¤–çš„æ–‡ä»¶å¤¹...'
       OnClick = ppmMoveAllClick
     end
     object ppmMoveSelected: TMenuItem
-      Caption = '½«µ±Ç°¡°Ñ¡ÖĞµÄ¡±²éÕÒ½á¹û¡°ÒÆ¶¯¡±µ½ÁíÍâµÄÎÄ¼ş¼Ğ...'
+      Caption = 'å°†å½“å‰â€œé€‰ä¸­çš„â€æŸ¥æ‰¾ç»“æœâ€œç§»åŠ¨â€åˆ°å¦å¤–çš„æ–‡ä»¶å¤¹...'
       OnClick = ppmMoveSelectedClick
     end
   end

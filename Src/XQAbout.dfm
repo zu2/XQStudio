@@ -3,21 +3,21 @@ object frmXQAbout: TfrmXQAbout
   Top = 220
   ActiveControl = OKButton
   BorderStyle = bsToolWindow
-  Caption = '关于"象棋演播室"'
+  Caption = #34568#65395#33696#12539#38606#65377#35709#21306#65404#30130#30522#34739#65380'"'
   ClientHeight = 211
   ClientWidth = 377
   Color = clBtnFace
-  Font.Charset = DEFAULT_CHARSET
+  Font.Charset = SHIFTJIS_CHARSET
   Font.Color = clBlack
   Font.Height = -11
-  Font.Name = 'MS Sans Serif'
+  Font.Name = 'System'
   Font.Style = []
   OldCreateOrder = True
   Position = poScreenCenter
   Scaled = False
   OnCreate = FormCreate
   PixelsPerInch = 96
-  TextHeight = 13
+  TextHeight = 18
   object pnlVersionInfo: TPanel
     Left = 0
     Top = 0
@@ -88,7 +88,7 @@ object frmXQAbout: TfrmXQAbout
     object Copyright: TLabel
       Left = 96
       Top = 96
-      Width = 248
+      Width = 239
       Height = 16
       Alignment = taCenter
       Caption = 'Copyright (C) Dong Shiwei,  1998-2007'
@@ -103,7 +103,7 @@ object frmXQAbout: TfrmXQAbout
     object Comments: TLabel
       Left = 96
       Top = 120
-      Width = 119
+      Width = 115
       Height = 16
       Alignment = taCenter
       Caption = 'All rights reserved'
@@ -118,7 +118,7 @@ object frmXQAbout: TfrmXQAbout
     object lblEmail: TLabel
       Left = 96
       Top = 144
-      Width = 187
+      Width = 183
       Height = 16
       Alignment = taCenter
       Caption = 'E-mail: xqstudio@qipaile.net'
@@ -132,29 +132,29 @@ object frmXQAbout: TfrmXQAbout
     end
     object Label2: TLabel
       Left = 96
-      Top = 72
-      Width = 93
-      Height = 16
-      Caption = '作者: 过河象'
-      Font.Charset = GB2312_CHARSET
+      Top = 73
+      Width = 75
+      Height = 17
+      Caption = #20316#32773': '#36807#27827#35937
+      Font.Charset = SHIFTJIS_CHARSET
       Font.Color = clBlack
       Font.Height = -13
-      Font.Name = 'System'
+      Font.Name = #28216#12468#12471#12483#12463
       Font.Style = [fsBold]
       ParentFont = False
     end
   end
   object OKButton: TButton
     Left = 160
-    Top = 178
+    Top = 181
     Width = 65
     Height = 22
-    Caption = '确认'
+    Caption = #30830#35748
     Default = True
-    Font.Charset = GB2312_CHARSET
+    Font.Charset = SHIFTJIS_CHARSET
     Font.Color = clBlack
     Font.Height = -12
-    Font.Name = '宋体'
+    Font.Name = #28216#12468#12471#12483#12463
     Font.Style = []
     ModalResult = 1
     ParentFont = False

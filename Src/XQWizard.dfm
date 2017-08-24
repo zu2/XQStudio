@@ -3,7 +3,7 @@ object frmXQWizard: TfrmXQWizard
   Top = 175
   BorderIcons = [biSystemMenu]
   BorderStyle = bsDialog
-  Caption = '建立一个新的XQF文件'
+  Caption = #34770#65402#36982#20534#65400#128#33651#65386#35649#65392#36903#1063'QF'#35649#12539#65403#65398
   ClientHeight = 359
   ClientWidth = 521
   Color = clBtnFace
@@ -35,26 +35,26 @@ object frmXQWizard: TfrmXQWizard
       Width = 510
       Height = 321
       ActivePage = tstStep1
-      Font.Charset = GB2312_CHARSET
+      Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -12
-      Font.Name = '宋体'
+      Font.Name = #34739#20534#65405#12539
       Font.Style = []
       ParentFont = False
       TabOrder = 0
       object tstStep1: TTabSheet
-        Caption = '设置文件属性'
-        Font.Charset = GB2312_CHARSET
+        Caption = #38582#65406#37122#65390#35649#12539#65403#65398#34747#27146#128#65383
+        Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -12
-        Font.Name = '宋体'
+        Font.Name = #34739#20534#65405#12539
         Font.Style = []
         ParentFont = False
         object pnlStep1: TPanel
           Left = 0
           Top = 0
           Width = 502
-          Height = 294
+          Height = 293
           Align = alClient
           BevelOuter = bvNone
           Caption = 'pnlStep1'
@@ -70,13 +70,13 @@ object frmXQWizard: TfrmXQWizard
             object Label6: TLabel
               Left = 25
               Top = 7
-              Width = 60
+              Width = 52
               Height = 12
-              Caption = '标    题: '
-              Font.Charset = GB2312_CHARSET
+              Caption = #35692#12539'   '#39706#12539' '
+              Font.Charset = DEFAULT_CHARSET
               Font.Color = clWindowText
               Font.Height = -12
-              Font.Name = '宋体'
+              Font.Name = #34739#20534#65405#12539
               Font.Style = []
               ParentFont = False
             end
@@ -85,10 +85,10 @@ object frmXQWizard: TfrmXQWizard
               Top = 4
               Width = 409
               Height = 20
-              Font.Charset = GB2312_CHARSET
+              Font.Charset = DEFAULT_CHARSET
               Font.Color = clWindowText
               Font.Height = -12
-              Font.Name = '宋体'
+              Font.Name = #34739#20534#65405#12539
               Font.Style = []
               MaxLength = 63
               ParentFont = False
@@ -102,10 +102,10 @@ object frmXQWizard: TfrmXQWizard
             Height = 176
             Align = alTop
             BevelOuter = bvNone
-            Font.Charset = GB2312_CHARSET
+            Font.Charset = DEFAULT_CHARSET
             Font.Color = clWindowText
             Font.Height = -12
-            Font.Name = '宋体'
+            Font.Name = #34739#20534#65405#12539
             Font.Style = []
             ParentFont = False
             TabOrder = 1
@@ -114,122 +114,122 @@ object frmXQWizard: TfrmXQWizard
               Top = 4
               Width = 489
               Height = 165
-              Caption = ' 比赛信息 '
+              Caption = ' '#35912#30865#65397#24081#65407#65377#35569#65391' '
               TabOrder = 0
               object Label1: TLabel
                 Left = 16
                 Top = 21
-                Width = 54
+                Width = 78
                 Height = 12
-                Caption = '比赛名称:'
-                Font.Charset = GB2312_CHARSET
+                Caption = #35912#30865#65397#24091#37648#36952#65392':'
+                Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
                 Font.Height = -12
-                Font.Name = '宋体'
+                Font.Name = #34739#20534#65405#12539
                 Font.Style = []
                 ParentFont = False
               end
               object Label2: TLabel
                 Left = 16
                 Top = 45
-                Width = 54
+                Width = 74
                 Height = 12
-                Caption = '比赛日期:'
-                Font.Charset = GB2312_CHARSET
+                Caption = #35912#30865#65397#24118#24459#35675#12539
+                Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
                 Font.Height = -12
-                Font.Name = '宋体'
+                Font.Name = #34739#20534#65405#12539
                 Font.Style = []
                 ParentFont = False
               end
               object Label3: TLabel
                 Left = 256
                 Top = 45
-                Width = 54
+                Width = 78
                 Height = 12
-                Caption = '比赛地点:'
-                Font.Charset = GB2312_CHARSET
+                Caption = #35912#30865#65397#24091#24909#36708#65401':'
+                Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
                 Font.Height = -12
-                Font.Name = '宋体'
+                Font.Name = #34739#20534#65405#12539
                 Font.Style = []
                 ParentFont = False
               end
               object Label4: TLabel
                 Left = 16
                 Top = 69
-                Width = 54
+                Width = 75
                 Height = 12
-                Caption = '红方棋手:'
-                Font.Charset = GB2312_CHARSET
+                Caption = #37092#65378#35649#65401#35709#21306#28948':'
+                Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
                 Font.Height = -12
-                Font.Name = '宋体'
+                Font.Name = #34739#20534#65405#12539
                 Font.Style = []
                 ParentFont = False
               end
               object Label5: TLabel
                 Left = 256
                 Top = 69
-                Width = 54
+                Width = 74
                 Height = 12
-                Caption = '黑方棋手:'
-                Font.Charset = GB2312_CHARSET
+                Caption = #39839#31532#23167#35709#21306#28948':'
+                Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
                 Font.Height = -12
-                Font.Name = '宋体'
+                Font.Name = #34739#20534#65405#12539
                 Font.Style = []
                 ParentFont = False
               end
               object lblResult: TLabel
                 Left = 16
                 Top = 141
-                Width = 54
+                Width = 78
                 Height = 12
-                Caption = '比赛结果:'
-                Font.Charset = GB2312_CHARSET
+                Caption = #35912#30865#65397#24119#65403#25466#26849':'
+                Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
                 Font.Height = -12
-                Font.Name = '宋体'
+                Font.Name = #34739#20534#65405#12539
                 Font.Style = []
                 ParentFont = False
               end
               object Label11: TLabel
                 Left = 16
                 Top = 93
-                Width = 54
+                Width = 62
                 Height = 12
-                Caption = '用时规则:'
-                Font.Charset = GB2312_CHARSET
+                Caption = #36885#65384#35660#65398#38551#12539#12539':'
+                Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
                 Font.Height = -12
-                Font.Name = '宋体'
+                Font.Name = #34739#20534#65405#12539
                 Font.Style = []
                 ParentFont = False
               end
               object Label12: TLabel
                 Left = 16
                 Top = 117
-                Width = 54
+                Width = 75
                 Height = 12
-                Caption = '红方用时:'
-                Font.Charset = GB2312_CHARSET
+                Caption = #37092#65378#35649#65401#36885#65384#35660#65398':'
+                Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
                 Font.Height = -12
-                Font.Name = '宋体'
+                Font.Name = #34739#20534#65405#12539
                 Font.Style = []
                 ParentFont = False
               end
               object Label13: TLabel
                 Left = 256
                 Top = 117
-                Width = 54
+                Width = 74
                 Height = 12
-                Caption = '黑方用时:'
-                Font.Charset = GB2312_CHARSET
+                Caption = #39839#31532#23167#36885#65384#35660#65398':'
+                Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
                 Font.Height = -12
-                Font.Name = '宋体'
+                Font.Name = #34739#20534#65405#12539
                 Font.Style = []
                 ParentFont = False
               end
@@ -238,10 +238,10 @@ object frmXQWizard: TfrmXQWizard
                 Top = 18
                 Width = 409
                 Height = 20
-                Font.Charset = GB2312_CHARSET
+                Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
                 Font.Height = -12
-                Font.Name = '宋体'
+                Font.Name = #34739#20534#65405#12539
                 Font.Style = []
                 MaxLength = 63
                 ParentFont = False
@@ -252,10 +252,10 @@ object frmXQWizard: TfrmXQWizard
                 Top = 42
                 Width = 169
                 Height = 20
-                Font.Charset = GB2312_CHARSET
+                Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
                 Font.Height = -12
-                Font.Name = '宋体'
+                Font.Name = #34739#20534#65405#12539
                 Font.Style = []
                 MaxLength = 15
                 ParentFont = False
@@ -266,10 +266,10 @@ object frmXQWizard: TfrmXQWizard
                 Top = 42
                 Width = 169
                 Height = 20
-                Font.Charset = GB2312_CHARSET
+                Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
                 Font.Height = -12
-                Font.Name = '宋体'
+                Font.Name = #34739#20534#65405#12539
                 Font.Style = []
                 MaxLength = 15
                 ParentFont = False
@@ -280,10 +280,10 @@ object frmXQWizard: TfrmXQWizard
                 Top = 66
                 Width = 169
                 Height = 20
-                Font.Charset = GB2312_CHARSET
+                Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
                 Font.Height = -12
-                Font.Name = '宋体'
+                Font.Name = #34739#20534#65405#12539
                 Font.Style = []
                 MaxLength = 15
                 ParentFont = False
@@ -294,10 +294,10 @@ object frmXQWizard: TfrmXQWizard
                 Top = 66
                 Width = 169
                 Height = 20
-                Font.Charset = GB2312_CHARSET
+                Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
                 Font.Height = -12
-                Font.Name = '宋体'
+                Font.Name = #34739#20534#65405#12539
                 Font.Style = []
                 MaxLength = 15
                 ParentFont = False
@@ -308,12 +308,12 @@ object frmXQWizard: TfrmXQWizard
                 Top = 140
                 Width = 57
                 Height = 17
-                Caption = '未  知'
+                Caption = #35675#65386'  '#36943#65381
                 Checked = True
-                Font.Charset = GB2312_CHARSET
+                Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
                 Font.Height = -12
-                Font.Name = '宋体'
+                Font.Name = #34739#20534#65405#12539
                 Font.Style = []
                 ParentFont = False
                 TabOrder = 8
@@ -324,11 +324,11 @@ object frmXQWizard: TfrmXQWizard
                 Top = 140
                 Width = 57
                 Height = 17
-                Caption = '红方胜'
-                Font.Charset = GB2312_CHARSET
+                Caption = #37092#65378#35649#65401#38317#12539
+                Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
                 Font.Height = -12
-                Font.Name = '宋体'
+                Font.Name = #34739#20534#65405#12539
                 Font.Style = []
                 ParentFont = False
                 TabOrder = 9
@@ -338,11 +338,11 @@ object frmXQWizard: TfrmXQWizard
                 Top = 140
                 Width = 57
                 Height = 17
-                Caption = '黑方胜'
-                Font.Charset = GB2312_CHARSET
+                Caption = #39839#31532#23167#38317#12539
+                Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
                 Font.Height = -12
-                Font.Name = '宋体'
+                Font.Name = #34739#20534#65405#12539
                 Font.Style = []
                 ParentFont = False
                 TabOrder = 10
@@ -352,11 +352,11 @@ object frmXQWizard: TfrmXQWizard
                 Top = 140
                 Width = 57
                 Height = 17
-                Caption = '和  棋'
-                Font.Charset = GB2312_CHARSET
+                Caption = #34597#12539' '#35709#12539
+                Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
                 Font.Height = -12
-                Font.Name = '宋体'
+                Font.Name = #34739#20534#65405#12539
                 Font.Style = []
                 ParentFont = False
                 TabOrder = 11
@@ -366,10 +366,10 @@ object frmXQWizard: TfrmXQWizard
                 Top = 90
                 Width = 409
                 Height = 20
-                Font.Charset = GB2312_CHARSET
+                Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
                 Font.Height = -12
-                Font.Name = '宋体'
+                Font.Name = #34739#20534#65405#12539
                 Font.Style = []
                 MaxLength = 63
                 ParentFont = False
@@ -380,10 +380,10 @@ object frmXQWizard: TfrmXQWizard
                 Top = 114
                 Width = 169
                 Height = 20
-                Font.Charset = GB2312_CHARSET
+                Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
                 Font.Height = -12
-                Font.Name = '宋体'
+                Font.Name = #34739#20534#65405#12539
                 Font.Style = []
                 MaxLength = 15
                 ParentFont = False
@@ -394,10 +394,10 @@ object frmXQWizard: TfrmXQWizard
                 Top = 114
                 Width = 169
                 Height = 20
-                Font.Charset = GB2312_CHARSET
+                Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
                 Font.Height = -12
-                Font.Name = '宋体'
+                Font.Name = #34739#20534#65405#12539
                 Font.Style = []
                 MaxLength = 15
                 ParentFont = False
@@ -418,11 +418,11 @@ object frmXQWizard: TfrmXQWizard
               Top = 8
               Width = 489
               Height = 43
-              Caption = '棋局类型 '
-              Font.Charset = GB2312_CHARSET
+              Caption = #35709#21477#65393#128#36992#65403#34649#12539
+              Font.Charset = DEFAULT_CHARSET
               Font.Color = clWindowText
               Font.Height = -12
-              Font.Name = '宋体'
+              Font.Name = #34739#20534#65405#12539
               Font.Style = []
               ParentFont = False
               TabOrder = 0
@@ -432,12 +432,12 @@ object frmXQWizard: TfrmXQWizard
               Top = 26
               Width = 105
               Height = 17
-              Caption = '全局、对局'
+              Caption = #34568#65384#34747#128#32306#8733#65391#65401#34747#128
               Checked = True
-              Font.Charset = GB2312_CHARSET
+              Font.Charset = DEFAULT_CHARSET
               Font.Color = clWindowText
               Font.Height = -12
-              Font.Name = '宋体'
+              Font.Name = #34739#20534#65405#12539
               Font.Style = []
               ParentFont = False
               TabOrder = 1
@@ -449,11 +449,11 @@ object frmXQWizard: TfrmXQWizard
               Top = 26
               Width = 105
               Height = 17
-              Caption = '残局、排局'
-              Font.Charset = GB2312_CHARSET
+              Caption = #35903#21477#65393#128#32306#8757#36060#34747#128
+              Font.Charset = DEFAULT_CHARSET
               Font.Color = clWindowText
               Font.Height = -12
-              Font.Name = '宋体'
+              Font.Name = #34739#20534#65405#12539
               Font.Style = []
               ParentFont = False
               TabOrder = 4
@@ -464,11 +464,11 @@ object frmXQWizard: TfrmXQWizard
               Top = 26
               Width = 105
               Height = 17
-              Caption = '布局、开局'
-              Font.Charset = GB2312_CHARSET
+              Caption = #34806#12539#65393#128#32306#8733#65404#128#34747#128
+              Font.Charset = DEFAULT_CHARSET
               Font.Color = clWindowText
               Font.Height = -12
-              Font.Name = '宋体'
+              Font.Name = #34739#20534#65405#12539
               Font.Style = []
               ParentFont = False
               TabOrder = 2
@@ -479,11 +479,11 @@ object frmXQWizard: TfrmXQWizard
               Top = 26
               Width = 105
               Height = 17
-              Caption = '实战中、残局'
-              Font.Charset = GB2312_CHARSET
+              Caption = #34739#27146#12539#33651#65389#32306#8757#65390#21477#65393#128
+              Font.Charset = DEFAULT_CHARSET
               Font.Color = clWindowText
               Font.Height = -12
-              Font.Name = '宋体'
+              Font.Name = #34739#20534#65405#12539
               Font.Style = []
               ParentFont = False
               TabOrder = 3
@@ -494,33 +494,33 @@ object frmXQWizard: TfrmXQWizard
             Left = 0
             Top = 265
             Width = 502
-            Height = 29
+            Height = 28
             Align = alClient
             BevelOuter = bvNone
             TabOrder = 3
             object Label7: TLabel
               Left = 24
               Top = 5
-              Width = 54
+              Width = 76
               Height = 12
-              Caption = '棋谱讲评:'
-              Font.Charset = GB2312_CHARSET
+              Caption = #35709#29590#65392#65393#38582#65394#38584#12539
+              Font.Charset = DEFAULT_CHARSET
               Font.Color = clWindowText
               Font.Height = -12
-              Font.Name = '宋体'
+              Font.Name = #34739#20534#65405#12539
               Font.Style = []
               ParentFont = False
             end
             object Label8: TLabel
               Left = 264
               Top = 5
-              Width = 54
+              Width = 63
               Height = 12
-              Caption = '文件作者:'
-              Font.Charset = GB2312_CHARSET
+              Caption = #35649#12539#65403#65398#33780#25030#128#12539
+              Font.Charset = DEFAULT_CHARSET
               Font.Color = clWindowText
               Font.Height = -12
-              Font.Name = '宋体'
+              Font.Name = #34739#20534#65405#12539
               Font.Style = []
               ParentFont = False
             end
@@ -529,10 +529,10 @@ object frmXQWizard: TfrmXQWizard
               Top = 2
               Width = 169
               Height = 20
-              Font.Charset = GB2312_CHARSET
+              Font.Charset = DEFAULT_CHARSET
               Font.Color = clWindowText
               Font.Height = -12
-              Font.Name = '宋体'
+              Font.Name = #34739#20534#65405#12539
               Font.Style = []
               MaxLength = 15
               ParentFont = False
@@ -543,10 +543,10 @@ object frmXQWizard: TfrmXQWizard
               Top = 2
               Width = 169
               Height = 20
-              Font.Charset = GB2312_CHARSET
+              Font.Charset = DEFAULT_CHARSET
               Font.Color = clWindowText
               Font.Height = -12
-              Font.Name = '宋体'
+              Font.Name = #34739#20534#65405#12539
               Font.Style = []
               MaxLength = 15
               ParentFont = False
@@ -556,9 +556,13 @@ object frmXQWizard: TfrmXQWizard
         end
       end
       object tstStep2: TTabSheet
-        Caption = '设置棋子位置和对局结果'
+        Caption = #38582#65406#37122#65390#35709#21477#65389#34633#65405#21682#65405#65390#34597#24735#65391#65401#34747#128#25160#25466#26849
         ImageIndex = 1
         TabVisible = False
+        ExplicitLeft = 0
+        ExplicitTop = 0
+        ExplicitWidth = 0
+        ExplicitHeight = 0
         object pnlXQBoard: TPanel
           Left = 0
           Top = 0
@@ -583,8 +587,8 @@ object frmXQWizard: TfrmXQWizard
             Width = 212
             Height = 290
             Hint = 
-              '|用鼠标右键盘单击棋盘可弹出棋图复制的功能菜单，你可以将棋图复制' +
-              '到文件或剪贴板上，以便在网站或字处理软件(如Word)中使用。'
+              '|'#36885#65384#39840#63728#35692#12539#25215#39646#65390#36918#20252#40658#34563#65403#35709#29399#23592#34623#65391#34833#65401#34563#65402#35709#21477#23839#34719#27018#23451#36903#12539#31909#38317#65405#38358#25079#40658#12539#24481#65405#63728#34623#65391#33673#65381#34758#12539#65379#21477#23839#34719#27018#23451#34555#65392#35649#12539#65403#65398#35596#38272#23713#38605 +
+              #65396#35674#65407#33651#22855#65404#24481#65403#65381#33811#65407#34664#65384#37122#37261#65387#21582#12539#34756#24604#65380#12539#28810#38675#65391#33673#65398'('#34735#65304'ord)'#33651#65389#33780#65407#36885#65384#32306#12539
             AutoSize = True
             Picture.Data = {
               07544269746D6170CE7A0000424DCE7A0000000000007600000028000000D400
@@ -2467,22 +2471,22 @@ object frmXQWizard: TfrmXQWizard
               Align = alBottom
               AutoSize = False
               Caption = 
-                '    在本窗口中，可以排放32个棋子的初始位置。左边是一个棋盘，盘面' +
-                '上只放了两个子：红方的“帅”和黑方的“将”，其余的棋子在棋盘的右' +
-                '边。你可以用鼠标将右边的棋子拖放到棋盘上的指定位置，也可以将棋盘' +
-                '上的棋子（帅、将除外）拖放到棋盘的右边（即不使用该棋子）。'
+                '    '#34664#65384#35675#65388#36975#24604#21736#33651#65389#12539#24735#24196#33673#65381#35607#21576#21467'32'#33651#65386#35709#21477#65389#21315#22122#34555#26191#65383#20534#65405#21682#65405#65390#32306#12423#65399#65382#38670#65401#35663#65391#33651#128#33651#65386#35709#29399#23592#12539#27278#23592#39665#65378#33651#38593#23477#35646#65406#33696 +
+                #12539#65400#65380#33651#65386#34756#25776#65404#22786#65402#65378#35649#65401#36903#12539#128#25079#65400#12539#128#26191#26609#39839#31532#23167#36903#12539#128#25079#65392#12539#128#26210#65404#24735#12539#33780#21647#22122#35709#21477#65389#20185#24800#35709#29399#23592#36903#12539#25215#38670#65401#32306#12422#65405#63728#34623#65391#33673#65381#36885#65384#39840#63728 +
+                #35692#12539#65392#12539#25215#38670#65401#36903#12539#65379#21477#65389#20808#35377#35646#65406#34555#65392#35709#29399#23592#33651#38996#22122#35606#12539#65390#22779#65405#21682#65405#65390#12539#24481#65401#28343#24196#33673#65381#34758#12539#65379#29399#23592#33651#38996#22122#35709#21477#65389#25776#65404#20133#65400#12539#128#8733#65392#12539#21185#34719#21380#65404#30011 +
+                #35377#35646#65406#34555#65392#35709#29399#23592#36903#12539#25215#38670#65401#12539#20133#21449#33651#22586#65405#65407#36885#65384#38584#65381#35709#21477#65389#25776#65404#23784#128#12539
               WordWrap = True
             end
             object Label10: TLabel
               Left = 0
               Top = 8
-              Width = 64
-              Height = 20
-              Caption = '提示: '
-              Font.Charset = GB2312_CHARSET
+              Width = 73
+              Height = 24
+              Caption = #35616#21315#65380#65402': '
+              Font.Charset = DEFAULT_CHARSET
               Font.Color = clWindowText
               Font.Height = -20
-              Font.Name = '宋体'
+              Font.Name = #34739#20534#65405#12539
               Font.Style = [fsBold]
               ParentFont = False
             end
@@ -2501,7 +2505,7 @@ object frmXQWizard: TfrmXQWizard
               Width = 174
               Height = 41
               Align = alTop
-              Caption = ' 先行方 '
+              Caption = ' '#34568#37057#65377#26791#23167' '
               TabOrder = 0
             end
             object rbtWhoPlay0: TRadioButton
@@ -2509,7 +2513,7 @@ object frmXQWizard: TfrmXQWizard
               Top = 16
               Width = 65
               Height = 17
-              Caption = '红  方'
+              Caption = #37092#65378'  '#35649#65401
               Checked = True
               TabOrder = 1
               TabStop = True
@@ -2519,7 +2523,7 @@ object frmXQWizard: TfrmXQWizard
               Top = 16
               Width = 65
               Height = 17
-              Caption = '黑  方'
+              Caption = #39839#12539' '#35649#65401
               TabOrder = 2
             end
           end
@@ -2537,7 +2541,7 @@ object frmXQWizard: TfrmXQWizard
               Width = 174
               Height = 65
               Align = alTop
-              Caption = ' 结  果 '
+              Caption = ' '#25160#12539' '#35691#12539
               TabOrder = 0
             end
             object rbtRst1: TRadioButton
@@ -2545,7 +2549,7 @@ object frmXQWizard: TfrmXQWizard
               Top = 40
               Width = 65
               Height = 17
-              Caption = '红方胜'
+              Caption = #37092#65378#35649#65401#38317#12539
               TabOrder = 3
             end
             object rbtRst2: TRadioButton
@@ -2553,7 +2557,7 @@ object frmXQWizard: TfrmXQWizard
               Top = 40
               Width = 65
               Height = 17
-              Caption = '黑方胜'
+              Caption = #39839#31532#23167#38317#12539
               TabOrder = 4
             end
             object rbtRst3: TRadioButton
@@ -2561,7 +2565,7 @@ object frmXQWizard: TfrmXQWizard
               Top = 16
               Width = 65
               Height = 17
-              Caption = '和  棋'
+              Caption = #34597#12539' '#35709#12539
               TabOrder = 2
             end
             object rbtRst0: TRadioButton
@@ -2569,7 +2573,7 @@ object frmXQWizard: TfrmXQWizard
               Top = 16
               Width = 65
               Height = 17
-              Caption = '未  知'
+              Caption = #35675#65386'  '#36943#65381
               Checked = True
               TabOrder = 1
               TabStop = True
@@ -2593,11 +2597,11 @@ object frmXQWizard: TfrmXQWizard
       Top = 0
       Width = 80
       Height = 22
-      Caption = '< 上一步(&B)'
-      Font.Charset = GB2312_CHARSET
+      Caption = '< '#33651#36107#65400#128#35905#65381'(&B)'
+      Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -12
-      Font.Name = '宋体'
+      Font.Name = #34739#20534#65405#12539
       Font.Style = []
       ParentFont = False
       TabOrder = 0
@@ -2609,11 +2613,11 @@ object frmXQWizard: TfrmXQWizard
       Top = 0
       Width = 80
       Height = 22
-      Caption = '下一步(&X) >'
-      Font.Charset = GB2312_CHARSET
+      Caption = #33651#20534#65400#128#35905#65381'(&X) >'
+      Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -12
-      Font.Name = '宋体'
+      Font.Name = #34739#20534#65405#12539
       Font.Style = []
       ParentFont = False
       TabOrder = 1
@@ -2625,11 +2629,11 @@ object frmXQWizard: TfrmXQWizard
       Top = 0
       Width = 80
       Height = 22
-      Caption = '取消'
-      Font.Charset = GB2312_CHARSET
+      Caption = #34623#21249#65398#12539
+      Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -12
-      Font.Name = '宋体'
+      Font.Name = #34739#20534#65405#12539
       Font.Style = []
       ModalResult = 2
       ParentFont = False
@@ -2640,11 +2644,11 @@ object frmXQWizard: TfrmXQWizard
       Top = 0
       Width = 80
       Height = 22
-      Caption = '完成(&F) '
-      Font.Charset = GB2312_CHARSET
+      Caption = #34739#26791#12539'(&F) '
+      Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -12
-      Font.Name = '宋体'
+      Font.Name = #34739#20534#65405#12539
       Font.Style = []
       ModalResult = 1
       ParentFont = False
@@ -2657,39 +2661,39 @@ object frmXQWizard: TfrmXQWizard
     Left = 210
     Top = 1
     object ppmCopy: TMenuItem
-      Caption = '将当前棋局图象复制到剪贴板'
+      Caption = #34758#12539#65405#28760#29141#35709#21477#65393#128#34647#65406#38606#65377#34719#27018#23451#34555#65392#34577#65386#38605#65396#35674#65407
       OnClick = ppmCopyClick
     end
     object ppmSaveAsBmp: TMenuItem
-      Caption = '将当前棋局图象复制到文件...'
+      Caption = #34758#12539#65405#28760#29141#35709#21477#65393#128#34647#65406#38606#65377#34719#27018#23451#34555#65392#35649#12539#65403#65398'...'
       OnClick = ppmSaveAsBmpClick
     end
     object ppmLine1: TMenuItem
       Caption = '-'
     end
     object ppmPastePosition: TMenuItem
-      Caption = '从剪贴板文本棋图中粘贴棋子的位置'
+      Caption = #33673#20027#23713#38605#65396#35674#65407#35649#12539#24765#35709#21477#23839#33651#65389#37002#20521#65396#65396#35709#21477#65389#21315#22122#33780#21682#65405#65390
       OnClick = ppmPastePositionClick
     end
     object N1: TMenuItem
       Caption = '-'
     end
     object ppm32Qizi: TMenuItem
-      Caption = '32个棋子的初始位置'
+      Caption = '32'#33651#65386#35709#21477#65389#21315#22122#34555#26191#65383#20534#65405#21682#65405#65390
       OnClick = ppm32QiziClick
     end
     object ppm1Ma: TMenuItem
-      Caption = '让单马'
+      Caption = #38582#65385#34570#26286#65385#65388
       OnClick = ppm1MaClick
     end
     object ppm2M: TMenuItem
-      Caption = '让双马'
+      Caption = #38582#65385#34623#30849#65385#65388
       OnClick = ppm2MClick
     end
   end
   object dlgSaveDialog: TSaveDialog
     Filter = 'Bitmap Files (*.bmp)|*.bmp|All files (*.*)|*.*'
-    Title = '将当前棋局图象保存为'
+    Title = #34758#12539#65405#28760#29141#35709#21477#65393#128#34647#65406#38606#65377#33771#26191#65389#20485#65400#65402
     Left = 242
     Top = 2
   end

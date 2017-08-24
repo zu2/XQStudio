@@ -2,7 +2,7 @@
 //
 // XQStduio Source Code (http://www.qipaile.net/xqstudio)
 //
-// Copyright (c) 1998-2008, DONG Shiwei (¶­ÊÀÎ° or ¹ıºÓÏó)
+// Copyright (c) 1998-2008, DONG Shiwei (è‘£ä¸–ä¼Ÿ or è¿‡æ²³è±¡)
 // All rights reserved.
 // 
 // Redistribution and use in source and binary forms, with or without
@@ -58,28 +58,28 @@ const
   dCVersionInfo = dCProductName+' '+dCMainVersion;
 
   dCMaxRecNo = 1023;
-  dCMaxVarNo = 1023;                            // ×î´óµÄ±ä×ÅÊı
+  dCMaxVarNo = 1023;                            // æœ€å¤§çš„å˜ç€æ•°
 
   dCWMOPENXQF   =  9966;
 
 type
   //-----------------------------------------------------------------------
-  // ¶¨ÒåÏóÆåÀàÖĞÓÃµ½µÄÊı¾İÀàĞÍ
+  // å®šä¹‰è±¡æ£‹ç±»ä¸­ç”¨åˆ°çš„æ•°æ®ç±»å‹
   //.......................................................................
-  dTXQPXY = array [0..8, 0..9] of TImage;       // ÏóÆåÅÌ×ø±ê¶¨Òå: Ò»¸öÆåÅÌ
-                                                // ÓÉ90¸ö½»²æµã'±øÕ¾'×é³É
+  dTXQPXY = array [0..8, 0..9] of TImage;       // è±¡æ£‹ç›˜åæ ‡å®šä¹‰: ä¸€ä¸ªæ£‹ç›˜
+                                                // ç”±90ä¸ªäº¤å‰ç‚¹'å…µç«™'ç»„æˆ
 
-  dTXQZPic = array [1..14] of TPicture;         // ÏóÆå×ÓµÄÍ¼Æ¬, ÒÀ´ÎÎª:
-                                                // ºì: ³µÂíÏàÊ¿Ë§ÅÚ±ø
-                                                // ºÚ: ³µÂíÏóÊ¿½«ÅÚ±ø
+  dTXQZPic = array [1..14] of TPicture;         // è±¡æ£‹å­çš„å›¾ç‰‡, ä¾æ¬¡ä¸º:
+                                                // çº¢: è½¦é©¬ç›¸å£«å¸…ç‚®å…µ
+                                                // é»‘: è½¦é©¬è±¡å£«å°†ç‚®å…µ
 
-  dTWhoPlay = (wpRed, wpBlk, wpNone, wpPause);  // ¶¨Òå'¸ÃË­ÏÂ'
+  dTWhoPlay = (wpRed, wpBlk, wpNone, wpPause);  // å®šä¹‰'è¯¥è°ä¸‹'
 
-  dTXQZXY = array [1..32] of dTByte;            // 32¸öÆå×ÓµÄÎ»ÖÃ
-  // ÓÃµ¥×Ö½Ú×ø±ê±íÊ¾, ½«×Ö½Ú±äÎªÊ®½øÖÆÊı, Ê®Î»ÊıÎªX(0-8)¸öÎ»ÊıÎªY(0-9),
-  // ÆåÅÌµÄ×óÏÂ½ÇÎªÔ­µã(0, 0). 32¸öÆå×ÓµÄÎ»ÖÃ´Ó1µ½32ÒÀ´ÎÎª:
-  // ºì: ³µÂíÏàÊ¿Ë§Ê¿ÏàÂí³µÅÚÅÚ±ø±ø±ø±ø±ø (Î»ÖÃ´ÓÓÒµ½×ó, ´ÓÏÂµ½ÉÏ)
-  // ºÚ: ³µÂíÏóÊ¿½«Ê¿ÏóÂí³µÅÚÅÚ×ä×ä×ä×ä×ä (Î»ÖÃ´ÓÓÒµ½×ó, ´ÓÏÂµ½ÉÏ)
+  dTXQZXY = array [1..32] of dTByte;            // 32ä¸ªæ£‹å­çš„ä½ç½®
+  // ç”¨å•å­—èŠ‚åæ ‡è¡¨ç¤º, å°†å­—èŠ‚å˜ä¸ºåè¿›åˆ¶æ•°, åä½æ•°ä¸ºX(0-8)ä¸ªä½æ•°ä¸ºY(0-9),
+  // æ£‹ç›˜çš„å·¦ä¸‹è§’ä¸ºåŸç‚¹(0, 0). 32ä¸ªæ£‹å­çš„ä½ç½®ä»1åˆ°32ä¾æ¬¡ä¸º:
+  // çº¢: è½¦é©¬ç›¸å£«å¸…å£«ç›¸é©¬è½¦ç‚®ç‚®å…µå…µå…µå…µå…µ (ä½ç½®ä»å³åˆ°å·¦, ä»ä¸‹åˆ°ä¸Š)
+  // é»‘: è½¦é©¬è±¡å£«å°†å£«è±¡é©¬è½¦ç‚®ç‚®å’å’å’å’å’ (ä½ç½®ä»å³åˆ°å·¦, ä»ä¸‹åˆ°ä¸Š)
 
   procedure dMakeStandardQzXY(var qzXY: dTXQZXY);
   function  IsQzXYSame(var qzXY1, qzXY2: dTXQZXY; bQzNumOnly, bIgnoreYz: Boolean): Boolean;
@@ -100,17 +100,17 @@ type
 
 
 //-------------------------------------------------------------------------
-// ±äÁ¿¶¨Òå
+// å˜é‡å®šä¹‰
 //.........................................................................
 var
-  dCREDNUM: array [0..9] of String[3] =         // ºì·½ËùÓÃµÄÊı×ÖÏµÍ³
-             ('0', 'Ò»','¶ş','Èı','ËÄ','Îå','Áù','Æß','°Ë','¾Å');
-  dCBLKNUM: array [0..9] of String[3] =         // ºÚ·½ËùÓÃµÄÊı×ÖÏµÍ³
-             ('0', '£±','£²','£³','£´','£µ','£¶','£·','£¸','£¹');
+  dCREDNUM: array [0..9] of String[3] =         // çº¢æ–¹æ‰€ç”¨çš„æ•°å­—ç³»ç»Ÿ
+             ('0', 'ä¸€','äºŒ','ä¸‰','å››','äº”','å…­','ä¸ƒ','å…«','ä¹');
+  dCBLKNUM: array [0..9] of String[3] =         // é»‘æ–¹æ‰€ç”¨çš„æ•°å­—ç³»ç»Ÿ
+             ('0', 'ï¼‘','ï¼’','ï¼“','ï¼”','ï¼•','ï¼–','ï¼—','ï¼˜','ï¼™');
 implementation
 
 //-------------------------------------------------------------------------
-// ÓĞÆå×Ó×ø±ê±äÎªÆåÆ×¼ÇÂ¼£¬Í¬Ê±Æå¾ÖµÄ¾ÖÊÆ¸üĞÂ
+// æœ‰æ£‹å­åæ ‡å˜ä¸ºæ£‹è°±è®°å½•ï¼ŒåŒæ—¶æ£‹å±€çš„å±€åŠ¿æ›´æ–°
 //.........................................................................
 function sGetPlayRecStr(var qzXY:dTXQZXY; XYf,XYt:Byte; bRL:Boolean;
              bMove: Boolean):string;
@@ -132,12 +132,12 @@ begin
 end;
 function sGetRedLine(iX: Integer): String;
 begin
-  // bRL Îª×óÓÒ¶Ô»»±êÖ¾
+  // bRL ä¸ºå·¦å³å¯¹æ¢æ ‡å¿—
   if bRL then Result := dCREDNUM[iX+1] else Result := dCREDNUM[9-iX];
 end;
 function sGetBlkLine(iX: Integer): String;
 begin
-  // bRL Îª×óÓÒ¶Ô»»±êÖ¾
+  // bRL ä¸ºå·¦å³å¯¹æ¢æ ‡å¿—
   if bRL then Result := dCBLKNUM[9-iX] else Result := dCBLKNUM[iX+1];
 end;
 
@@ -150,7 +150,7 @@ begin
     else    Exit;
   end;
 
-  case iGetQZIdxAtXY(XYt) of                    // ²»¿ÉÒÔ³Ô×Ô¼º×Ó
+  case iGetQZIdxAtXY(XYt) of                    // ä¸å¯ä»¥åƒè‡ªå·±å­
     01..16: if (WP = wpRed) then Exit;
     17..32: if (WP = wpBlk) then Exit;
   end;
@@ -172,33 +172,33 @@ begin
       case WP of
       wpRed:
         begin
-          sRec := '³µ' + sGetRedLine(Xf);
+          sRec := 'è½¦' + sGetRedLine(Xf);
 
           if qzXY[01] = XYf then
             MN := qzXY[09]
           else
             MN := qzXY[01];
           m := MN div 10;  n := MN mod 10;
-          if (m=Xf) then if (Yf>n) then sRec:='Ç°³µ' else sRec:='ºó³µ';
+          if (m=Xf) then if (Yf>n) then sRec:='å‰è½¦' else sRec:='åè½¦';
 
           case Dy of
-            01..09: sRec := sRec + '½ø' + dCREDNUM[Db];
-            -9..-1: sRec := sRec + 'ÍË' + dCREDNUM[Db];
-            0     : sRec := sRec + 'Æ½' + sGetRedLine(Xt);
+            01..09: sRec := sRec + 'è¿›' + dCREDNUM[Db];
+            -9..-1: sRec := sRec + 'é€€' + dCREDNUM[Db];
+            0     : sRec := sRec + 'å¹³' + sGetRedLine(Xt);
           end;
         end;
       wpBlk:
         begin
-          sRec := '³µ' + sGetBlkLine(Xf);
+          sRec := 'è½¦' + sGetBlkLine(Xf);
 
           if (qzXY[17]=XYf) then MN:=qzXY[25] else MN:=qzXY[17];
           m := MN div 10;  n := MN mod 10;
-          if (m=Xf) then if (Yf<n) then sRec:='Ç°³µ' else sRec:='ºó³µ';
+          if (m=Xf) then if (Yf<n) then sRec:='å‰è½¦' else sRec:='åè½¦';
 
           case Dy of
-            -9..-1: sRec := sRec + '½ø' + dCBLKNUM[Db];
-            01..09: sRec := sRec + 'ÍË' + dCBLKNUM[Db];
-            0     : sRec := sRec + 'Æ½' + sGetBlkLine(Xt);
+            -9..-1: sRec := sRec + 'è¿›' + dCBLKNUM[Db];
+            01..09: sRec := sRec + 'é€€' + dCBLKNUM[Db];
+            0     : sRec := sRec + 'å¹³' + sGetBlkLine(Xt);
           end;
         end;
       end;
@@ -213,26 +213,26 @@ begin
       case WP of
       wpRed:
         begin
-          sRec := 'Âí' + sGetRedLine(Xf);
+          sRec := 'é©¬' + sGetRedLine(Xf);
 
           if (qzXY[02]=XYf) then MN:=qzXY[08] else MN:=qzXY[02];
           m := MN div 10;  n := MN mod 10;
-          if (m=Xf) then if (Yf>n) then sRec:='Ç°Âí' else sRec:='ºóÂí';
+          if (m=Xf) then if (Yf>n) then sRec:='å‰é©¬' else sRec:='åé©¬';
           case Dy of
-            01..02: sRec := sRec + '½ø' + sGetRedLine(Xt);
-            -2..-1: sRec := sRec + 'ÍË' + sGetRedLine(Xt);
+            01..02: sRec := sRec + 'è¿›' + sGetRedLine(Xt);
+            -2..-1: sRec := sRec + 'é€€' + sGetRedLine(Xt);
           end;
         end;
       wpBlk:
         begin
-          sRec := 'Âí' + sGetBlkLine(Xf);
+          sRec := 'é©¬' + sGetBlkLine(Xf);
 
           if (qzXY[18]=XYf) then MN:=qzXY[24] else MN:=qzXY[18];
           m := MN div 10;  n := MN mod 10;
-          if (m=Xf) then if (Yf<n) then sRec:='Ç°Âí' else sRec:='ºóÂí';
+          if (m=Xf) then if (Yf<n) then sRec:='å‰é©¬' else sRec:='åé©¬';
           case Dy of
-            -2..-1: sRec := sRec + '½ø' + sGetBlkLine(Xt);
-            01..02: sRec := sRec + 'ÍË' + sGetBlkLine(Xt);
+            -2..-1: sRec := sRec + 'è¿›' + sGetBlkLine(Xt);
+            01..02: sRec := sRec + 'é€€' + sGetBlkLine(Xt);
           end;
         end;
       end;
@@ -251,28 +251,28 @@ begin
       case WP of
       wpRed:
         begin
-          sRec := 'Ïà' + sGetRedLine(Xf);
+          sRec := 'ç›¸' + sGetRedLine(Xf);
 
           //if qzXY[03]=XYf then MN:=qzXY[07]else MN:=qzXY[03];
           //m := MN div 10;  n := MN mod 10;
-          //if (m=Xf) then if (Yf>n) then sRec:='Ç°Ïà' else sRec:='ºóÏà';
+          //if (m=Xf) then if (Yf>n) then sRec:='å‰ç›¸' else sRec:='åç›¸';
 
           case Dy of
-            01..02: sRec := sRec + '½ø' + sGetRedLine(Xt);
-            -2..-1: sRec := sRec + 'ÍË' + sGetRedLine(Xt);
+            01..02: sRec := sRec + 'è¿›' + sGetRedLine(Xt);
+            -2..-1: sRec := sRec + 'é€€' + sGetRedLine(Xt);
           end;
         end;
       wpBlk:
         begin
-          sRec := 'Ïó' + sGetBlkLine(Xf);
+          sRec := 'è±¡' + sGetBlkLine(Xf);
 
           //if qzXY[19]=XYf then MN:=qzXY[23] else MN:=qzXY[19];
           //m := MN div 10;  n := MN mod 10;
-          //if (m=Xf) then if (Yf<n) then sRec:='Ç°Ïó' else sRec:='ºóÏó';
+          //if (m=Xf) then if (Yf<n) then sRec:='å‰è±¡' else sRec:='åè±¡';
 
           case Dy of
-            -2..-1: sRec := sRec + '½ø' + sGetBlkLine(Xt);
-            01..02: sRec := sRec + 'ÍË' + sGetBlkLine(Xt);
+            -2..-1: sRec := sRec + 'è¿›' + sGetBlkLine(Xt);
+            01..02: sRec := sRec + 'é€€' + sGetBlkLine(Xt);
           end;
         end;
       end;
@@ -290,28 +290,28 @@ begin
       case WP of
       wpRed:
         begin
-          sRec := 'Ê¿' + sGetRedLine(Xf);
+          sRec := 'å£«' + sGetRedLine(Xf);
 
           //if qzXY[04] = XYf then MN:=qzXY[06] else MN:=qzXY[04];
           //m := MN div 10;  n := MN mod 10;
-          //if (m=Xf) then if (Yf>n) then sRec:='Ç°Ê¿' else sRec:='ºóÊ¿';
+          //if (m=Xf) then if (Yf>n) then sRec:='å‰å£«' else sRec:='åå£«';
 
           case Dy of
-            01..02: sRec := sRec + '½ø' + sGetRedLine(Xt);
-            -2..-1: sRec := sRec + 'ÍË' + sGetRedLine(Xt);
+            01..02: sRec := sRec + 'è¿›' + sGetRedLine(Xt);
+            -2..-1: sRec := sRec + 'é€€' + sGetRedLine(Xt);
           end;
         end;
       wpBlk:
         begin
-          sRec := 'Ê¿' + sGetBlkLine(Xf);
+          sRec := 'å£«' + sGetBlkLine(Xf);
 
           //if qzXY[20]=XYf then MN:=qzXY[22] else MN:=qzXY[20];
           //m := MN div 10;  n := MN mod 10;
-          //if (m=Xf) then if (Yf<n) then sRec:='Ç°Ê¿' else sRec:= 'ºóÊ¿';
+          //if (m=Xf) then if (Yf<n) then sRec:='å‰å£«' else sRec:= 'åå£«';
 
           case Dy of
-            -2..-1: sRec := sRec + '½ø' + sGetBlkLine(Xt);
-            01..02: sRec := sRec + 'ÍË' + sGetBlkLine(Xt);
+            -2..-1: sRec := sRec + 'è¿›' + sGetBlkLine(Xt);
+            01..02: sRec := sRec + 'é€€' + sGetBlkLine(Xt);
           end;
         end;
       end;
@@ -329,20 +329,20 @@ begin
       case WP of
       wpRed:
         begin
-          sRec := 'Ë§' + sGetRedLine(Xf);
+          sRec := 'å¸…' + sGetRedLine(Xf);
           case Dy of
-            01..09: sRec := sRec + '½ø' + dCREDNUM[Db];
-            -9..-1: sRec := sRec + 'ÍË' + dCREDNUM[Db];
-            0     : sRec := sRec + 'Æ½' + sGetRedLine(Xt);
+            01..09: sRec := sRec + 'è¿›' + dCREDNUM[Db];
+            -9..-1: sRec := sRec + 'é€€' + dCREDNUM[Db];
+            0     : sRec := sRec + 'å¹³' + sGetRedLine(Xt);
           end;
         end;
       wpBlk:
         begin
-          sRec := '½«' + sGetBlkLine(Xf);
+          sRec := 'å°†' + sGetBlkLine(Xf);
           case Dy of
-            -9..-1: sRec := sRec + '½ø' + dCBLKNUM[Db];
-            01..09: sRec := sRec + 'ÍË' + dCBLKNUM[Db];
-            0     : sRec := sRec + 'Æ½' + sGetBlkLine(Xt);
+            -9..-1: sRec := sRec + 'è¿›' + dCBLKNUM[Db];
+            01..09: sRec := sRec + 'é€€' + dCBLKNUM[Db];
+            0     : sRec := sRec + 'å¹³' + sGetBlkLine(Xt);
           end;
         end;
       end;
@@ -363,29 +363,29 @@ begin
       case WP of
       wpRed:
         begin
-          sRec := 'ÅÚ' + sGetRedLine(Xf);
+          sRec := 'ç‚®' + sGetRedLine(Xf);
 
           if qzXY[10] = XYf then MN:=qzXY[11] else MN:=qzXY[10];
           m := MN div 10;  n := MN mod 10;
-          if (m=Xf) then if (Yf>n) then sRec:='Ç°ÅÚ' else sRec:='ºóÅÚ';
+          if (m=Xf) then if (Yf>n) then sRec:='å‰ç‚®' else sRec:='åç‚®';
 
           case Dy of
-            01..09: sRec := sRec + '½ø' + dCREDNUM[Db];
-            -9..-1: sRec := sRec + 'ÍË' + dCREDNUM[Db];
-            0     : sRec := sRec + 'Æ½' + sGetRedLine(Xt);
+            01..09: sRec := sRec + 'è¿›' + dCREDNUM[Db];
+            -9..-1: sRec := sRec + 'é€€' + dCREDNUM[Db];
+            0     : sRec := sRec + 'å¹³' + sGetRedLine(Xt);
           end;
         end;
       wpBlk:
         begin
-          sRec := 'ÅÚ' + sGetBlkLine(Xf);
+          sRec := 'ç‚®' + sGetBlkLine(Xf);
           if qzXY[26] = XYf then MN := qzXY[27] else MN := qzXY[26];
           m := MN div 10;  n := MN mod 10;
-          if (m=Xf) then if (Yf<n) then sRec:='Ç°ÅÚ' else sRec:= 'ºóÅÚ';
+          if (m=Xf) then if (Yf<n) then sRec:='å‰ç‚®' else sRec:= 'åç‚®';
 
           case Dy of
-            -9..-1: sRec := sRec + '½ø' + dCBLKNUM[Db];
-            01..09: sRec := sRec + 'ÍË' + dCBLKNUM[Db];
-            0     : sRec := sRec + 'Æ½' + sGetBlkLine(Xt);
+            -9..-1: sRec := sRec + 'è¿›' + dCBLKNUM[Db];
+            01..09: sRec := sRec + 'é€€' + dCBLKNUM[Db];
+            0     : sRec := sRec + 'å¹³' + sGetBlkLine(Xt);
           end;
         end;
       end
@@ -403,7 +403,7 @@ begin
       case WP of
       wpRed:
         begin
-          sRec := '±ø' + sGetRedLine(Xf);
+          sRec := 'å…µ' + sGetRedLine(Xf);
 
           m := 0;  n := 0;
           for i:=7 downto 1 do
@@ -415,37 +415,37 @@ begin
           end;
 
           case m of
-          2: if (n=1) then sRec:='Ç°±ø' else sRec:= 'ºó±ø';
+          2: if (n=1) then sRec:='å‰å…µ' else sRec:= 'åå…µ';
           3: case n of
-             1: sRec:='Ç°±ø';
-             2: sRec:='ÖĞ±ø';
-             3: sRec:='ºó±ø';
+             1: sRec:='å‰å…µ';
+             2: sRec:='ä¸­å…µ';
+             3: sRec:='åå…µ';
              end;
           4: case n of
-             1: sRec:='Ç°±ø';
-             2: sRec:='¶ş±ø';
-             3: sRec:='Èı±ø';
-             4: sRec:='ºó±ø';
+             1: sRec:='å‰å…µ';
+             2: sRec:='äºŒå…µ';
+             3: sRec:='ä¸‰å…µ';
+             4: sRec:='åå…µ';
              end;
           5: case n of
-             1: sRec:='Ç°±ø';
-             2: sRec:='¶ş±ø';
-             3: sRec:='Èı±ø';
-             4: sRec:='ËÄ±ø';
-             5: sRec:='ºó±ø';
+             1: sRec:='å‰å…µ';
+             2: sRec:='äºŒå…µ';
+             3: sRec:='ä¸‰å…µ';
+             4: sRec:='å››å…µ';
+             5: sRec:='åå…µ';
              end;
 
           end;
 
           case Dy of
-          1 : sRec := sRec + '½ø' + dCREDNUM[Db];
-          0 : sRec := sRec + 'Æ½' + sGetRedLine(Xt);
+          1 : sRec := sRec + 'è¿›' + dCREDNUM[Db];
+          0 : sRec := sRec + 'å¹³' + sGetRedLine(Xt);
           end;
         end;
 
       wpBlk:
         begin
-          sRec := '×ä' + sGetBlkLine(Xf);
+          sRec := 'å’' + sGetBlkLine(Xf);
 
           m := 0;  n := 0;
           for i:=1 to 7 do
@@ -457,30 +457,30 @@ begin
           end;
 
           case m of
-          2: if (n=1) then sRec:='Ç°×ä' else sRec:= 'ºó×ä';
+          2: if (n=1) then sRec:='å‰å’' else sRec:= 'åå’';
           3: case n of
-             1: sRec:='Ç°×ä';
-             2: sRec:='ÖĞ×ä';
-             3: sRec:='ºó×ä';
+             1: sRec:='å‰å’';
+             2: sRec:='ä¸­å’';
+             3: sRec:='åå’';
              end;
           4: case n of
-             1: sRec:='Ç°×ä';
-             2: sRec:='¶ş×ä';
-             3: sRec:='Èı×ä';
-             4: sRec:='ºó×ä';
+             1: sRec:='å‰å’';
+             2: sRec:='äºŒå’';
+             3: sRec:='ä¸‰å’';
+             4: sRec:='åå’';
              end;
           5: case n of
-             1: sRec:='Ç°×ä';
-             2: sRec:='¶ş×ä';
-             3: sRec:='Èı×ä';
-             4: sRec:='ËÄ×ä';
-             5: sRec:='ºó×ä';
+             1: sRec:='å‰å’';
+             2: sRec:='äºŒå’';
+             3: sRec:='ä¸‰å’';
+             4: sRec:='å››å’';
+             5: sRec:='åå’';
              end;
           end;
 
           case Dy of
-          -1: sRec := sRec + '½ø' + dCBLKNUM[Db];
-          0 : sRec := sRec + 'Æ½' + sGetBlkLine(Xt);
+          -1: sRec := sRec + 'è¿›' + dCBLKNUM[Db];
+          0 : sRec := sRec + 'å¹³' + sGetBlkLine(Xt);
           end;
         end;
       end;
@@ -491,14 +491,14 @@ begin
   if iGetQZIdxAtXY(XYt) <> 0 then qzXY[iGetQZIdxAtXY(XYt)]:=$FF;
   qzXY[iGetQZIdxAtXY(XYf)]:=XYt;
 
-  // Èç¹ûÒª×ß×Ó£¬¼ì²é½«Ë§µÄ°²È«¡£
+  // å¦‚æœè¦èµ°å­ï¼Œæ£€æŸ¥å°†å¸…çš„å®‰å…¨ã€‚
   if bMove then
   begin
-    // ¼ì²é×ßÆåºó½«Ë§µÄ°²È«¶È
-    Xf := qzXY[ 5] div 10;  Yf := qzXY[ 5] mod 10;      // ºìË§µÄÎ»ÖÃ
-    Xt := qzXY[21] div 10;  Yt := qzXY[21] mod 10;      // ºÚ½«µÄÎ»ÖÃ
+    // æ£€æŸ¥èµ°æ£‹åå°†å¸…çš„å®‰å…¨åº¦
+    Xf := qzXY[ 5] div 10;  Yf := qzXY[ 5] mod 10;      // çº¢å¸…çš„ä½ç½®
+    Xt := qzXY[21] div 10;  Yt := qzXY[21] mod 10;      // é»‘å°†çš„ä½ç½®
 
-    // ¼ì²é½«Ë§ÊÇ·ñÕÕÃæ
+    // æ£€æŸ¥å°†å¸…æ˜¯å¦ç…§é¢
     if (Xf = Xt) then
     begin
       isKingSafe := False;
@@ -513,7 +513,7 @@ begin
       end;
     end;
 
-    // ¼ì²é×ß×ÓºóÊÇ·ñÓĞ×ÓÒª³Ôµô½«Ë§
+    // æ£€æŸ¥èµ°å­åæ˜¯å¦æœ‰å­è¦åƒæ‰å°†å¸…
     isKingSafe := True;
     case WP of
     wpRed:
@@ -548,23 +548,23 @@ begin
     end;
   end;
 
-  // ²»ÒÆ¶¯Æå×Ó£¬»¹Ô­
+  // ä¸ç§»åŠ¨æ£‹å­ï¼Œè¿˜åŸ
   if not bMove then for i:=1 to 32 do qzXY[i] := TempXY[i];
 
   sGetPlayRecStr := sRec;
 end;
 
 //-------------------------------------------------------------------------
-// ¸ù¾İÆåÆ×È¡µÃ×ø±êµÄÒÆ¶¯£¬ÆåÆ×²ÉÓÃWXFµÄ¼ÇÂ¼·½·¨
+// æ ¹æ®æ£‹è°±å–å¾—åæ ‡çš„ç§»åŠ¨ï¼Œæ£‹è°±é‡‡ç”¨WXFçš„è®°å½•æ–¹æ³•
 //.........................................................................
 function wGetPlayRecXY(qzXY:dTXQZXY;wp: dTWhoPlay;sRecStr:string):dTWord;
 var
   s: string;
   i, j, iCol, iRow, iNum : dTInt32;
-  qzIdx   : array [1..5] of dTInt32;            // Í¬Ò»¸ö±øÖÖ¿ÉÄÜµÄÆå×ÓĞòºÅ
-  qzCnt   : array [1..5] of dTInt32;            // Í¬Ò»ÁĞÉÏµÄÆå×ÓµÄ¸öÊı
-  qzOrd   : array [1..5] of dTInt32;            // ¸ÃÆå×ÓÔÚÍ¬Ò»ÁĞÉÏµÄ´ÎĞò
-  qzMove  : dTInt32;                            // µ±Ç°ÒÆ¶¯µÄÆå×Ó
+  qzIdx   : array [1..5] of dTInt32;            // åŒä¸€ä¸ªå…µç§å¯èƒ½çš„æ£‹å­åºå·
+  qzCnt   : array [1..5] of dTInt32;            // åŒä¸€åˆ—ä¸Šçš„æ£‹å­çš„ä¸ªæ•°
+  qzOrd   : array [1..5] of dTInt32;            // è¯¥æ£‹å­åœ¨åŒä¸€åˆ—ä¸Šçš„æ¬¡åº
+  qzMove  : dTInt32;                            // å½“å‰ç§»åŠ¨çš„æ£‹å­
   qzXYTemp: dTXQZXY;
   Xf, Yf, Xt, Yt, iDx, iDy, XYf, XYt: dTInt32;
   isPawn  : dTBoolean;
@@ -581,7 +581,7 @@ begin
     qzIdx[i] := 0;  qzCnt[i] := 0;  qzOrd[i] := 0;
   end;
 
-  // ¸ù¾İ±øÖÖÉ¸Ñ¡Æå×Ó£¬×î¶à¿ÉÒÔÑ¡³ö5¸ö
+  // æ ¹æ®å…µç§ç­›é€‰æ£‹å­ï¼Œæœ€å¤šå¯ä»¥é€‰å‡º5ä¸ª
   isPawn := False;
 
   case sRecStr[1] of
@@ -617,9 +617,9 @@ begin
       end;
 
     else Exit;
-  end;  // É¸Ñ¡Æå×Ó½áÊø£¬¹Ì¶¨µ½Ä³¸ö±øÖÖÉÏ
+  end;  // ç­›é€‰æ£‹å­ç»“æŸï¼Œå›ºå®šåˆ°æŸä¸ªå…µç§ä¸Š
 
-  // ¼ÆËãÍ¬Ò»ÁĞµÄÆå×ÓµÄ¸öÊıºÍÆå×ÓµÄ´ÎĞò
+  // è®¡ç®—åŒä¸€åˆ—çš„æ£‹å­çš„ä¸ªæ•°å’Œæ£‹å­çš„æ¬¡åº
   for i:=1 to 5 do
   begin
     if (qzIdx[i]=0) then break;
@@ -641,42 +641,42 @@ begin
     end;
   end;
 
-  // ¸ù¾İÇ°ÃæÉ¸Ñ¡µÄ½á¹ûºÍÆåÆ×µÄµÚ¶ş¸ö×Ö·û£¬È·¶¨ÒÆ¶¯µÄÆå×Ó(ÒÔĞòºÅ±íÊ¾)
+  // æ ¹æ®å‰é¢ç­›é€‰çš„ç»“æœå’Œæ£‹è°±çš„ç¬¬äºŒä¸ªå­—ç¬¦ï¼Œç¡®å®šç§»åŠ¨çš„æ£‹å­(ä»¥åºå·è¡¨ç¤º)
   qzMove := 0;
   case sRecStr[2] of
-    '1','2','3','4','5','6','7','8','9':        // ÒÔÊı×Ö±íÊ¾
+    '1','2','3','4','5','6','7','8','9':        // ä»¥æ•°å­—è¡¨ç¤º
       begin
-        iCol := Ord(sRecStr[2]) - Ord('0');     // È¡µÃÊı×ÖµÄÖµ
+        iCol := Ord(sRecStr[2]) - Ord('0');     // å–å¾—æ•°å­—çš„å€¼
 
-        // ¼ÆËã¾ø¶Ô×ø±êÏßX
+        // è®¡ç®—ç»å¯¹åæ ‡çº¿X
         case wp of
           wpRed: iCol := 9 - iCol;
           wpBlk: iCol := iCol - 1;
         end;
-        // ´ËÊ±£¬iColÊÇµ±Ç°ÒÆ¶¯Æå×ÓµÄX×ø±ê
+        // æ­¤æ—¶ï¼ŒiColæ˜¯å½“å‰ç§»åŠ¨æ£‹å­çš„Xåæ ‡
 
-        for i:=1 to 5 do                        // ´Ó5¸öºîÑ¡Æå×ÓÖĞÕÒ
+        for i:=1 to 5 do                        // ä»5ä¸ªä¾¯é€‰æ£‹å­ä¸­æ‰¾
         begin
-          if (qzIdx[i]=0) then Exit;            // ÕÒ²»µ½£¬ÍË³ö
+          if (qzIdx[i]=0) then Exit;            // æ‰¾ä¸åˆ°ï¼Œé€€å‡º
           if ((qzXY[qzIdx[i]] div 10)=iCol) then
-          begin                                 // ÕÒµ½
-            if isPawn then                      // ¡°±ø¡¢×ä¡±µÄÇé¿öÒªÌØÊâ´¦Àí
+          begin                                 // æ‰¾åˆ°
+            if isPawn then                      // â€œå…µã€å’â€çš„æƒ…å†µè¦ç‰¹æ®Šå¤„ç†
             begin
-              if ((qzCnt[i]=1) or               // µ¥±øÔÚÒ»ÌõÏßÉÏ
-                ((qzCnt[i]=3)and(qzOrd[i]=2)) or    // Èı±øÔÚÒ»ÏßµÄÖĞ¼ä±ø
-                ((qzCnt[i]=5)and(qzOrd[i]=3))) then // Îå±øÔÚÒ»ÏßµÄÖĞ¼ä±ø
+              if ((qzCnt[i]=1) or               // å•å…µåœ¨ä¸€æ¡çº¿ä¸Š
+                ((qzCnt[i]=3)and(qzOrd[i]=2)) or    // ä¸‰å…µåœ¨ä¸€çº¿çš„ä¸­é—´å…µ
+                ((qzCnt[i]=5)and(qzOrd[i]=3))) then // äº”å…µåœ¨ä¸€çº¿çš„ä¸­é—´å…µ
               begin
-                qzMove := qzIdx[i];             // qzMoveÎªµ±Ç°Æå×ÓµÄĞòºÅ
+                qzMove := qzIdx[i];             // qzMoveä¸ºå½“å‰æ£‹å­çš„åºå·
               end;
             end
-            else                                // ³ı±ø×äÍâµÄÆäËü±øÖÖ
+            else                                // é™¤å…µå’å¤–çš„å…¶å®ƒå…µç§
             begin
               case qzCnt[i] of
-                1:                              // ²»³öÏÖÁ½¸öÍ¬Ñù±øÖÖÔÚÍ¬Ò»ÁĞÉÏ
+                1:                              // ä¸å‡ºç°ä¸¤ä¸ªåŒæ ·å…µç§åœ¨åŒä¸€åˆ—ä¸Š
                   begin
-                    qzMove := qzIdx[i];         // qzMoveÎªµ±Ç°Æå×ÓµÄĞòºÅ
+                    qzMove := qzIdx[i];         // qzMoveä¸ºå½“å‰æ£‹å­çš„åºå·
                   end;
-                2:                              // ÓĞÁ½¸öÍ¬ÑùµÄ±øÖÖÔÚÍ¬Ò»ÁĞÉÏ
+                2:                              // æœ‰ä¸¤ä¸ªåŒæ ·çš„å…µç§åœ¨åŒä¸€åˆ—ä¸Š
                   begin
                     qzXYTemp := qzXY;  s := sRecStr;
                     case qzOrd[i] of
@@ -690,12 +690,12 @@ begin
           end;
           if (qzMove<>0) then break;
         end;
-        if (i>5) then Exit;                     // ÕÒ²»µ½£¬ÍË³ö
+        if (i>5) then Exit;                     // æ‰¾ä¸åˆ°ï¼Œé€€å‡º
       end;
 
-    '+', '-':                                   // ÒÔ¡®Ç°£¬ºó¡¯±íÊ¾
+    '+', '-':                                   // ä»¥â€˜å‰ï¼Œåâ€™è¡¨ç¤º
       begin
-        if isPawn then                          // ¡°±ø¡¢×ä¡±µÄÇé¿öÒªÌØÊâ´¦Àí
+        if isPawn then                          // â€œå…µã€å’â€çš„æƒ…å†µè¦ç‰¹æ®Šå¤„ç†
         begin
           case sRecStr[1] of
             'P','p':
@@ -785,20 +785,20 @@ begin
     else Exit;
   end;
 
-  // ´ËÊ±£¬ÕÒµ½µ±Ç°ÒÆ¶¯Æå×ÓµÄĞòºÅqzMove
-  if ((qzMove<1) or (qzMove>32)) then Exit;     // °²È«ĞÔ¼ì²é
-  if (qzXY[qzMove]=$FF) then Exit;              // ²»ÄÜÎª¡°ËÀ¡±×Ó
+  // æ­¤æ—¶ï¼Œæ‰¾åˆ°å½“å‰ç§»åŠ¨æ£‹å­çš„åºå·qzMove
+  if ((qzMove<1) or (qzMove>32)) then Exit;     // å®‰å…¨æ€§æ£€æŸ¥
+  if (qzXY[qzMove]=$FF) then Exit;              // ä¸èƒ½ä¸ºâ€œæ­»â€å­
   
-  Xf := qzXY[qzMove] div 10;  Xt := Xf;         // ¸øÒÆ¶¯×ø±ê¸³Öµ
+  Xf := qzXY[qzMove] div 10;  Xt := Xf;         // ç»™ç§»åŠ¨åæ ‡èµ‹å€¼
   Yf := qzXY[qzMove] mod 10;  Yt := Yf;
 
-  // È¡µÃÆåÆ×¼ÇÂ¼µÄ×îºóÒ»Î»Êı×ÖµÄÖµ
+  // å–å¾—æ£‹è°±è®°å½•çš„æœ€åä¸€ä½æ•°å­—çš„å€¼
   iNum := Ord(sRecStr[4]) - Ord('0');
   if ((iNum<1)or(iNum>9)) then Exit;
 
-  // ¸ù¾İÒÆ¶¯µÄ·½Ïò¼ÆËãÄ¿±êµãµÄ×ø±ê
+  // æ ¹æ®ç§»åŠ¨çš„æ–¹å‘è®¡ç®—ç›®æ ‡ç‚¹çš„åæ ‡
   case sRecStr[3] of 
-    '.':  // Traverse (Æ½ÒÆ)
+    '.':  // Traverse (å¹³ç§»)
       begin
         case wp of
           wpRed: Xt := 9 - iNum;
@@ -806,9 +806,9 @@ begin
         end;
       end;
 
-    '+', '-':  // Advance, Retreat (Ç°½ø»òºóÍË)
+    '+', '-':  // Advance, Retreat (å‰è¿›æˆ–åé€€)
       begin
-        // ÉèÖÃ½øÍË²½ÊıµÄ³Ë·¨Òò×Ó
+        // è®¾ç½®è¿›é€€æ­¥æ•°çš„ä¹˜æ³•å› å­
         iDy := 0;
         case sRecStr[3] of
           '+': iDy := +1;
@@ -817,20 +817,20 @@ begin
 
         case sRecStr[1] of
           'R','r','K','k','C','c','P','p','+','-':
-             begin                              // ³µ½«ÅÚ±ø
+             begin                              // è½¦å°†ç‚®å…µ
                case wp of
                  wpRed: Yt := Yt + iDy*iNum;
                  wpBlk: Yt := Yt - iDy*iNum;
                end;
              end;
 
-          'H', 'h':                             // Âí
+          'H', 'h':                             // é©¬
              begin
                case wp of
                  wpRed:
                    begin
                      iDx := (9-iNum) - Xt;
-                     // ÅĞ¶ÏË®Æ½·½ÏòÒÆ¶¯µÄ¾àÀë
+                     // åˆ¤æ–­æ°´å¹³æ–¹å‘ç§»åŠ¨çš„è·ç¦»
                      case abs(iDx) of
                        1: begin Xt := 9 - iNum; Yt := Yt + iDy*2; end;
                        2: begin Xt := 9 - iNum; Yt := Yt + iDy*1; end;
@@ -849,7 +849,7 @@ begin
                end;
              end;
 
-          'E', 'e':                             // Ïó
+          'E', 'e':                             // è±¡
              begin
                case wp of
                  wpRed: begin Xt := 9 - iNum; Yt := Yt + iDy*2; end;
@@ -857,7 +857,7 @@ begin
                end;
              end;
 
-          'A', 'a':                             // Ê¿
+          'A', 'a':                             // å£«
              begin
                case wp of
                  wpRed: begin Xt := 9 - iNum; Yt := Yt + iDy*1; end;
@@ -882,7 +882,7 @@ end;
 
 
 //-------------------------------------------------------------------------
-// ÖĞ¹úÏóÆå´óÊ¦ÓÃµÄ¸ñÊ½
+// ä¸­å›½è±¡æ£‹å¤§å¸ˆç”¨çš„æ ¼å¼
 // BZxjZcCZZZZZZBZZZZZZZmZZZZZZZZZbZZZZZZZZZZZZZ
 // ZZZZZZZZZPZZZBZZZZXZZZZZZZXZZZZbZZZZZZZJZZZbZ
 // B : Bing
@@ -935,7 +935,7 @@ begin
 end;
 
 //-------------------------------------------------------------------------
-// ´ÓÁ½¸ö¾ÖÊÆµÄ²î±ğ¼ÆËã³öÆå×ÓÒÆ¶¯µÄ×ø±ê
+// ä»ä¸¤ä¸ªå±€åŠ¿çš„å·®åˆ«è®¡ç®—å‡ºæ£‹å­ç§»åŠ¨çš„åæ ‡
 //.........................................................................
 procedure dXQZXYtoXYfXYt(var XYf, XYt: dTByte; qzXYf, qzXYt: dTXQZXY);
 var
@@ -970,16 +970,16 @@ var
   iX,iY, iC: integer;
 begin
   case iIdx of
-    01,09,17,25: sQZName := '³µ';
-    02,08,18,24: sQZName := 'Âí';
-    03,07      : sQZName := 'Ïà';
-    19,23      : sQZName := 'Ïó';
-    04,06,20,22: sQZName := 'Ê¿';
-    05         : sQZName := 'Ë§';
-    21         : sQZName := '½«';
-    10,11,26,27: sQZName := 'ÅÚ';
-    12..16     : sQZName := '±ø';
-    28..32     : sQZName := '×ä';
+    01,09,17,25: sQZName := 'è½¦';
+    02,08,18,24: sQZName := 'é©¬';
+    03,07      : sQZName := 'ç›¸';
+    19,23      : sQZName := 'è±¡';
+    04,06,20,22: sQZName := 'å£«';
+    05         : sQZName := 'å¸…';
+    21         : sQZName := 'å°†';
+    10,11,26,27: sQZName := 'ç‚®';
+    12..16     : sQZName := 'å…µ';
+    28..32     : sQZName := 'å’';
     else         Exit;
   end;
 
@@ -1004,15 +1004,15 @@ begin
 end;
 
 begin
-  // ÉèÖÃÎÄ±¾µÄ¿í¶È£¬ÓÃ¿Õ°×ĞĞ±íÊ¾
+  // è®¾ç½®æ–‡æœ¬çš„å®½åº¦ï¼Œç”¨ç©ºç™½è¡Œè¡¨ç¤º
   case iMode of
     0: sBlank := '                                      ';
     1: sBlank := '                  ';
   end;
   
   mem.Lines.Add('');
-  // ¼ÓÈëºÚ·½ÆåÊÖĞÕÃû
-  sBlk := 'ºÚ·½ ' + sBlk;  sBlk := Trim(sBlk);
+  // åŠ å…¥é»‘æ–¹æ£‹æ‰‹å§“å
+  sBlk := 'é»‘æ–¹ ' + sBlk;  sBlk := Trim(sBlk);
   if (Length(sBlk) >= Length(sBlank)) then
   begin
     s := sBlk;
@@ -1025,33 +1025,33 @@ begin
   end;
   mem.Lines.Add(s);
 
-  mem.Lines.Add(sBlank);                // ¼ÓÈë¿ÕĞĞ
+  mem.Lines.Add(sBlank);                // åŠ å…¥ç©ºè¡Œ
 
-  // ÉèÖÃÆåÅÌµÄ¸ñÊ½
-  mem.Lines.Add('  ©°©¤©Ğ©¤©Ğ©¤©Ğ©¤©Ğ©¤©Ğ©¤©Ğ©¤©Ğ©¤©´  ');
-  mem.Lines.Add('  ©¦¡¡©¦¡¡©¦¡¡©¦£Ü©¦£¯©¦¡¡©¦¡¡©¦¡¡©¦  ');
-  mem.Lines.Add('  ©À©¤©à©¤©à©¤©à©¤¡ù©¤©à©¤©à©¤©à©¤©È  ');
-  mem.Lines.Add('  ©¦¡¡©¦¡¡©¦¡¡©¦£¯©¦£Ü©¦¡¡©¦¡¡©¦¡¡©¦  ');
-  mem.Lines.Add('  ©À©¤©à©¤©à©¤©à©¤©à©¤©à©¤©à©¤©à©¤©È  ');
-  mem.Lines.Add('  ©¦¡¡©¦¡¡©¦¡¡©¦¡¡©¦¡¡©¦¡¡©¦¡¡©¦¡¡©¦  ');
-  mem.Lines.Add('  ©À©¤©à©¤©à©¤©à©¤©à©¤©à©¤©à©¤©à©¤©È  ');
-  mem.Lines.Add('  ©¦¡¡©¦¡¡©¦¡¡©¦¡¡©¦¡¡©¦¡¡©¦¡¡©¦¡¡©¦  ');
-  mem.Lines.Add('  ©À©¤©Ø©¤©Ø©¤©Ø©¤©Ø©¤©Ø©¤©Ø©¤©Ø©¤©È  ');
-  mem.Lines.Add('  ©¦¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡©¦  ');
-  mem.Lines.Add('  ©À©¤©Ğ©¤©Ğ©¤©Ğ©¤©Ğ©¤©Ğ©¤©Ğ©¤©Ğ©¤©È  ');
-  mem.Lines.Add('  ©¦¡¡©¦¡¡©¦¡¡©¦¡¡©¦¡¡©¦¡¡©¦¡¡©¦¡¡©¦  ');
-  mem.Lines.Add('  ©À©¤©à©¤©à©¤©à©¤©à©¤©à©¤©à©¤©à©¤©È  ');
-  mem.Lines.Add('  ©¦¡¡©¦¡¡©¦¡¡©¦¡¡©¦¡¡©¦¡¡©¦¡¡©¦¡¡©¦  ');
-  mem.Lines.Add('  ©À©¤©à©¤©à©¤©à©¤©à©¤©à©¤©à©¤©à©¤©È  ');
-  mem.Lines.Add('  ©¦¡¡©¦¡¡©¦¡¡©¦£Ü©¦£¯©¦¡¡©¦¡¡©¦¡¡©¦  ');
-  mem.Lines.Add('  ©À©¤©à©¤©à©¤©à©¤¡ù©¤©à©¤©à©¤©à©¤©È  ');
-  mem.Lines.Add('  ©¦¡¡©¦¡¡©¦¡¡©¦£¯©¦£Ü©¦¡¡©¦¡¡©¦¡¡©¦  ');
-  mem.Lines.Add('  ©¸©¤©Ø©¤©Ø©¤©Ø©¤©Ø©¤©Ø©¤©Ø©¤©Ø©¤©¼  ');
+  // è®¾ç½®æ£‹ç›˜çš„æ ¼å¼
+  mem.Lines.Add('  â”Œâ”€â”¬â”€â”¬â”€â”¬â”€â”¬â”€â”¬â”€â”¬â”€â”¬â”€â”  ');
+  mem.Lines.Add('  â”‚ã€€â”‚ã€€â”‚ã€€â”‚ï¼¼â”‚ï¼â”‚ã€€â”‚ã€€â”‚ã€€â”‚  ');
+  mem.Lines.Add('  â”œâ”€â”¼â”€â”¼â”€â”¼â”€â€»â”€â”¼â”€â”¼â”€â”¼â”€â”¤  ');
+  mem.Lines.Add('  â”‚ã€€â”‚ã€€â”‚ã€€â”‚ï¼â”‚ï¼¼â”‚ã€€â”‚ã€€â”‚ã€€â”‚  ');
+  mem.Lines.Add('  â”œâ”€â”¼â”€â”¼â”€â”¼â”€â”¼â”€â”¼â”€â”¼â”€â”¼â”€â”¤  ');
+  mem.Lines.Add('  â”‚ã€€â”‚ã€€â”‚ã€€â”‚ã€€â”‚ã€€â”‚ã€€â”‚ã€€â”‚ã€€â”‚  ');
+  mem.Lines.Add('  â”œâ”€â”¼â”€â”¼â”€â”¼â”€â”¼â”€â”¼â”€â”¼â”€â”¼â”€â”¤  ');
+  mem.Lines.Add('  â”‚ã€€â”‚ã€€â”‚ã€€â”‚ã€€â”‚ã€€â”‚ã€€â”‚ã€€â”‚ã€€â”‚  ');
+  mem.Lines.Add('  â”œâ”€â”´â”€â”´â”€â”´â”€â”´â”€â”´â”€â”´â”€â”´â”€â”¤  ');
+  mem.Lines.Add('  â”‚ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â”‚  ');
+  mem.Lines.Add('  â”œâ”€â”¬â”€â”¬â”€â”¬â”€â”¬â”€â”¬â”€â”¬â”€â”¬â”€â”¤  ');
+  mem.Lines.Add('  â”‚ã€€â”‚ã€€â”‚ã€€â”‚ã€€â”‚ã€€â”‚ã€€â”‚ã€€â”‚ã€€â”‚  ');
+  mem.Lines.Add('  â”œâ”€â”¼â”€â”¼â”€â”¼â”€â”¼â”€â”¼â”€â”¼â”€â”¼â”€â”¤  ');
+  mem.Lines.Add('  â”‚ã€€â”‚ã€€â”‚ã€€â”‚ã€€â”‚ã€€â”‚ã€€â”‚ã€€â”‚ã€€â”‚  ');
+  mem.Lines.Add('  â”œâ”€â”¼â”€â”¼â”€â”¼â”€â”¼â”€â”¼â”€â”¼â”€â”¼â”€â”¤  ');
+  mem.Lines.Add('  â”‚ã€€â”‚ã€€â”‚ã€€â”‚ï¼¼â”‚ï¼â”‚ã€€â”‚ã€€â”‚ã€€â”‚  ');
+  mem.Lines.Add('  â”œâ”€â”¼â”€â”¼â”€â”¼â”€â€»â”€â”¼â”€â”¼â”€â”¼â”€â”¤  ');
+  mem.Lines.Add('  â”‚ã€€â”‚ã€€â”‚ã€€â”‚ï¼â”‚ï¼¼â”‚ã€€â”‚ã€€â”‚ã€€â”‚  ');
+  mem.Lines.Add('  â””â”€â”´â”€â”´â”€â”´â”€â”´â”€â”´â”€â”´â”€â”´â”€â”˜  ');
 
   mem.Lines.Add(sBlank);
   
-  // ¼ÓÈëºì·½ÆåÊÖĞÕÃû
-  sRed := 'ºì·½ ' + sRed;  sRed := Trim(sRed);
+  // åŠ å…¥çº¢æ–¹æ£‹æ‰‹å§“å
+  sRed := 'çº¢æ–¹ ' + sRed;  sRed := Trim(sRed);
   if (Length(sRed) >= Length(sBlank)) then
   begin
     s := sRed;
@@ -1064,16 +1064,16 @@ begin
   end;
   mem.Lines.Add(s);
 
-  // ÉèÖÃ32¸öÆå×ÓµÄÎ»ÖÃ(Ê¹ÓÃ±ê×¼¸ñÊ½£¬´øÓĞ[]ºÍ()µÄÎÄ±¾¸ñÊ½)
+  // è®¾ç½®32ä¸ªæ£‹å­çš„ä½ç½®(ä½¿ç”¨æ ‡å‡†æ ¼å¼ï¼Œå¸¦æœ‰[]å’Œ()çš„æ–‡æœ¬æ ¼å¼)
   for i:=1 to 32 do
   begin
     if (qzXY[i] = $FF) then Continue;
     dInsertQiZiToQiTuText(i, qzXY[i]);
   end;
 
-  // ¸ù¾İ²»Í¬µÄ¸ñÊ½ÖØĞÂµ÷ÕûÏÔÊ¾
+  // æ ¹æ®ä¸åŒçš„æ ¼å¼é‡æ–°è°ƒæ•´æ˜¾ç¤º
   case iMode of
-    0: // ±ê×¼¸ñÊ½
+    0: // æ ‡å‡†æ ¼å¼
       begin
         //for i:=0 to 22 do
         //begin
@@ -1081,9 +1081,9 @@ begin
         //end;
       end;
 
-    1: // ´¿ºº×Ö±íÊ¾
+    1: // çº¯æ±‰å­—è¡¨ç¤º
       begin
-        s := '¡¡¡¡¡¡¡¡¡¡¡¡';
+        s := 'ã€€ã€€ã€€ã€€ã€€ã€€';
         mem.Lines[ 1] := mem.Lines[ 1] + s;
         mem.Lines[ 2] := mem.Lines[ 2] + s;
         mem.Lines[22] := mem.Lines[22] + s;
@@ -1097,48 +1097,48 @@ begin
             Continue;
           end;
           s := mem.Lines[i];
-          s := StringReplace(s, '(³µ)', 'íº', [rfReplaceAll]);
-          s := StringReplace(s, '(Âí)', 'Âë', [rfReplaceAll]);
-          s := StringReplace(s, '[ÅÚ]', '°ü', [rfReplaceAll]);
-          s := StringReplace(s, '(Ê¿)', 'ÊË', [rfReplaceAll]);
+          s := StringReplace(s, '(è½¦)', 'ç —', [rfReplaceAll]);
+          s := StringReplace(s, '(é©¬)', 'ç ', [rfReplaceAll]);
+          s := StringReplace(s, '[ç‚®]', 'åŒ…', [rfReplaceAll]);
+          s := StringReplace(s, '(å£«)', 'ä»•', [rfReplaceAll]);
           s := StringReplace(s,    '[',   '', [rfReplaceAll]);
           s := StringReplace(s,    ']',   '', [rfReplaceAll]);
           s := StringReplace(s,    '(',   '', [rfReplaceAll]);
           s := StringReplace(s,    ')',   '', [rfReplaceAll]);
           s := StringReplace(s,    ' ',   '', [rfReplaceAll]);
-          s := StringReplace(s,   '©¤',   '', [rfReplaceAll]);
+          s := StringReplace(s,   'â”€',   '', [rfReplaceAll]);
           s := StringReplace(s,    '-',   '', [rfReplaceAll]);
           case i of
-             3: s := s + '¡¡¡¡ºì¡¡ºÚ¡¡';
-             5: s := s + '¡¡¡¡©¤¡¡©¤¡¡';
-             7: s := s + '¡¡¡¡íº¡¡³µ¡¡';
-             9: s := s + '¡¡¡¡Âë¡¡Âí¡¡';
-            11: s := s + '¡¡¡¡Ïà¡¡Ïó¡¡';
-            13: s := s + '¡¡¡¡ÊË¡¡Ê¿¡¡';
-            15: s := s + '¡¡¡¡Ë§¡¡½«¡¡';
-            17: s := s + '¡¡¡¡ÅÚ¡¡°ü¡¡';
-            19: s := s + '¡¡¡¡±ø¡¡×ä¡¡';
+             3: s := s + 'ã€€ã€€çº¢ã€€é»‘ã€€';
+             5: s := s + 'ã€€ã€€â”€ã€€â”€ã€€';
+             7: s := s + 'ã€€ã€€ç —ã€€è½¦ã€€';
+             9: s := s + 'ã€€ã€€ç ã€€é©¬ã€€';
+            11: s := s + 'ã€€ã€€ç›¸ã€€è±¡ã€€';
+            13: s := s + 'ã€€ã€€ä»•ã€€å£«ã€€';
+            15: s := s + 'ã€€ã€€å¸…ã€€å°†ã€€';
+            17: s := s + 'ã€€ã€€ç‚®ã€€åŒ…ã€€';
+            19: s := s + 'ã€€ã€€å…µã€€å’ã€€';
             21:
               begin
                 case wp of
-                  wpRed: s := s + '¡¡(ºì·½ĞĞÆå)';
-                  wpBlk: s := s + '¡¡(ºÚ·½ĞĞÆå)';
+                  wpRed: s := s + 'ã€€(çº¢æ–¹è¡Œæ£‹)';
+                  wpBlk: s := s + 'ã€€(é»‘æ–¹è¡Œæ£‹)';
                 end;
               end;
           end;
           mem.Lines[i] := s;
         end; // End of for;
 
-        mem.Lines.Insert(1, '©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤');
-        mem.Lines.Append(   '©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤');
+        mem.Lines.Insert(1, 'â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€');
+        mem.Lines.Append(   'â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€');
       end;
   end;
 
-  // ½«°ë½ÇµÄ¿Õ¸ñÌæ»»ÎªÈ«½ÇµÄ¿Õ¸ñ
+  // å°†åŠè§’çš„ç©ºæ ¼æ›¿æ¢ä¸ºå…¨è§’çš„ç©ºæ ¼
   for i:= 0 to (mem.Lines.Count - 1) do
   begin
     s := mem.Lines[i];
-    s := StringReplace(s, '  ', '¡¡', [rfReplaceAll]);
+    s := StringReplace(s, '  ', 'ã€€', [rfReplaceAll]);
     mem.Lines[i] := s;
   end;
 
@@ -1146,55 +1146,55 @@ begin
   begin
     sMemText := mem.Text;
     case iMode of
-    0: // ±ê×¼¸ñÊ½
+    0: // æ ‡å‡†æ ¼å¼
       begin
         sMemText := StringReplace(sMemText, '[', #27#27'[1;32m[', [rfReplaceAll]);
         sMemText := StringReplace(sMemText, ']', ']'#27#27'[0m',    [rfReplaceAll]);
         sMemText := StringReplace(sMemText, '(', #27#27'[1;31m(', [rfReplaceAll]);
         sMemText := StringReplace(sMemText, ')', ')'#27#27'[0m',    [rfReplaceAll]);
       end;
-    1: // ´¿ºº×Ö±íÊ¾
+    1: // çº¯æ±‰å­—è¡¨ç¤º
       begin
-        sMemText := StringReplace(sMemText, 'íº', #27#27'[1;31míº'#27#27'[0m', [rfReplaceAll]);
-        sMemText := StringReplace(sMemText, 'Âë', #27#27'[1;31mÂë'#27#27'[0m', [rfReplaceAll]);
-        sMemText := StringReplace(sMemText, 'Ïà', #27#27'[1;31mÏà'#27#27'[0m', [rfReplaceAll]);
-        sMemText := StringReplace(sMemText, 'ÊË', #27#27'[1;31mÊË'#27#27'[0m', [rfReplaceAll]);
-        sMemText := StringReplace(sMemText, 'Ë§', #27#27'[1;31mË§'#27#27'[0m', [rfReplaceAll]);
-        sMemText := StringReplace(sMemText, 'ÅÚ', #27#27'[1;31mÅÚ'#27#27'[0m', [rfReplaceAll]);
-        sMemText := StringReplace(sMemText, '±ø', #27#27'[1;31m±ø'#27#27'[0m', [rfReplaceAll]);
-        sMemText := StringReplace(sMemText, '³µ', #27#27'[1;32m³µ'#27#27'[0m', [rfReplaceAll]);
-        sMemText := StringReplace(sMemText, 'Âí', #27#27'[1;32mÂí'#27#27'[0m', [rfReplaceAll]);
-        sMemText := StringReplace(sMemText, 'Ïó', #27#27'[1;32mÏó'#27#27'[0m', [rfReplaceAll]);
-        sMemText := StringReplace(sMemText, 'Ê¿', #27#27'[1;32mÊ¿'#27#27'[0m', [rfReplaceAll]);
-        sMemText := StringReplace(sMemText, '½«', #27#27'[1;32m½«'#27#27'[0m', [rfReplaceAll]);
-        sMemText := StringReplace(sMemText, '°ü', #27#27'[1;32m°ü'#27#27'[0m', [rfReplaceAll]);
-        sMemText := StringReplace(sMemText, '×ä', #27#27'[1;32m×ä'#27#27'[0m', [rfReplaceAll]);
+        sMemText := StringReplace(sMemText, 'ç —', #27#27'[1;31mç —'#27#27'[0m', [rfReplaceAll]);
+        sMemText := StringReplace(sMemText, 'ç ', #27#27'[1;31mç '#27#27'[0m', [rfReplaceAll]);
+        sMemText := StringReplace(sMemText, 'ç›¸', #27#27'[1;31mç›¸'#27#27'[0m', [rfReplaceAll]);
+        sMemText := StringReplace(sMemText, 'ä»•', #27#27'[1;31mä»•'#27#27'[0m', [rfReplaceAll]);
+        sMemText := StringReplace(sMemText, 'å¸…', #27#27'[1;31må¸…'#27#27'[0m', [rfReplaceAll]);
+        sMemText := StringReplace(sMemText, 'ç‚®', #27#27'[1;31mç‚®'#27#27'[0m', [rfReplaceAll]);
+        sMemText := StringReplace(sMemText, 'å…µ', #27#27'[1;31må…µ'#27#27'[0m', [rfReplaceAll]);
+        sMemText := StringReplace(sMemText, 'è½¦', #27#27'[1;32mè½¦'#27#27'[0m', [rfReplaceAll]);
+        sMemText := StringReplace(sMemText, 'é©¬', #27#27'[1;32mé©¬'#27#27'[0m', [rfReplaceAll]);
+        sMemText := StringReplace(sMemText, 'è±¡', #27#27'[1;32mè±¡'#27#27'[0m', [rfReplaceAll]);
+        sMemText := StringReplace(sMemText, 'å£«', #27#27'[1;32må£«'#27#27'[0m', [rfReplaceAll]);
+        sMemText := StringReplace(sMemText, 'å°†', #27#27'[1;32må°†'#27#27'[0m', [rfReplaceAll]);
+        sMemText := StringReplace(sMemText, 'åŒ…', #27#27'[1;32måŒ…'#27#27'[0m', [rfReplaceAll]);
+        sMemText := StringReplace(sMemText, 'å’', #27#27'[1;32må’'#27#27'[0m', [rfReplaceAll]);
       end;
     end;
-    // ½â¾öÍø¸ñÎÊÌâ
-    sMemText := StringReplace(sMemText, '©°', #27#27'[1;33m©°'#27#27'[0m', [rfReplaceAll]);
-    sMemText := StringReplace(sMemText, '©Ğ', #27#27'[1;33m©Ğ'#27#27'[0m', [rfReplaceAll]);
-    sMemText := StringReplace(sMemText, '©´', #27#27'[1;33m©´'#27#27'[0m', [rfReplaceAll]);
-    sMemText := StringReplace(sMemText, '©À', #27#27'[1;33m©À'#27#27'[0m', [rfReplaceAll]);
-    sMemText := StringReplace(sMemText, '©à', #27#27'[1;33m©à'#27#27'[0m', [rfReplaceAll]);
-    sMemText := StringReplace(sMemText, '¡ù', #27#27'[1;33m¡ù'#27#27'[0m', [rfReplaceAll]);
-    sMemText := StringReplace(sMemText, '©È', #27#27'[1;33m©È'#27#27'[0m', [rfReplaceAll]);
-    sMemText := StringReplace(sMemText, '©¸', #27#27'[1;33m©¸'#27#27'[0m', [rfReplaceAll]);
-    sMemText := StringReplace(sMemText, '©Ø', #27#27'[1;33m©Ø'#27#27'[0m', [rfReplaceAll]);
-    sMemText := StringReplace(sMemText, '©¼', #27#27'[1;33m©¼'#27#27'[0m', [rfReplaceAll]);
-    // ´óÆåÍ¼×¨ÓÃ
-    sMemText := StringReplace(sMemText, '©¤', #27#27'[1;33m©¤'#27#27'[0m', [rfReplaceAll]);
-    sMemText := StringReplace(sMemText, '£Ü', #27#27'[1;33m£Ü'#27#27'[0m', [rfReplaceAll]);
-    sMemText := StringReplace(sMemText, '£¯', #27#27'[1;33m£¯'#27#27'[0m', [rfReplaceAll]);
-    sMemText := StringReplace(sMemText, '©¦', #27#27'[1;33m©¦'#27#27'[0m', [rfReplaceAll]);
+    // è§£å†³ç½‘æ ¼é—®é¢˜
+    sMemText := StringReplace(sMemText, 'â”Œ', #27#27'[1;33mâ”Œ'#27#27'[0m', [rfReplaceAll]);
+    sMemText := StringReplace(sMemText, 'â”¬', #27#27'[1;33mâ”¬'#27#27'[0m', [rfReplaceAll]);
+    sMemText := StringReplace(sMemText, 'â”', #27#27'[1;33mâ”'#27#27'[0m', [rfReplaceAll]);
+    sMemText := StringReplace(sMemText, 'â”œ', #27#27'[1;33mâ”œ'#27#27'[0m', [rfReplaceAll]);
+    sMemText := StringReplace(sMemText, 'â”¼', #27#27'[1;33mâ”¼'#27#27'[0m', [rfReplaceAll]);
+    sMemText := StringReplace(sMemText, 'â€»', #27#27'[1;33mâ€»'#27#27'[0m', [rfReplaceAll]);
+    sMemText := StringReplace(sMemText, 'â”¤', #27#27'[1;33mâ”¤'#27#27'[0m', [rfReplaceAll]);
+    sMemText := StringReplace(sMemText, 'â””', #27#27'[1;33mâ””'#27#27'[0m', [rfReplaceAll]);
+    sMemText := StringReplace(sMemText, 'â”´', #27#27'[1;33mâ”´'#27#27'[0m', [rfReplaceAll]);
+    sMemText := StringReplace(sMemText, 'â”˜', #27#27'[1;33mâ”˜'#27#27'[0m', [rfReplaceAll]);
+    // å¤§æ£‹å›¾ä¸“ç”¨
+    sMemText := StringReplace(sMemText, 'â”€', #27#27'[1;33mâ”€'#27#27'[0m', [rfReplaceAll]);
+    sMemText := StringReplace(sMemText, 'ï¼¼', #27#27'[1;33mï¼¼'#27#27'[0m', [rfReplaceAll]);
+    sMemText := StringReplace(sMemText, 'ï¼', #27#27'[1;33mï¼'#27#27'[0m', [rfReplaceAll]);
+    sMemText := StringReplace(sMemText, 'â”‚', #27#27'[1;33mâ”‚'#27#27'[0m', [rfReplaceAll]);
     sMemText := StringReplace(sMemText, '-',  #27#27'[1;33m-'#27#27'[0m',  [rfReplaceAll]);
     mem.Text := sMemText;
   end;
 
-  if (iMode = 1) then mem.Lines.Add('ÍøÉÏÆåÅÆÀÖ(www.qipaile.net)');
+  if (iMode = 1) then mem.Lines.Add('ç½‘ä¸Šæ£‹ç‰Œä¹(www.qipaile.net)');
 end;
 
-// ÅĞ¶ÏÆå×ÓÊÇ·ñ¿ÉÒÔÎ»ÓÚµ±Ç°µÄÎ»ÖÃ
+// åˆ¤æ–­æ£‹å­æ˜¯å¦å¯ä»¥ä½äºå½“å‰çš„ä½ç½®
 function isQiziCanAtXY(Idx, XYx, XYy: dTInt32): dTBoolean;
 var
   XY: dTInt32;
@@ -1202,41 +1202,41 @@ begin
   isQiziCanAtXY := True;
   XY := XYx*10 + XYy;
   case Idx of
-    1, 9, 2, 8, 10, 11, 17, 25, 18, 24, 26, 27:  // ³µ¡¢Âí¡¢ÅÚ
+    1, 9, 2, 8, 10, 11, 17, 25, 18, 24, 26, 27:  // è½¦ã€é©¬ã€ç‚®
       begin
         Exit;
       end;
-    12..16: // ºì±ø
+    12..16: // çº¢å…µ
       begin
         if (XYy > 4) then Exit;
         if (XY in [03,04, 23, 24, 43, 44, 63, 64, 83, 84]) then Exit;
       end;
-    28..32: // ºÚ×ä
+    28..32: // é»‘å’
       begin
         if (XYy < 5) then Exit;
         if (XY in [05,06, 25, 26, 45, 46, 65, 66, 85, 86]) then Exit;
       end;
-    3, 7: // ºìÏà
+    3, 7: // çº¢ç›¸
       begin
         if (XY in [02, 20, 24, 42, 60, 64, 82]) then Exit;
       end;
-    19, 23: // ºÚÏó
+    19, 23: // é»‘è±¡
       begin
         if (XY in [07, 25, 29, 47, 65, 69, 87]) then Exit;
       end;
-    4, 6: //ºìÊ¿
+    4, 6: //çº¢å£«
       begin
         if (XY in [30, 32, 41, 50, 52]) then Exit;
       end;
-    20, 22: //ºÚÊ¿
+    20, 22: //é»‘å£«
       begin
         if (XY in [37, 39, 48, 57, 59]) then Exit;
       end;
-    5: // ºìË§
+    5: // çº¢å¸…
       begin
         if (XY in [30,31,32,40,41,42,50,51,52]) then Exit;
       end;
-    21: // ºÚ½«
+    21: // é»‘å°†
       begin
         if (XY in [37,38,39,47,48,49,57,58,59]) then Exit;
       end;
@@ -1244,13 +1244,13 @@ begin
   isQiziCanAtXY := False;
 end;
 
-// ½«ÅÌÃæ¹éÒ»»¯£¬±ÜÃâ²éÕÒÊ§°Ü
+// å°†ç›˜é¢å½’ä¸€åŒ–ï¼Œé¿å…æŸ¥æ‰¾å¤±è´¥
 procedure dMakeStandardQzXY(var qzXY: dTXQZXY);
 begin
   Exit;
 end;
 
-// ÅĞ¶Ï¾ÖÃæÊÇ·ñÏàÍ¬
+// åˆ¤æ–­å±€é¢æ˜¯å¦ç›¸åŒ
 var
   iSearchXYPieceNum: array [1..14] of Integer;
 procedure dSetSearchQzXYParam(qzXY: dTXQZXY);
@@ -1355,152 +1355,152 @@ begin
   if (bIgnoreYz) then
   begin
     if (qzXY1[ 1] <= 89) then
-    if (qzXY1[ 1]<>qzXY2[ 1])and(qzXY1[ 1]<>qzXY2[ 9]) then Exit;   // ³µ1
+    if (qzXY1[ 1]<>qzXY2[ 1])and(qzXY1[ 1]<>qzXY2[ 9]) then Exit;   // è½¦1
     if (qzXY1[ 9] <= 89) then
-    if (qzXY1[ 9]<>qzXY2[ 1])and(qzXY1[ 9]<>qzXY2[ 9]) then Exit;   // ³µ2
+    if (qzXY1[ 9]<>qzXY2[ 1])and(qzXY1[ 9]<>qzXY2[ 9]) then Exit;   // è½¦2
     if (qzXY1[ 2] <= 89) then
-    if (qzXY1[ 2]<>qzXY2[ 2])and(qzXY1[ 2]<>qzXY2[ 8]) then Exit;   // Âí1
+    if (qzXY1[ 2]<>qzXY2[ 2])and(qzXY1[ 2]<>qzXY2[ 8]) then Exit;   // é©¬1
     if (qzXY1[ 8] <= 89) then
-    if (qzXY1[ 8]<>qzXY2[ 2])and(qzXY1[ 8]<>qzXY2[ 8]) then Exit;   // Âí2
+    if (qzXY1[ 8]<>qzXY2[ 2])and(qzXY1[ 8]<>qzXY2[ 8]) then Exit;   // é©¬2
     if (qzXY1[ 3] <= 89) then
-    if (qzXY1[ 3]<>qzXY2[ 3])and(qzXY1[ 3]<>qzXY2[ 7]) then Exit;   // Ïà1
+    if (qzXY1[ 3]<>qzXY2[ 3])and(qzXY1[ 3]<>qzXY2[ 7]) then Exit;   // ç›¸1
     if (qzXY1[ 7] <= 89) then
-    if (qzXY1[ 7]<>qzXY2[ 3])and(qzXY1[ 7]<>qzXY2[ 7]) then Exit;   // Ïà2
+    if (qzXY1[ 7]<>qzXY2[ 3])and(qzXY1[ 7]<>qzXY2[ 7]) then Exit;   // ç›¸2
     if (qzXY1[ 4] <= 89) then
-    if (qzXY1[ 4]<>qzXY2[ 4])and(qzXY1[ 4]<>qzXY2[ 6]) then Exit;   // Ê¿1
+    if (qzXY1[ 4]<>qzXY2[ 4])and(qzXY1[ 4]<>qzXY2[ 6]) then Exit;   // å£«1
     if (qzXY1[ 6] <= 89) then
-    if (qzXY1[ 6]<>qzXY2[ 4])and(qzXY1[ 6]<>qzXY2[ 6]) then Exit;   // Ê¿2
+    if (qzXY1[ 6]<>qzXY2[ 4])and(qzXY1[ 6]<>qzXY2[ 6]) then Exit;   // å£«2
     if (qzXY1[ 5] <= 89) then
-    if (qzXY1[ 5]<>qzXY2[ 5])and(qzXY1[ 5]<>qzXY2[ 5]) then Exit;   // Ë§
+    if (qzXY1[ 5]<>qzXY2[ 5])and(qzXY1[ 5]<>qzXY2[ 5]) then Exit;   // å¸…
     if (qzXY1[10] <= 89) then
-    if (qzXY1[10]<>qzXY2[10])and(qzXY1[10]<>qzXY2[11]) then Exit;   // ÅÚ1
+    if (qzXY1[10]<>qzXY2[10])and(qzXY1[10]<>qzXY2[11]) then Exit;   // ç‚®1
     if (qzXY1[11] <= 89) then
-    if (qzXY1[11]<>qzXY2[10])and(qzXY1[11]<>qzXY2[11]) then Exit;   // ÅÚ2
+    if (qzXY1[11]<>qzXY2[10])and(qzXY1[11]<>qzXY2[11]) then Exit;   // ç‚®2
     if (qzXY1[12] <= 89) then
-    if (qzXY1[12]<>qzXY2[12])and(qzXY1[12]<>qzXY2[13]) and          // ±ø1
+    if (qzXY1[12]<>qzXY2[12])and(qzXY1[12]<>qzXY2[13]) and          // å…µ1
        (qzXY1[12]<>qzXY2[14])and(qzXY1[12]<>qzXY2[15]) and
        (qzXY1[12]<>qzXY2[16])then Exit;
     if (qzXY1[13] <= 89) then
-    if (qzXY1[13]<>qzXY2[12])and(qzXY1[13]<>qzXY2[13]) and          // ±ø2
+    if (qzXY1[13]<>qzXY2[12])and(qzXY1[13]<>qzXY2[13]) and          // å…µ2
        (qzXY1[13]<>qzXY2[14])and(qzXY1[13]<>qzXY2[15]) and
        (qzXY1[13]<>qzXY2[16])then Exit;
     if (qzXY1[14] <= 89) then
-    if (qzXY1[14]<>qzXY2[12])and(qzXY1[14]<>qzXY2[13]) and          // ±ø3
+    if (qzXY1[14]<>qzXY2[12])and(qzXY1[14]<>qzXY2[13]) and          // å…µ3
        (qzXY1[14]<>qzXY2[14])and(qzXY1[14]<>qzXY2[15]) and
        (qzXY1[14]<>qzXY2[16])then Exit;
     if (qzXY1[15] <= 89) then
-    if (qzXY1[15]<>qzXY2[12])and(qzXY1[15]<>qzXY2[13]) and          // ±ø4
+    if (qzXY1[15]<>qzXY2[12])and(qzXY1[15]<>qzXY2[13]) and          // å…µ4
        (qzXY1[15]<>qzXY2[14])and(qzXY1[15]<>qzXY2[15]) and
        (qzXY1[15]<>qzXY2[16])then Exit;
     if (qzXY1[16] <= 89) then
-    if (qzXY1[16]<>qzXY2[12])and(qzXY1[16]<>qzXY2[13]) and          // ±ø5
+    if (qzXY1[16]<>qzXY2[12])and(qzXY1[16]<>qzXY2[13]) and          // å…µ5
        (qzXY1[16]<>qzXY2[14])and(qzXY1[16]<>qzXY2[15]) and
        (qzXY1[16]<>qzXY2[16])then Exit;
 
-    // ºÚÆå×ÓµÄÎ»ÖÃ
+    // é»‘æ£‹å­çš„ä½ç½®
     if (qzXY1[17] <= 89) then
-    if (qzXY1[17]<>qzXY2[17])and(qzXY1[17]<>qzXY2[25]) then Exit;   // ³µ1
+    if (qzXY1[17]<>qzXY2[17])and(qzXY1[17]<>qzXY2[25]) then Exit;   // è½¦1
     if (qzXY1[25] <= 89) then
-    if (qzXY1[25]<>qzXY2[17])and(qzXY1[25]<>qzXY2[25]) then Exit;   // ³µ2
+    if (qzXY1[25]<>qzXY2[17])and(qzXY1[25]<>qzXY2[25]) then Exit;   // è½¦2
     if (qzXY1[18] <= 89) then
-    if (qzXY1[18]<>qzXY2[18])and(qzXY1[18]<>qzXY2[24]) then Exit;   // Âí1
+    if (qzXY1[18]<>qzXY2[18])and(qzXY1[18]<>qzXY2[24]) then Exit;   // é©¬1
     if (qzXY1[24] <= 89) then
-    if (qzXY1[24]<>qzXY2[18])and(qzXY1[24]<>qzXY2[24]) then Exit;   // Âí2
+    if (qzXY1[24]<>qzXY2[18])and(qzXY1[24]<>qzXY2[24]) then Exit;   // é©¬2
     if (qzXY1[19] <= 89) then
-    if (qzXY1[19]<>qzXY2[19])and(qzXY1[19]<>qzXY2[23]) then Exit;   // Ïó1
+    if (qzXY1[19]<>qzXY2[19])and(qzXY1[19]<>qzXY2[23]) then Exit;   // è±¡1
     if (qzXY1[23] <= 89) then
-    if (qzXY1[23]<>qzXY2[19])and(qzXY1[23]<>qzXY2[23]) then Exit;   // Ïó2
+    if (qzXY1[23]<>qzXY2[19])and(qzXY1[23]<>qzXY2[23]) then Exit;   // è±¡2
     if (qzXY1[20] <= 89) then
-    if (qzXY1[20]<>qzXY2[20])and(qzXY1[20]<>qzXY2[22]) then Exit;   // Ê¿1
+    if (qzXY1[20]<>qzXY2[20])and(qzXY1[20]<>qzXY2[22]) then Exit;   // å£«1
     if (qzXY1[22] <= 89) then
-    if (qzXY1[22]<>qzXY2[20])and(qzXY1[22]<>qzXY2[22]) then Exit;   // Ê¿2
+    if (qzXY1[22]<>qzXY2[20])and(qzXY1[22]<>qzXY2[22]) then Exit;   // å£«2
     if (qzXY1[21] <= 89) then
-    if (qzXY1[21]<>qzXY2[21])and(qzXY1[21]<>qzXY2[21]) then Exit;   // ½«
+    if (qzXY1[21]<>qzXY2[21])and(qzXY1[21]<>qzXY2[21]) then Exit;   // å°†
     if (qzXY1[26] <= 89) then
-    if (qzXY1[26]<>qzXY2[26])and(qzXY1[26]<>qzXY2[27]) then Exit;   // ÅÚ1
+    if (qzXY1[26]<>qzXY2[26])and(qzXY1[26]<>qzXY2[27]) then Exit;   // ç‚®1
     if (qzXY1[27] <= 89) then
-    if (qzXY1[27]<>qzXY2[26])and(qzXY1[27]<>qzXY2[27]) then Exit;   // ÅÚ2
+    if (qzXY1[27]<>qzXY2[26])and(qzXY1[27]<>qzXY2[27]) then Exit;   // ç‚®2
     if (qzXY1[28] <= 89) then
-    if (qzXY1[28]<>qzXY2[28])and(qzXY1[28]<>qzXY2[29]) and          // ×ä1
+    if (qzXY1[28]<>qzXY2[28])and(qzXY1[28]<>qzXY2[29]) and          // å’1
        (qzXY1[28]<>qzXY2[30])and(qzXY1[28]<>qzXY2[31]) and
        (qzXY1[28]<>qzXY2[32])then Exit;
     if (qzXY1[29] <= 89) then
-    if (qzXY1[29]<>qzXY2[28])and(qzXY1[29]<>qzXY2[29]) and          // ×ä2
+    if (qzXY1[29]<>qzXY2[28])and(qzXY1[29]<>qzXY2[29]) and          // å’2
        (qzXY1[29]<>qzXY2[30])and(qzXY1[29]<>qzXY2[31]) and
        (qzXY1[29]<>qzXY2[32])then Exit;
     if (qzXY1[20] <= 89) then
-    if (qzXY1[30]<>qzXY2[28])and(qzXY1[30]<>qzXY2[29]) and          // ×ä3
+    if (qzXY1[30]<>qzXY2[28])and(qzXY1[30]<>qzXY2[29]) and          // å’3
        (qzXY1[30]<>qzXY2[30])and(qzXY1[30]<>qzXY2[31]) and
        (qzXY1[30]<>qzXY2[32])then Exit;
     if (qzXY1[31] <= 89) then
-    if (qzXY1[31]<>qzXY2[28])and(qzXY1[31]<>qzXY2[29]) and          // ×ä4
+    if (qzXY1[31]<>qzXY2[28])and(qzXY1[31]<>qzXY2[29]) and          // å’4
        (qzXY1[31]<>qzXY2[30])and(qzXY1[31]<>qzXY2[31]) and
        (qzXY1[31]<>qzXY2[32])then Exit;
     if (qzXY1[21] <= 89) then
-    if (qzXY1[32]<>qzXY2[28])and(qzXY1[32]<>qzXY2[29]) and          // ×ä5
+    if (qzXY1[32]<>qzXY2[28])and(qzXY1[32]<>qzXY2[29]) and          // å’5
        (qzXY1[32]<>qzXY2[30])and(qzXY1[32]<>qzXY2[31]) and
        (qzXY1[32]<>qzXY2[32])then Exit;
     Result := True;
     Exit;
   end;
 
-  // ºìÆå×ÓµÄÎ»ÖÃ
-  if (qzXY1[ 1]<>qzXY2[ 1])and(qzXY1[ 1]<>qzXY2[ 9]) then Exit;   // ³µ1
-  if (qzXY1[ 9]<>qzXY2[ 1])and(qzXY1[ 9]<>qzXY2[ 9]) then Exit;   // ³µ2
-  if (qzXY1[ 2]<>qzXY2[ 2])and(qzXY1[ 2]<>qzXY2[ 8]) then Exit;   // Âí1
-  if (qzXY1[ 8]<>qzXY2[ 2])and(qzXY1[ 8]<>qzXY2[ 8]) then Exit;   // Âí2
-  if (qzXY1[ 3]<>qzXY2[ 3])and(qzXY1[ 3]<>qzXY2[ 7]) then Exit;   // Ïà1
-  if (qzXY1[ 7]<>qzXY2[ 3])and(qzXY1[ 7]<>qzXY2[ 7]) then Exit;   // Ïà2
-  if (qzXY1[ 4]<>qzXY2[ 4])and(qzXY1[ 4]<>qzXY2[ 6]) then Exit;   // Ê¿1
-  if (qzXY1[ 6]<>qzXY2[ 4])and(qzXY1[ 6]<>qzXY2[ 6]) then Exit;   // Ê¿2
-  if (qzXY1[ 5]<>qzXY2[ 5])and(qzXY1[ 5]<>qzXY2[ 5]) then Exit;   // Ë§
-  if (qzXY1[10]<>qzXY2[10])and(qzXY1[10]<>qzXY2[11]) then Exit;   // ÅÚ1
-  if (qzXY1[11]<>qzXY2[10])and(qzXY1[11]<>qzXY2[11]) then Exit;   // ÅÚ2
-  if (qzXY1[12]<>qzXY2[12])and(qzXY1[12]<>qzXY2[13]) and          // ±ø1
+  // çº¢æ£‹å­çš„ä½ç½®
+  if (qzXY1[ 1]<>qzXY2[ 1])and(qzXY1[ 1]<>qzXY2[ 9]) then Exit;   // è½¦1
+  if (qzXY1[ 9]<>qzXY2[ 1])and(qzXY1[ 9]<>qzXY2[ 9]) then Exit;   // è½¦2
+  if (qzXY1[ 2]<>qzXY2[ 2])and(qzXY1[ 2]<>qzXY2[ 8]) then Exit;   // é©¬1
+  if (qzXY1[ 8]<>qzXY2[ 2])and(qzXY1[ 8]<>qzXY2[ 8]) then Exit;   // é©¬2
+  if (qzXY1[ 3]<>qzXY2[ 3])and(qzXY1[ 3]<>qzXY2[ 7]) then Exit;   // ç›¸1
+  if (qzXY1[ 7]<>qzXY2[ 3])and(qzXY1[ 7]<>qzXY2[ 7]) then Exit;   // ç›¸2
+  if (qzXY1[ 4]<>qzXY2[ 4])and(qzXY1[ 4]<>qzXY2[ 6]) then Exit;   // å£«1
+  if (qzXY1[ 6]<>qzXY2[ 4])and(qzXY1[ 6]<>qzXY2[ 6]) then Exit;   // å£«2
+  if (qzXY1[ 5]<>qzXY2[ 5])and(qzXY1[ 5]<>qzXY2[ 5]) then Exit;   // å¸…
+  if (qzXY1[10]<>qzXY2[10])and(qzXY1[10]<>qzXY2[11]) then Exit;   // ç‚®1
+  if (qzXY1[11]<>qzXY2[10])and(qzXY1[11]<>qzXY2[11]) then Exit;   // ç‚®2
+  if (qzXY1[12]<>qzXY2[12])and(qzXY1[12]<>qzXY2[13]) and          // å…µ1
      (qzXY1[12]<>qzXY2[14])and(qzXY1[12]<>qzXY2[15]) and
      (qzXY1[12]<>qzXY2[16])then Exit;
-  if (qzXY1[13]<>qzXY2[12])and(qzXY1[13]<>qzXY2[13]) and          // ±ø2
+  if (qzXY1[13]<>qzXY2[12])and(qzXY1[13]<>qzXY2[13]) and          // å…µ2
      (qzXY1[13]<>qzXY2[14])and(qzXY1[13]<>qzXY2[15]) and
      (qzXY1[13]<>qzXY2[16])then Exit;
-  if (qzXY1[14]<>qzXY2[12])and(qzXY1[14]<>qzXY2[13]) and          // ±ø3
+  if (qzXY1[14]<>qzXY2[12])and(qzXY1[14]<>qzXY2[13]) and          // å…µ3
      (qzXY1[14]<>qzXY2[14])and(qzXY1[14]<>qzXY2[15]) and
      (qzXY1[14]<>qzXY2[16])then Exit;
-  if (qzXY1[15]<>qzXY2[12])and(qzXY1[15]<>qzXY2[13]) and          // ±ø4
+  if (qzXY1[15]<>qzXY2[12])and(qzXY1[15]<>qzXY2[13]) and          // å…µ4
      (qzXY1[15]<>qzXY2[14])and(qzXY1[15]<>qzXY2[15]) and
      (qzXY1[15]<>qzXY2[16])then Exit;
-  if (qzXY1[16]<>qzXY2[12])and(qzXY1[16]<>qzXY2[13]) and          // ±ø5
+  if (qzXY1[16]<>qzXY2[12])and(qzXY1[16]<>qzXY2[13]) and          // å…µ5
      (qzXY1[16]<>qzXY2[14])and(qzXY1[16]<>qzXY2[15]) and
      (qzXY1[16]<>qzXY2[16])then Exit;
 
-  // ºÚÆå×ÓµÄÎ»ÖÃ
-  if (qzXY1[17]<>qzXY2[17])and(qzXY1[17]<>qzXY2[25]) then Exit;   // ³µ1
-  if (qzXY1[25]<>qzXY2[17])and(qzXY1[25]<>qzXY2[25]) then Exit;   // ³µ2
-  if (qzXY1[18]<>qzXY2[18])and(qzXY1[18]<>qzXY2[24]) then Exit;   // Âí1
-  if (qzXY1[24]<>qzXY2[18])and(qzXY1[24]<>qzXY2[24]) then Exit;   // Âí2
-  if (qzXY1[19]<>qzXY2[19])and(qzXY1[19]<>qzXY2[23]) then Exit;   // Ïó1
-  if (qzXY1[23]<>qzXY2[19])and(qzXY1[23]<>qzXY2[23]) then Exit;   // Ïó2
-  if (qzXY1[20]<>qzXY2[20])and(qzXY1[20]<>qzXY2[22]) then Exit;   // Ê¿1
-  if (qzXY1[22]<>qzXY2[20])and(qzXY1[22]<>qzXY2[22]) then Exit;   // Ê¿2
-  if (qzXY1[21]<>qzXY2[21])and(qzXY1[21]<>qzXY2[21]) then Exit;   // ½«
-  if (qzXY1[26]<>qzXY2[26])and(qzXY1[26]<>qzXY2[27]) then Exit;   // ÅÚ1
-  if (qzXY1[27]<>qzXY2[26])and(qzXY1[27]<>qzXY2[27]) then Exit;   // ÅÚ2
-  if (qzXY1[28]<>qzXY2[28])and(qzXY1[28]<>qzXY2[29]) and          // ×ä1
+  // é»‘æ£‹å­çš„ä½ç½®
+  if (qzXY1[17]<>qzXY2[17])and(qzXY1[17]<>qzXY2[25]) then Exit;   // è½¦1
+  if (qzXY1[25]<>qzXY2[17])and(qzXY1[25]<>qzXY2[25]) then Exit;   // è½¦2
+  if (qzXY1[18]<>qzXY2[18])and(qzXY1[18]<>qzXY2[24]) then Exit;   // é©¬1
+  if (qzXY1[24]<>qzXY2[18])and(qzXY1[24]<>qzXY2[24]) then Exit;   // é©¬2
+  if (qzXY1[19]<>qzXY2[19])and(qzXY1[19]<>qzXY2[23]) then Exit;   // è±¡1
+  if (qzXY1[23]<>qzXY2[19])and(qzXY1[23]<>qzXY2[23]) then Exit;   // è±¡2
+  if (qzXY1[20]<>qzXY2[20])and(qzXY1[20]<>qzXY2[22]) then Exit;   // å£«1
+  if (qzXY1[22]<>qzXY2[20])and(qzXY1[22]<>qzXY2[22]) then Exit;   // å£«2
+  if (qzXY1[21]<>qzXY2[21])and(qzXY1[21]<>qzXY2[21]) then Exit;   // å°†
+  if (qzXY1[26]<>qzXY2[26])and(qzXY1[26]<>qzXY2[27]) then Exit;   // ç‚®1
+  if (qzXY1[27]<>qzXY2[26])and(qzXY1[27]<>qzXY2[27]) then Exit;   // ç‚®2
+  if (qzXY1[28]<>qzXY2[28])and(qzXY1[28]<>qzXY2[29]) and          // å’1
      (qzXY1[28]<>qzXY2[30])and(qzXY1[28]<>qzXY2[31]) and
      (qzXY1[28]<>qzXY2[32])then Exit;
-  if (qzXY1[29]<>qzXY2[28])and(qzXY1[29]<>qzXY2[29]) and          // ×ä2
+  if (qzXY1[29]<>qzXY2[28])and(qzXY1[29]<>qzXY2[29]) and          // å’2
      (qzXY1[29]<>qzXY2[30])and(qzXY1[29]<>qzXY2[31]) and
      (qzXY1[29]<>qzXY2[32])then Exit;
-  if (qzXY1[30]<>qzXY2[28])and(qzXY1[30]<>qzXY2[29]) and          // ×ä3
+  if (qzXY1[30]<>qzXY2[28])and(qzXY1[30]<>qzXY2[29]) and          // å’3
      (qzXY1[30]<>qzXY2[30])and(qzXY1[30]<>qzXY2[31]) and
      (qzXY1[30]<>qzXY2[32])then Exit;
-  if (qzXY1[31]<>qzXY2[28])and(qzXY1[31]<>qzXY2[29]) and          // ×ä4
+  if (qzXY1[31]<>qzXY2[28])and(qzXY1[31]<>qzXY2[29]) and          // å’4
      (qzXY1[31]<>qzXY2[30])and(qzXY1[31]<>qzXY2[31]) and
      (qzXY1[31]<>qzXY2[32])then Exit;
-  if (qzXY1[32]<>qzXY2[28])and(qzXY1[32]<>qzXY2[29]) and          // ×ä5
+  if (qzXY1[32]<>qzXY2[28])and(qzXY1[32]<>qzXY2[29]) and          // å’5
      (qzXY1[32]<>qzXY2[30])and(qzXY1[32]<>qzXY2[31]) and
      (qzXY1[32]<>qzXY2[32])then Exit;
 
-  // Í³¼ÆËÀ×ÓµÄ¸öÊı
+  // ç»Ÿè®¡æ­»å­çš„ä¸ªæ•°
   AQzNum1 := 0; for i:=1 to 32 do if (qzXY1[i] = $FF) then Inc(AQzNum1);
   AQzNum2 := 0; for i:=1 to 32 do if (qzXY2[i] = $FF) then Inc(AQzNum2);
   if (AQzNum1 <> AQzNum2) then Exit;

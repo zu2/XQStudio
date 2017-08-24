@@ -2,7 +2,7 @@
 //
 // XQStduio Source Code (http://www.qipaile.net/xqstudio)
 //
-// Copyright (c) 1998-2008, DONG Shiwei (¶­ÊÀÎ° or ¹ıºÓÏó)
+// Copyright (c) 1998-2008, DONG Shiwei (è‘£ä¸–ä¼Ÿ or è¿‡æ²³è±¡)
 // All rights reserved.
 // 
 // Redistribution and use in source and binary forms, with or without
@@ -48,37 +48,37 @@ uses
 
 type
   //-----------------------------------------------------------------------
-  // ¶¨ÒåÒ»²½ĞĞÆå¼ÇÂ¼½Úµã(ĞĞÆå¼ÇÂ¼Ê÷), ²ÉÓÃ×óº¢×Ó¡¢ÓÒĞÖµÜµÄ±íÊ¾·½·¨
-  // ¼´½«×ßÆå¼ÇÂ¼µÄ¶à²æÊ÷£¬ÓÃ×óº¢×ÓÓÒĞÖµÜµÄ¶ş²æÊ÷±íÊ¾¡£Í¬Ê±Ã¿¸ö½Úµã
-  // ÓĞÒ»¸öÖ¸ÏòÔ­À´¶ÔŞÄÊ÷¸¸Ç×½Úµã(¼´ÉÏÒ»²½Æå)µÄÖ¸Õë¡£
+  // å®šä¹‰ä¸€æ­¥è¡Œæ£‹è®°å½•èŠ‚ç‚¹(è¡Œæ£‹è®°å½•æ ‘), é‡‡ç”¨å·¦å­©å­ã€å³å…„å¼Ÿçš„è¡¨ç¤ºæ–¹æ³•
+  // å³å°†èµ°æ£‹è®°å½•çš„å¤šå‰æ ‘ï¼Œç”¨å·¦å­©å­å³å…„å¼Ÿçš„äºŒå‰æ ‘è¡¨ç¤ºã€‚åŒæ—¶æ¯ä¸ªèŠ‚ç‚¹
+  // æœ‰ä¸€ä¸ªæŒ‡å‘åŸæ¥å¯¹å¼ˆæ ‘çˆ¶äº²èŠ‚ç‚¹(å³ä¸Šä¸€æ­¥æ£‹)çš„æŒ‡é’ˆã€‚
   //.......................................................................
   dTXQPlayNode = class
   public
-    StepNo      : dTInt32;                      // µÚ¼¸²½£¬¿ª¾Ö×´Ì¬ÎªµÚ0²½
-    StrRec      : String[10];                   // ±¾²½µÄÆåÆ×, Èç'ÅÚ¶şÆ½Îå'
-    XYf         : dTBYTE;                       // ±¾²½ÆåµÄÆğÊ¼Î»ÖÃXY
-    XYt         : dTBYTE;                       // ±¾²½ÆåµÄÄ¿µÄÎ»ÖÃXY
-    QiziXY      : dTXQZXY;                      // ±¾²½Æå×ßºó32¸ö×ÓµÄÎ»ÖÃ
-    Remark      : TStringList;                  // ±¾²½ÆåµÄ×¢½â
-    LastStepNode: dTXQPlayNode;                 // ÉÏÒ»²½ÆåµÄ½Úµã
-    LParent     : dTXQPlayNode;                 // Ë«Ç×½Úµã
-    RParent     : dTXQPlayNode;                 // LParentºÍRParent±ØĞëÓĞ
-                                                // Ò»¸öÎªnil,  Èç¹û¸Ã½Úµã
-                                                // ÊÇË«Ç×µÄ×óº¢×Ó£¬ÔòLPÎª
-                                                // nil, ·´Ö®, RPÎªnil
-    LChild      : dTXQPlayNode;                 // ×óº¢×Ó
-    LChildTag   : dTInt32;                      //   ×óº¢×ÓµÄ±ê¼Ç
-    RChild      : dTXQPlayNode;                 // ÓÒº¢×Ó (Êµ¼ÊÊÇĞÖµÜ)
-    RChildTag   : dTInt32;                      //   ÓÒº¢×ÓµÄ±ê¼Ç
+    StepNo      : dTInt32;                      // ç¬¬å‡ æ­¥ï¼Œå¼€å±€çŠ¶æ€ä¸ºç¬¬0æ­¥
+    StrRec      : String[10];                   // æœ¬æ­¥çš„æ£‹è°±, å¦‚'ç‚®äºŒå¹³äº”'
+    XYf         : dTBYTE;                       // æœ¬æ­¥æ£‹çš„èµ·å§‹ä½ç½®XY
+    XYt         : dTBYTE;                       // æœ¬æ­¥æ£‹çš„ç›®çš„ä½ç½®XY
+    QiziXY      : dTXQZXY;                      // æœ¬æ­¥æ£‹èµ°å32ä¸ªå­çš„ä½ç½®
+    Remark      : TStringList;                  // æœ¬æ­¥æ£‹çš„æ³¨è§£
+    LastStepNode: dTXQPlayNode;                 // ä¸Šä¸€æ­¥æ£‹çš„èŠ‚ç‚¹
+    LParent     : dTXQPlayNode;                 // åŒäº²èŠ‚ç‚¹
+    RParent     : dTXQPlayNode;                 // LParentå’ŒRParentå¿…é¡»æœ‰
+                                                // ä¸€ä¸ªä¸ºnil,  å¦‚æœè¯¥èŠ‚ç‚¹
+                                                // æ˜¯åŒäº²çš„å·¦å­©å­ï¼Œåˆ™LPä¸º
+                                                // nil, åä¹‹, RPä¸ºnil
+    LChild      : dTXQPlayNode;                 // å·¦å­©å­
+    LChildTag   : dTInt32;                      //   å·¦å­©å­çš„æ ‡è®°
+    RChild      : dTXQPlayNode;                 // å³å­©å­ (å®é™…æ˜¯å…„å¼Ÿ)
+    RChildTag   : dTInt32;                      //   å³å­©å­çš„æ ‡è®°
 
-    procedure dSetLChild(Node: dTXQPlayNode);   // ÉèÖÃ×óº¢×Ó
-    procedure dSetRChild(Node: dTXQPlayNode);   // ÉèÖÃÓÒº¢×Ó
+    procedure dSetLChild(Node: dTXQPlayNode);   // è®¾ç½®å·¦å­©å­
+    procedure dSetRChild(Node: dTXQPlayNode);   // è®¾ç½®å³å­©å­
 
-    // ¹¹Ôìº¯Êı
+    // æ„é€ å‡½æ•°
     constructor Create(iStepNo:dTInt32; sStrRec:String; bXYf, bXYt:dTBYTE;
                        qzXY:dTXQZXY; slRMK:TStringList;
                        LN,LP,RP:dTXQPlayNode);
-    // Îö¹¹º¯Êı
+    // ææ„å‡½æ•°
     destructor Destroy; override;
   end;
 
@@ -111,7 +111,7 @@ end;
 
 destructor dTXQPlayNode.Destroy;
 begin
-  // ÏÈ¶Ï¿ªÓëË«Ç×µÄÁ¬½Ó
+  // å…ˆæ–­å¼€ä¸åŒäº²çš„è¿æ¥
   if (LParent <> nil) then LParent.RChild := nil;
   if (RParent <> nil) then RParent.LChild := nil;
 

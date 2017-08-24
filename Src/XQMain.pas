@@ -1,8 +1,8 @@
-///////////////////////////////////////////////////////////////////////////////
+ï»¿///////////////////////////////////////////////////////////////////////////////
 //
 // XQStduio Source Code (http://www.qipaile.net/xqstudio)
 //
-// Copyright (c) 1998-2008, DONG Shiwei (¶­ÊÀÎ° or ¹ıºÓÏó)
+// Copyright (c) 1998-2008, DONG Shiwei (è‘£ä¸–ä¼Ÿ or è¿‡æ²³è±¡)
 // All rights reserved.
 // 
 // Redistribution and use in source and binary forms, with or without
@@ -47,7 +47,7 @@ uses
   ActnList, ToolWin, ImgList, Mapi, ShellApi,
 
   dDelphiS, XQDataT, XQTable, XQPNode, XQSystem, XQFileRW,
-  XQFileP, XQAbout, XQReadme, XQWizard;
+  XQFileP, XQAbout, XQReadme, XQWizard, System.ImageList, System.Actions;
 
 type
   TfrmMain = class(TForm)
@@ -337,7 +337,7 @@ type
     FImgXQBitmapList: array [0..14] of TImage;  // 0 - Board
                                                 // 1 - 7  Red
                                                 // 8 - 14 Blk
-    FImgXQQiziBmp   : array [1..32] of TImage;  // Æå×ÓµÄImg;
+    FImgXQQiziBmp   : array [1..32] of TImage;  // æ£‹å­çš„Img;
     FXQTopLeftX     : Integer;
     FXQTopLeftY     : Integer;
     FXQColW, FXQRowH: Integer;
@@ -369,7 +369,7 @@ uses XQSearch, XQTipsDlg;
 {$R *.DFM}
 
 //-------------------------------------------------------------------------
-// ´´½¨Ò»¸öÏóÆå×À
+// åˆ›å»ºä¸€ä¸ªè±¡æ£‹æ¡Œ
 //.........................................................................
 procedure TfrmMain.dCreateXQTable(const Name: string);
 var
@@ -413,7 +413,7 @@ begin
     NewXQTable.actPlayRecFirstExecute(NewXQTable.actPlayRecFirst);
   end;
 
-  if FileExists(Name) then              // ÅĞ¶ÏÎÄ¼şÊÇ·ñ´æÔÚ£¿
+  if FileExists(Name) then              // åˆ¤æ–­æ–‡ä»¶æ˜¯å¦å­˜åœ¨ï¼Ÿ
   begin
     XQFile := dTXQFILE.Create(Name, NewXQTable.XQ.PlayTree);
     if (XQFile=nil) then
@@ -422,7 +422,7 @@ begin
       Exit;
     end;
 
-    case XQFile.iLoadXQFile of          // ¶ÁÈëXQFÎÄ¼ş
+    case XQFile.iLoadXQFile of          // è¯»å…¥XQFæ–‡ä»¶
       0:
         begin
           with NewXQTable do
@@ -440,14 +440,14 @@ begin
         begin
           btnStopAutoPlayClick(nil);
           Application.MessageBox(
-            '´ò¿ªÎÄ¼ş³ö´í£¬¿ÉÄÜµÄÔ­ÒòÓĞ£º'+chr($0D)+chr($0A)+
-            '    1.¸ÃÎÄ¼ş²»ÊÇXQF¸ñÊ½ÎÄ¼ş(À©Õ¹ÃûÎª.XQF)£»'+chr($0D)+chr($0A)+
-            '    2.´ÅÅÌÎïÀí¹ÊÕÏ£»'+chr($0D)+chr($0A)+
-            '    3.¸ÃÎÄ¼şµÄÄÚÈİ±»ÆÆ»µ£»'+chr($0D)+chr($0A)+
-            '    4.¸ÃÎÄ¼şĞèÒª¸ü¸ß°æ±¾µÄXQStudioµÄÖ§³Ö¡£'+chr($0D)+chr($0A)+
+            'æ‰“å¼€æ–‡ä»¶å‡ºé”™ï¼Œå¯èƒ½çš„åŸå› æœ‰ï¼š'+chr($0D)+chr($0A)+
+            '    1.è¯¥æ–‡ä»¶ä¸æ˜¯XQFæ ¼å¼æ–‡ä»¶(æ‰©å±•åä¸º.XQF)ï¼›'+chr($0D)+chr($0A)+
+            '    2.ç£ç›˜ç‰©ç†æ•…éšœï¼›'+chr($0D)+chr($0A)+
+            '    3.è¯¥æ–‡ä»¶çš„å†…å®¹è¢«ç ´åï¼›'+chr($0D)+chr($0A)+
+            '    4.è¯¥æ–‡ä»¶éœ€è¦æ›´é«˜ç‰ˆæœ¬çš„XQStudioçš„æ”¯æŒã€‚'+chr($0D)+chr($0A)+
             chr($0D)+chr($0A)+
-            '°´¡°È·¶¨¡±°´Å¥·µ»ØXQStudio¡£',
-            'ÏµÍ³ĞÅÏ¢',
+            'æŒ‰â€œç¡®å®šâ€æŒ‰é’®è¿”å›XQStudioã€‚',
+            'ç³»ç»Ÿä¿¡æ¯',
             MB_OK + MB_ICONERROR + MB_DEFBUTTON1);
           XQFile.Free;
           NewXQTable.Close;
@@ -459,17 +459,17 @@ begin
     Screen.Cursor := crDefault;
   end
   else
-  begin                                 // Òª´ò¿ªµÄÎÄ¼ş²»´æÔÚ£¿
+  begin                                 // è¦æ‰“å¼€çš„æ–‡ä»¶ä¸å­˜åœ¨ï¼Ÿ
     Screen.Cursor := crDefault;
     if (Name<>'') then
     begin
       btnStopAutoPlayClick(nil);
       Application.MessageBox(
-        '´ò¿ªÎÄ¼ş³ö´í£¬³ö´íÔ­Òò£º'+chr($0D)+chr($0A)+
-        '    ÕÒ²»µ½Ö¸¶¨µÄÎÄ¼ş¡£'+chr($0D)+chr($0A)+
+        'æ‰“å¼€æ–‡ä»¶å‡ºé”™ï¼Œå‡ºé”™åŸå› ï¼š'+chr($0D)+chr($0A)+
+        '    æ‰¾ä¸åˆ°æŒ‡å®šçš„æ–‡ä»¶ã€‚'+chr($0D)+chr($0A)+
                                  chr($0D)+chr($0A)+
-        '°´¡°È·¶¨¡±°´Å¥·µ»ØXQStudio¡£',
-        'ÏµÍ³ĞÅÏ¢',
+        'æŒ‰â€œç¡®å®šâ€æŒ‰é’®è¿”å›XQStudioã€‚',
+        'ç³»ç»Ÿä¿¡æ¯',
         MB_OK + MB_ICONERROR + MB_DEFBUTTON1);
       NewXQTable.Close;
     end;
@@ -478,7 +478,7 @@ begin
 end;
 
 //-------------------------------------------------------------------------
-// ĞÂ½¨Ò»¸öÏóÆå×À
+// æ–°å»ºä¸€ä¸ªè±¡æ£‹æ¡Œ
 //.........................................................................
 procedure TfrmMain.actFileNewExecute(Sender: TObject);
 var
@@ -487,8 +487,8 @@ begin
   if (MDIChildCount>=10) then
   begin
     Application.MessageBox(
-      '´ò¿ªµÄ´°¿Ú¸öÊıÌ«¶à£¬ÇëÏÈ¹Ø±ÕÒ»Ğ©Ã»ÓĞÓÃµÄ´°¿ÚÔÙ½øĞĞ±¾²Ù×÷¡£',
-      'ÏµÍ³ĞÅÏ¢',
+      'æ‰“å¼€çš„çª—å£ä¸ªæ•°å¤ªå¤šï¼Œè¯·å…ˆå…³é—­ä¸€äº›æ²¡æœ‰ç”¨çš„çª—å£å†è¿›è¡Œæœ¬æ“ä½œã€‚',
+      'ç³»ç»Ÿä¿¡æ¯',
       MB_OK + MB_ICONWARNING + MB_DEFBUTTON1);
       Exit;
   end;
@@ -504,22 +504,22 @@ try
   frmXQWizard := TfrmXQWizard.Create(Application);
   if (frmXQWizard=nil) then Exit;
 
-  // ´ò¿ª¡°Ïòµ¼¡±´°¿Ú
+  // æ‰“å¼€â€œå‘å¯¼â€çª—å£
   case frmXQWizard.ShowModal of
     mrOK:
       begin
-        dCreateXQTable('');             // ½¨Á¢Ò»¸ö¿ÕµÄÏóÆå×À
+        dCreateXQTable('');             // å»ºç«‹ä¸€ä¸ªç©ºçš„è±¡æ£‹æ¡Œ
         if (not isCreateTableOK) then Exit;
         if (ActiveXQTable=nil) then Exit;
         with ActiveXQTable do
         begin
-          iXQFType   := 0;                      // Æå¾ÖÀàĞÍ
+          iXQFType   := 0;                      // æ£‹å±€ç±»å‹
           if frmXQWizard.rbtPlayType0.Checked then iXQFType := 0;
           if frmXQWizard.rbtPlayType1.Checked then iXQFType := 1;
           if frmXQWizard.rbtPlayType2.Checked then iXQFType := 2;
           if frmXQWizard.rbtPlayType3.Checked then iXQFType := 3;
-          iWhoPlay   := 0;                      // ¼Ù¶¨ºì·½ÏÈĞĞ
-          iResult    := 0;                      // ¶Ô¾Ö½á¹û
+          iWhoPlay   := 0;                      // å‡å®šçº¢æ–¹å…ˆè¡Œ
+          iResult    := 0;                      // å¯¹å±€ç»“æœ
           if frmXQWizard.rbtResult0.Checked then iResult := 0;
           if frmXQWizard.rbtResult1.Checked then iResult := 1;
           if frmXQWizard.rbtResult2.Checked then iResult := 2;
@@ -537,19 +537,19 @@ try
           sAuthor    := Trim(frmXQWizard.edtAuthor.Text);
         end;
 
-        if (frmXQWizard.rbtPlayType2.Checked or    // ÖĞ¾Ö»ò²Ğ¾Ö
+        if (frmXQWizard.rbtPlayType2.Checked or    // ä¸­å±€æˆ–æ®‹å±€
             frmXQWizard.rbtPlayType3.Checked)then
         begin
-          for i:=1 to 32 do                     // ÉèÖÃÆå×ÓÎ»ÖÃ
+          for i:=1 to 32 do                     // è®¾ç½®æ£‹å­ä½ç½®
           begin
             ActiveXQTable.XQ.PlayTree.QiziXY[i] := frmXQWizard.QiziXY[i];
           end;
-          if frmXQWizard.rbtWhoPlay1.Checked then  // ºÚ·½ÏÈĞĞ
+          if frmXQWizard.rbtWhoPlay1.Checked then  // é»‘æ–¹å…ˆè¡Œ
           begin
             ActiveXQTable.XQ.PlayTree.XYt := $FF;
             ActiveXQTable.iWhoPlay        := 1;
           end;
-                                                // ÉèÖÃ¶Ô¾Ö½á¹û
+                                                // è®¾ç½®å¯¹å±€ç»“æœ
           if frmXQWizard.rbtRst0.Checked then ActiveXQTable.iResult := 0;
           if frmXQWizard.rbtRst1.Checked then ActiveXQTable.iResult := 1;
           if frmXQWizard.rbtRst2.Checked then ActiveXQTable.iResult := 2;
@@ -575,8 +575,8 @@ begin
   if (MDIChildCount>=10) then
   begin
     Application.MessageBox(
-      '´ò¿ªµÄ´°¿Ú¸öÊıÌ«¶à£¬ÇëÏÈ¹Ø±ÕÒ»Ğ©Ã»ÓĞÓÃµÄ´°¿ÚÔÙ½øĞĞ±¾²Ù×÷¡£',
-      'ÏµÍ³ĞÅÏ¢',
+      'æ‰“å¼€çš„çª—å£ä¸ªæ•°å¤ªå¤šï¼Œè¯·å…ˆå…³é—­ä¸€äº›æ²¡æœ‰ç”¨çš„çª—å£å†è¿›è¡Œæœ¬æ“ä½œã€‚',
+      'ç³»ç»Ÿä¿¡æ¯',
       MB_OK + MB_ICONWARNING + MB_DEFBUTTON1);
       Exit;
   end;
@@ -585,12 +585,12 @@ begin
   if ((not isCreateTableOK) or (MDIChildCount>=11)) then
   begin
     Application.MessageBox(
-      '´ò¿ªÎÄ¼ş³ö´í£¬¿ÉÄÜµÄÔ­ÒòÓĞ£º'+chr($0D)+chr($0A)+
-      '    1.´ò¿ªÎÄ¼şµÄ¸öÊı»ò´°¿ÚÌ«¶à(×î¶à10¸ö)£»'+chr($0D)+chr($0A)+
-      '    2.ÏµÍ³ÄÚ´æ¿Õ¼äÌ«Ğ¡¡£'+chr($0D)+chr($0A)+
+      'æ‰“å¼€æ–‡ä»¶å‡ºé”™ï¼Œå¯èƒ½çš„åŸå› æœ‰ï¼š'+chr($0D)+chr($0A)+
+      '    1.æ‰“å¼€æ–‡ä»¶çš„ä¸ªæ•°æˆ–çª—å£å¤ªå¤š(æœ€å¤š10ä¸ª)ï¼›'+chr($0D)+chr($0A)+
+      '    2.ç³»ç»Ÿå†…å­˜ç©ºé—´å¤ªå°ã€‚'+chr($0D)+chr($0A)+
       chr($0D)+chr($0A)+
-      '°´¡°È·¶¨¡±°´Å¥·µ»ØXQStudio¡£',
-      'ÏµÍ³ĞÅÏ¢',
+      'æŒ‰â€œç¡®å®šâ€æŒ‰é’®è¿”å›XQStudioã€‚',
+      'ç³»ç»Ÿä¿¡æ¯',
       MB_OK + MB_ICONERROR + MB_DEFBUTTON1);
       Exit;
   end;
@@ -600,7 +600,7 @@ begin
 end;
 
 //-------------------------------------------------------------------------
-// ´ò¿ªÒ»¸öXQFÎÄ¼ş²¢´´½¨ÏóÆå×À
+// æ‰“å¼€ä¸€ä¸ªXQFæ–‡ä»¶å¹¶åˆ›å»ºè±¡æ£‹æ¡Œ
 //.........................................................................
 procedure TfrmMain.actFileOpenExecute(Sender: TObject);
 var
@@ -609,8 +609,8 @@ begin
   if (MDIChildCount>=10) then
   begin
     Application.MessageBox(
-      '´ò¿ªµÄ´°¿Ú¸öÊıÌ«¶à£¬ÇëÏÈ¹Ø±ÕÒ»Ğ©Ã»ÓĞÓÃµÄ´°¿ÚÔÙ½øĞĞ±¾²Ù×÷¡£',
-      'ÏµÍ³ĞÅÏ¢',
+      'æ‰“å¼€çš„çª—å£ä¸ªæ•°å¤ªå¤šï¼Œè¯·å…ˆå…³é—­ä¸€äº›æ²¡æœ‰ç”¨çš„çª—å£å†è¿›è¡Œæœ¬æ“ä½œã€‚',
+      'ç³»ç»Ÿä¿¡æ¯',
       MB_OK + MB_ICONWARNING + MB_DEFBUTTON1);
       Exit;
   end;
@@ -634,12 +634,12 @@ begin
         if ((not isCreateTableOK) or (MDIChildCount>=11)) then
         begin
           Application.MessageBox(
-            '´ò¿ªÎÄ¼ş³ö´í£¬¿ÉÄÜµÄÔ­ÒòÓĞ£º'+chr($0D)+chr($0A)+
-            '    1.´ò¿ªÎÄ¼şµÄ¸öÊı»ò´°¿ÚÌ«¶à(×î¶à10¸ö)£»'+chr($0D)+chr($0A)+
-            '    2.ÏµÍ³ÄÚ´æ¿Õ¼äÌ«Ğ¡¡£'+chr($0D)+chr($0A)+
+            'æ‰“å¼€æ–‡ä»¶å‡ºé”™ï¼Œå¯èƒ½çš„åŸå› æœ‰ï¼š'+chr($0D)+chr($0A)+
+            '    1.æ‰“å¼€æ–‡ä»¶çš„ä¸ªæ•°æˆ–çª—å£å¤ªå¤š(æœ€å¤š10ä¸ª)ï¼›'+chr($0D)+chr($0A)+
+            '    2.ç³»ç»Ÿå†…å­˜ç©ºé—´å¤ªå°ã€‚'+chr($0D)+chr($0A)+
             chr($0D)+chr($0A)+
-            '°´¡°È·¶¨¡±°´Å¥·µ»ØXQStudio¡£',
-            'ÏµÍ³ĞÅÏ¢',
+            'æŒ‰â€œç¡®å®šâ€æŒ‰é’®è¿”å›XQStudioã€‚',
+            'ç³»ç»Ÿä¿¡æ¯',
             MB_OK + MB_ICONERROR + MB_DEFBUTTON1);
           break;
         end;
@@ -649,7 +649,7 @@ begin
 end;
 
 //-------------------------------------------------------------------------
-// ´ò¿ªÒ»¸ö°ïÖúÎÄ¼ş
+// æ‰“å¼€ä¸€ä¸ªå¸®åŠ©æ–‡ä»¶
 //.........................................................................
 procedure TfrmMain.actHelpAboutExecute(Sender: TObject);
 begin
@@ -657,7 +657,7 @@ begin
 end;
 
 //-------------------------------------------------------------------------
-// ÍË³öÏµÍ³
+// é€€å‡ºç³»ç»Ÿ
 //.........................................................................
 procedure TfrmMain.actFileExitExecute(Sender: TObject);
 begin
@@ -665,7 +665,7 @@ begin
 end;
 
 //-------------------------------------------------------------------------
-// ÏµÍ³³õÊ¼»¯
+// ç³»ç»Ÿåˆå§‹åŒ–
 //.........................................................................
 procedure TfrmMain.FormCreate(Sender: TObject);
 begin
@@ -712,10 +712,10 @@ begin
   FImgXQBitmapList[13] := imgBlk6Bmp;
   FImgXQBitmapList[14] := imgBlk7Bmp;
 
-  FXQTopLeftX          := 1;            // ×óÉÏ½ÇX×ø±ê
-  FXQTopLeftY          := 19;            // ×óÉÏ½ÇY×ø±ê
-  FXQColW              := 41;            // ÁĞ¿í
-  FXQRowH              := 41;            // ĞĞ¸ß
+  FXQTopLeftX          := 1;            // å·¦ä¸Šè§’Xåæ ‡
+  FXQTopLeftY          := 19;            // å·¦ä¸Šè§’Yåæ ‡
+  FXQColW              := 41;            // åˆ—å®½
+  FXQRowH              := 41;            // è¡Œé«˜
 
   FImgXQQiziBmp[01]    := imgRed1Bmp;
   FImgXQQiziBmp[02]    := imgRed2Bmp;
@@ -759,7 +759,7 @@ begin
 end;
 
 //-------------------------------------------------------------------------
-//  ±£´æÏóÆåÎÄ¼ş
+//  ä¿å­˜è±¡æ£‹æ–‡ä»¶
 //.........................................................................
 procedure TfrmMain.actFileSaveExecute(Sender: TObject);
 begin
@@ -775,7 +775,7 @@ begin
 end;
 
 //-------------------------------------------------------------------------
-//  »»Ãû±£´æÏóÆåÎÄ¼ş
+//  æ¢åä¿å­˜è±¡æ£‹æ–‡ä»¶
 //.........................................................................
 procedure TfrmMain.actFileSaveAsExecute(Sender: TObject);
 var
@@ -799,8 +799,8 @@ begin
     if FileExists(XQFName) then
     begin
       if (Application.MessageBox(
-          PChar(Format('ÎÄ¼ş¡°%s¡±ÒÑ¾­´æÔÚ£¬ÒªÌæ»»Âğ?', [XQFName])),
-          'Áí´æÎª',
+          PChar(Format('æ–‡ä»¶â€œ%sâ€å·²ç»å­˜åœ¨ï¼Œè¦æ›¿æ¢å—?', [XQFName])),
+          'å¦å­˜ä¸º',
           MB_OKCANCEL + MB_ICONWARNING + MB_DEFBUTTON1) = IDCANCEL) then
       begin
         Exit;
@@ -825,7 +825,7 @@ begin
 end;
 
 //-------------------------------------------------------------------------
-//  ²é¿´/ÉèÖÃÏóÆåÎÄ¼şÊôĞÔ
+//  æŸ¥çœ‹/è®¾ç½®è±¡æ£‹æ–‡ä»¶å±æ€§
 //.........................................................................
 procedure TfrmMain.actFilePExecute(Sender: TObject);
 var
@@ -841,10 +841,10 @@ begin
     XQFileP.edtTitle.Text := sTitle;
 
     case iXQFType of
-      0: XQFileP.lblType.Caption := 'È«¾Ö»ò¶Ô¾Ö';
-      1: XQFileP.lblType.Caption := '²¼¾Ö»ò¿ª¾Ö';
-      2: XQFileP.lblType.Caption := 'ÊµÕ½ÖĞ¾Ö»ò²Ğ¾Ö';
-      3: XQFileP.lblType.Caption := 'ÖĞ¾Ö»ò²Ğ¾Ö';
+      0: XQFileP.lblType.Caption := 'å…¨å±€æˆ–å¯¹å±€';
+      1: XQFileP.lblType.Caption := 'å¸ƒå±€æˆ–å¼€å±€';
+      2: XQFileP.lblType.Caption := 'å®æˆ˜ä¸­å±€æˆ–æ®‹å±€';
+      3: XQFileP.lblType.Caption := 'ä¸­å±€æˆ–æ®‹å±€';
       else XQFileP.lblType.Caption := '';
     end;
 
@@ -911,7 +911,7 @@ begin
 end;
 
 //-------------------------------------------------------------------------
-// ÆåÅÌµ¹ÖÃ
+// æ£‹ç›˜å€’ç½®
 //.........................................................................
 procedure TfrmMain.actViewReverseVExecute(Sender: TObject);
 begin
@@ -920,7 +920,7 @@ begin
 end;
 
 //-------------------------------------------------------------------------
-// ×óÓÒµ÷»»
+// å·¦å³è°ƒæ¢
 //.........................................................................
 procedure TfrmMain.actViewReverseHExecute(Sender: TObject);
 begin
@@ -929,7 +929,7 @@ begin
 end;
 
 //-------------------------------------------------------------------------
-// µ÷Õû´°¿Ú
+// è°ƒæ•´çª—å£
 //.........................................................................
 procedure TfrmMain.FormResize(Sender: TObject);
 var
@@ -950,7 +950,7 @@ begin
 end;
 
 //-------------------------------------------------------------------------
-//  Ö»ÏÔÊ¾ÆåÅÌ
+//  åªæ˜¾ç¤ºæ£‹ç›˜
 //.........................................................................
 procedure TfrmMain.actViewBoardOnlyExecute(Sender: TObject);
 begin
@@ -961,7 +961,7 @@ end;
 
 
 //-------------------------------------------------------------------------
-//  ²é¿´/ÉèÖÃÏóÆåÎÄ¼şÊôĞÔ
+//  æŸ¥çœ‹/è®¾ç½®è±¡æ£‹æ–‡ä»¶å±æ€§
 //.........................................................................
 procedure TfrmMain.ContentsItemClick(Sender: TObject);
 begin
@@ -969,7 +969,7 @@ begin
 end;
 
 //-------------------------------------------------------------------------
-//  ±£´æÏóÆåÎÄ¼ş
+//  ä¿å­˜è±¡æ£‹æ–‡ä»¶
 //.........................................................................
 function TfrmMain.iSaveXQTable(sFName:String; XQTable:TFrmXQTable):dTInt32;
 var
@@ -1000,7 +1000,7 @@ begin
 end;
 
 //-------------------------------------------------------------------------
-//  ¼ì²éÃüÁîĞĞ£¬×Ô¶¯´ò¿ªÎÄ¼ş
+//  æ£€æŸ¥å‘½ä»¤è¡Œï¼Œè‡ªåŠ¨æ‰“å¼€æ–‡ä»¶
 //.........................................................................
 procedure TfrmMain.FormShow(Sender: TObject);
 var
@@ -1048,7 +1048,7 @@ begin
 end;
 
 //-------------------------------------------------------------------------
-//  ×Ô¶¯²¥·ÅÁĞ±í
+//  è‡ªåŠ¨æ’­æ”¾åˆ—è¡¨
 //.........................................................................
 procedure TfrmMain.dAutoPlayNextFile;
 var
@@ -1093,7 +1093,7 @@ begin
 end;
 
 //-------------------------------------------------------------------------
-//  ¹Ø±Õ£¬ÍË³öÏµÍ³
+//  å…³é—­ï¼Œé€€å‡ºç³»ç»Ÿ
 //.........................................................................
 procedure TfrmMain.FormClose(Sender: TObject; var Action: TCloseAction);
 {
@@ -1141,10 +1141,10 @@ var
 begin
   sImportFileName := '';
   isSetAutoImport := False;
-  lblTextLine0.Caption := StringReplace(lblTextLine0.Caption, '×ª»»', '²¥·Å', [rfReplaceAll]);
-  lblTextLine1.Caption := StringReplace(lblTextLine1.Caption, '×ª»»', '²¥·Å', [rfReplaceAll]);
-  lblTextLine2.Caption := StringReplace(lblTextLine2.Caption, '×ª»»', '²¥·Å', [rfReplaceAll]);
-  lblTextLine3.Caption := StringReplace(lblTextLine3.Caption, '×ª»»', '²¥·Å', [rfReplaceAll]);
+  lblTextLine0.Caption := StringReplace(lblTextLine0.Caption, 'è½¬æ¢', 'æ’­æ”¾', [rfReplaceAll]);
+  lblTextLine1.Caption := StringReplace(lblTextLine1.Caption, 'è½¬æ¢', 'æ’­æ”¾', [rfReplaceAll]);
+  lblTextLine2.Caption := StringReplace(lblTextLine2.Caption, 'è½¬æ¢', 'æ’­æ”¾', [rfReplaceAll]);
+  lblTextLine3.Caption := StringReplace(lblTextLine3.Caption, 'è½¬æ¢', 'æ’­æ”¾', [rfReplaceAll]);
   lbxPlayList.Height   := 129;
 
   pnlPlayList.Visible  := True;
@@ -1194,7 +1194,7 @@ begin
   end
   else
   begin
-    OPenDialog.Filter  := 'ÎÄ±¾ÎÄ¼ş (*.txt)|*.TXT|QQÓÎÏ·´æÅÌÎÄ¼ş (*.che)|*.CHE|ÁªÖÚÏóÆå´æÅÌÎÄ¼ş (*.chn)|*.CHN|ŞÄÌìÏóÆå´æÅÌÎÄ¼ş (*.mxq)|*.MXQ|ÖĞ¹úÓÎÏ·ÖĞĞÄÏóÆå´æÅÌÎÄ¼ş (*.ccm)|*.CCM|All files (*.*)|*.*';
+    OPenDialog.Filter  := 'æ–‡æœ¬æ–‡ä»¶ (*.txt)|*.TXT|QQæ¸¸æˆå­˜ç›˜æ–‡ä»¶ (*.che)|*.CHE|è”ä¼—è±¡æ£‹å­˜ç›˜æ–‡ä»¶ (*.chn)|*.CHN|å¼ˆå¤©è±¡æ£‹å­˜ç›˜æ–‡ä»¶ (*.mxq)|*.MXQ|ä¸­å›½æ¸¸æˆä¸­å¿ƒè±¡æ£‹å­˜ç›˜æ–‡ä»¶ (*.ccm)|*.CCM|All files (*.*)|*.*';
   end;
 
   OpenDialog.Options := OpenDialog.Options + [ofAllowMultiSelect];
@@ -1262,7 +1262,7 @@ begin
 
 
   iAutoPlayTime     := StrToInt(cbxAutoPlayTime.Text)*1000;
-  isAutoPlaySoundOn := (cbxAutoPlaySound.Text = 'ÓĞ');
+  isAutoPlaySoundOn := (cbxAutoPlaySound.Text = 'æœ‰');
 
   isSetAutoPlayList := True;
   dCreateXQTable(lbxPlayList.Items[lbxPlayList.ItemIndex]+'.XQF');
@@ -1332,7 +1332,7 @@ end;
 
 procedure TfrmMain.cbxAutoPlaySoundChange(Sender: TObject);
 begin
-  isAutoPlaySoundOn := (cbxAutoPlaySound.Text = 'ÓĞ');
+  isAutoPlaySoundOn := (cbxAutoPlaySound.Text = 'æœ‰');
 end;
 
 procedure TfrmMain.lbxPlayListDblClick(Sender: TObject);
@@ -1356,7 +1356,7 @@ begin
   XQFile := dTXQFILE.Create(sFileName, XqfPlayTree);
   if (XQFile=nil) then Exit;
 
-  case XQFile.iLoadXQFile of          // ¶ÁÈëXQFÎÄ¼ş
+  case XQFile.iLoadXQFile of          // è¯»å…¥XQFæ–‡ä»¶
     0:
       begin
         XQFile.isDisableRmk := cbxDisableRemark.Checked;
@@ -1530,7 +1530,7 @@ begin
   ActiveXQTable.dShowBoardOnly(True);
   ActiveXQTable.lbxPlayRecClick(ActiveXQTable.lbxPlayRec);
   ActiveXQTable.Left  := 406;
-  ActiveXQTable.Caption     := 'ÍÆÑİÆåÅÌ - ' + CurrentXQTable.Caption;
+  ActiveXQTable.Caption     := 'æ¨æ¼”æ£‹ç›˜ - ' + CurrentXQTable.Caption;
   ActiveXQTable.isDemoTable := True;
   ActiveXQTable.FormActivate(ActiveXQTable);  
 end;
@@ -1550,7 +1550,7 @@ begin
   begin
     ulReserved := 0;
     lpszSubject := nil;
-    lpszNoteText := PChar(ActiveXQTable.memText.Text);
+  //  lpszNoteText := PChar(ActiveXQTable.memText.Text);     XXXXX
     lpszMessageType := nil; 
     lpszDateReceived := nil; 
     lpszConversationID := nil; 
@@ -1741,8 +1741,8 @@ var
   i: Integer;
 begin
   if (Application.MessageBox(
-      PChar('±¾²Ù×÷½«Çå³ıËùÓĞµÄÎÄ¼ş´ò¿ªÀúÊ·£¬È·ÊµÒªÇå³ıÂğ?'),
-      'Çå³ıÎÄ¼şÀúÊ·',
+      PChar('æœ¬æ“ä½œå°†æ¸…é™¤æ‰€æœ‰çš„æ–‡ä»¶æ‰“å¼€å†å²ï¼Œç¡®å®è¦æ¸…é™¤å—?'),
+      'æ¸…é™¤æ–‡ä»¶å†å²',
       MB_OKCANCEL + MB_ICONWARNING + MB_DEFBUTTON1) = IDCANCEL) then
   begin
     Exit;
@@ -1828,8 +1828,8 @@ begin
   if (ActiveXQTable.XQ.PlayStepNo > 0) then
   begin
     if (Application.MessageBox(
-        PChar('³õÊ¼ÆåÍ¼ÒÑ¾­±»ĞŞ¸Ä£¬±¾²Ù×÷½«Çå³ıËùÓĞµÄĞĞÆå¼ÇÂ¼£¬È·ÊµÒª¼ÌĞøÂğ?'),
-        'ĞŞ¸Ä³õÊ¼ÆåÍ¼',
+        PChar('åˆå§‹æ£‹å›¾å·²ç»è¢«ä¿®æ”¹ï¼Œæœ¬æ“ä½œå°†æ¸…é™¤æ‰€æœ‰çš„è¡Œæ£‹è®°å½•ï¼Œç¡®å®è¦ç»§ç»­å—?'),
+        'ä¿®æ”¹åˆå§‹æ£‹å›¾',
         MB_OKCANCEL + MB_ICONWARNING + MB_DEFBUTTON1) <> IDOK) then
     begin
       Exit;
@@ -1892,10 +1892,10 @@ procedure TfrmMain.FileImportItemClick(Sender: TObject);
 var
   ABool: Boolean;
 begin
-  lblTextLine0.Caption := StringReplace(lblTextLine0.Caption, '²¥·Å', '×ª»»', [rfReplaceAll]);
-  lblTextLine1.Caption := StringReplace(lblTextLine1.Caption, '²¥·Å', '×ª»»', [rfReplaceAll]);
-  lblTextLine2.Caption := StringReplace(lblTextLine2.Caption, '²¥·Å', '×ª»»', [rfReplaceAll]);
-  lblTextLine3.Caption := StringReplace(lblTextLine3.Caption, '²¥·Å', '×ª»»', [rfReplaceAll]);
+  lblTextLine0.Caption := StringReplace(lblTextLine0.Caption, 'æ’­æ”¾', 'è½¬æ¢', [rfReplaceAll]);
+  lblTextLine1.Caption := StringReplace(lblTextLine1.Caption, 'æ’­æ”¾', 'è½¬æ¢', [rfReplaceAll]);
+  lblTextLine2.Caption := StringReplace(lblTextLine2.Caption, 'æ’­æ”¾', 'è½¬æ¢', [rfReplaceAll]);
+  lblTextLine3.Caption := StringReplace(lblTextLine3.Caption, 'æ’­æ”¾', 'è½¬æ¢', [rfReplaceAll]);
   lbxPlayList.Height   := 173;
 
   pnlPlayList.Visible := True;
@@ -1950,7 +1950,7 @@ begin
   if (not IsBitmapListLoaded) then Exit;
 
   try
-    imgXQQituBmp.Canvas.CopyRect(       // ÖØĞÂ¸´ÖÆÆåÍ¼
+    imgXQQituBmp.Canvas.CopyRect(       // é‡æ–°å¤åˆ¶æ£‹å›¾
           Bounds(0, 0, imgXQQituBmp.Width, imgXQQituBmp.Height),
           imgXQBoardBmp.Canvas,
           Bounds(0, 0, imgXQQituBmp.Width, imgXQQituBmp.Height));

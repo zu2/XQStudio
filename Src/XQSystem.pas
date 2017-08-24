@@ -2,7 +2,7 @@
 //
 // XQStduio Source Code (http://www.qipaile.net/xqstudio)
 //
-// Copyright (c) 1998-2008, DONG Shiwei (¶­ÊÀÎ° or ¹ıºÓÏó)
+// Copyright (c) 1998-2008, DONG Shiwei (è‘£ä¸–ä¼Ÿ or è¿‡æ²³è±¡)
 // All rights reserved.
 // 
 // Redistribution and use in source and binary forms, with or without
@@ -53,27 +53,27 @@ uses
   ActnList, ToolWin, ImgList, dDelphiS, XQDataT, XQPNode, XQRecLBX;
 
 //-------------------------------------------------------------------------
-//  ÀàĞÍ¶¨Òå
+//  ç±»å‹å®šä¹‰
 //.........................................................................
 type
 
   //-----------------------------------------------------------------------
-  // ¶¨ÒåÏóÆå×ÓÀà
+  // å®šä¹‰è±¡æ£‹å­ç±»
   //.......................................................................
   dTXQZ = class
-    Index       : dTINT32;      // Æå×ÓË÷Òı
-    Name        : String[16];   // Æå×ÓÃû³Æ
-    Picture     : TPicture;     // Æå×ÓÍ¼Ïñ
-    Arms        : 1..7;         // ±øÖÖ,ÒÀ´ÎÎª:³µÂíÏóÊ¿½«ÅÚ±ø
-    XYStart     : dTBYTE;       // Æå×ÓµÄ¿ª¾ÖÎ»ÖÃ(Ö¸Ô­Ê¼Î»ÖÃ)
-    XY          : dTBYTE;       // Æå×ÓµÄÎ»ÖÃ(Ö¸Æå×ÓÔÚÆåÅÌÉÏµ±Ç°µÄÎ»ÖÃ)
+    Index       : dTINT32;      // æ£‹å­ç´¢å¼•
+    Name        : String[16];   // æ£‹å­åç§°
+    Picture     : TPicture;     // æ£‹å­å›¾åƒ
+    Arms        : 1..7;         // å…µç§,ä¾æ¬¡ä¸º:è½¦é©¬è±¡å£«å°†ç‚®å…µ
+    XYStart     : dTBYTE;       // æ£‹å­çš„å¼€å±€ä½ç½®(æŒ‡åŸå§‹ä½ç½®)
+    XY          : dTBYTE;       // æ£‹å­çš„ä½ç½®(æŒ‡æ£‹å­åœ¨æ£‹ç›˜ä¸Šå½“å‰çš„ä½ç½®)
    public
     constructor Create(iIdx:dTINT32; sName:String; pic:TPicture;
                        iArms:dTBYTE; bXYStart:dTBYTE);
   end;
 
   //-----------------------------------------------------------------------
-  // ¶¨ÒåÏóÆå¼ÆÊ±ÖÓ
+  // å®šä¹‰è±¡æ£‹è®¡æ—¶é’Ÿ
   //.......................................................................
   dTXQCLOCK = class
     Name        : String[16];
@@ -85,35 +85,35 @@ type
 
 
   //-----------------------------------------------------------------------
-  // ¶¨ÒåÏóÆåÀà
+  // å®šä¹‰è±¡æ£‹ç±»
   //.......................................................................
   dTXiangQi = class
   public
-    BoardImage  : TImage;                       // ÏóÆåÅÌÍ¼Ïñ
-    BoardXY     : dTXQPXY;                      // ÆåÅÌ9x10¸ö½»²æµã
-    QiziMoveImg : TImage;                       // ÒÆ¶¯ÖĞÆå×ÓµÄÍ¼Ïñ
-                                                // ÓÃÀ´´¦ÀíÒÆ¶¯
-    Qizi        : array [1..32] of dTXQZ;       // 32¸öÏóÆå×Ó
-    QiziMove    : dTXQZ;                        // ±»ÄÃÆğÒÆ¶¯µÄÆå×Ó
-    MovePosFrom : TImage;                       // ×îºóÒÆ¶¯¹ıµÄÆå×ÓµÄÎ»ÖÃ
-    MovePosTo   : TImage;                       //   ÓÃÀ´ÏÔÊ¾×ßÆåÖ¸Ê¾
-    Clock       : dTXQCLOCK;                    // ¼ÆÊ±ÖÓ
-    RedPlayer   : String[32];                   // ºì·½ÆåÊÖ
-    BlkPlayer   : String[32];                   // ºÚ·½ÆåÊÖ
-    RecListBox  : TListBox;                     // ÆåÆ×¼ÇÂ¼ÁĞ±í¿ò
-    VarListBox  : TListBox;                     // ±ä×Å¼ÇÂ¼ÁĞ±í¿ò
-    isAddVarStep: dTBoolean;                    // ÊÇ·ñÊÇ¼ÓÈë±ä×Å×´Ì¬
-    RecMemo     : TMemo;                        // ×¢½â±¸×¢
+    BoardImage  : TImage;                       // è±¡æ£‹ç›˜å›¾åƒ
+    BoardXY     : dTXQPXY;                      // æ£‹ç›˜9x10ä¸ªäº¤å‰ç‚¹
+    QiziMoveImg : TImage;                       // ç§»åŠ¨ä¸­æ£‹å­çš„å›¾åƒ
+                                                // ç”¨æ¥å¤„ç†ç§»åŠ¨
+    Qizi        : array [1..32] of dTXQZ;       // 32ä¸ªè±¡æ£‹å­
+    QiziMove    : dTXQZ;                        // è¢«æ‹¿èµ·ç§»åŠ¨çš„æ£‹å­
+    MovePosFrom : TImage;                       // æœ€åç§»åŠ¨è¿‡çš„æ£‹å­çš„ä½ç½®
+    MovePosTo   : TImage;                       //   ç”¨æ¥æ˜¾ç¤ºèµ°æ£‹æŒ‡ç¤º
+    Clock       : dTXQCLOCK;                    // è®¡æ—¶é’Ÿ
+    RedPlayer   : String[32];                   // çº¢æ–¹æ£‹æ‰‹
+    BlkPlayer   : String[32];                   // é»‘æ–¹æ£‹æ‰‹
+    RecListBox  : TListBox;                     // æ£‹è°±è®°å½•åˆ—è¡¨æ¡†
+    VarListBox  : TListBox;                     // å˜ç€è®°å½•åˆ—è¡¨æ¡†
+    isAddVarStep: dTBoolean;                    // æ˜¯å¦æ˜¯åŠ å…¥å˜ç€çŠ¶æ€
+    RecMemo     : TMemo;                        // æ³¨è§£å¤‡æ³¨
     isMemoEdit  : dTBoolean;
-    PlayStepNo  : dTINT32;                      // µ±Ç°ĞĞÆåµÄ×Ü²½Êı
-    DispStepNo  : dTINT32;                      // µ±Ç°ÏÔÊ¾µÄÆÁÄ»ÊÇµÚ¼¸²½Æå
-    PlayNode    : dTXQPlayNode;                 // µ±Ç°×îºóÒ»²½ÆåµÄ½Úµã
-    DispNode    : dTXQPlayNode;                 // µ±Ç°ÆåÅÌÏÔÊ¾µÄÆåµÄ½Úµã
-    WhoPlay     : dTWHOPLAY;                    // ÂÖµ½Ë­ÏÂ
-    ReverseH    : Boolean;                      // ×óÓÒ¶Ô»»±êÖ¾
-    PlayRec     : array [0..dCMaxRecNo] of dTXQPlayNode; // ĞĞÆå¼ÇÂ¼(ÆåÆ×)
+    PlayStepNo  : dTINT32;                      // å½“å‰è¡Œæ£‹çš„æ€»æ­¥æ•°
+    DispStepNo  : dTINT32;                      // å½“å‰æ˜¾ç¤ºçš„å±å¹•æ˜¯ç¬¬å‡ æ­¥æ£‹
+    PlayNode    : dTXQPlayNode;                 // å½“å‰æœ€åä¸€æ­¥æ£‹çš„èŠ‚ç‚¹
+    DispNode    : dTXQPlayNode;                 // å½“å‰æ£‹ç›˜æ˜¾ç¤ºçš„æ£‹çš„èŠ‚ç‚¹
+    WhoPlay     : dTWHOPLAY;                    // è½®åˆ°è°ä¸‹
+    ReverseH    : Boolean;                      // å·¦å³å¯¹æ¢æ ‡å¿—
+    PlayRec     : array [0..dCMaxRecNo] of dTXQPlayNode; // è¡Œæ£‹è®°å½•(æ£‹è°±)
     PlayVar     : array [0..dCMaxVarNo] of dTXQPlayNode;
-    PlayTree    : dTXQPlayNode;                 // ¶ÔŞÄÊ÷
+    PlayTree    : dTXQPlayNode;                 // å¯¹å¼ˆæ ‘
     PlayRecHook : procedure;
     RefreshHook : procedure;
 
@@ -131,27 +131,27 @@ type
                        memRec:TMemo;XQZXY:dTXQZXY); overload;
     destructor Destroy; override;
 
-    procedure dStartMoveFromXY(XY:dTBYTE);      // ´ÓXY´¦¿ªÊ¼ÒÆ¶¯Æå×Ó
-    procedure dStopMoveAtXY(XY:dTBYTE);         // ÒÆ¶¯Í£Ö¹µ½XY´¦
+    procedure dStartMoveFromXY(XY:dTBYTE);      // ä»XYå¤„å¼€å§‹ç§»åŠ¨æ£‹å­
+    procedure dStopMoveAtXY(XY:dTBYTE);         // ç§»åŠ¨åœæ­¢åˆ°XYå¤„
     function  isMoveToValid(XY:dTBYTE; var sPlayRec:String):dTBOOLEAN;
-                // ÅĞ¶ÏÒÆ¶¯ÊÇ·ñºÏºõ¹æÔò, sPlayRec ¼ÇÂ¼±¾²½ÆåÆ×
+                // åˆ¤æ–­ç§»åŠ¨æ˜¯å¦åˆä¹è§„åˆ™, sPlayRec è®°å½•æœ¬æ­¥æ£‹è°±
 
 //    function  GetPlayRecStr(qzXY:dTXQZXY; WP:dTWhoPlay;
 //                            XYf,XYt:dTBYTE):string;
-    procedure dUndoMove;                        // È¡ÏûÒÆ¶¯
-    function  iQiziIndexAtXY(XY:dTBYTE):dTINT32;// È¡XY´¦µÄÆå×ÓË÷ÒıºÅ
+    procedure dUndoMove;                        // å–æ¶ˆç§»åŠ¨
+    function  iQiziIndexAtXY(XY:dTBYTE):dTINT32;// å–XYå¤„çš„æ£‹å­ç´¢å¼•å·
     function  isPlayOneStepOK(XYf, XYt: dTBYTE): dTBOOLEAN;
-                // ÅĞ¶Ï´ÓXYfÒÆ¶¯µ½XYtÊÇ·ñºÏºõ¹æÔò, ÈôºÏºõ¹æÔò,ÕæÕıÖ´ĞĞ
-    procedure dEnablePlayer(WP:dTWHOPLAY); overload; // ÔÊĞíÒ»·½×ßÆå
+                // åˆ¤æ–­ä»XYfç§»åŠ¨åˆ°XYtæ˜¯å¦åˆä¹è§„åˆ™, è‹¥åˆä¹è§„åˆ™,çœŸæ­£æ‰§è¡Œ
+    procedure dEnablePlayer(WP:dTWHOPLAY); overload; // å…è®¸ä¸€æ–¹èµ°æ£‹
     procedure dEnablePlayer(PN:dTXQPlayNode); overload;
-    procedure dDeleteOnePlayRec(bRefresh: Boolean=True); // É¾³ı×îºóÒ»²½¶Ô¾Ö¼ÇÂ¼
-    procedure dDeleteOnePlayNode;               // É¾³ı¸Õ¸Õ×ß¹ıµÄÒ»²½ÆåµÄ½Úµã
+    procedure dDeleteOnePlayRec(bRefresh: Boolean=True); // åˆ é™¤æœ€åä¸€æ­¥å¯¹å±€è®°å½•
+    procedure dDeleteOnePlayNode;               // åˆ é™¤åˆšåˆšèµ°è¿‡çš„ä¸€æ­¥æ£‹çš„èŠ‚ç‚¹
     procedure dDeletePlayVar(PN:dTXQPlayNode);
     procedure dRefreshBoard(ReStart:Boolean);
-                // Ë¢ĞÂµ±Ç°Æå¾Ö, Restart = True ±íÊ¾´ÓµÚ0²½¿ªÊ¼(¸´Î»)
-    procedure dDispQiziAtRecNo(iRec: dTINT32);  // ÏÔÊ¾iRec²½µÄÆå¾Ö
-    procedure dMoveMemoToRecNo(iRec:dTINT32);   // ½«×¢½âÒÆÈë¶Ô¾Ö¼ÇÂ¼
-    procedure dLoadMemoFromRecNo(iRec:dTINT32); // ½«¼ÇÂ¼ÖĞµÄ×¢½âÏÔÊ¾³öÀ´
+                // åˆ·æ–°å½“å‰æ£‹å±€, Restart = True è¡¨ç¤ºä»ç¬¬0æ­¥å¼€å§‹(å¤ä½)
+    procedure dDispQiziAtRecNo(iRec: dTINT32);  // æ˜¾ç¤ºiRecæ­¥çš„æ£‹å±€
+    procedure dMoveMemoToRecNo(iRec:dTINT32);   // å°†æ³¨è§£ç§»å…¥å¯¹å±€è®°å½•
+    procedure dLoadMemoFromRecNo(iRec:dTINT32); // å°†è®°å½•ä¸­çš„æ³¨è§£æ˜¾ç¤ºå‡ºæ¥
     function  isHighlightVarStepActive: Boolean;
     procedure dMovePlayVarUp;
     procedure dMovePlayVarDown;
@@ -159,11 +159,11 @@ type
     procedure dDispVarStepAtRecNo(iRec:dTInt32);
     procedure dLoadAllRecForPlayNode(PN:dTXQPlayNode);
     procedure dAddPlayNodeIntoPlayRec(PN:dTXQPlayNode);
-    procedure dOnRecListBoxClick;               // ÏìÓ¦µ¥»÷Æå¾Ö¼ÇÂ¼ÊÂ¼ş
+    procedure dOnRecListBoxClick;               // å“åº”å•å‡»æ£‹å±€è®°å½•äº‹ä»¶
     procedure dOnVarListBoxDblClick;
     procedure dOnRecMemoChange;
     procedure dRefreshRecStr;
-//    procedure dReverseBoard;                    // ÆåÅÌµ¹×ª180¶È
+//    procedure dReverseBoard;                    // æ£‹ç›˜å€’è½¬180åº¦
   end;
 
 const
@@ -201,7 +201,7 @@ end;
 
 
 //-------------------------------------------------------------------------
-// ÏóÆåÀàµÄ¹¹Ôìº¯Êı
+// è±¡æ£‹ç±»çš„æ„é€ å‡½æ•°
 //.........................................................................
 constructor dTXIANGQI.Create(imgBoard:TImage;imgXY:dTXQPXY;imgQZMove:TImage;
                              imgMovePosF,imgMovePosT:TImage;picQZ:dTXQZPIC;
@@ -210,65 +210,65 @@ constructor dTXIANGQI.Create(imgBoard:TImage;imgXY:dTXQPXY;imgQZMove:TImage;
 var
   i, j: dTINT32;
 begin
-  BoardImage := imgBoard;                       // ÆåÅÌÍ¼Æ¬
+  BoardImage := imgBoard;                       // æ£‹ç›˜å›¾ç‰‡
 
-  for i:=0 to 8 do for j:=0 to 9 do             // ´´½¨ÏóÆåÅÌÖĞµÄ'±øÕ¾'
+  for i:=0 to 8 do for j:=0 to 9 do             // åˆ›å»ºè±¡æ£‹ç›˜ä¸­çš„'å…µç«™'
   begin
     BoardXY[i,j]         := imgXY[i, j];
-    BoardXY[i,j].Tag     := i*10 + j;           // Tag ÖĞ´æÓĞ'±øÕ¾'×ø±ê
+    BoardXY[i,j].Tag     := i*10 + j;           // Tag ä¸­å­˜æœ‰'å…µç«™'åæ ‡
     BoardXY[i,j].Picture := nil;
   end;
 
-  QiziMoveImg := imgQZMove;                     // ÄÃÆğÒÆ¶¯µÄÆå×ÓµÄÍ¼Æ¬
+  QiziMoveImg := imgQZMove;                     // æ‹¿èµ·ç§»åŠ¨çš„æ£‹å­çš„å›¾ç‰‡
 
-  QiziMove    := nil;                           // ÕıÔÚÒÆ¶¯µÄÆå×Ó
+  QiziMove    := nil;                           // æ­£åœ¨ç§»åŠ¨çš„æ£‹å­
 
   MovePosFrom         := imgMovePosF;
-  MovePosTo           := imgMovePosT;           // ×îºóÒÆ¶¯µÄÆå×ÓµÄÖ¸Ê¾
-  MovePosTo.Visible   := False;                 // ¹ØµôÆå×ÓÖ¸Ê¾
+  MovePosTo           := imgMovePosT;           // æœ€åç§»åŠ¨çš„æ£‹å­çš„æŒ‡ç¤º
+  MovePosTo.Visible   := False;                 // å…³æ‰æ£‹å­æŒ‡ç¤º
   MovePosFrom.Visible := False;
 
-  // ´´½¨32¸öÏóÆå×Ó(ĞèÒªQiziPicÊı×é)
-  QiZi[ 1] := dTXQZ.Create( 1, '³µ', picQZ[ 1], 1, 80); // Red
-  QiZi[ 2] := dTXQZ.Create( 2, 'Âí', picQZ[ 2], 2, 70);
-  QiZi[ 3] := dTXQZ.Create( 3, 'Ïà', picQZ[ 3], 3, 60);
-  QiZi[ 4] := dTXQZ.Create( 4, 'Ê¿', picQZ[ 4], 4, 50);
-  QiZi[ 5] := dTXQZ.Create( 5, 'Ë§', picQZ[ 5], 5, 40);
-  QiZi[ 6] := dTXQZ.Create( 6, 'Ê¿', picQZ[ 4], 4, 30);
-  QiZi[ 7] := dTXQZ.Create( 7, 'Ïà', picQZ[ 3], 3, 20);
-  QiZi[ 8] := dTXQZ.Create( 8, 'Âí', picQZ[ 2], 2, 10);
-  QiZi[ 9] := dTXQZ.Create( 9, '³µ', picQZ[ 1], 1, 00);
-  QiZi[10] := dTXQZ.Create(10, 'ÅÚ', picQZ[ 6], 6, 72);
-  QiZi[11] := dTXQZ.Create(11, 'ÅÚ', picQZ[ 6], 6, 12);
-  QiZi[12] := dTXQZ.Create(12, '±ø', picQZ[ 7], 7, 83);
-  QiZi[13] := dTXQZ.Create(13, '±ø', picQZ[ 7], 7, 63);
-  QiZi[14] := dTXQZ.Create(14, '±ø', picQZ[ 7], 7, 43);
-  QiZi[15] := dTXQZ.Create(15, '±ø', picQZ[ 7], 7, 23);
-  QiZi[16] := dTXQZ.Create(16, '±ø', picQZ[ 7], 7, 03);
-  QiZi[17] := dTXQZ.Create(17, '³µ', picQZ[ 8], 1, 09); // Blk
-  QiZi[18] := dTXQZ.Create(18, 'Âí', picQZ[ 9], 2, 19);
-  QiZi[19] := dTXQZ.Create(19, 'Ïó', picQZ[10], 3, 29);
-  QiZi[20] := dTXQZ.Create(20, 'Ê¿', picQZ[11], 4, 39);
-  QiZi[21] := dTXQZ.Create(21, '½«', picQZ[12], 5, 49);
-  QiZi[22] := dTXQZ.Create(22, 'Ê¿', picQZ[11], 4, 59);
-  QiZi[23] := dTXQZ.Create(23, 'Ïó', picQZ[10], 3, 69);
-  QiZi[24] := dTXQZ.Create(24, 'Âí', picQZ[ 9], 2, 79);
-  QiZi[25] := dTXQZ.Create(25, '³µ', picQZ[ 8], 1, 89);
-  QiZi[26] := dTXQZ.Create(26, 'ÅÚ', picQZ[13], 6, 17);
-  QiZi[27] := dTXQZ.Create(27, 'ÅÚ', picQZ[13], 6, 77);
-  QiZi[28] := dTXQZ.Create(28, '×ä', picQZ[14], 7, 06);
-  QiZi[29] := dTXQZ.Create(29, '×ä', picQZ[14], 7, 26);
-  QiZi[30] := dTXQZ.Create(30, '×ä', picQZ[14], 7, 46);
-  QiZi[31] := dTXQZ.Create(31, '×ä', picQZ[14], 7, 66);
-  QiZi[32] := dTXQZ.Create(32, '×ä', picQZ[14], 7, 86);
+  // åˆ›å»º32ä¸ªè±¡æ£‹å­(éœ€è¦QiziPicæ•°ç»„)
+  QiZi[ 1] := dTXQZ.Create( 1, 'è½¦', picQZ[ 1], 1, 80); // Red
+  QiZi[ 2] := dTXQZ.Create( 2, 'é©¬', picQZ[ 2], 2, 70);
+  QiZi[ 3] := dTXQZ.Create( 3, 'ç›¸', picQZ[ 3], 3, 60);
+  QiZi[ 4] := dTXQZ.Create( 4, 'å£«', picQZ[ 4], 4, 50);
+  QiZi[ 5] := dTXQZ.Create( 5, 'å¸…', picQZ[ 5], 5, 40);
+  QiZi[ 6] := dTXQZ.Create( 6, 'å£«', picQZ[ 4], 4, 30);
+  QiZi[ 7] := dTXQZ.Create( 7, 'ç›¸', picQZ[ 3], 3, 20);
+  QiZi[ 8] := dTXQZ.Create( 8, 'é©¬', picQZ[ 2], 2, 10);
+  QiZi[ 9] := dTXQZ.Create( 9, 'è½¦', picQZ[ 1], 1, 00);
+  QiZi[10] := dTXQZ.Create(10, 'ç‚®', picQZ[ 6], 6, 72);
+  QiZi[11] := dTXQZ.Create(11, 'ç‚®', picQZ[ 6], 6, 12);
+  QiZi[12] := dTXQZ.Create(12, 'å…µ', picQZ[ 7], 7, 83);
+  QiZi[13] := dTXQZ.Create(13, 'å…µ', picQZ[ 7], 7, 63);
+  QiZi[14] := dTXQZ.Create(14, 'å…µ', picQZ[ 7], 7, 43);
+  QiZi[15] := dTXQZ.Create(15, 'å…µ', picQZ[ 7], 7, 23);
+  QiZi[16] := dTXQZ.Create(16, 'å…µ', picQZ[ 7], 7, 03);
+  QiZi[17] := dTXQZ.Create(17, 'è½¦', picQZ[ 8], 1, 09); // Blk
+  QiZi[18] := dTXQZ.Create(18, 'é©¬', picQZ[ 9], 2, 19);
+  QiZi[19] := dTXQZ.Create(19, 'è±¡', picQZ[10], 3, 29);
+  QiZi[20] := dTXQZ.Create(20, 'å£«', picQZ[11], 4, 39);
+  QiZi[21] := dTXQZ.Create(21, 'å°†', picQZ[12], 5, 49);
+  QiZi[22] := dTXQZ.Create(22, 'å£«', picQZ[11], 4, 59);
+  QiZi[23] := dTXQZ.Create(23, 'è±¡', picQZ[10], 3, 69);
+  QiZi[24] := dTXQZ.Create(24, 'é©¬', picQZ[ 9], 2, 79);
+  QiZi[25] := dTXQZ.Create(25, 'è½¦', picQZ[ 8], 1, 89);
+  QiZi[26] := dTXQZ.Create(26, 'ç‚®', picQZ[13], 6, 17);
+  QiZi[27] := dTXQZ.Create(27, 'ç‚®', picQZ[13], 6, 77);
+  QiZi[28] := dTXQZ.Create(28, 'å’', picQZ[14], 7, 06);
+  QiZi[29] := dTXQZ.Create(29, 'å’', picQZ[14], 7, 26);
+  QiZi[30] := dTXQZ.Create(30, 'å’', picQZ[14], 7, 46);
+  QiZi[31] := dTXQZ.Create(31, 'å’', picQZ[14], 7, 66);
+  QiZi[32] := dTXQZ.Create(32, 'å’', picQZ[14], 7, 86);
 
   PlayTree := dTXQPlayNode.Create(0,'========= ',0,0,XQZXY,nil,nil,nil,nil);
   PlayNode := PlayTree;
 
-  // 32¸öÆå×ÓµÄµ±Ç°Î»ÖÃ
+  // 32ä¸ªæ£‹å­çš„å½“å‰ä½ç½®
   for i:=1 to 32 do
   begin
-    Qizi[i].XY           := $FF;        // Æå×Ó¾ù²»ÔÚÆåÅÌÉÏ
+    Qizi[i].XY           := $FF;        // æ£‹å­å‡ä¸åœ¨æ£‹ç›˜ä¸Š
     PlayTree.QiziXY[i] := XQZXY[i];
   end;
 
@@ -279,12 +279,12 @@ begin
   RecMemo    := memRec;
   RecListBox.Items.Add(' ============ ');
 
-  //  Clock       : dTXQCLOCK;                    // ¼ÆÊ±ÖÓ
+  //  Clock       : dTXQCLOCK;                    // è®¡æ—¶é’Ÿ
 
   RedPlayer := 'RedPlayer';
   BlkPlayer := 'BlkPlayer';
 
-  PlayStepNo:= 0; // µ±Ç°ĞĞÆåµÄ×Ü²½Êı
+  PlayStepNo:= 0; // å½“å‰è¡Œæ£‹çš„æ€»æ­¥æ•°
 
   PlayRecHook := nil;
   RefreshHook := nil;
@@ -396,13 +396,13 @@ begin
 end;
 
 //-------------------------------------------------------------------------
-// ±äÁ¿¶¨Òå
+// å˜é‡å®šä¹‰
 //.........................................................................
 var
-  dCREDNUM: array [1..9] of String[3] =         // ºì·½ËùÓÃµÄÊı×ÖÏµÍ³
-             ('Ò»','¶ş','Èı','ËÄ','Îå','Áù','Æß','°Ë','¾Å');
-  dCBLKNUM: array [1..9] of String[3] =         // ºÚ·½ËùÓÃµÄÊı×ÖÏµÍ³
-             ('£±','£²','£³','£´','£µ','£¶','£·','£¸','£¹');
+  dCREDNUM: array [1..9] of String[3] =         // çº¢æ–¹æ‰€ç”¨çš„æ•°å­—ç³»ç»Ÿ
+             ('ä¸€','äºŒ','ä¸‰','å››','äº”','å…­','ä¸ƒ','å…«','ä¹');
+  dCBLKNUM: array [1..9] of String[3] =         // é»‘æ–¹æ‰€ç”¨çš„æ•°å­—ç³»ç»Ÿ
+             ('ï¼‘','ï¼’','ï¼“','ï¼”','ï¼•','ï¼–','ï¼—','ï¼˜','ï¼™');
 function dTXIANGQI.isMoveToValid(XY:dTBYTE; var sPlayRec:String):dTBOOLEAN;
 var
   i    : dTINT32;
@@ -421,8 +421,8 @@ begin
       if ((PN.XYf=QiziMove.XY)and(PN.XYt=XY)) then
       begin
         Application.MessageBox(
-          'Äú¸Õ²Å×ßµÄÒ»²½±ä×ÅÒÑ¾­´æÔÚ£¬Çë»»Ò»ÖÖ×ß·¨×÷Îª±ä×Å¡£',
-          'ÏµÍ³ĞÅÏ¢ - Ôö¼ÓĞÂ±ä×Å',
+          'æ‚¨åˆšæ‰èµ°çš„ä¸€æ­¥å˜ç€å·²ç»å­˜åœ¨ï¼Œè¯·æ¢ä¸€ç§èµ°æ³•ä½œä¸ºå˜ç€ã€‚',
+          'ç³»ç»Ÿä¿¡æ¯ - å¢åŠ æ–°å˜ç€',
           MB_OK + MB_ICONWARNING + MB_DEFBUTTON1);
         Exit;
       end;
@@ -458,71 +458,71 @@ begin
   BoardXY[X,Y].DragMode := dmAutomatic;
   QiziMoveImg.Visible   := False;
 
-  // 2001-02-15 : ½â¾öµã»÷×ß×ÓÎÊÌâ¡£
+  // 2001-02-15 : è§£å†³ç‚¹å‡»èµ°å­é—®é¢˜ã€‚
   MovePosTo.Left := BoardXY[X,Y].Left;  MovePosTo.Top := BoardXY[X,Y].Top;
   MovePosTo.Visible := True;
 end;
 
 //-------------------------------------------------------------------------
-// ÒÆ¶¯½áÊø´¦Àí
+// ç§»åŠ¨ç»“æŸå¤„ç†
 //.........................................................................
 procedure dTXIANGQI.dStopMoveAtXY(XY:dTBYTE);
 var
   i, X, Y: dTInt32;
-  sPlayRec   : string;                          // ±¾²½ÆåµÄÎÄ×Ö¼ÇÂ¼
+  sPlayRec   : string;                          // æœ¬æ­¥æ£‹çš„æ–‡å­—è®°å½•
   qzXY       : dTXQZXY;
   XYFrom     : dTByte;
   PN, PNTemp : dTXQPlayNode;
 begin
-  if (QiziMove = nil) then Exit;                // Ã»ÓĞÆå×ÓÒÆ¶¯£¬·µ»Ø
+  if (QiziMove = nil) then Exit;                // æ²¡æœ‰æ£‹å­ç§»åŠ¨ï¼Œè¿”å›
   if ((PlayStepNo>(dCMaxRecNo-1))or
-     (not isMoveToValid(XY, sPlayRec))) then    // ÎŞĞ§±ãÈ¡ÏûÒÆ¶¯
+     (not isMoveToValid(XY, sPlayRec))) then    // æ— æ•ˆä¾¿å–æ¶ˆç§»åŠ¨
   begin
     dUndoMove;
     Exit;
   end;
 
-  X := XY div 10;  Y := XY mod 10;              // ·Ö½âX, Y
-  XYFrom := QiziMove.XY;                        // Æå×ÓÒÆ¶¯µÄÆğµã
+  X := XY div 10;  Y := XY mod 10;              // åˆ†è§£X, Y
+  XYFrom := QiziMove.XY;                        // æ£‹å­ç§»åŠ¨çš„èµ·ç‚¹
 
-  i := iQiziIndexAtXY(XY);                      // ±»³ÔµôµÄÆå×Ó
+  i := iQiziIndexAtXY(XY);                      // è¢«åƒæ‰çš„æ£‹å­
   if (i <> 0) then begin Qizi[i].XY := $FF; end;
 
-  // ½«Æå×Ó·ÅÏÂ
+  // å°†æ£‹å­æ”¾ä¸‹
   QiziMove.XY := XY;  BoardXY[X,Y].Picture := QiziMove.Picture;
 
-  // ¸ú×ÙÆå×ÓµÄÒÆ¶¯£¬·ÅÖÃÒÆ¶¯Ö¸Ê¾
+  // è·Ÿè¸ªæ£‹å­çš„ç§»åŠ¨ï¼Œæ”¾ç½®ç§»åŠ¨æŒ‡ç¤º
   MovePosTo.Left := BoardXY[X,Y].Left;  MovePosTo.Top := BoardXY[X,Y].Top;
   MovePosTo.Visible := True;
   MovePosFrom.Visible := True;
 
-  // Æå×ÓÒÆ¶¯µÄ'ÌæÉí'µÄÈÎÎñ½áÊø
+  // æ£‹å­ç§»åŠ¨çš„'æ›¿èº«'çš„ä»»åŠ¡ç»“æŸ
   QiziMoveImg.Visible := False;  QiziMove := nil;
 
-  dMoveMemoToRecNo(PlayStepNo);                 // ¼ÇÂ¼×¢½â(ÒÆ¶¯Ç°µÄ×¢½â)
+  dMoveMemoToRecNo(PlayStepNo);                 // è®°å½•æ³¨è§£(ç§»åŠ¨å‰çš„æ³¨è§£)
 
-  PlayStepNo := PlayStepNo + 1;                 // ĞĞÆå¼ÇÂ¼Ôö¼ÓÒ»²½
+  PlayStepNo := PlayStepNo + 1;                 // è¡Œæ£‹è®°å½•å¢åŠ ä¸€æ­¥
   DispStepNo := PlayStepNo;
 
   for i:=1 to 32 do qzXY[i] := Qizi[i].XY;
 
-  // ÅĞ¶ÏÊÇ·ñÊÇÔö¼Ó±ä×Å×´Ì¬
+  // åˆ¤æ–­æ˜¯å¦æ˜¯å¢åŠ å˜ç€çŠ¶æ€
   if not isAddVarStep then
   begin
-    // ²»ÊÇÔö¼Ó±ä×Å×´Ì¬, ÔòÔÚ¶ÔŞÄÊ÷ÖĞÔö¼ÓÒ»¸ö×óº¢×Ó½Úµã, ²¢½«µ±Ç°½Úµã
-    // ÉèÖÃÎª¸Ã½Úµã
+    // ä¸æ˜¯å¢åŠ å˜ç€çŠ¶æ€, åˆ™åœ¨å¯¹å¼ˆæ ‘ä¸­å¢åŠ ä¸€ä¸ªå·¦å­©å­èŠ‚ç‚¹, å¹¶å°†å½“å‰èŠ‚ç‚¹
+    // è®¾ç½®ä¸ºè¯¥èŠ‚ç‚¹
     PN := dTXQPlayNode.Create(PlayStepNo, sPlayRec,
             XYFrom, XY, qzXY, nil, PlayNode, nil, PlayNode);
   end
   else
   begin
-    // ÊÇÔö¼Ó±ä×Å×´Ì¬£¬ÔòÔÚ¶ÔŞÄÊ÷ÖĞÔö¼ÓÒ»¸öÓÒº¢×Ó½Úµã£¬²¢½«µ±Ç°½Úµã
-    // ÉèÖÃÎª¸Ã½Úµã, ¸Ã½ÚµãÓ¦¼ÓÔÚµ±Ç°½ÚµãµÄ×îÓÒºó´ú
+    // æ˜¯å¢åŠ å˜ç€çŠ¶æ€ï¼Œåˆ™åœ¨å¯¹å¼ˆæ ‘ä¸­å¢åŠ ä¸€ä¸ªå³å­©å­èŠ‚ç‚¹ï¼Œå¹¶å°†å½“å‰èŠ‚ç‚¹
+    // è®¾ç½®ä¸ºè¯¥èŠ‚ç‚¹, è¯¥èŠ‚ç‚¹åº”åŠ åœ¨å½“å‰èŠ‚ç‚¹çš„æœ€å³åä»£
     PN:= dTXQPlayNode.Create(PlayStepNo, sPlayRec,
            XYFrom, XY, qzXY, nil, DispNode, nil, nil);
     PNTemp := DispNode.LChild;
     if (PNTemp = nil) then begin ShowMessage('Error PNTemp'); Exit; end;
-     // Ñ°ÕÒ×îÓÒºó´ú
+     // å¯»æ‰¾æœ€å³åä»£
     while (PNTemp.RChild <> nil) do PNTemp := PNTemp.RChild;
     PNTemp.dSetRChild(PN);
   end;
@@ -579,7 +579,7 @@ begin
   if (PN=nil) then begin dEnablePlayer(wpPause); Exit; end;
   if ((PN=PlayTree)and(PlayStepNo=0)and(PN.XYf=0)) then
   begin
-    if (PN.XYt=0) then                  // µÚ0²½µÄXYtÖ¸Ê¾ÁËË­ÏÈĞĞ
+    if (PN.XYt=0) then                  // ç¬¬0æ­¥çš„XYtæŒ‡ç¤ºäº†è°å…ˆè¡Œ
       dEnablePlayer(wpRed)
     else
       dEnablePlayer(wpBlk);
@@ -593,13 +593,13 @@ begin
 end;
 
 //-------------------------------------------------------------------------
-// ÏÔÊ¾ÆåÆ×¼ÇÂ¼ÖĞÄ³Ò»²½µÄÅÌÃæ²¼¾Ö  (µÚ0²½Îª¿ª¾ÖµÄÅÌÃæ)
+// æ˜¾ç¤ºæ£‹è°±è®°å½•ä¸­æŸä¸€æ­¥çš„ç›˜é¢å¸ƒå±€  (ç¬¬0æ­¥ä¸ºå¼€å±€çš„ç›˜é¢)
 //.........................................................................
 procedure dTXIANGQI.dDispQiziAtRecNo(iRec: dTINT32);
 var
   i, Xf, Yf, Xt, Yt, iHeight: dTINT32;
 begin
-  if ((iRec<0)or(iRec>PlayStepNo)) then Exit;   // ¼ì²é²½ÊıµÄÓĞĞ§ĞÔ
+  if ((iRec<0)or(iRec>PlayStepNo)) then Exit;   // æ£€æŸ¥æ­¥æ•°çš„æœ‰æ•ˆæ€§
 
   MovePosFrom.Visible := False;
 
@@ -618,9 +618,9 @@ begin
     end;
   end;
 
-  MovePosTo.Visible   := False;                 // ¹ØµôÆå×ÓÖ¸Ê¾
+  MovePosTo.Visible   := False;                 // å…³æ‰æ£‹å­æŒ‡ç¤º
   
-  for i:=1 to 32 do                             // ÇåµôÎŞÓÃµÄÆå×Ó
+  for i:=1 to 32 do                             // æ¸…æ‰æ— ç”¨çš„æ£‹å­
   begin
    if (Qizi[i].XY <> PlayRec[iRec].QiziXY[i]) then
    begin
@@ -629,7 +629,7 @@ begin
    end;
   end;
 
-  for i:=1 to 32 do                             // ÏÔÊ¾²»Ò»ÑùµÄÆå×Ó
+  for i:=1 to 32 do                             // æ˜¾ç¤ºä¸ä¸€æ ·çš„æ£‹å­
   begin
      if (PlayRec[iRec].QiziXY[i] <> Qizi[i].XY ) then
      begin
@@ -640,7 +640,7 @@ begin
      end;
   end;
 
-  if (iRec > 0) then                            // ÏÔÊ¾Æå×Ó×ß¶¯Ö¸Ê¾
+  if (iRec > 0) then                            // æ˜¾ç¤ºæ£‹å­èµ°åŠ¨æŒ‡ç¤º
   begin
     Xf                  := PlayRec[iRec].XYf div 10;
     Yf                  := PlayRec[iRec].XYf mod 10;
@@ -654,35 +654,35 @@ begin
     MovePosTo.Visible   := True;
   end;
 
-  dMoveMemoToRecNo(DispStepNo);                 // ½«¸üĞÂµÄ×¢½â¼ÇÂ¼ÏÂÀ´
-  dLoadMemoFromRecNo(iRec);                     // ÏÔÊ¾±¾²½ÆåµÄ×¢½â
+  dMoveMemoToRecNo(DispStepNo);                 // å°†æ›´æ–°çš„æ³¨è§£è®°å½•ä¸‹æ¥
+  dLoadMemoFromRecNo(iRec);                     // æ˜¾ç¤ºæœ¬æ­¥æ£‹çš„æ³¨è§£
 
   dDispVarStepAtRecNo(iRec);
   RecListBox.ItemIndex := iRec;
-  DispStepNo := iRec;                           // ÉèÖÃµ±Ç°ÏÔÊ¾µÄ¼ÇÂ¼
+  DispStepNo := iRec;                           // è®¾ç½®å½“å‰æ˜¾ç¤ºçš„è®°å½•
   DispNode   := PlayRec[DispStepNo];
 
   if(@PlayRecHook<>nil) then PlayRecHook;
 end;
 
 //-------------------------------------------------------------------------
-// ½«×¢½â´æÈë¶Ô¾Ö¼ÇÂ¼
+// å°†æ³¨è§£å­˜å…¥å¯¹å±€è®°å½•
 //.........................................................................
 procedure dTXIANGQI.dMoveMemoToRecNo(iRec:dTINT32);
 var
   PN : dTXQPlayNode;
 begin
   if (not isMemoEdit) then Exit;
-  if ((iRec<0)or(iRec>PlayStepNo)) then Exit;   // ¼ì²é·¶Î§
+  if ((iRec<0)or(iRec>PlayStepNo)) then Exit;   // æ£€æŸ¥èŒƒå›´
 
   PN := PlayRec[iRec];
 
-  if (PN.Remark <> nil) then                    // ÏÈÊÍ·Å¾ÉµÄ¼ÇÂ¼
+  if (PN.Remark <> nil) then                    // å…ˆé‡Šæ”¾æ—§çš„è®°å½•
   begin
       PN.Remark.Free;  PN.Remark := nil;
   end;
 
-  if (RecMemo.Lines.Count>0) then               // ÓĞ×¢½â
+  if (RecMemo.Lines.Count>0) then               // æœ‰æ³¨è§£
     if (not ((RecMemo.Lines.Count=1) and (RecMemo.Lines[0]=''))) then
     begin
       PN.Remark      := TStringList.Create;
@@ -694,7 +694,7 @@ begin
 end;
 
 //-------------------------------------------------------------------------
-// ½«¼ÇÂ¼ÖĞµÄ×¢½âÏÔÊ¾³öÀ´
+// å°†è®°å½•ä¸­çš„æ³¨è§£æ˜¾ç¤ºå‡ºæ¥
 //.........................................................................
 procedure dTXIANGQI.dLoadMemoFromRecNo(iRec:dTINT32);
 var
@@ -712,7 +712,7 @@ begin
 end;
 
 //-------------------------------------------------------------------------
-// ±ä×Å¼ÇÂ¼ÊÇµ±Ç°¼ÇÂ¼Âğ£¿
+// å˜ç€è®°å½•æ˜¯å½“å‰è®°å½•å—ï¼Ÿ
 //.........................................................................
 function dTXiangQi.isHighlightVarStepActive: Boolean;
 var
@@ -792,7 +792,7 @@ begin
   if ((iRec<1)or(iRec>dCMaxRecNo)) then Exit;
   if PlayRec[iRec] = nil then Exit;
 
-  // ÔÚÆåÆ×¼ÇÂ¼ÖĞÕÒµ½µ±Ç°µÄ½ÚµãµÄÉÏÒ»²½ÆåµÄ½ÚµãµÄµÚÒ»²½Ó¦×Å
+  // åœ¨æ£‹è°±è®°å½•ä¸­æ‰¾åˆ°å½“å‰çš„èŠ‚ç‚¹çš„ä¸Šä¸€æ­¥æ£‹çš„èŠ‚ç‚¹çš„ç¬¬ä¸€æ­¥åº”ç€
   PN := PlayRec[iRec].LastStepNode.LChild;  n := 0;
   while (PN <> nil) do
   begin
@@ -818,7 +818,7 @@ procedure dTXiangQi.dLoadAllRecForPlayNode(PN:dTXQPlayNode);
 var
   i, iDispStepNo :  dTInt32;
 begin
-  // ÏÈÉ¾³ıÔ­À´µÄ×ß·¨(´ÓÏÔÊ¾µÄµ±Ç°×´¿ö¿ªÊ¼)
+  // å…ˆåˆ é™¤åŸæ¥çš„èµ°æ³•(ä»æ˜¾ç¤ºçš„å½“å‰çŠ¶å†µå¼€å§‹)
   if (PN=nil) then Exit;
   iDispStepNo := DispStepNo;
   if (iDispStepNo<PN.StepNo) then iDispStepNo:=PN.StepNo;
@@ -828,7 +828,7 @@ begin
 
   for i:=PlayStepNo downto iDispStepNo do
   begin
-    //ÎªĞŞÕı±ä×ÅÖĞ×¢½âÏÔÊ¾µÄ´íÎó
+    //ä¸ºä¿®æ­£å˜ç€ä¸­æ³¨è§£æ˜¾ç¤ºçš„é”™è¯¯
     if i = iDispStepNo then
     begin
       dDeleteOnePlayRec;
@@ -855,7 +855,7 @@ begin
 end;
 
 //-------------------------------------------------------------------------
-// ½«×ßÆå½Úµã¼ÓÈëÆåÆ×ÁĞ±í
+// å°†èµ°æ£‹èŠ‚ç‚¹åŠ å…¥æ£‹è°±åˆ—è¡¨
 //.........................................................................
 procedure dTXiangQi.dAddPlayNodeIntoPlayRec(PN:dTXQPlayNode);
 begin
@@ -864,7 +864,7 @@ begin
   if (PN.StepNo <= dCMaxRecNo) then
   begin
     PlayRec[PN.StepNo] := PN;
-    RecListBox.Items.Add(sGetFMTRecStr(PN));    // ÏÔÊ¾±¾²½Æå
+    RecListBox.Items.Add(sGetFMTRecStr(PN));    // æ˜¾ç¤ºæœ¬æ­¥æ£‹
   end;
 end;
 
@@ -908,12 +908,12 @@ begin
   if ((PlayStepNo=0)or(PlayStepNo<>DispStepNo)) then Exit;
   PN := PlayRec[PlayStepNo];
   if (PN=nil) then Exit;
-  if (not ((PN.LParent=nil)and(PN.RChild=nil))) then // ÓĞ±ä×Å
+  if (not ((PN.LParent=nil)and(PN.RChild=nil))) then // æœ‰å˜ç€
   begin
     case Application.MessageBox(
-          '±¾²½ÆåµÄ¼ÇÂ¼ÓĞ±ä×Å´æÔÚ£¬Èç¹ûÄúÉ¾³ıÁË±¾¼ÇÂ¼£¬ËùÓĞµÄ±ä×ÅÒÔ¼°ºó'+
-          'Ğø±ä»¯¶¼»á±»É¾³ı¡£'#13#10#13#10'ÕæµÄÒªÉ¾³ıÂğ£¿',
-          'É¾³ıÆåÆ×¼ÇÂ¼',
+          'æœ¬æ­¥æ£‹çš„è®°å½•æœ‰å˜ç€å­˜åœ¨ï¼Œå¦‚æœæ‚¨åˆ é™¤äº†æœ¬è®°å½•ï¼Œæ‰€æœ‰çš„å˜ç€ä»¥åŠå'+
+          'ç»­å˜åŒ–éƒ½ä¼šè¢«åˆ é™¤ã€‚'#13#10#13#10'çœŸçš„è¦åˆ é™¤å—ï¼Ÿ',
+          'åˆ é™¤æ£‹è°±è®°å½•',
           MB_OKCANCEL + MB_ICONQUESTION + MB_DEFBUTTON2) of
       IDOK:
         begin end;
@@ -932,12 +932,12 @@ procedure dTXiangQi.dDeletePlayVar(PN:dTXQPlayNode);
 begin
   if (PN=nil) then Exit;
 
-  if (not (PN.LChild=nil)) then // ÓĞºóĞø±ä»¯
+  if (not (PN.LChild=nil)) then // æœ‰åç»­å˜åŒ–
   begin
     case Application.MessageBox(
-          '±¾²½±ä×ÅÓĞºóĞø±ä»¯£¬Èç¹ûÄúÉ¾³ıÁË±¾¼ÇÂ¼£¬ËùÓĞµÄºó'+
-          'Ğø±ä»¯¶¼»á±»É¾³ı¡£'#13#10#13#10'ÕæµÄÒªÉ¾³ıÂğ£¿',
-          'É¾³ı±ä×Å',
+          'æœ¬æ­¥å˜ç€æœ‰åç»­å˜åŒ–ï¼Œå¦‚æœæ‚¨åˆ é™¤äº†æœ¬è®°å½•ï¼Œæ‰€æœ‰çš„å'+
+          'ç»­å˜åŒ–éƒ½ä¼šè¢«åˆ é™¤ã€‚'#13#10#13#10'çœŸçš„è¦åˆ é™¤å—ï¼Ÿ',
+          'åˆ é™¤å˜ç€',
           MB_OKCANCEL + MB_ICONQUESTION + MB_DEFBUTTON2) of
       IDOK:
         begin end;
@@ -959,13 +959,13 @@ begin
 end;
 
 //-------------------------------------------------------------------------
-// É¾³ıÒ»¸öÆåÆ×¼ÇÂ¼£¬ÔÚRecListBoxÖĞ
+// åˆ é™¤ä¸€ä¸ªæ£‹è°±è®°å½•ï¼Œåœ¨RecListBoxä¸­
 //.........................................................................
 procedure dTXIANGQI.dDeleteOnePlayRec(bRefresh: Boolean);
 begin
   if (PlayStepNo = 0) then Exit;
   RecListBox.Items.Delete(RecListBox.Items.Count-1);
-  PlayStepNo := RecListBox.Items.Count - 1;    // ×ßÆå²½Êı-1
+  PlayStepNo := RecListBox.Items.Count - 1;    // èµ°æ£‹æ­¥æ•°-1
   PlayNode   := PlayNode.LastStepNode;
   RecListBox.ItemIndex := -1;
   if (bRefresh) then dDispQiziAtRecNo(PlayStepNo);
@@ -1027,7 +1027,7 @@ begin
     BoardXY[8-i, 9-j].Left := iLeft;
     BoardXY[8-i, 9-j].Top  := iTop;
   end;
-  dDispQiziAtRecNo(DispStepNo);         // ÎªÁËÏÔÊ¾×îºóÒÆ¶¯Æå×ÓµÄ±ê¼Ç
+  dDispQiziAtRecNo(DispStepNo);         // ä¸ºäº†æ˜¾ç¤ºæœ€åç§»åŠ¨æ£‹å­çš„æ ‡è®°
 end;
 }
 

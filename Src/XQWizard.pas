@@ -1,8 +1,8 @@
-///////////////////////////////////////////////////////////////////////////////
+ï»¿///////////////////////////////////////////////////////////////////////////////
 //
 // XQStduio Source Code (http://www.qipaile.net/xqstudio)
 //
-// Copyright (c) 1998-2008, DONG Shiwei (¶­ÊÀÎ° or ¹ıºÓÏó)
+// Copyright (c) 1998-2008, DONG Shiwei (è‘£ä¸–ä¼Ÿ or è¿‡æ²³è±¡)
 // All rights reserved.
 // 
 // Redistribution and use in source and binary forms, with or without
@@ -185,7 +185,7 @@ type
     StartMoveLeft, StartMoveTop : dTInt32;
     QiziXYRect                  : array [0..8, 0..9] of TRect;
     pntQizi                     : array [1..32] of TPoint;
-    FIsEditPosition: Boolean;      // ÆåÅÌÍâµÄÎ»ÖÃ
+    FIsEditPosition: Boolean;      // æ£‹ç›˜å¤–çš„ä½ç½®
   public
     imgQizi                     : array [1..32] of TImage;
     QiziXY                      : dTXQZXY;
@@ -281,7 +281,7 @@ begin
     Cy   := imgQZMove.Top  + (Height div 2);
     if not isPointInQiziXY(Cx, Cy) then
     begin
-      if ((Tag=05) or (Tag=21)) then Exit;      // Ë§¡¢½«²»¿ÉÒÔÒÆ³ö¹¬Íâ 
+      if ((Tag=05) or (Tag=21)) then Exit;      // å¸…ã€å°†ä¸å¯ä»¥ç§»å‡ºå®«å¤– 
       if (Cx > (imgXQBoard.Left + imgXQBoard.Width - 50)) then
       begin
         QiziXY[Tag] := $FF;
@@ -312,7 +312,7 @@ var
 begin
   FIsEditPosition := False;
   
-  // ¸ø32¸öÆå×ÓÍ¼Æ¬¸³Öµ
+  // ç»™32ä¸ªæ£‹å­å›¾ç‰‡èµ‹å€¼
   imgQizi[01]:=imgQZ01; imgQizi[17]:=imgQZ17;
   imgQizi[02]:=imgQZ02; imgQizi[18]:=imgQZ18;
   imgQizi[03]:=imgQZ03; imgQizi[19]:=imgQZ19;
@@ -330,7 +330,7 @@ begin
   imgQizi[15]:=imgQZ15; imgQizi[31]:=imgQZ31;
   imgQizi[16]:=imgQZ16; imgQizi[32]:=imgQZ32;
 
-  // ÉèÖÃÆåÅÌÉÏµÄ±øÕ¾
+  // è®¾ç½®æ£‹ç›˜ä¸Šçš„å…µç«™
   for i:=0 to 8 do for j:=0 to 9 do
   begin
     with QiziXYRect[i, j] do
@@ -342,10 +342,10 @@ begin
     end;
   end;
 
-  // Æå×ÓÒÆ¶¯µÄ'ÌæÉí'
+  // æ£‹å­ç§»åŠ¨çš„'æ›¿èº«'
   imgQZMove.Width:=18; imgQZMove.Height:=18; imgQZMove.Visible:=False;
 
-  // ÉèÖÃÅÌÍâÆå×ÓµÄ¾²Ì¬Î»ÖÃ
+  // è®¾ç½®ç›˜å¤–æ£‹å­çš„é™æ€ä½ç½®
   for i:=1 to 32 do
   begin
     imgQizi[i].Width  := 18;
@@ -356,15 +356,15 @@ begin
     pntQizi[i].Y      := imgQizi[i].Top;
   end;
 
-  // È«²¿µÄÆå×Ó²»ÔÚÅÌÉÏ
+  // å…¨éƒ¨çš„æ£‹å­ä¸åœ¨ç›˜ä¸Š
   for i:=1 to 32 do QiziXY[i] := $FF;
 
-  // ½«'ºìË§'·ÅÔÚÅÌÉÏ
+  // å°†'çº¢å¸…'æ”¾åœ¨ç›˜ä¸Š
   QiziXY[05]       :=40;
   imgQizi[05].Left := QiziXYRect[4,0].Left;
   imgQizi[05].Top  := QiziXYRect[4,0].Top;
 
-  // ½«'ºÚ½«'·ÅÔÚÅÌÉÏ
+  // å°†'é»‘å°†'æ”¾åœ¨ç›˜ä¸Š
   QiziXY[21]       :=49;
   imgQizi[21].Left := QiziXYRect[4,9].Left;
   imgQizi[21].Top  := QiziXYRect[4,9].Top;
@@ -554,7 +554,7 @@ begin
     if (Pos('.', sFileName)=0) then sFileName := sFileName + '.bmp';
     if FileExists(sFileName) then
     begin
-      if (Application.MessageBox('ÎÄ¼şÒÑ¾­´æÔÚ£¬ÒªÌæ»»Âğ?', '±£´æÎÄ¼ş',
+      if (Application.MessageBox('æ–‡ä»¶å·²ç»å­˜åœ¨ï¼Œè¦æ›¿æ¢å—?', 'ä¿å­˜æ–‡ä»¶',
           MB_OKCANCEL + MB_DEFBUTTON1) = IDCANCEL) then Exit;
     end;
     dSaveBoardToFile(sFileName);
@@ -575,7 +575,7 @@ var
   i,xy, x, y: dTInt32;
 
 begin
-  // È«²¿µÄÆå×Ó²»ÔÚÅÌÉÏ
+  // å…¨éƒ¨çš„æ£‹å­ä¸åœ¨ç›˜ä¸Š
   for i:=1 to 32 do
   begin
     if (QiziXY[i] = $FF) then Continue;
@@ -590,7 +590,7 @@ end;
 
 procedure TfrmXQWizard.ppmBoardPopup(Sender: TObject);
 begin
-  // ÅĞ¶ÏÊÇ·ñÊÇÎÄ±¾£¬ÒÔ¾ö¶¨ÊÇ·ñÔÊĞíÕ³Ìù
+  // åˆ¤æ–­æ˜¯å¦æ˜¯æ–‡æœ¬ï¼Œä»¥å†³å®šæ˜¯å¦å…è®¸ç²˜è´´
   ppmPastePosition.Enabled := Clipboard.HasFormat(CF_TEXT);
 end;
 
@@ -600,16 +600,16 @@ var
   iIdxPos                   : array [1..5] of dTInt32;
   xy                        : dTXQZXY;
   s                         : String;
-  sPiece                    : String[2];
+  sPiece                    : String;
 begin
   Result := False;
   if sl.Count < 19 then Exit;
 
-  // Ñ°ÕÒÆåÅÌµÄ×óÉÏ½Ç£¬x0ÎªÁĞÊı´Ó1¿ªÊ¼£¬y0ÎªĞĞÊı´Ó0¿ªÊ¼
+  // å¯»æ‰¾æ£‹ç›˜çš„å·¦ä¸Šè§’ï¼Œx0ä¸ºåˆ—æ•°ä»1å¼€å§‹ï¼Œy0ä¸ºè¡Œæ•°ä»0å¼€å§‹
   x0 := 0;  y0 := 0;
   for i:=0 to (sl.Count - 1) do
   begin
-    x0 := pos('©¦¡¡©¦¡¡©¦¡¡©¦£Ü©¦£¯©¦¡¡©¦¡¡©¦¡¡©¦', sl.Strings[i]);
+    x0 := pos('â”‚ã€€â”‚ã€€â”‚ã€€â”‚ï¼¼â”‚ï¼â”‚ã€€â”‚ã€€â”‚ã€€â”‚', sl.Strings[i]);
     if x0 > 0 then
     begin
       y0 := i - 1;
@@ -621,20 +621,20 @@ begin
 
   for i:=1 to 32 do xy[i] := $FF;
 
-  for i:=0 to 9 do                      // ÆåÅÌ¹²ÓĞ10ĞĞ
+  for i:=0 to 9 do                      // æ£‹ç›˜å…±æœ‰10è¡Œ
   begin
-    s := sl.Strings[y0 + ((9-i)*2)] + '   ';    // È¡µÃÎÄ±¾ÁĞ
+    s := sl.Strings[y0 + ((9-i)*2)] + '   ';    // å–å¾—æ–‡æœ¬åˆ—
     if ((Length(s) - x0 -1) < 34) then Exit;
-    for j:=0 to 8 do                    // ÆåÅÌ¹²ÓĞ9ÁĞ
+    for j:=0 to 8 do                    // æ£‹ç›˜å…±æœ‰9åˆ—
     begin
       if (j > 0) then k := -1 else k := 2;
 
       if (not (s[x0 + j*4 + k] in ['[', ']', '(', ')'])) then Continue;
 
       if ((s[x0 + j*4 + k] = '[') or (s[x0 + j*4 + k] = ']')) then
-        iIdxBase := 16                  // ºÚ·½
+        iIdxBase := 16                  // é»‘æ–¹
       else
-        iIdxBase := 00;                 // ºì·½
+        iIdxBase := 00;                 // çº¢æ–¹
 
       for k:=1 to 5 do iIdxPos[k] := 0;
 
@@ -642,36 +642,36 @@ begin
       sPiece[1] := s[x0 + j*4 + 0];
       sPiece[2] := s[x0 + j*4 + 1];
 
-      if (sPiece = '³µ') then
+      if (sPiece = 'è½¦') then
       begin
         iIdxPos[1] := iIdxBase + 01;
         iIdxPos[2] := iIdxBase + 09;
       end;
-      if (sPiece = 'Âí') then
+      if (sPiece = 'é©¬') then
       begin
         iIdxPos[1] := iIdxBase + 02;
         iIdxPos[2] := iIdxBase + 08;
       end;
-      if (sPiece = 'Ïà') or (sPiece = 'Ïó') then
+      if (sPiece = 'ç›¸') or (sPiece = 'è±¡') then
       begin
         iIdxPos[1] := iIdxBase + 03;
         iIdxPos[2] := iIdxBase + 07;
       end;
-      if (sPiece = 'Ê¿') or (sPiece = 'ÊË') then
+      if (sPiece = 'å£«') or (sPiece = 'ä»•') then
       begin
         iIdxPos[1] := iIdxBase + 04;
         iIdxPos[2] := iIdxBase + 06;
       end;
-      if (sPiece = 'Ë§') or (sPiece = '½«') then
+      if (sPiece = 'å¸…') or (sPiece = 'å°†') then
       begin
         iIdxPos[1] := iIdxBase + 05;
       end;
-      if (sPiece = 'ÅÚ') then
+      if (sPiece = 'ç‚®') then
       begin
         iIdxPos[1] := iIdxBase + 10;
         iIdxPos[2] := iIdxBase + 11;
       end;
-      if (sPiece = '±ø') or (sPiece = '×ä') then
+      if (sPiece = 'å…µ') or (sPiece = 'å’') then
       begin
         iIdxPos[1] := iIdxBase + 12;
         iIdxPos[2] := iIdxBase + 13;
@@ -698,7 +698,7 @@ begin
   Result := True;
 end;
 
-// ¸ù¾İÄ¿Ç°µÄÆå×ÓÎ»ÖÃË¢ĞÂÆåÍ¼
+// æ ¹æ®ç›®å‰çš„æ£‹å­ä½ç½®åˆ·æ–°æ£‹å›¾
 procedure TfrmXQWizard.ppmPastePositionClick(Sender: TObject);
 var
   slTxt: TStringList;
@@ -711,11 +711,11 @@ try
   if not (isStringListToQiziXYOK(slTxt, QiziXY)) then
   begin
     Application.MessageBox(
-      '¼ôÌù°åÖĞµÄÎÄ±¾²»ÊÇÓĞĞ§µÄÆå×ÓÎ»ÖÃÍ¼¡£'#13#10#13#10+
-      'ÓĞĞ§µÄÎ»ÖÃÍ¼ÊÇÓÉ±¾' +
-      'Èí¼ş×Ô¶¯Éú³ÉµÄÎÄ±¾´óÆåÍ¼(Ğ¡ÆåÍ¼²»¿ÉÒÔ)¡£'#13#10#13#10 +
-      'ÇëÈ·ÈÏ½«ÕıÈ·µÄÆåÍ¼ÎÄ±¾Ñ¡ÖĞ²¢·ÅÈë¼ôÌù°å¡£',
-      'ÏµÍ³ĞÅÏ¢',
+      'å‰ªè´´æ¿ä¸­çš„æ–‡æœ¬ä¸æ˜¯æœ‰æ•ˆçš„æ£‹å­ä½ç½®å›¾ã€‚'#13#10#13#10+
+      'æœ‰æ•ˆçš„ä½ç½®å›¾æ˜¯ç”±æœ¬' +
+      'è½¯ä»¶è‡ªåŠ¨ç”Ÿæˆçš„æ–‡æœ¬å¤§æ£‹å›¾(å°æ£‹å›¾ä¸å¯ä»¥)ã€‚'#13#10#13#10 +
+      'è¯·ç¡®è®¤å°†æ­£ç¡®çš„æ£‹å›¾æ–‡æœ¬é€‰ä¸­å¹¶æ”¾å…¥å‰ªè´´æ¿ã€‚',
+      'ç³»ç»Ÿä¿¡æ¯',
       MB_OK + MB_ICONWARNING + MB_DEFBUTTON1);
       IsPasteQituOk := False;
   end;
@@ -798,7 +798,7 @@ begin
   btnPrior.Visible    := False;
   btnNext.Visible     := False;
   btnFinish.Enabled   := True;
-  Self.Caption        := ' ĞŞ¸Ä»òµ÷Õûµ±Ç°ÎÄ¼ş³õÊ¼¾ÖÃæµÄ×ÓÁ¦Î»ÖÃ';
+  Self.Caption        := ' ä¿®æ”¹æˆ–è°ƒæ•´å½“å‰æ–‡ä»¶åˆå§‹å±€é¢çš„å­åŠ›ä½ç½®';
 end;
 
 end.
