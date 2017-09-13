@@ -396,6 +396,7 @@ type
     procedure tbtSaveQituBitmapClick(Sender: TObject);
     procedure ppmBitmapCopyClick(Sender: TObject);
     procedure ppmBitmapSaveAsBmpClick(Sender: TObject);
+    procedure tlbTextToolBarClick(Sender: TObject);
   private
     { Private declarations }
     FDragImgXY      : TImage;
@@ -1607,7 +1608,12 @@ begin
   memQiTuText.SelectAll;
 end;
 
-////////////////////////////////////////////////////////////////////////////////
+procedure TfrmXQTable.tlbTextToolBarClick(Sender: TObject);
+begin
+
+end;
+
+///////////////////////////////////////////////////////////////////////////////
 // 取关键词后面的字符串
 function sGetKeyString(sLine, sKey: string): string;
 var
@@ -2226,20 +2232,20 @@ try
   //  memText.Lines.Add(sAlignCenter(lblTimeAddr.Caption, 52));
   //memText.Lines.Add('');
 
-  memText.Lines.Add('标题: ' + sTitle);
-  memText.Lines.Add('赛事: ' + sMatchName);
-  memText.Lines.Add('日期: ' + sMatchTime);
-  memText.Lines.Add('地点: ' + sMatchAddr);
-  memText.Lines.Add('红方: ' + sRedPlayer);
-  memText.Lines.Add('黑方: ' + sBlkPlayer);
+  memText.Lines.Add('表題: ' + sTitle);
+  memText.Lines.Add('棋戦: ' + sMatchName);
+  memText.Lines.Add('日時: ' + sMatchTime);
+  memText.Lines.Add('場所: ' + sMatchAddr);
+  memText.Lines.Add('紅方: ' + sRedPlayer);
+  memText.Lines.Add('黒方: ' + sBlkPlayer);
   case iResult of
     0: sPlayRec := '';
-    1: sPlayRec := '红方胜';
-    2: sPlayRec := '黑方胜';
-    3: sPlayRec := '和棋';
+    1: sPlayRec := '紅勝';
+    2: sPlayRec := '黒勝';
+    3: sPlayRec := '引分';
   end;
-  memText.Lines.Add('结果: ' + sPlayRec);
-  memText.Lines.Add('评论: ' + sRMKWriter);
+  memText.Lines.Add('結果: ' + sPlayRec);
+  memText.Lines.Add('コメント: ' + sRMKWriter);                 // 评论
   memText.Lines.Add('作者: ' + sAuthor);
   memText.Lines.Add('----------------------------------------------------');
 
@@ -2311,7 +2317,7 @@ try
     if (XQ.PlayRec[i].Remark<>nil) then
     begin
       memText.Lines.Add('');
-      memText.Lines.Add(XQ.PlayRec[i].Remark.Text);
+      memText.Lines.Add(AnsiString(XQ.PlayRec[i].Remark.Text)); // XXXX
       memText.Lines.Add('');
     end;
   end;
@@ -2322,7 +2328,7 @@ try
   end;
 
   memText.Lines.Add('----------------------------------------------------');
-  memText.Lines.Add('棋谱由XQStudio生成 (http://www.qipaile.net/xqstudio)');
+  memText.Lines.Add('XQStudio自動生成棋譜 (http://www.qipaile.net/xqstudio)'); // XXXX
   memText.Lines.Add('');
 
 finally

@@ -1,4 +1,4 @@
-///////////////////////////////////////////////////////////////////////////////
+﻿///////////////////////////////////////////////////////////////////////////////
 //
 // XQStduio Source Code (http://www.qipaile.net/xqstudio)
 //
@@ -327,7 +327,7 @@ begin
           1: s := '  ' + s;
           2: s := ' ' + s;
         end;
-        s := s + '. ' + PN.StrRec + ' ';
+        s := s + '. ' + PN.StrRec + ' '; // XXXX
       end;
     0:
       begin
@@ -807,7 +807,7 @@ begin
   end;
   if n<>0 then
   begin
-    RecListBox.Items[iRec]:=sGetFMTRecStr(PlayRec[iRec]);
+    RecListBox.Items[iRec]:=sGetFMTRecStr(PlayRec[iRec]); // XXXX
   end;
 end;
 

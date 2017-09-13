@@ -1,4 +1,4 @@
-///////////////////////////////////////////////////////////////////////////////
+﻿///////////////////////////////////////////////////////////////////////////////
 //
 // XQStduio Source Code (http://www.qipaile.net/xqstudio)
 //
@@ -103,9 +103,9 @@ type
 // 变量定义
 //.........................................................................
 var
-  dCREDNUM: array [0..9] of String[3] =         // 红方所用的数字系统
+  dCREDNUM: array [0..9] of String =         // 红方所用的数字系统
              ('0', '一','二','三','四','五','六','七','八','九');
-  dCBLKNUM: array [0..9] of String[3] =         // 黑方所用的数字系统
+  dCBLKNUM: array [0..9] of String =         // 黑方所用的数字系统
              ('0', '１','２','３','４','５','６','７','８','９');
 implementation
 
@@ -172,31 +172,31 @@ begin
       case WP of
       wpRed:
         begin
-          sRec := '车' + sGetRedLine(Xf);
+          sRec := '車' + sGetRedLine(Xf);
 
           if qzXY[01] = XYf then
             MN := qzXY[09]
           else
             MN := qzXY[01];
           m := MN div 10;  n := MN mod 10;
-          if (m=Xf) then if (Yf>n) then sRec:='前车' else sRec:='后车';
+          if (m=Xf) then if (Yf>n) then sRec:='前車' else sRec:='后車';
 
           case Dy of
-            01..09: sRec := sRec + '进' + dCREDNUM[Db];
+            01..09: sRec := sRec + '進' + dCREDNUM[Db];
             -9..-1: sRec := sRec + '退' + dCREDNUM[Db];
             0     : sRec := sRec + '平' + sGetRedLine(Xt);
           end;
         end;
       wpBlk:
         begin
-          sRec := '车' + sGetBlkLine(Xf);
+          sRec := '車' + sGetBlkLine(Xf);
 
           if (qzXY[17]=XYf) then MN:=qzXY[25] else MN:=qzXY[17];
           m := MN div 10;  n := MN mod 10;
-          if (m=Xf) then if (Yf<n) then sRec:='前车' else sRec:='后车';
+          if (m=Xf) then if (Yf<n) then sRec:='前車' else sRec:='后車';
 
           case Dy of
-            -9..-1: sRec := sRec + '进' + dCBLKNUM[Db];
+            -9..-1: sRec := sRec + '進' + dCBLKNUM[Db];
             01..09: sRec := sRec + '退' + dCBLKNUM[Db];
             0     : sRec := sRec + '平' + sGetBlkLine(Xt);
           end;
@@ -213,25 +213,25 @@ begin
       case WP of
       wpRed:
         begin
-          sRec := '马' + sGetRedLine(Xf);
+          sRec := '馬' + sGetRedLine(Xf);
 
           if (qzXY[02]=XYf) then MN:=qzXY[08] else MN:=qzXY[02];
           m := MN div 10;  n := MN mod 10;
-          if (m=Xf) then if (Yf>n) then sRec:='前马' else sRec:='后马';
+          if (m=Xf) then if (Yf>n) then sRec:='前馬' else sRec:='后馬';
           case Dy of
-            01..02: sRec := sRec + '进' + sGetRedLine(Xt);
+            01..02: sRec := sRec + '進' + sGetRedLine(Xt);
             -2..-1: sRec := sRec + '退' + sGetRedLine(Xt);
           end;
         end;
       wpBlk:
         begin
-          sRec := '马' + sGetBlkLine(Xf);
+          sRec := '馬' + sGetBlkLine(Xf);
 
           if (qzXY[18]=XYf) then MN:=qzXY[24] else MN:=qzXY[18];
           m := MN div 10;  n := MN mod 10;
-          if (m=Xf) then if (Yf<n) then sRec:='前马' else sRec:='后马';
+          if (m=Xf) then if (Yf<n) then sRec:='前馬' else sRec:='后馬';
           case Dy of
-            -2..-1: sRec := sRec + '进' + sGetBlkLine(Xt);
+            -2..-1: sRec := sRec + '進' + sGetBlkLine(Xt);
             01..02: sRec := sRec + '退' + sGetBlkLine(Xt);
           end;
         end;
@@ -258,7 +258,7 @@ begin
           //if (m=Xf) then if (Yf>n) then sRec:='前相' else sRec:='后相';
 
           case Dy of
-            01..02: sRec := sRec + '进' + sGetRedLine(Xt);
+            01..02: sRec := sRec + '進' + sGetRedLine(Xt);
             -2..-1: sRec := sRec + '退' + sGetRedLine(Xt);
           end;
         end;
@@ -271,7 +271,7 @@ begin
           //if (m=Xf) then if (Yf<n) then sRec:='前象' else sRec:='后象';
 
           case Dy of
-            -2..-1: sRec := sRec + '进' + sGetBlkLine(Xt);
+            -2..-1: sRec := sRec + '進' + sGetBlkLine(Xt);
             01..02: sRec := sRec + '退' + sGetBlkLine(Xt);
           end;
         end;
@@ -297,7 +297,7 @@ begin
           //if (m=Xf) then if (Yf>n) then sRec:='前士' else sRec:='后士';
 
           case Dy of
-            01..02: sRec := sRec + '进' + sGetRedLine(Xt);
+            01..02: sRec := sRec + '進' + sGetRedLine(Xt);
             -2..-1: sRec := sRec + '退' + sGetRedLine(Xt);
           end;
         end;
@@ -310,7 +310,7 @@ begin
           //if (m=Xf) then if (Yf<n) then sRec:='前士' else sRec:= '后士';
 
           case Dy of
-            -2..-1: sRec := sRec + '进' + sGetBlkLine(Xt);
+            -2..-1: sRec := sRec + '進' + sGetBlkLine(Xt);
             01..02: sRec := sRec + '退' + sGetBlkLine(Xt);
           end;
         end;
@@ -329,9 +329,9 @@ begin
       case WP of
       wpRed:
         begin
-          sRec := '帅' + sGetRedLine(Xf);
+          sRec := '師' + sGetRedLine(Xf);
           case Dy of
-            01..09: sRec := sRec + '进' + dCREDNUM[Db];
+            01..09: sRec := sRec + '進' + dCREDNUM[Db];
             -9..-1: sRec := sRec + '退' + dCREDNUM[Db];
             0     : sRec := sRec + '平' + sGetRedLine(Xt);
           end;
@@ -340,7 +340,7 @@ begin
         begin
           sRec := '将' + sGetBlkLine(Xf);
           case Dy of
-            -9..-1: sRec := sRec + '进' + dCBLKNUM[Db];
+            -9..-1: sRec := sRec + '進' + dCBLKNUM[Db];
             01..09: sRec := sRec + '退' + dCBLKNUM[Db];
             0     : sRec := sRec + '平' + sGetBlkLine(Xt);
           end;
@@ -370,7 +370,7 @@ begin
           if (m=Xf) then if (Yf>n) then sRec:='前炮' else sRec:='后炮';
 
           case Dy of
-            01..09: sRec := sRec + '进' + dCREDNUM[Db];
+            01..09: sRec := sRec + '進' + dCREDNUM[Db];
             -9..-1: sRec := sRec + '退' + dCREDNUM[Db];
             0     : sRec := sRec + '平' + sGetRedLine(Xt);
           end;
@@ -383,7 +383,7 @@ begin
           if (m=Xf) then if (Yf<n) then sRec:='前炮' else sRec:= '后炮';
 
           case Dy of
-            -9..-1: sRec := sRec + '进' + dCBLKNUM[Db];
+            -9..-1: sRec := sRec + '進' + dCBLKNUM[Db];
             01..09: sRec := sRec + '退' + dCBLKNUM[Db];
             0     : sRec := sRec + '平' + sGetBlkLine(Xt);
           end;
@@ -438,7 +438,7 @@ begin
           end;
 
           case Dy of
-          1 : sRec := sRec + '进' + dCREDNUM[Db];
+          1 : sRec := sRec + '進' + dCREDNUM[Db];
           0 : sRec := sRec + '平' + sGetRedLine(Xt);
           end;
         end;
@@ -479,7 +479,7 @@ begin
           end;
 
           case Dy of
-          -1: sRec := sRec + '进' + dCBLKNUM[Db];
+          -1: sRec := sRec + '進' + dCBLKNUM[Db];
           0 : sRec := sRec + '平' + sGetBlkLine(Xt);
           end;
         end;
@@ -551,7 +551,7 @@ begin
   // 不移动棋子，还原
   if not bMove then for i:=1 to 32 do qzXY[i] := TempXY[i];
 
-  sGetPlayRecStr := sRec;
+  sGetPlayRecStr := AnsiString(sRec);  // XXXX
 end;
 
 //-------------------------------------------------------------------------
