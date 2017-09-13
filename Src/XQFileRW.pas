@@ -1,4 +1,4 @@
-///////////////////////////////////////////////////////////////////////////////
+﻿///////////////////////////////////////////////////////////////////////////////
 //
 // XQStduio Source Code (http://www.qipaile.net/xqstudio)
 //
@@ -280,13 +280,30 @@ var
 function slLoadRemark(fs:dTXqfStream; RmkSize:dTDWord):TStringList;
 var
   sl: TStringList;
-  ss: TStringStream;                            // 字符串流
+  ss: TStringStream;                           // 字符串流
+  s0: String;
+  s1: String;
+  s2: String;
+  LBuffer: TBytes;
+  LEncoding: TEncoding;
+  DestEncoding: TEncoding;
 begin
   slLoadRemark := nil;
   if (RmkSize=0) then Exit;
   sl := TStringList.Create;
+  SetLength(LBuffer, RmkSize);
+  fs.ReadBuffer(Pointer(LBuffer)^, RmkSize);     // Read Remark Text as byte-sequence
+  LEncoding := TEncoding.GetEncoding(936);
+  DestEncoding := TEncoding.Default;
+//  ShowMessage(MBuffer);
+  s0 := LEncoding.GetString(LBuffer,0,Length(LBuffer));  // Convert byte-sequence (as GB2312) to UnicodeString
+//  ShowMessage('LEnc:'+s0);                               // OK
   ss := TStringStream.Create('');
-  ss.CopyFrom(fs, RmkSize);  ss.Position := 0;
+  ss.WriteString(s0);  ss.Position:=0;           // XXXX BUG: Convert may destroy some characters. Why?
+//  s1:=ss.DataString;
+//  SetLength(s2, Length(s1) * 2);
+//  BinToHex(PCHAR(s1), PCHAR(s2), Length(s1));
+//  ShowMessage('Hex:'+s2);
   sl.LoadFromStream(ss);
   ss.Free;
   slLoadRemark:=sl;
