@@ -49,7 +49,6 @@ uses
   XQSystem in 'XQSystem.pas',
   XQFileP in 'XQFileP.pas' {frmXQFileP},
   XQFileRW in 'XQFileRW.pas',
-  dDelphiS in 'dDelphiS.pas',
   XQPNode in 'XQPNode.pas',
   XQDataT in 'XQDataT.pas',
   XQRecLBX in 'XQRecLBX.pas',

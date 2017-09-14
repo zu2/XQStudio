@@ -49,7 +49,6 @@
         <DCC_ImageBase>00400000</DCC_ImageBase>
         <DCC_Alignment>1</DCC_Alignment>
         <DCC_AssertionsAtRuntime>false</DCC_AssertionsAtRuntime>
-        <DCC_DebugInformation>0</DCC_DebugInformation>
         <DCC_IOChecking>false</DCC_IOChecking>
         <DCC_WriteableConstants>true</DCC_WriteableConstants>
         <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
@@ -93,6 +92,11 @@
     <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
         <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
         <AppEnableHighDPI>true</AppEnableHighDPI>
+        <DCC_DebugInformation>2</DCC_DebugInformation>
+        <VerInfo_MinorVer>0</VerInfo_MinorVer>
+        <VerInfo_Release>0</VerInfo_Release>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName)</VerInfo_Keys>
     </PropertyGroup>
     <ItemGroup>
         <DelphiCompile Include="$(MainSource)">
@@ -113,7 +117,6 @@
             <Form>frmXQFileP</Form>
         </DCCReference>
         <DCCReference Include="XQFileRW.pas"/>
-        <DCCReference Include="dDelphiS.pas"/>
         <DCCReference Include="XQPNode.pas"/>
         <DCCReference Include="XQDataT.pas"/>
         <DCCReference Include="XQRecLBX.pas"/>
