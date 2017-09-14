@@ -1550,7 +1550,7 @@ begin
   begin
     ulReserved := 0;
     lpszSubject := nil;
-  //  lpszNoteText := PChar(ActiveXQTable.memText.Text);     XXXXX
+//    lpszNoteText := PChar(ActiveXQTable.memText.Text);     //XXXXX
     lpszMessageType := nil; 
     lpszDateReceived := nil; 
     lpszConversationID := nil; 
@@ -1568,7 +1568,7 @@ end;
 
 procedure TfrmMain.actHelpHttpXQStudioExecute(Sender: TObject);
 begin
-  ShellExecute(Self.Handle, nil, PChar('http://www.qipaile.net/xqstudio'),
+  ShellExecute(Self.Handle, nil, PChar('http://web.archive.org/web/*/http://www.qipaile.net/xqstudio'),
       nil, nil, SW_SHOWNORMAL);
 end;
 
@@ -1791,13 +1791,13 @@ end;
 
 procedure TfrmMain.actHelpHttpQipaileExecute(Sender: TObject);
 begin
-  ShellExecute(Self.Handle, nil, PChar('http://www.qipaile.net'),
+  ShellExecute(Self.Handle, nil, PChar('http://web.archive.org/web/*/http://www.qipaile.net'),
       nil, nil, SW_SHOWNORMAL);
 end;
 
 procedure TfrmMain.actHelpHttpXqfExecute(Sender: TObject);
 begin
-  ShellExecute(Self.Handle, nil, PChar('http://www.qipaile.net/xqf'),
+  ShellExecute(Self.Handle, nil, PChar('http://web.archive.org/web/*/http://www.qipaile.net/xqf'),
       nil, nil, SW_SHOWNORMAL);
 end;
 
