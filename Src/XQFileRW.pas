@@ -158,6 +158,9 @@ type
 
 implementation
 
+type
+  GB2312String = type Ansistring(936);
+
 procedure dTXqfStream.SetKeyBytes(B1, B2, B3, B4: Byte);
 begin
   FKeyBytes[1] := B1;  FKeyBytes[2] := B2;
@@ -268,6 +271,7 @@ begin
   Name := sName;  XQPlayTree := XQPTree;  isReverseH := False;
 end;
 
+
 //-------------------------------------------------------------------------
 // 装入象棋文件
 //.........................................................................
@@ -276,36 +280,33 @@ var
   fs        : dTXqfStream;                      // 文件流
   i, iRet   : dTInt32;
 
+  // 子函数:
+function sGB2312toUnicode(tb:TBytes; RmkSize:dTDWord):UnicodeString;
+var
+  LEnc: TEncoding;
+begin
+  sGB2312toUnicode:='';
+  if (RmkSize=0) then Exit;
+  LEnc:= TEncoding.GetEncoding(936);
+  sGB2312toUnicode := LEnc.GetString(tb,0,Length(tb));
+  LEnc.Free;
+end;
+
 // 子函数:读入注解
 function slLoadRemark(fs:dTXqfStream; RmkSize:dTDWord):TStringList;
 var
-  sl: TStringList;
-  ss: TStringStream;                           // 字符串流
-  s0: String;
-  s1: String;
-  s2: String;
+  sl: TStringList;                           // 字符串流
+  s0: UnicodeString;
   LBuffer: TBytes;
-  LEncoding: TEncoding;
-  DestEncoding: TEncoding;
 begin
   slLoadRemark := nil;
   if (RmkSize=0) then Exit;
   sl := TStringList.Create;
   SetLength(LBuffer, RmkSize);
   fs.ReadBuffer(Pointer(LBuffer)^, RmkSize);     // Read Remark Text as byte-sequence
-  LEncoding := TEncoding.GetEncoding(936);
-  DestEncoding := TEncoding.Default;
-//  ShowMessage(MBuffer);
-  s0 := LEncoding.GetString(LBuffer,0,Length(LBuffer));  // Convert byte-sequence (as GB2312) to UnicodeString
-//  ShowMessage('LEnc:'+s0);                               // OK
-  ss := TStringStream.Create('');
-  ss.WriteString(s0);  ss.Position:=0;           // XXXX BUG: Convert may destroy some characters. Why?
-//  s1:=ss.DataString;
-//  SetLength(s2, Length(s1) * 2);
-//  BinToHex(PCHAR(s1), PCHAR(s2), Length(s1));
-//  ShowMessage('Hex:'+s2);
-  sl.LoadFromStream(ss);
-  ss.Free;
+  s0 := sGB2312toUnicode(LBuffer,RmkSize);  // Convert byte-sequence (as GB2312) to UnicodeString
+//  ShowMessage(s0);
+  sl.Text := s0;
   slLoadRemark:=sl;
 end;
 
@@ -381,6 +382,7 @@ begin
 end;
 
 begin                                           // 装入象棋文件主程序
+
   iLoadXQFile := -1;
   iRet        := -1;
   fs          := nil;
@@ -565,6 +567,7 @@ var
   pn     : dTXQFPlayNode;
   iBytes : dTInt32;
   b      : dTByte;
+  gbRemark: GB2312String;
 begin
   if (pt=nil) then Exit;                        // 没有棋局记录
   pn.RemarkSize := 0;
@@ -594,9 +597,11 @@ begin
   if pt.RChild <> nil then pn.ChildTag := (pn.ChildTag or $40);
 
   iBytes := 0;
+  gbRemark := '';
   if (pt.Remark <> nil) then
   begin
-    pn.RemarkSize := Length(pt.Remark.Text);
+    gbRemark := pt.Remark.Text;
+    pn.RemarkSize := Length(gbRemark);
     iBytes := pn.RemarkSize;
   end;
 
@@ -607,7 +612,7 @@ begin
     pn.ChildTag := (pn.ChildTag or $20);
     pn.RemarkSize := pn.RemarkSize + KeyRMKSize;
     fs.Write(pn, SizeOf(pn));
-    fs.Write(PChar(pt.Remark.Text)^, iBytes);
+    fs.Write(PByte(gbRemark)^, iBytes);
   end
   else
   begin
