@@ -51,7 +51,7 @@ uses
 //.........................................................................
 const
   dCProductName = 'XQStudio';
-  dCMainVersion = '1.63';
+  dCMainVersion = '1.63J';
   dCFileVersion = 18;
   dCBetaVersion = 'Final Beta';
   //dCVersionInfo = dCProductName+' '+dCMainVersion +' ('+dCBetaVersion+')';
