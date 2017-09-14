@@ -427,17 +427,17 @@ type
     iResult         : dTInt32;                  // 比赛结果
                                                 // 0-未知, 1-红胜
                                                 // 2-黑胜, 3-和棋
-    sTitle          : String[63];               // 标题
-    sMatchName      : String[63];               // 比赛名称
-    sMatchTime      : String[15];               // 比赛时间
-    sMatchAddr      : String[15];               // 比赛地点
-    sRedPlayer      : String[15];               // 红方姓名
-    sBlkPlayer      : String[15];               // 黑方姓名
-    sTimeRule       : String[63];               // 用时规则
-    sRedTime        : String[15];               // 红方用时
-    sBlkTime        : String[15];               // 黑方用时
-    sRMKWriter      : String[15];               // 棋谱评论员
-    sAuthor         : STring[15];               // 文件的作者
+    sTitle          : String; //[63];               // 标题
+    sMatchName      : String; //[63];               // 比赛名称
+    sMatchTime      : String; //[15];               // 比赛时间
+    sMatchAddr      : String; //[15];               // 比赛地点
+    sRedPlayer      : String; //[15];               // 红方姓名
+    sBlkPlayer      : String; //[15];               // 黑方姓名
+    sTimeRule       : String; //[63];               // 用时规则
+    sRedTime        : String; //[15];               // 红方用时
+    sBlkTime        : String; //[15];               // 黑方用时
+    sRMKWriter      : String; //[15];               // 棋谱评论员
+    sAuthor         : STring; //[15];               // 文件的作者
     //---------------------------------------------------------------------
 
     procedure dReverseBoardV;
@@ -465,7 +465,8 @@ procedure dRefreshHook;
 
 implementation
 
-uses XQMain, XQWizard, XQSearch;
+uses XQMain, XQWizard, XQSearch, MECSUtils;
+
 
 {$R *.DFM}
 
@@ -1360,40 +1361,63 @@ begin
   end;
 end;
 
+type
+  GB2312String = type Ansistring(936);
+
 procedure TfrmXQTable.dGetHeadInfoFromXQFHead(XQFHead: dTXQFHead);
 begin
   iXQFType   := XQFHead.CodeA;
   iWhoPlay   := XQFHead.WhoPlay;
   iResult    := XQFHead.PlayResult;
-  sTitle     := XQFHead.TitleA;
-  sMatchName := XQFHead.MatchName;
-  sMatchTime := XQFHead.MatchTime;
-  sMatchAddr := XQFHead.MatchAddr;
-  sRedPlayer := XQFHead.RedPlayer;
-  sBlkPlayer := XQFHead.BlkPlayer;
-  sTimeRule  := XQFHead.TimeRule;
-  sRedTime   := XQFHead.RedTime;
-  sBlkTime   := XQFHead.BlkTime;
-  sRMKWriter := XQFHead.RMKWriter;
-  sAuthor    := XQFHead.Author;
+  sTitle     := GB2312String(XQFHead.TitleA);
+  sMatchName := GB2312String(XQFHead.MatchName);
+  sMatchTime := GB2312String(XQFHead.MatchTime);
+  sMatchAddr := GB2312String(XQFHead.MatchAddr);
+  sRedPlayer := GB2312String(XQFHead.RedPlayer);
+  sBlkPlayer := GB2312String(XQFHead.BlkPlayer);
+  sTimeRule  := GB2312String(XQFHead.TimeRule);
+  sRedTime   := GB2312String(XQFHead.RedTime);
+  sBlkTime   := GB2312String(XQFHead.BlkTime);
+  sRMKWriter := GB2312String(XQFHead.RMKWriter);
+  sAuthor    := GB2312String(XQFHead.Author);
 end;
 
+
 procedure TfrmXQTable.dPutHeadInfoIntoXQFHead(Var XQFHead: dTXQFHead);
+
+// 子函数:
+function GB2312Trim(s:String; b:Integer):GB2312String;
+var
+  i:Integer;
+  gs:GB2312String;
+begin
+  GB2312Trim:='';
+  gs:=GB2312String(s);
+  for i:=Length(s) downto 0 do
+  begin
+    if(MecsCharToElementLen(gs,i)<=b) then
+    begin
+      GB2312Trim:=MecsLeftStr(gs,i);
+      exit;
+    end;
+  end;
+end;
+
 begin
   XQFHead.CodeA      := iXQFType;
   XQFHead.WhoPlay    := iWhoPlay;
   XQFHead.PlayResult := iResult;
-  XQFHead.TitleA     := sTitle;
-  XQFHead.MatchName  := sMatchName;
-  XQFHead.MatchTime  := sMatchTime;
-  XQFHead.MatchAddr  := sMatchAddr;
-  XQFHead.RedPlayer  := sRedPlayer;
-  XQFHead.BlkPlayer  := sBlkPlayer;
-  XQFHead.TimeRule   := sTimeRule;
-  XQFHead.RedTime    := sRedTime;
-  XQFHead.BlkTime    := sBlkTime;
-  XQFHead.RMKWriter  := sRMKWriter;
-  XQFHead.Author     := sAuthor;
+  XQFHead.TitleA     := GB2312Trim(sTitle,SizeOf(sTitle)-1);
+  XQFHead.MatchName  := GB2312Trim(sMatchName,SizeOf(sMatchName)-1);
+  XQFHead.MatchTime  := GB2312Trim(sMatchTime,SizeOf(sMatchTime)-1);
+  XQFHead.MatchAddr  := GB2312Trim(sMatchAddr,SizeOf(sMatchAddr)-1);
+  XQFHead.RedPlayer  := GB2312Trim(sRedPlayer,SizeOf(sRedPlayer)-1);
+  XQFHead.BlkPlayer  := GB2312Trim(sBlkPlayer,SizeOf(sBlkPlayer)-1);
+  XQFHead.TimeRule   := GB2312Trim(sTimeRule, SizeOf(sTimeRule)-1);
+  XQFHead.RedTime    := GB2312Trim(sRedTime,  SizeOf(sRedTime)-1);
+  XQFHead.BlkTime    := GB2312Trim(sBlkTime,  SizeOf(sBlkTime)-1);
+  XQFHead.RMKWriter  := GB2312Trim(sRMKWriter,SizeOf(sRMKWriter)-1);
+  XQFHead.Author     := GB2312Trim(sAuthor,   SizeOf(sAuthor)-1);
 end;
 
 
@@ -2232,20 +2256,20 @@ try
   //  memText.Lines.Add(sAlignCenter(lblTimeAddr.Caption, 52));
   //memText.Lines.Add('');
 
-  memText.Lines.Add('表題: ' + sTitle);
-  memText.Lines.Add('棋戦: ' + sMatchName);
-  memText.Lines.Add('日時: ' + sMatchTime);
-  memText.Lines.Add('場所: ' + sMatchAddr);
-  memText.Lines.Add('紅方: ' + sRedPlayer);
-  memText.Lines.Add('黒方: ' + sBlkPlayer);
+  memText.Lines.Add('标题: ' + sTitle);
+  memText.Lines.Add('赛事: ' + sMatchName);
+  memText.Lines.Add('日期: ' + sMatchTime);
+  memText.Lines.Add('地点: ' + sMatchAddr);
+  memText.Lines.Add('红方: ' + sRedPlayer);
+  memText.Lines.Add('黑方: ' + sBlkPlayer);
   case iResult of
     0: sPlayRec := '';
     1: sPlayRec := '紅勝';
     2: sPlayRec := '黒勝';
     3: sPlayRec := '引分';
   end;
-  memText.Lines.Add('結果: ' + sPlayRec);
-  memText.Lines.Add('コメント: ' + sRMKWriter);                 // 评论
+  memText.Lines.Add('结果: ' + sPlayRec);
+  memText.Lines.Add('评论: ' + sRMKWriter);                 // 评论
   memText.Lines.Add('作者: ' + sAuthor);
   memText.Lines.Add('----------------------------------------------------');
 
@@ -2317,7 +2341,7 @@ try
     if (XQ.PlayRec[i].Remark<>nil) then
     begin
       memText.Lines.Add('');
-      memText.Lines.Add(AnsiString(XQ.PlayRec[i].Remark.Text)); // XXXX
+      memText.Lines.Add(XQ.PlayRec[i].Remark.Text);
       memText.Lines.Add('');
     end;
   end;
@@ -2328,7 +2352,7 @@ try
   end;
 
   memText.Lines.Add('----------------------------------------------------');
-  memText.Lines.Add('XQStudio自動生成棋譜 (http://www.qipaile.net/xqstudio)'); // XXXX
+  memText.Lines.Add('XQStudio自動生成棋譜 (http://www.qipaile.net/xqstudio)');
   memText.Lines.Add('');
 
 finally
