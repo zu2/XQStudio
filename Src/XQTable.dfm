@@ -32,8 +32,6 @@ object frmXQTable: TfrmXQTable
     BevelOuter = bvNone
     TabOrder = 2
     OnResize = pnlRightMarginResize
-    ExplicitLeft = 729
-    ExplicitHeight = 422
   end
   object pnlLeft: TPanel
     Left = 0
@@ -46,7 +44,6 @@ object frmXQTable: TfrmXQTable
     Ctl3D = True
     ParentCtl3D = False
     TabOrder = 0
-    ExplicitHeight = 422
     object imgXQBoard: TImage
       Left = 0
       Top = 0
@@ -3658,8 +3655,6 @@ object frmXQTable: TfrmXQTable
     Caption = 'pnlRight'
     TabOrder = 1
     OnResize = pnlRightResize
-    ExplicitWidth = 360
-    ExplicitHeight = 422
     object pnlRTop: TPanel
       Left = 0
       Top = 0
@@ -3670,28 +3665,25 @@ object frmXQTable: TfrmXQTable
       BevelWidth = 2
       TabOrder = 0
       OnResize = pnlRTopResize
-      ExplicitWidth = 360
     end
     object pgcInfoPage: TPageControl
       Left = 0
       Top = 50
       Width = 352
       Height = 367
-      ActivePage = tstXQInfoA
+      ActivePage = tstXQInfoB
       Align = alClient
-      Font.Charset = DEFAULT_CHARSET
+      Font.Charset = SHIFTJIS_CHARSET
       Font.Color = clWindowText
       Font.Height = -12
-      Font.Name = #34739#20534#65405#12539
+      Font.Name = #65325#65331' '#12468#12471#12483#12463
       Font.Style = []
       ParentFont = False
       TabOrder = 1
       TabStop = False
       OnResize = pgcInfoPageResize
-      ExplicitWidth = 360
-      ExplicitHeight = 372
       object tstXQInfoA: TTabSheet
-        Caption = #35709#21477#65393#128
+        Caption = #26827#23616
         Font.Charset = ANSI_CHARSET
         Font.Color = clWindowText
         Font.Height = -13
@@ -3699,10 +3691,6 @@ object frmXQTable: TfrmXQTable
         Font.Style = [fsBold]
         ImageIndex = 1
         ParentFont = False
-        ExplicitLeft = 0
-        ExplicitTop = 0
-        ExplicitWidth = 0
-        ExplicitHeight = 0
         object pnlPlayRec: TPanel
           Left = 0
           Top = 65
@@ -3712,8 +3700,6 @@ object frmXQTable: TfrmXQTable
           BevelOuter = bvNone
           Caption = 'pnlPlayRec'
           TabOrder = 0
-          ExplicitWidth = 352
-          ExplicitHeight = 280
           object pgcRemark: TPageControl
             Left = 129
             Top = 0
@@ -3730,10 +3716,8 @@ object frmXQTable: TfrmXQTable
             ParentFont = False
             TabOrder = 0
             TabStop = False
-            ExplicitWidth = 223
-            ExplicitHeight = 280
             object tstRemark: TTabSheet
-              Caption = #35925#65384#38551#65379
+              Caption = #27880#35299
               object pnlVarStepButtons: TPanel
                 Left = 0
                 Top = 216
@@ -3743,8 +3727,6 @@ object frmXQTable: TfrmXQTable
                 BevelOuter = bvNone
                 TabOrder = 0
                 OnResize = pnlVarStepButtonsResize
-                ExplicitTop = 222
-                ExplicitWidth = 215
                 object tlbPlayVar: TToolBar
                   Left = 48
                   Top = 0
@@ -3758,28 +3740,28 @@ object frmXQTable: TfrmXQTable
                   TabOrder = 0
                   object tbtAddVarStep: TToolButton
                     Left = 0
-                    Top = 2
+                    Top = 0
                     Action = actPlayVarAdd
                     ParentShowHint = False
                     ShowHint = True
                   end
                   object tbtDelVarStep: TToolButton
                     Left = 23
-                    Top = 2
+                    Top = 0
                     Action = actPlayVarDelete
                     ParentShowHint = False
                     ShowHint = True
                   end
                   object tbtCancelAddVarStep: TToolButton
                     Left = 46
-                    Top = 2
+                    Top = 0
                     Action = actPlayVarCancel
                     ParentShowHint = False
                     ShowHint = True
                   end
                   object tbtPlayVarSpace: TToolButton
                     Left = 69
-                    Top = 2
+                    Top = 0
                     Width = 8
                     Caption = 'tbtPlayVarSpace'
                     ImageIndex = 8
@@ -3787,14 +3769,14 @@ object frmXQTable: TfrmXQTable
                   end
                   object tbtPlayVarUp: TToolButton
                     Left = 77
-                    Top = 2
+                    Top = 0
                     Action = actPlayVarUp
                     ParentShowHint = False
                     ShowHint = True
                   end
                   object tbtPlayVarDown: TToolButton
                     Left = 100
-                    Top = 2
+                    Top = 0
                     Action = actPlayVarDown
                     ParentShowHint = False
                     ShowHint = True
@@ -3815,20 +3797,18 @@ object frmXQTable: TfrmXQTable
                   Top = 0
                   Width = 207
                   Height = 121
-                  Hint = #38673#21582#24333#35709#29590#65392#65393#35925#65384#38551#65379#36975#24604#21736'. '#34623#65391#33673#65381#34664#65384#38673#21646#12857#35679#65381#36917#21477#26609#33771#65390#35646#65401#35709#29590#65392#65393#35925#65384#38551#65379'('#35912#19976#65400#128#35905#65381#35709#30697#12539#34623#65391#33673#65381#35675#12539#35925#65384#38551#65379').'
+                  Hint = #36825#26159#26827#35889#27880#35299#31383#21475'. '#21487#20197#22312#36825#37324#26597#30475#21644#20462#25913#26827#35889#27880#35299'('#27599#19968#27493#26827#37117#21487#20197#26377#27880#35299').'
                   Align = alClient
-                  Font.Charset = DEFAULT_CHARSET
+                  Font.Charset = SHIFTJIS_CHARSET
                   Font.Color = clWindowText
                   Font.Height = -12
-                  Font.Name = #34739#20534#65405#12539
+                  Font.Name = 'Meiryo UI'
                   Font.Style = []
                   ParentFont = False
                   ScrollBars = ssVertical
                   TabOrder = 0
                   OnChange = memPlayRecChange
                   OnKeyPress = memPlayRecKeyPress
-                  ExplicitWidth = 215
-                  ExplicitHeight = 127
                 end
                 object pnlVarStepListBox: TPanel
                   Left = 0
@@ -3846,7 +3826,7 @@ object frmXQTable: TfrmXQTable
                     Width = 199
                     Height = 15
                     AutoSize = False
-                    Caption = #35675#65388#35905#65381#36903#12539#22290#35675#33469#65397#65392#35925#12539'('#34623#24735#12539#34623#65391#35679#65381#36917#12539#12539#12539
+                    Caption = #26412#27493#30340#25152#26377#36208#27861' ('#21452#20987#21487#26597#30475')'#65306
                   end
                   object lbxPlayVar: TListBox
                     Left = 0
@@ -3880,30 +3860,27 @@ object frmXQTable: TfrmXQTable
                     TabOrder = 1
                     Visible = False
                     OnResize = pnlAddVarStepHintResize
-                    ExplicitWidth = 215
                     object lblAddPlayVarHint: TLabel
-                      Left = 8
+                      Left = 15
                       Top = 32
                       Width = 194
                       Height = 57
                       AutoSize = False
-                      Caption = 
-                        #34735#12423#23839#34838#65378#34569#65407',  '#37092#65378#35649#65401#34814#65394#25160#20055#24591#39721#65388#34568#65387#38673#24081#65400#12539' '#39721#65388#34568#65387#38673#24081#65401#12539' '#39721#65388#34568#65389#38673#24081#65402#30382#65389#33469#65397#65392#35925#12539#36999#65392#34664#65384#38670#28760#12539#35649#65392#36903#12539#24207#36921 +
-                        #128'.'
-                      Font.Charset = DEFAULT_CHARSET
+                      Caption = #22914#22270#24418#21183',  '#32418#26041#24050#32463#26377#39532#20843#36827#19971', '#39532#20843#36827#20061', '#39532#20845#36827#20116#31561#36208#27861','#29616#22312#36755#20837#26032#30340#21464#30528'.'
+                      Font.Charset = SHIFTJIS_CHARSET
                       Font.Color = clWindowText
                       Font.Height = -12
-                      Font.Name = #34739#20534#65405#12539
+                      Font.Name = 'Meiryo UI'
                       Font.Style = []
                       ParentFont = False
                       WordWrap = True
                     end
                     object lblBigHint: TLabel
-                      Left = 0
-                      Top = 8
-                      Width = 192
+                      Left = 2
+                      Top = 7
+                      Width = 132
                       Height = 19
-                      Caption = #35616#21315#65380#65402': ('#34821#27115#21000#35649#65392#34623#20513#25449')'
+                      Caption = #25552#31034': ('#22686#21152#26032#21464#30528')'
                       Font.Charset = DEFAULT_CHARSET
                       Font.Color = clWindowText
                       Font.Height = -16
@@ -3932,9 +3909,8 @@ object frmXQTable: TfrmXQTable
             ParentFont = False
             TabOrder = 1
             TabStop = False
-            ExplicitHeight = 280
             object tstRecord: TTabSheet
-              Caption = #35709#29590#65392#65393
+              Caption = #26827#35889
               Font.Charset = DEFAULT_CHARSET
               Font.Color = clWindowText
               Font.Height = -27
@@ -3946,15 +3922,13 @@ object frmXQTable: TfrmXQTable
                 Top = 0
                 Width = 121
                 Height = 216
-                Hint = 
-                  #34664#65384#35709#29590#65392#65393#38582#65392#34838#31298#65400#38593#40658#34563#65403#39840#63728#35692#12539#25215#39646#65390#34623#65391#34833#65401#34563#65402#39525#23822#65382#8747#22122#34569#28335#12539#39486#29273#40658#12539#24119#30033#39840#63728#35692#12539#65399#65382#39646#65390#34570#21215#12539#34568#65398#33651#65389#36903#12539#65400#128#35905#65381#34623 +
-                  #65391#33673#65381#35679#65381#36917#29590#65391#65381#35905#65381#36903#12539#65393#128#34569#65407'; '#34623#24735#12539#39840#63728#35692#12539#65399#65382#39646#65390#34623#65391#33673#25163#65391#65381#35905#65381#34833#128#34763#29590#12539#34569#65384#35622#65389#35646#65406#32306#12539
+                Hint = #22312#26827#35889#35760#24405#19978#21333#20987#40736#26631#21491#38190#21487#24377#20986#37325#35201#30340#21151#33021#36873#21333#65307#29992#40736#26631#24038#38190#21333#20987#20854#20013#30340#19968#27493#21487#20197#26597#30475#35813#27493#30340#23616#21183'; '#21452#20987#40736#26631#24038#38190#21487#20174#35813#27493#24320#22987#33258#21160#25773#25918#12290
                 Style = lbOwnerDrawFixed
                 Align = alClient
-                Font.Charset = DEFAULT_CHARSET
+                Font.Charset = SHIFTJIS_CHARSET
                 Font.Color = clWindowText
                 Font.Height = -12
-                Font.Name = #34739#20534#65405#12539
+                Font.Name = #65325#65331' '#12468#12471#12483#12463
                 Font.Style = []
                 ParentFont = False
                 PopupMenu = ppmPlayRec
@@ -3971,7 +3945,6 @@ object frmXQTable: TfrmXQTable
                 BevelOuter = bvNone
                 TabOrder = 1
                 OnResize = pnlCtrlToolBarResize
-                ExplicitTop = 222
                 object tlbPlayRec: TToolBar
                   Left = 0
                   Top = 0
@@ -3986,7 +3959,7 @@ object frmXQTable: TfrmXQTable
                   TabOrder = 0
                   object tbtFirstStep: TToolButton
                     Left = 0
-                    Top = 2
+                    Top = 0
                     Hint = #34833#128#34747#128'|'#34647#27115#33446#34833#128#34747#128#36837#65398#35556#12539
                     Action = actPlayRecFirst
                     ParentShowHint = False
@@ -3994,28 +3967,28 @@ object frmXQTable: TfrmXQTable
                   end
                   object tbtPriorStep: TToolButton
                     Left = 23
-                    Top = 2
+                    Top = 0
                     Action = actPlayRecPrior
                     ParentShowHint = False
                     ShowHint = True
                   end
                   object tbtNextStep: TToolButton
                     Left = 46
-                    Top = 2
+                    Top = 0
                     Action = actPlayRecNext
                     ParentShowHint = False
                     ShowHint = True
                   end
                   object tbtLastStep: TToolButton
                     Left = 69
-                    Top = 2
+                    Top = 0
                     Action = actPlayRecLast
                     ParentShowHint = False
                     ShowHint = True
                   end
                   object tbtDelStep: TToolButton
                     Left = 92
-                    Top = 2
+                    Top = 0
                     Action = actPlayRecDelete
                     ParentShowHint = False
                     ShowHint = True
@@ -4027,15 +4000,13 @@ object frmXQTable: TfrmXQTable
                 Top = 0
                 Width = 121
                 Height = 216
-                Hint = 
-                  #34664#65384#35709#29590#65392#65393#38582#65392#34838#31298#65400#38593#40658#34563#65403#39840#63728#35692#12539#25215#39646#65390#34623#65391#34833#65401#34563#65402#39525#23822#65382#8747#22122#34569#28335#12539#39486#29273#40658#12539#24119#30033#39840#63728#35692#12539#65399#65382#39646#65390#34570#21215#12539#34568#65398#33651#65389#36903#12539#65400#128#35905#65381#34623 +
-                  #65391#33673#65381#35679#65381#36917#29590#65391#65381#35905#65381#36903#12539#65393#128#34569#65407'; '#34623#24735#12539#39840#63728#35692#12539#65399#65382#39646#65390#34623#65391#33673#25163#65391#65381#35905#65381#34833#128#34763#29590#12539#34569#65384#35622#65389#35646#65406#32306#12539
+                Hint = #22312#26827#35889#35760#24405#19978#21333#20987#40736#26631#21491#38190#21487#24377#20986#37325#35201#30340#21151#33021#36873#21333#65307#29992#40736#26631#24038#38190#21333#20987#20854#20013#30340#19968#27493#21487#20197#26597#30475#35813#27493#30340#23616#21183'; '#21452#20987#40736#26631#24038#38190#21487#20174#35813#27493#24320#22987#33258#21160#25773#25918#12290
                 Style = lbOwnerDrawFixed
                 Align = alClient
-                Font.Charset = DEFAULT_CHARSET
+                Font.Charset = SHIFTJIS_CHARSET
                 Font.Color = clWindowText
                 Font.Height = -12
-                Font.Name = #34739#20534#65405#12539
+                Font.Name = #65325#65331' '#12468#12471#12483#12463
                 Font.Style = []
                 ParentFont = False
                 PopupMenu = ppmPlayRec
@@ -4099,11 +4070,10 @@ object frmXQTable: TfrmXQTable
           Font.Style = [fsBold]
           ParentFont = False
           TabOrder = 1
-          ExplicitWidth = 352
           object lblTitle: TLabel
             Left = 0
             Top = 12
-            Width = 352
+            Width = 344
             Height = 16
             Align = alTop
             Alignment = taCenter
@@ -4115,11 +4085,12 @@ object frmXQTable: TfrmXQTable
             Font.Style = []
             ParentFont = False
             Transparent = True
+            ExplicitWidth = 352
           end
           object lblPlayer: TLabel
             Left = 0
             Top = 28
-            Width = 352
+            Width = 344
             Height = 16
             Align = alTop
             Alignment = taCenter
@@ -4131,11 +4102,12 @@ object frmXQTable: TfrmXQTable
             Font.Style = []
             ParentFont = False
             Transparent = True
+            ExplicitWidth = 352
           end
           object lblTimeAddr: TLabel
             Left = 0
             Top = 44
-            Width = 352
+            Width = 344
             Height = 16
             Align = alTop
             Alignment = taCenter
@@ -4147,11 +4119,12 @@ object frmXQTable: TfrmXQTable
             Font.Style = []
             ParentFont = False
             Transparent = True
+            ExplicitWidth = 352
           end
           object Label1: TLabel
             Left = 0
             Top = 0
-            Width = 4
+            Width = 344
             Height = 12
             Align = alTop
             Font.Charset = DEFAULT_CHARSET
@@ -4161,17 +4134,14 @@ object frmXQTable: TfrmXQTable
             Font.Style = []
             ParentFont = False
             Transparent = True
+            ExplicitWidth = 4
           end
         end
       end
       object tstXQInfoB: TTabSheet
-        Caption = #35709#21477#23839
+        Caption = #26827#22270
         ImageIndex = 1
         OnShow = tstXQInfoBShow
-        ExplicitLeft = 0
-        ExplicitTop = 0
-        ExplicitWidth = 0
-        ExplicitHeight = 0
         object pgcQiTu: TPageControl
           Left = 0
           Top = 0
@@ -4181,19 +4151,19 @@ object frmXQTable: TfrmXQTable
           Align = alClient
           TabOrder = 0
           TabStop = False
-          ExplicitWidth = 352
-          ExplicitHeight = 345
           object tstQiTuText: TTabSheet
-            Caption = #35649#12539#24765#34647#65406
-            ExplicitLeft = 0
-            ExplicitTop = 0
-            ExplicitWidth = 0
-            ExplicitHeight = 0
+            Caption = #25991#26412#22270
+            Font.Charset = SHIFTJIS_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -12
+            Font.Name = 'Meiryo UI'
+            Font.Style = []
+            ParentFont = False
             object memQiTuText: TMemo
               Left = 0
               Top = 0
-              Width = 344
-              Height = 297
+              Width = 336
+              Height = 283
               Align = alClient
               ReadOnly = True
               ScrollBars = ssVertical
@@ -4202,8 +4172,8 @@ object frmXQTable: TfrmXQTable
             end
             object pnlQiTuTextToolBar: TPanel
               Left = 0
-              Top = 297
-              Width = 344
+              Top = 283
+              Width = 336
               Height = 28
               Align = alBottom
               BevelOuter = bvNone
@@ -4213,7 +4183,7 @@ object frmXQTable: TfrmXQTable
                 Left = 269
                 Top = 0
                 Width = 73
-                Height = 28
+                Height = 26
                 Align = alNone
                 AutoSize = True
                 BorderWidth = 1
@@ -4224,7 +4194,7 @@ object frmXQTable: TfrmXQTable
                 TabOrder = 1
                 object tbtSelectQiTuText: TToolButton
                   Left = 0
-                  Top = 2
+                  Top = 0
                   Hint = #34568#65384#39486#27022#34758#12539#22290#35675#33253#22122#35709#21477#23839#35649#12539#24765#39486#25105#65400#65389#12539#24481#65403#65381#33811#65407#35646#65406#34555#65392#34577#65386#38605#65396#35674#65407
                   Caption = 'tbtSelectQiTuText'
                   ImageIndex = 19
@@ -4234,14 +4204,14 @@ object frmXQTable: TfrmXQTable
                 end
                 object tbtCopyQiTuText: TToolButton
                   Left = 23
-                  Top = 2
+                  Top = 0
                   Action = frmMain.actEditCopy
                   ParentShowHint = False
                   ShowHint = True
                 end
                 object tbtSaveQiTuText: TToolButton
                   Left = 46
-                  Top = 2
+                  Top = 0
                   Hint = #33771#26191#65389#20470#65379#21477#23839#35649#12539#24765'|'#34758#12539#65379#21477#23839#35649#12539#24765#33771#26191#65389#20252#33446#35649#12539#24765#35649#12539#65403#65398#33651#65389'.'
                   Caption = '&Copy'
                   ImageIndex = 8
@@ -4259,18 +4229,18 @@ object frmXQTable: TfrmXQTable
                 BevelOuter = bvNone
                 TabOrder = 0
                 object lblQiTuTextStyle: TLabel
-                  Left = 4
-                  Top = 10
-                  Width = 37
-                  Height = 12
-                  Caption = #35692#65404#34833#12539
+                  Left = -2
+                  Top = 6
+                  Width = 29
+                  Height = 15
+                  Caption = #26684#24335':'
                 end
                 object rbtQiTuStyle01: TRadioButton
                   Left = 34
                   Top = 8
                   Width = 58
                   Height = 17
-                  Caption = #34719#65383#35709#21477#23839
+                  Caption = #22823#26827#22270
                   Checked = True
                   TabOrder = 0
                   TabStop = True
@@ -4279,10 +4249,10 @@ object frmXQTable: TfrmXQTable
                 object rbtQiTuStyle02: TRadioButton
                   Tag = 1
                   Left = 98
-                  Top = 8
+                  Top = 6
                   Width = 58
                   Height = 17
-                  Caption = #34758#20055#65379#21477#23839
+                  Caption = #23567#26827#22270
                   TabOrder = 1
                   OnClick = tstXQInfoBShow
                 end
@@ -4292,10 +4262,10 @@ object frmXQTable: TfrmXQTable
                   Width = 89
                   Height = 17
                   Hint = 
-                    '|'#34735#12424#26849#39486#25105#65400#65389#38584#65381#39486#34558#65377#65401#12539#24735#12539#33780#65407#36885#65384'ASCII'#39706#25030#29281#35607#65383#34555#65398#34756#31036#65388#65382#35646#65401#34623#20513#65402#65378#39839#31532#23167#35709#21477#65389#20185#26609#35709#29399#23592#37122#31532#63728#65404#37092#65407#36903#12539#65378#25030 +
-                    #29281#32306#12426#65391#65381#34569#28335#12539#33651#65403#38549#8747#30033#35674#65381#34664#65384#34719#65383#34756#65382#35692#65377#34647#65389#34756#31036#65388#65382'BBS'#33651#38593#65404#63728#38605#65396#34838#65385#28662#65394#35709#21477#23839#36885#65384#32306#12539
+                    '|'#22914#26524#36873#20013#35813#36873#39033#65292#21017#20351#29992'ASCII'#39068#33394#25511#21046#23383#31526#25913#21464#32418#40657#26041#26827#23376#21644#26827#30424#32593#26684#32447#30340#39068#33394#12290#35813#21151#33021#20027#35201#29992#26469#22312#22823#23398#26657#22253#23383#31526'BBS'#19978#24352#36148#24425#33394#26827#22270 +
+                    #29992#12290
                   TabStop = False
-                  Caption = #34756#31036#65388#65382'BBS'#39706#25030#29281
+                  Caption = #23383#31526'BBS'#39068#33394
                   TabOrder = 2
                   OnClick = tstXQInfoBShow
                 end
@@ -4303,17 +4273,13 @@ object frmXQTable: TfrmXQTable
             end
           end
           object tstQituImage: TTabSheet
-            Caption = #33653#65382#34555#38929#36060#36826#20133#23839
+            Caption = #20070#21002#25490#29256#22270
             ImageIndex = 1
             OnShow = tstQituImageShow
-            ExplicitLeft = 0
-            ExplicitTop = 0
-            ExplicitWidth = 0
-            ExplicitHeight = 0
             object Panel1: TPanel
               Left = 0
-              Top = 297
-              Width = 344
+              Top = 283
+              Width = 336
               Height = 28
               Align = alBottom
               BevelOuter = bvNone
@@ -4322,15 +4288,15 @@ object frmXQTable: TfrmXQTable
               object Label3: TLabel
                 Left = 4
                 Top = 10
-                Width = 406
+                Width = 288
                 Height = 12
-                Caption = #34623#65391#33673#65381#34758#12539#24765#35709#21477#23839#34719#27018#23451#34555#65392#34577#65386#38605#65396#35674#65407#12539#27278#9519#34615#23432#65394#20521#65396#65396#34664#65384'Word'#35649#12539#65377#65379#33651#65389#32306#12539
+                Caption = #21487#20197#23558#26412#26827#22270#22797#21046#21040#21098#36148#26495#65292#28982#21518#31896#36148#22312'Word'#25991#26723#20013#12290
               end
               object ToolBar1: TToolBar
                 Left = 289
                 Top = 0
                 Width = 50
-                Height = 28
+                Height = 26
                 Align = alNone
                 AutoSize = True
                 BorderWidth = 1
@@ -4341,7 +4307,7 @@ object frmXQTable: TfrmXQTable
                 TabOrder = 0
                 object tbtCopyQituImage: TToolButton
                   Left = 0
-                  Top = 2
+                  Top = 0
                   Hint = #34719#27018#23451#34555#65392#34577#65386#38605#65396#35674#65407'|'#34758#12539#24765#35709#21477#23839'('#34647#65406#38606#65377')'#34719#27018#23451#34555#65392#34577#65386#34555#12539#25912#33811#23094'ord'#36978#29273#65389#24604#65380#12539#28810#38675#65391#33673#65398#33780#65407#36885#65384#32306#12539
                   Caption = '&Copy'
                   ImageIndex = 1
@@ -4351,7 +4317,7 @@ object frmXQTable: TfrmXQTable
                 end
                 object tbtSaveQituImage: TToolButton
                   Left = 23
-                  Top = 2
+                  Top = 0
                   Hint = #33771#26191#65389#20470#65379#21477#23839'('#34647#65406#38606#65377')|'#34758#12539#65379#21477#23839'('#34647#65406#38606#65377')'#33771#26191#65389#20252#33446'Windos'#34647#65406#38606#65377#35649#12539#65403#65398#33651#65389'(*.BMP)'#32306#12539
                   Caption = '&Copy'
                   ImageIndex = 8
@@ -4364,8 +4330,8 @@ object frmXQTable: TfrmXQTable
             object pnlQituImage: TPanel
               Left = 0
               Top = 0
-              Width = 344
-              Height = 297
+              Width = 336
+              Height = 283
               Align = alClient
               BevelOuter = bvNone
               BorderStyle = bsSingle
@@ -4381,17 +4347,13 @@ object frmXQTable: TfrmXQTable
             end
           end
           object tstQituBitmap: TTabSheet
-            Caption = #38334#65386#34739#22779#65401#29273#23839#38606#65377#35709#21477#23839
+            Caption = #33258#23450#20041#22270#35937#26827#22270
             ImageIndex = 2
             OnShow = tstQituBitmapShow
-            ExplicitLeft = 0
-            ExplicitTop = 0
-            ExplicitWidth = 0
-            ExplicitHeight = 0
             object Panel2: TPanel
               Left = 0
-              Top = 297
-              Width = 344
+              Top = 283
+              Width = 336
               Height = 28
               Align = alBottom
               BevelOuter = bvNone
@@ -4400,15 +4362,15 @@ object frmXQTable: TfrmXQTable
               object Label4: TLabel
                 Left = 4
                 Top = 10
-                Width = 406
+                Width = 288
                 Height = 12
-                Caption = #34623#65391#33673#65381#34758#12539#24765#35709#21477#23839#34719#27018#23451#34555#65392#34577#65386#38605#65396#35674#65407#12539#27278#9519#34615#23432#65394#20521#65396#65396#34664#65384'Word'#35649#12539#65377#65379#33651#65389#32306#12539
+                Caption = #21487#20197#23558#26412#26827#22270#22797#21046#21040#21098#36148#26495#65292#28982#21518#31896#36148#22312'Word'#25991#26723#20013#12290
               end
               object ToolBar2: TToolBar
                 Left = 289
                 Top = 0
                 Width = 50
-                Height = 28
+                Height = 26
                 Align = alNone
                 AutoSize = True
                 BorderWidth = 1
@@ -4419,8 +4381,8 @@ object frmXQTable: TfrmXQTable
                 TabOrder = 0
                 object tbtCopyQituBitmap: TToolButton
                   Left = 0
-                  Top = 2
-                  Hint = #34719#27018#23451#34555#65392#34577#65386#38605#65396#35674#65407'|'#34758#12539#24765#35709#21477#23839'('#34647#65406#38606#65377')'#34719#27018#23451#34555#65392#34577#65386#34555#12539#25912#33811#23094'ord'#36978#29273#65389#24604#65380#12539#28810#38675#65391#33673#65398#33780#65407#36885#65384#32306#12539
+                  Top = 0
+                  Hint = #22797#21046#21040#21098#36148#26495'|'#23558#26412#26827#22270'('#22270#35937')'#22797#21046#21040#21098#20999#26495#20379'Word'#31561#23383#22788#29702#36719#20214#20351#29992#12290
                   Caption = '&Copy'
                   ImageIndex = 1
                   ParentShowHint = False
@@ -4429,9 +4391,9 @@ object frmXQTable: TfrmXQTable
                 end
                 object tbtSaveQituBitmap: TToolButton
                   Left = 23
-                  Top = 2
-                  Hint = #33771#26191#65389#20470#65379#21477#23839'('#34647#65406#38606#65377')|'#34758#12539#65379#21477#23839'('#34647#65406#38606#65377')'#33771#26191#65389#20252#33446'Windos'#34647#65406#38606#65377#35649#12539#65403#65398#33651#65389'(*.BMP)'#32306#12539
-                  Caption = '&Copy'
+                  Top = 0
+                  Hint = #20445#23384#26827#22270'('#22270#35937')|'#23558#26827#22270'('#22270#35937')'#20445#23384#21040'Windos'#22270#35937#25991#20214#20013'(*.BMP)'#12290
+                  Caption = '&Save'
                   ImageIndex = 8
                   ParentShowHint = False
                   ShowHint = True
@@ -4442,8 +4404,8 @@ object frmXQTable: TfrmXQTable
             object Panel3: TPanel
               Left = 0
               Top = 0
-              Width = 344
-              Height = 297
+              Width = 336
+              Height = 283
               Align = alClient
               BevelOuter = bvNone
               BorderStyle = bsSingle
@@ -4459,9 +4421,9 @@ object frmXQTable: TfrmXQTable
               object Label5: TLabel
                 Left = 12
                 Top = 10
-                Width = 444
+                Width = 302
                 Height = 12
-                Caption = #33651#21477#23839#35663#65391#39706#12539#65383#22495#35676#35691#25079#23839','#35670#65396#37002#65406#25160#12539#22122#34647#65406#38606#65377#34623#65391#39486#22794#65407#12539#23713#38605#65396#35674#65407#35596#21249#26522#33673#65398#38356#65399#34837#12539
+                Caption = #19979#22270#26159#39044#35272#25928#26524#22270','#26356#31934#32454#30340#22270#35937#21487#36890#36807#21098#36148#26495#25110#25991#20214#33719#24471
                 Font.Charset = DEFAULT_CHARSET
                 Font.Color = clGray
                 Font.Height = -12
@@ -4474,17 +4436,13 @@ object frmXQTable: TfrmXQTable
         end
       end
       object tstXQInfoC: TTabSheet
-        Caption = #35649#12539#24765
+        Caption = #25991#26412
         ImageIndex = 2
         OnShow = tstXQInfoCShow
-        ExplicitLeft = 0
-        ExplicitTop = 0
-        ExplicitWidth = 0
-        ExplicitHeight = 0
         object pnlTextToolBar: TPanel
           Left = 0
-          Top = 324
-          Width = 352
+          Top = 311
+          Width = 344
           Height = 28
           Align = alBottom
           BevelOuter = bvNone
@@ -4501,16 +4459,16 @@ object frmXQTable: TfrmXQTable
             object Label2: TLabel
               Left = 4
               Top = 10
-              Width = 37
+              Width = 30
               Height = 12
-              Caption = #35692#65404#34833#12539
+              Caption = #26684#24335':'
             end
             object rbtTextStyle01: TRadioButton
-              Left = 40
-              Top = 8
+              Left = 37
+              Top = 6
               Width = 49
               Height = 17
-              Caption = #34570#22675#63728#12539
+              Caption = #21333#26639
               TabOrder = 0
               OnClick = tstXQInfoCShow
             end
@@ -4520,7 +4478,7 @@ object frmXQTable: TfrmXQTable
               Top = 8
               Width = 49
               Height = 17
-              Caption = #34623#26791#63728#12539
+              Caption = #21452#26639
               Checked = True
               TabOrder = 1
               TabStop = True
@@ -4532,7 +4490,7 @@ object frmXQTable: TfrmXQTable
               Top = 8
               Width = 49
               Height = 17
-              Caption = #33651#30011#63728#12539
+              Caption = #19977#26639
               TabOrder = 2
               OnClick = tstXQInfoCShow
             end
@@ -4542,7 +4500,7 @@ object frmXQTable: TfrmXQTable
               Top = 8
               Width = 71
               Height = 17
-              Caption = 'Java'#35709#29399#23592
+              Caption = 'Java'#26827#30424
               TabOrder = 3
               OnClick = tstXQInfoCShow
             end
@@ -4551,7 +4509,7 @@ object frmXQTable: TfrmXQTable
             Left = 266
             Top = 0
             Width = 73
-            Height = 28
+            Height = 26
             Align = alNone
             AutoSize = True
             BorderWidth = 1
@@ -4560,9 +4518,10 @@ object frmXQTable: TfrmXQTable
             EdgeOuter = esNone
             Images = frmMain.imlMain
             TabOrder = 0
+            OnClick = tlbTextToolBarClick
             object tbtSelectAllText: TToolButton
               Left = 0
-              Top = 2
+              Top = 0
               Hint = #34568#65384#39486#27022#34758#12539#22290#35675#33253#22122#35649#12539#24765#39486#25105#65400#65389#12539#24481#65403#65381#33811#65407#35646#65406#34555#65392#34577#65386#38605#65396#35674#65407
               Caption = 'tbtSelectAllText'
               ImageIndex = 19
@@ -4572,14 +4531,14 @@ object frmXQTable: TfrmXQTable
             end
             object tbtCopySelectedText: TToolButton
               Left = 23
-              Top = 2
+              Top = 0
               Action = frmMain.actEditCopy
               ParentShowHint = False
               ShowHint = True
             end
             object tbtSaveTextIntoFile: TToolButton
               Left = 46
-              Top = 2
+              Top = 0
               Hint = #33771#26191#65389#20470#26522#35675#65388'|'#34758#12539#65379#29590#65392#65393#35649#12539#24765#33771#26191#65389#20252#33446#35649#12539#24765#35649#12539#65403#65398#33651#65389
               Caption = '&Copy'
               ImageIndex = 8
@@ -4592,13 +4551,13 @@ object frmXQTable: TfrmXQTable
         object memText: TMemo
           Left = 0
           Top = 0
-          Width = 352
-          Height = 324
+          Width = 344
+          Height = 311
           Align = alClient
-          Font.Charset = DEFAULT_CHARSET
+          Font.Charset = SHIFTJIS_CHARSET
           Font.Color = clWindowText
           Font.Height = -12
-          Font.Name = #34739#20534#65405#12539
+          Font.Name = #65325#65331' '#12468#12471#12483#12463
           Font.Style = []
           ParentFont = False
           ScrollBars = ssVertical

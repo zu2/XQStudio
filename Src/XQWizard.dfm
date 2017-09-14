@@ -3,7 +3,7 @@ object frmXQWizard: TfrmXQWizard
   Top = 175
   BorderIcons = [biSystemMenu]
   BorderStyle = bsDialog
-  Caption = #34770#65402#36982#20534#65400#128#33651#65386#35649#65392#36903#1063'QF'#35649#12539#65403#65398
+  Caption = #24314#31435#19968#20010#26032#30340'XQF'#25991#20214
   ClientHeight = 359
   ClientWidth = 521
   Color = clBtnFace
@@ -43,7 +43,7 @@ object frmXQWizard: TfrmXQWizard
       ParentFont = False
       TabOrder = 0
       object tstStep1: TTabSheet
-        Caption = #38582#65406#37122#65390#35649#12539#65403#65398#34747#27146#128#65383
+        Caption = #35774#32622#25991#20214#23646#24615
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -12
@@ -70,9 +70,9 @@ object frmXQWizard: TfrmXQWizard
             object Label6: TLabel
               Left = 25
               Top = 7
-              Width = 52
+              Width = 46
               Height = 12
-              Caption = #35692#12539'   '#39706#12539' '
+              Caption = #26631'    '#39064': '
               Font.Charset = DEFAULT_CHARSET
               Font.Color = clWindowText
               Font.Height = -12
@@ -84,11 +84,11 @@ object frmXQWizard: TfrmXQWizard
               Left = 80
               Top = 4
               Width = 409
-              Height = 20
-              Font.Charset = DEFAULT_CHARSET
+              Height = 23
+              Font.Charset = SHIFTJIS_CHARSET
               Font.Color = clWindowText
               Font.Height = -12
-              Font.Name = #34739#20534#65405#12539
+              Font.Name = 'Meiryo UI'
               Font.Style = []
               MaxLength = 63
               ParentFont = False
@@ -114,14 +114,14 @@ object frmXQWizard: TfrmXQWizard
               Top = 4
               Width = 489
               Height = 165
-              Caption = ' '#35912#30865#65397#24081#65407#65377#35569#65391' '
+              Caption = ' '#27604#36187#20449#24687' '
               TabOrder = 0
               object Label1: TLabel
                 Left = 16
                 Top = 21
-                Width = 78
+                Width = 50
                 Height = 12
-                Caption = #35912#30865#65397#24091#37648#36952#65392':'
+                Caption = #27604#36187#21517#31216':'
                 Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
                 Font.Height = -12
@@ -132,9 +132,9 @@ object frmXQWizard: TfrmXQWizard
               object Label2: TLabel
                 Left = 16
                 Top = 45
-                Width = 74
+                Width = 50
                 Height = 12
-                Caption = #35912#30865#65397#24118#24459#35675#12539
+                Caption = #27604#36187#26085#26399':'
                 Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
                 Font.Height = -12
@@ -145,9 +145,9 @@ object frmXQWizard: TfrmXQWizard
               object Label3: TLabel
                 Left = 256
                 Top = 45
-                Width = 78
+                Width = 50
                 Height = 12
-                Caption = #35912#30865#65397#24091#24909#36708#65401':'
+                Caption = #27604#36187#22320#28857':'
                 Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
                 Font.Height = -12
@@ -158,9 +158,9 @@ object frmXQWizard: TfrmXQWizard
               object Label4: TLabel
                 Left = 16
                 Top = 69
-                Width = 75
+                Width = 50
                 Height = 12
-                Caption = #37092#65378#35649#65401#35709#21306#28948':'
+                Caption = #32418#26041#26827#25163':'
                 Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
                 Font.Height = -12
@@ -171,9 +171,9 @@ object frmXQWizard: TfrmXQWizard
               object Label5: TLabel
                 Left = 256
                 Top = 69
-                Width = 74
+                Width = 50
                 Height = 12
-                Caption = #39839#31532#23167#35709#21306#28948':'
+                Caption = #40657#26041#26827#25163':'
                 Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
                 Font.Height = -12
@@ -184,9 +184,9 @@ object frmXQWizard: TfrmXQWizard
               object lblResult: TLabel
                 Left = 16
                 Top = 141
-                Width = 78
+                Width = 50
                 Height = 12
-                Caption = #35912#30865#65397#24119#65403#25466#26849':'
+                Caption = #27604#36187#32467#26524':'
                 Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
                 Font.Height = -12
@@ -197,9 +197,9 @@ object frmXQWizard: TfrmXQWizard
               object Label11: TLabel
                 Left = 16
                 Top = 93
-                Width = 62
+                Width = 50
                 Height = 12
-                Caption = #36885#65384#35660#65398#38551#12539#12539':'
+                Caption = #29992#26102#35268#21017':'
                 Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
                 Font.Height = -12
@@ -210,9 +210,9 @@ object frmXQWizard: TfrmXQWizard
               object Label12: TLabel
                 Left = 16
                 Top = 117
-                Width = 75
+                Width = 50
                 Height = 12
-                Caption = #37092#65378#35649#65401#36885#65384#35660#65398':'
+                Caption = #32418#26041#29992#26102':'
                 Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
                 Font.Height = -12
@@ -223,9 +223,9 @@ object frmXQWizard: TfrmXQWizard
               object Label13: TLabel
                 Left = 256
                 Top = 117
-                Width = 74
+                Width = 50
                 Height = 12
-                Caption = #39839#31532#23167#36885#65384#35660#65398':'
+                Caption = #40657#26041#29992#26102':'
                 Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
                 Font.Height = -12
@@ -235,13 +235,13 @@ object frmXQWizard: TfrmXQWizard
               end
               object edtMatchName: TEdit
                 Left = 72
-                Top = 18
+                Top = 19
                 Width = 409
-                Height = 20
-                Font.Charset = DEFAULT_CHARSET
+                Height = 23
+                Font.Charset = SHIFTJIS_CHARSET
                 Font.Color = clWindowText
                 Font.Height = -12
-                Font.Name = #34739#20534#65405#12539
+                Font.Name = 'Meiryo UI'
                 Font.Style = []
                 MaxLength = 63
                 ParentFont = False
@@ -251,11 +251,11 @@ object frmXQWizard: TfrmXQWizard
                 Left = 72
                 Top = 42
                 Width = 169
-                Height = 20
-                Font.Charset = DEFAULT_CHARSET
+                Height = 23
+                Font.Charset = SHIFTJIS_CHARSET
                 Font.Color = clWindowText
                 Font.Height = -12
-                Font.Name = #34739#20534#65405#12539
+                Font.Name = 'Meiryo UI'
                 Font.Style = []
                 MaxLength = 15
                 ParentFont = False
@@ -265,11 +265,11 @@ object frmXQWizard: TfrmXQWizard
                 Left = 312
                 Top = 42
                 Width = 169
-                Height = 20
-                Font.Charset = DEFAULT_CHARSET
+                Height = 23
+                Font.Charset = SHIFTJIS_CHARSET
                 Font.Color = clWindowText
                 Font.Height = -12
-                Font.Name = #34739#20534#65405#12539
+                Font.Name = 'Meiryo UI'
                 Font.Style = []
                 MaxLength = 15
                 ParentFont = False
@@ -277,13 +277,13 @@ object frmXQWizard: TfrmXQWizard
               end
               object edtRedPlayer: TEdit
                 Left = 72
-                Top = 66
+                Top = 64
                 Width = 169
-                Height = 20
-                Font.Charset = DEFAULT_CHARSET
+                Height = 23
+                Font.Charset = SHIFTJIS_CHARSET
                 Font.Color = clWindowText
                 Font.Height = -12
-                Font.Name = #34739#20534#65405#12539
+                Font.Name = 'Meiryo UI'
                 Font.Style = []
                 MaxLength = 15
                 ParentFont = False
@@ -293,11 +293,11 @@ object frmXQWizard: TfrmXQWizard
                 Left = 312
                 Top = 66
                 Width = 169
-                Height = 20
-                Font.Charset = DEFAULT_CHARSET
+                Height = 23
+                Font.Charset = SHIFTJIS_CHARSET
                 Font.Color = clWindowText
                 Font.Height = -12
-                Font.Name = #34739#20534#65405#12539
+                Font.Name = 'Meiryo UI'
                 Font.Style = []
                 MaxLength = 15
                 ParentFont = False
@@ -308,7 +308,7 @@ object frmXQWizard: TfrmXQWizard
                 Top = 140
                 Width = 57
                 Height = 17
-                Caption = #35675#65386'  '#36943#65381
+                Caption = #26410'  '#30693
                 Checked = True
                 Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
@@ -324,7 +324,7 @@ object frmXQWizard: TfrmXQWizard
                 Top = 140
                 Width = 57
                 Height = 17
-                Caption = #37092#65378#35649#65401#38317#12539
+                Caption = #32418#26041#32988
                 Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
                 Font.Height = -12
@@ -338,7 +338,7 @@ object frmXQWizard: TfrmXQWizard
                 Top = 140
                 Width = 57
                 Height = 17
-                Caption = #39839#31532#23167#38317#12539
+                Caption = #40657#26041#32988
                 Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
                 Font.Height = -12
@@ -352,7 +352,7 @@ object frmXQWizard: TfrmXQWizard
                 Top = 140
                 Width = 57
                 Height = 17
-                Caption = #34597#12539' '#35709#12539
+                Caption = #21644'  '#26827
                 Font.Charset = DEFAULT_CHARSET
                 Font.Color = clWindowText
                 Font.Height = -12
@@ -365,11 +365,11 @@ object frmXQWizard: TfrmXQWizard
                 Left = 72
                 Top = 90
                 Width = 409
-                Height = 20
-                Font.Charset = DEFAULT_CHARSET
+                Height = 23
+                Font.Charset = SHIFTJIS_CHARSET
                 Font.Color = clWindowText
                 Font.Height = -12
-                Font.Name = #34739#20534#65405#12539
+                Font.Name = 'Meiryo UI'
                 Font.Style = []
                 MaxLength = 63
                 ParentFont = False
@@ -379,11 +379,11 @@ object frmXQWizard: TfrmXQWizard
                 Left = 72
                 Top = 114
                 Width = 169
-                Height = 20
-                Font.Charset = DEFAULT_CHARSET
+                Height = 23
+                Font.Charset = SHIFTJIS_CHARSET
                 Font.Color = clWindowText
                 Font.Height = -12
-                Font.Name = #34739#20534#65405#12539
+                Font.Name = 'Meiryo UI'
                 Font.Style = []
                 MaxLength = 15
                 ParentFont = False
@@ -393,11 +393,11 @@ object frmXQWizard: TfrmXQWizard
                 Left = 312
                 Top = 114
                 Width = 169
-                Height = 20
-                Font.Charset = DEFAULT_CHARSET
+                Height = 23
+                Font.Charset = SHIFTJIS_CHARSET
                 Font.Color = clWindowText
                 Font.Height = -12
-                Font.Name = #34739#20534#65405#12539
+                Font.Name = 'Meiryo UI'
                 Font.Style = []
                 MaxLength = 15
                 ParentFont = False
@@ -418,7 +418,7 @@ object frmXQWizard: TfrmXQWizard
               Top = 8
               Width = 489
               Height = 43
-              Caption = #35709#21477#65393#128#36992#65403#34649#12539
+              Caption = #26827#23616#31867#22411
               Font.Charset = DEFAULT_CHARSET
               Font.Color = clWindowText
               Font.Height = -12
@@ -432,7 +432,7 @@ object frmXQWizard: TfrmXQWizard
               Top = 26
               Width = 105
               Height = 17
-              Caption = #34568#65384#34747#128#32306#8733#65391#65401#34747#128
+              Caption = #20840#23616#12289#23545#23616
               Checked = True
               Font.Charset = DEFAULT_CHARSET
               Font.Color = clWindowText
@@ -449,7 +449,7 @@ object frmXQWizard: TfrmXQWizard
               Top = 26
               Width = 105
               Height = 17
-              Caption = #35903#21477#65393#128#32306#8757#36060#34747#128
+              Caption = #23454#25112#20013#12289#27531#23616
               Font.Charset = DEFAULT_CHARSET
               Font.Color = clWindowText
               Font.Height = -12
@@ -464,7 +464,7 @@ object frmXQWizard: TfrmXQWizard
               Top = 26
               Width = 105
               Height = 17
-              Caption = #34806#12539#65393#128#32306#8733#65404#128#34747#128
+              Caption = #27531#23616#12289#25490#23616
               Font.Charset = DEFAULT_CHARSET
               Font.Color = clWindowText
               Font.Height = -12
@@ -479,7 +479,7 @@ object frmXQWizard: TfrmXQWizard
               Top = 26
               Width = 105
               Height = 17
-              Caption = #34739#27146#12539#33651#65389#32306#8757#65390#21477#65393#128
+              Caption = #24067#23616#12289#24320#23616
               Font.Charset = DEFAULT_CHARSET
               Font.Color = clWindowText
               Font.Height = -12
@@ -501,9 +501,9 @@ object frmXQWizard: TfrmXQWizard
             object Label7: TLabel
               Left = 24
               Top = 5
-              Width = 76
+              Width = 50
               Height = 12
-              Caption = #35709#29590#65392#65393#38582#65394#38584#12539
+              Caption = #26827#35889#35762#35780':'
               Font.Charset = DEFAULT_CHARSET
               Font.Color = clWindowText
               Font.Height = -12
@@ -514,9 +514,9 @@ object frmXQWizard: TfrmXQWizard
             object Label8: TLabel
               Left = 264
               Top = 5
-              Width = 63
+              Width = 50
               Height = 12
-              Caption = #35649#12539#65403#65398#33780#25030#128#12539
+              Caption = #25991#20214#20316#32773':'
               Font.Charset = DEFAULT_CHARSET
               Font.Color = clWindowText
               Font.Height = -12
@@ -528,11 +528,11 @@ object frmXQWizard: TfrmXQWizard
               Left = 80
               Top = 2
               Width = 169
-              Height = 20
-              Font.Charset = DEFAULT_CHARSET
+              Height = 23
+              Font.Charset = SHIFTJIS_CHARSET
               Font.Color = clWindowText
               Font.Height = -12
-              Font.Name = #34739#20534#65405#12539
+              Font.Name = 'Meiryo UI'
               Font.Style = []
               MaxLength = 15
               ParentFont = False
@@ -542,11 +542,11 @@ object frmXQWizard: TfrmXQWizard
               Left = 320
               Top = 2
               Width = 169
-              Height = 20
-              Font.Charset = DEFAULT_CHARSET
+              Height = 23
+              Font.Charset = SHIFTJIS_CHARSET
               Font.Color = clWindowText
               Font.Height = -12
-              Font.Name = #34739#20534#65405#12539
+              Font.Name = 'Meiryo UI'
               Font.Style = []
               MaxLength = 15
               ParentFont = False
@@ -556,7 +556,7 @@ object frmXQWizard: TfrmXQWizard
         end
       end
       object tstStep2: TTabSheet
-        Caption = #38582#65406#37122#65390#35709#21477#65389#34633#65405#21682#65405#65390#34597#24735#65391#65401#34747#128#25160#25466#26849
+        Caption = #35774#32622#26827#23376#20301#32622#21644#23545#23616#32467#26524
         ImageIndex = 1
         TabVisible = False
         ExplicitLeft = 0
@@ -567,7 +567,7 @@ object frmXQWizard: TfrmXQWizard
           Left = 0
           Top = 0
           Width = 321
-          Height = 294
+          Height = 293
           Align = alLeft
           BevelOuter = bvNone
           TabOrder = 0
@@ -576,10 +576,11 @@ object frmXQWizard: TfrmXQWizard
             Left = 0
             Top = 0
             Width = 321
-            Height = 294
+            Height = 293
             Align = alClient
             Transparent = True
             OnDragOver = imgXQBoardDragOver
+            ExplicitHeight = 294
           end
           object imgXQBoard: TImage
             Left = 0
@@ -2442,7 +2443,7 @@ object frmXQWizard: TfrmXQWizard
           Left = 495
           Top = 0
           Width = 7
-          Height = 294
+          Height = 293
           Align = alRight
           BevelOuter = bvNone
           TabOrder = 1
@@ -2451,7 +2452,7 @@ object frmXQWizard: TfrmXQWizard
           Left = 321
           Top = 0
           Width = 174
-          Height = 294
+          Height = 293
           Align = alClient
           BevelOuter = bvNone
           TabOrder = 2
@@ -2531,7 +2532,7 @@ object frmXQWizard: TfrmXQWizard
             Left = 0
             Top = 217
             Width = 174
-            Height = 77
+            Height = 76
             Align = alClient
             BevelOuter = bvNone
             TabOrder = 2
@@ -2593,11 +2594,11 @@ object frmXQWizard: TfrmXQWizard
     TabOrder = 1
     OnResize = pnlBottomResize
     object btnPrior: TButton
-      Left = 152
-      Top = 0
+      Left = 156
+      Top = -1
       Width = 80
       Height = 22
-      Caption = '< '#33651#36107#65400#128#35905#65381'(&B)'
+      Caption = '< '#19978#19968#27493'(&B)'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -12
@@ -2609,11 +2610,11 @@ object frmXQWizard: TfrmXQWizard
       OnClick = btnPriorClick
     end
     object btnNext: TButton
-      Left = 240
-      Top = 0
+      Left = 242
+      Top = -1
       Width = 80
       Height = 22
-      Caption = #33651#20534#65400#128#35905#65381'(&X) >'
+      Caption = #19979#19968#27493'(&X) >'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -12
@@ -2629,7 +2630,7 @@ object frmXQWizard: TfrmXQWizard
       Top = 0
       Width = 80
       Height = 22
-      Caption = #34623#21249#65398#12539
+      Caption = #21462#28040
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -12
@@ -2644,7 +2645,7 @@ object frmXQWizard: TfrmXQWizard
       Top = 0
       Width = 80
       Height = 22
-      Caption = #34739#26791#12539'(&F) '
+      Caption = #23436#25104'(&F)'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -12
