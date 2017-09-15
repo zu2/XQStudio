@@ -1391,6 +1391,7 @@ var
   i:Integer;
   gs:GB2312String;
 begin
+  ShowMessage('Size:'+IntToStr(b)+' '+s);
   GB2312Trim:='';
   gs:=GB2312String(s);
   for i:=Length(s) downto 0 do
@@ -1407,17 +1408,17 @@ begin
   XQFHead.CodeA      := iXQFType;
   XQFHead.WhoPlay    := iWhoPlay;
   XQFHead.PlayResult := iResult;
-  XQFHead.TitleA     := GB2312Trim(sTitle,SizeOf(sTitle)-1);
-  XQFHead.MatchName  := GB2312Trim(sMatchName,SizeOf(sMatchName)-1);
-  XQFHead.MatchTime  := GB2312Trim(sMatchTime,SizeOf(sMatchTime)-1);
-  XQFHead.MatchAddr  := GB2312Trim(sMatchAddr,SizeOf(sMatchAddr)-1);
-  XQFHead.RedPlayer  := GB2312Trim(sRedPlayer,SizeOf(sRedPlayer)-1);
-  XQFHead.BlkPlayer  := GB2312Trim(sBlkPlayer,SizeOf(sBlkPlayer)-1);
-  XQFHead.TimeRule   := GB2312Trim(sTimeRule, SizeOf(sTimeRule)-1);
-  XQFHead.RedTime    := GB2312Trim(sRedTime,  SizeOf(sRedTime)-1);
-  XQFHead.BlkTime    := GB2312Trim(sBlkTime,  SizeOf(sBlkTime)-1);
-  XQFHead.RMKWriter  := GB2312Trim(sRMKWriter,SizeOf(sRMKWriter)-1);
-  XQFHead.Author     := GB2312Trim(sAuthor,   SizeOf(sAuthor)-1);
+  XQFHead.TitleA     := GB2312Trim(sTitle,SizeOf(XQFHead.TitleA)-1);
+  XQFHead.MatchName  := GB2312Trim(sMatchName,SizeOf(XQFHead.MatchName)-1);
+  XQFHead.MatchTime  := GB2312Trim(sMatchTime,SizeOf(XQFHead.MatchTime)-1);
+  XQFHead.MatchAddr  := GB2312Trim(sMatchAddr,SizeOf(XQFHead.MatchAddr)-1);
+  XQFHead.RedPlayer  := GB2312Trim(sRedPlayer,SizeOf(XQFHead.RedPlayer)-1);
+  XQFHead.BlkPlayer  := GB2312Trim(sBlkPlayer,SizeOf(XQFHead.BlkPlayer)-1);
+  XQFHead.TimeRule   := GB2312Trim(sTimeRule, SizeOf(XQFHead.TimeRule)-1);
+  XQFHead.RedTime    := GB2312Trim(sRedTime,  SizeOf(XQFHead.RedTime)-1);
+  XQFHead.BlkTime    := GB2312Trim(sBlkTime,  SizeOf(XQFHead.BlkTime)-1);
+  XQFHead.RMKWriter  := GB2312Trim(sRMKWriter,SizeOf(XQFHead.RMKWriter)-1);
+  XQFHead.Author     := GB2312Trim(sAuthor,   SizeOf(XQFHead.Author)-1);
 end;
 
 
