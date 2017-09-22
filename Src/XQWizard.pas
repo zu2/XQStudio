@@ -203,6 +203,7 @@ type
 var
   frmXQWizard: TfrmXQWizard;
 
+
 implementation
 
 uses XQMain;
