@@ -3,7 +3,7 @@ XQStduio Source Code (https://github.com/zu2/XQStudio)
 Copyright (c) 2017, ZUKERAN shin (zu2)
 All rights reserved.
 
-The source codes are writen by using delphi 10.2.
+The source codes are modified for using delphi 10.2.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
